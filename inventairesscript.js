@@ -14,24 +14,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (mobileToggle && mainNav) {
 
-        mobileToggle.addEventListener(
-            "click",
-            function () {
+        mobileToggle.addEventListener("click", function () {
 
-                const isOpen =
-                    mainNav.classList.toggle("active");
+            const isOpen =
+                mainNav.classList.toggle("active");
 
-                mobileToggle.classList.toggle(
-                    "open",
-                    isOpen
-                );
+            mobileToggle.classList.toggle(
+                "open",
+                isOpen
+            );
 
-                mobileToggle.setAttribute(
-                    "aria-expanded",
-                    isOpen ? "true" : "false"
-                );
-            }
-        );
+            mobileToggle.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+        });
+
     }
 
 
@@ -46,74 +45,62 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("inventoryToggle");
 
 
-    if (
-        inventoryDropdown &&
-        inventoryToggle
-    ) {
+    if (inventoryDropdown && inventoryToggle) {
 
         inventoryToggle.addEventListener(
             "click",
             function (event) {
 
                 event.preventDefault();
-
                 event.stopPropagation();
 
                 const isOpen =
-                    inventoryDropdown.classList.toggle(
-                        "open"
-                    );
+                    inventoryDropdown.classList.toggle("open");
 
                 inventoryToggle.setAttribute(
                     "aria-expanded",
                     isOpen ? "true" : "false"
                 );
+
             }
         );
+
     }
 
 
     /* =====================================================
-       FERMER LE MENU MOBILE
+       FERMER MENU MOBILE
        ===================================================== */
 
     function closeMobileMenu() {
 
         if (mainNav) {
-
-            mainNav.classList.remove(
-                "active"
-            );
+            mainNav.classList.remove("active");
         }
-
 
         if (mobileToggle) {
 
-            mobileToggle.classList.remove(
-                "open"
-            );
+            mobileToggle.classList.remove("open");
 
             mobileToggle.setAttribute(
                 "aria-expanded",
                 "false"
             );
+
         }
+
     }
 
 
     /* =====================================================
-       FERMER LE MENU INVENTAIRES
+       FERMER MENU INVENTAIRES
        ===================================================== */
 
     function closeInventoryMenu() {
 
         if (inventoryDropdown) {
-
-            inventoryDropdown.classList.remove(
-                "open"
-            );
+            inventoryDropdown.classList.remove("open");
         }
-
 
         if (inventoryToggle) {
 
@@ -121,54 +108,51 @@ document.addEventListener("DOMContentLoaded", function () {
                 "aria-expanded",
                 "false"
             );
+
         }
+
     }
 
 
     /* =====================================================
-       LIENS DU MENU
+       LIENS MENU
        ===================================================== */
 
-    const navLinks =
-        document.querySelectorAll(".nav-link");
+    document
+        .querySelectorAll(".nav-link")
+        .forEach(function (link) {
 
+            link.addEventListener(
+                "click",
+                function () {
 
-    navLinks.forEach(function (link) {
+                    closeMobileMenu();
 
-        link.addEventListener(
-            "click",
-            function () {
+                }
+            );
 
-                closeMobileMenu();
-
-            }
-        );
-    });
+        });
 
 
     /* =====================================================
-       LIENS DU SOUS-MENU
+       LIENS SOUS-MENU
        ===================================================== */
 
-    const submenuLinks =
-        document.querySelectorAll(
-            ".nav-dropdown-menu a"
-        );
+    document
+        .querySelectorAll(".nav-dropdown-menu a")
+        .forEach(function (link) {
 
+            link.addEventListener(
+                "click",
+                function () {
 
-    submenuLinks.forEach(function (link) {
+                    closeMobileMenu();
+                    closeInventoryMenu();
 
-        link.addEventListener(
-            "click",
-            function () {
+                }
+            );
 
-                closeMobileMenu();
-
-                closeInventoryMenu();
-
-            }
-        );
-    });
+        });
 
 
     /* =====================================================
@@ -181,14 +165,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (
                 inventoryDropdown &&
-                !inventoryDropdown.contains(
-                    event.target
-                )
+                !inventoryDropdown.contains(event.target)
             ) {
 
                 closeInventoryMenu();
 
             }
+
         }
     );
 
@@ -204,29 +187,10 @@ document.addEventListener("DOMContentLoaded", function () {
             if (event.key === "Escape") {
 
                 closeMobileMenu();
-
                 closeInventoryMenu();
 
             }
-        }
-    );
 
-
-    /* =====================================================
-       REDIMENSIONNEMENT
-       ===================================================== */
-
-    window.addEventListener(
-        "resize",
-        function () {
-
-            if (
-                window.innerWidth > 850
-            ) {
-
-                closeMobileMenu();
-
-            }
         }
     );
 
@@ -236,25 +200,16 @@ document.addEventListener("DOMContentLoaded", function () {
        ===================================================== */
 
     const searchInput =
-        document.getElementById(
-            "inventorySearch"
-        );
+        document.getElementById("inventorySearch");
 
-    const inventoryCards =
-        document.querySelectorAll(
-            ".inventory-card"
-        );
+    const cards =
+        document.querySelectorAll(".inventory-card");
 
-    const inventoryEmpty =
-        document.getElementById(
-            "inventoryEmpty"
-        );
+    const empty =
+        document.getElementById("inventoryEmpty");
 
 
-    if (
-        searchInput &&
-        inventoryCards.length
-    ) {
+    if (searchInput && cards.length) {
 
         searchInput.addEventListener(
             "input",
@@ -274,113 +229,57 @@ document.addEventListener("DOMContentLoaded", function () {
                 let found = 0;
 
 
-                inventoryCards.forEach(
-                    function (card) {
+                cards.forEach(function (card) {
 
-                        const content =
-                            (
-                                card.dataset.search ||
+                    const content =
+                        (
+                            card.dataset.search || ""
+                        )
+                        +
+                        " "
+                        +
+                        card.textContent;
+
+
+                    const normalized =
+                        content
+                            .toLowerCase()
+                            .normalize("NFD")
+                            .replace(
+                                /[\u0300-\u036f]/g,
                                 ""
-                            )
-                            +
-                            " " +
-                            card.textContent;
+                            );
 
 
-                        const normalizedContent =
-                            content
-                                .toLowerCase()
-                                .normalize("NFD")
-                                .replace(
-                                    /[\u0300-\u036f]/g,
-                                    ""
-                                );
+                    if (
+                        normalized.includes(search)
+                    ) {
 
+                        card.style.display = "flex";
 
-                        if (
-                            normalizedContent.includes(
-                                search
-                            )
-                        ) {
+                        found++;
 
-                            card.style.display =
-                                "flex";
+                    } else {
 
-                            found++;
+                        card.style.display = "none";
 
-                        } else {
-
-                            card.style.display =
-                                "none";
-                        }
                     }
-                );
+
+                });
 
 
-                if (inventoryEmpty) {
+                if (empty) {
 
-                    inventoryEmpty.style.display =
+                    empty.style.display =
                         found === 0
                             ? "block"
                             : "none";
+
                 }
 
             }
         );
-    }
 
-
-    /* =====================================================
-       ANIMATION DES CARTES
-       ===================================================== */
-
-    const cards =
-        document.querySelectorAll(
-            ".inventory-card"
-        );
-
-
-    if (
-        "IntersectionObserver" in window &&
-        cards.length
-    ) {
-
-        const observer =
-            new IntersectionObserver(
-                function (entries) {
-
-                    entries.forEach(
-                        function (entry) {
-
-                            if (
-                                entry.isIntersecting
-                            ) {
-
-                                entry.target.classList.add(
-                                    "visible"
-                                );
-
-                                observer.unobserve(
-                                    entry.target
-                                );
-                            }
-                        }
-                    );
-
-                },
-                {
-                    threshold: 0.12
-                }
-            );
-
-
-        cards.forEach(
-            function (card) {
-
-                observer.observe(card);
-
-            }
-        );
     }
 
 });
