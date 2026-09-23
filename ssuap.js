@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+
     /* =====================================================
        MENU MOBILE
        ===================================================== */
@@ -20,10 +21,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 const isOpen =
                     mainNav.classList.toggle("active");
 
+
                 mobileToggle.classList.toggle(
                     "open",
                     isOpen
                 );
+
 
                 mobileToggle.setAttribute(
                     "aria-expanded",
@@ -36,28 +39,42 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+
     /* =====================================================
        MENU INVENTAIRES
        ===================================================== */
 
     const inventoryDropdown =
-        document.getElementById("inventoryDropdown");
+        document.getElementById(
+            "inventoryDropdown"
+        );
+
 
     const inventoryToggle =
-        document.getElementById("inventoryToggle");
+        document.getElementById(
+            "inventoryToggle"
+        );
 
 
-    if (inventoryDropdown && inventoryToggle) {
+    if (
+        inventoryDropdown &&
+        inventoryToggle
+    ) {
 
         inventoryToggle.addEventListener(
             "click",
             function (event) {
 
                 event.preventDefault();
+
                 event.stopPropagation();
 
+
                 const isOpen =
-                    inventoryDropdown.classList.toggle("open");
+                    inventoryDropdown.classList.toggle(
+                        "open"
+                    );
+
 
                 inventoryToggle.setAttribute(
                     "aria-expanded",
@@ -70,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+
     /* =====================================================
        FERMER MENU MOBILE
        ===================================================== */
@@ -77,12 +95,20 @@ document.addEventListener("DOMContentLoaded", function () {
     function closeMobileMenu() {
 
         if (mainNav) {
-            mainNav.classList.remove("active");
+
+            mainNav.classList.remove(
+                "active"
+            );
+
         }
+
 
         if (mobileToggle) {
 
-            mobileToggle.classList.remove("open");
+            mobileToggle.classList.remove(
+                "open"
+            );
+
 
             mobileToggle.setAttribute(
                 "aria-expanded",
@@ -94,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+
     /* =====================================================
        FERMER MENU INVENTAIRES
        ===================================================== */
@@ -101,8 +128,13 @@ document.addEventListener("DOMContentLoaded", function () {
     function closeInventoryMenu() {
 
         if (inventoryDropdown) {
-            inventoryDropdown.classList.remove("open");
+
+            inventoryDropdown.classList.remove(
+                "open"
+            );
+
         }
+
 
         if (inventoryToggle) {
 
@@ -116,27 +148,37 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+
     /* =====================================================
        LIENS MENU
        ===================================================== */
 
     const navLinks =
-        document.querySelectorAll(".nav-link");
-
-
-    navLinks.forEach(function (link) {
-
-        link.addEventListener(
-            "click",
-            function () {
-
-                closeMobileMenu();
-
-            }
+        document.querySelectorAll(
+            ".nav-link"
         );
 
-    });
 
+    navLinks.forEach(
+        function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    closeMobileMenu();
+
+                }
+            );
+
+        }
+    );
+
+
+
+    /* =====================================================
+       LIENS SOUS-MENU INVENTAIRES
+       ===================================================== */
 
     const submenuLinks =
         document.querySelectorAll(
@@ -144,23 +186,27 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-    submenuLinks.forEach(function (link) {
+    submenuLinks.forEach(
+        function (link) {
 
-        link.addEventListener(
-            "click",
-            function () {
+            link.addEventListener(
+                "click",
+                function () {
 
-                closeMobileMenu();
-                closeInventoryMenu();
+                    closeMobileMenu();
 
-            }
-        );
+                    closeInventoryMenu();
 
-    });
+                }
+            );
+
+        }
+    );
+
 
 
     /* =====================================================
-       CLIC EN DEHORS
+       CLIC EN DEHORS DU MENU
        ===================================================== */
 
     document.addEventListener(
@@ -169,7 +215,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (
                 inventoryDropdown &&
-                !inventoryDropdown.contains(event.target)
+                !inventoryDropdown.contains(
+                    event.target
+                )
             ) {
 
                 closeInventoryMenu();
@@ -180,6 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
+
     /* =====================================================
        TOUCHE ESC
        ===================================================== */
@@ -188,15 +237,19 @@ document.addEventListener("DOMContentLoaded", function () {
         "keydown",
         function (event) {
 
-            if (event.key === "Escape") {
+            if (
+                event.key === "Escape"
+            ) {
 
                 closeMobileMenu();
+
                 closeInventoryMenu();
 
             }
 
         }
     );
+
 
 
     /* =====================================================
@@ -207,12 +260,17 @@ document.addEventListener("DOMContentLoaded", function () {
         "resize",
         function () {
 
-            if (window.innerWidth > 850) {
+            if (
+                window.innerWidth > 850
+            ) {
+
                 closeMobileMenu();
+
             }
 
         }
     );
+
 
 
     /* =====================================================
@@ -220,30 +278,40 @@ document.addEventListener("DOMContentLoaded", function () {
        ===================================================== */
 
     const cards =
-        document.querySelectorAll(".ssuap-card");
+        document.querySelectorAll(
+            ".ssuap-card"
+        );
 
 
-    if ("IntersectionObserver" in window) {
+    if (
+        "IntersectionObserver"
+        in window
+    ) {
 
         const observer =
             new IntersectionObserver(
                 function (entries) {
 
-                    entries.forEach(function (entry) {
+                    entries.forEach(
+                        function (entry) {
 
-                        if (entry.isIntersecting) {
+                            if (
+                                entry.isIntersecting
+                            ) {
 
-                            entry.target.classList.add(
-                                "visible"
-                            );
+                                entry.target.classList.add(
+                                    "visible"
+                                );
 
-                            observer.unobserve(
-                                entry.target
-                            );
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
 
                         }
-
-                    });
+                    );
 
                 },
                 {
@@ -252,11 +320,15 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        cards.forEach(function (card) {
+        cards.forEach(
+            function (card) {
 
-            observer.observe(card);
+                observer.observe(
+                    card
+                );
 
-        });
+            }
+        );
 
     }
 
