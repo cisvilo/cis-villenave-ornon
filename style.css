@@ -760,3 +760,34 @@ footer {
         min-height: 245px;
     }
 }
+/* =========================
+   ADAPTATION PHOTO MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    body {
+        background-attachment: scroll;
+
+        background-position: center center;
+
+        background-size: cover;
+    }
+
+    .hero {
+        min-height: 100svh;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    body {
+        background-position: center center;
+        background-size: auto 100%;
+    }
+
+    .hero {
+        min-height: 100svh;
+    }
+}
