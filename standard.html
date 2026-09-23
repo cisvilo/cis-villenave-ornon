@@ -1,0 +1,336 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standard — CIS Villenave-d'Ornon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="standard.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+
+        <a href="index.html" class="brand">
+            <img src="logo1.png" alt="Logo CIS Villenave-d'Ornon" class="brand-logo">
+
+            <div class="brand-text">
+                <div class="brand-title">CIS VILLENAVE-D'ORNON</div>
+                <div class="brand-subtitle">PORTAIL OPÉRATIONNEL</div>
+            </div>
+        </a>
+
+        <button class="mobile-toggle" id="mobileToggle" type="button"
+                aria-label="Ouvrir le menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav" id="mainNav">
+
+            <a href="index.html" class="nav-link">ACCUEIL</a>
+
+            <div class="nav-dropdown" id="inventoryDropdown">
+
+                <button type="button" class="nav-dropdown-toggle"
+                        id="inventoryToggle" aria-expanded="false">
+                    <span>INVENTAIRES</span>
+                    <span class="dropdown-arrow">▾</span>
+                </button>
+
+                <div class="nav-dropdown-menu" id="inventoryMenu">
+
+                    <a href="pages/inventaires.html">
+                        <span class="submenu-icon">▣</span>
+                        VUE D'ENSEMBLE
+                    </a>
+
+                    <a href="ssuap.html">
+                        <span class="submenu-icon">＋</span>
+                        SSUAP
+                    </a>
+
+                    <a href="incendie.html">
+                        <span class="submenu-icon">◆</span>
+                        INCENDIE
+                    </a>
+
+                    <a href="div.html">
+                        <span class="submenu-icon">◇</span>
+                        DIV
+                    </a>
+
+                    <a href="fdf.html">
+                        <span class="submenu-icon">▲</span>
+                        FDF
+                    </a>
+
+                    <a href="specialites.html">
+                        <span class="submenu-icon">★</span>
+                        SPÉCIALITÉS
+                    </a>
+
+                    <a href="standard.html" class="active">
+                        <span class="submenu-icon">▤</span>
+                        STANDARD
+                    </a>
+
+                    <a href="casernement.html">
+                        <span class="submenu-icon">⌂</span>
+                        CASERNEMENT
+                    </a>
+
+                </div>
+            </div>
+
+            <a href="pages/entretiens.html" class="nav-link">ENTRETIENS</a>
+            <a href="pages/documents.html" class="nav-link">DOCUMENTS</a>
+            <a href="pages/amicale.html" class="nav-link">AMICALE</a>
+            <a href="pages/raccourcis.html" class="nav-link">RACCOURCIS</a>
+
+        </nav>
+    </div>
+</header>
+
+
+<main class="standard-page">
+
+    <section class="standard-hero">
+
+        <div class="standard-hero-overlay"></div>
+
+        <div class="standard-hero-content">
+
+            <div class="standard-eyebrow">
+                CENTRE D'INCENDIE ET DE SECOURS
+            </div>
+
+            <div class="standard-line"></div>
+
+            <h1>STANDARD</h1>
+
+            <p>Accès direct aux formulaires d'inventaire.</p>
+
+        </div>
+
+    </section>
+
+
+    <section class="standard-content">
+
+        <div class="standard-container">
+
+            <div class="standard-breadcrumb">
+
+                <a href="index.html">Accueil</a>
+
+                <span>›</span>
+
+                <a href="pages/inventaires.html">Inventaires</a>
+
+                <span>›</span>
+
+                <strong>Standard</strong>
+
+            </div>
+
+
+            <div class="standard-intro">
+
+                <div class="standard-intro-icon">▤</div>
+
+                <div>
+
+                    <span class="standard-label">ACCÈS RAPIDE</span>
+
+                    <h2>Inventaires Standard</h2>
+
+                    <p>
+                        Retrouvez rapidement les formulaires d'inventaire du matériel standard.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="standard-search">
+
+                <span class="search-icon">⌕</span>
+
+                <input
+                    type="search"
+                    id="standardSearch"
+                    placeholder="Rechercher un matériel ou un formulaire..."
+                    autocomplete="off"
+                    aria-label="Rechercher un matériel ou un formulaire"
+                >
+
+                <button
+                    id="clearSearch"
+                    type="button"
+                    aria-label="Effacer"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div id="searchResult" class="search-result"></div>
+
+
+            <div class="standard-grid" id="standardGrid">
+
+
+                <article
+                    class="standard-card"
+                    data-search="STAS standard inventaire"
+                >
+
+                    <div class="standard-card-header">
+
+                        <span class="standard-number">01</span>
+
+                        <div>
+                            <h3>STAS</h3>
+                            <p>Matériel standard</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="standard-actions">
+
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScdd2DsB_Wz0qSrbNyVSzvNkQPEw4Qotl6O9GvUJop908IG1g/viewform"
+                            target="_blank"
+                            rel="noopener"
+                            class="standard-button"
+                        >
+
+                            <span>STAS</span>
+
+                            <strong>Inventaire STAS</strong>
+
+                            <b>↗</b>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="standard-card"
+                    data-search="SAC PS STAS standard inventaire"
+                >
+
+                    <div class="standard-card-header">
+
+                        <span class="standard-number">02</span>
+
+                        <div>
+                            <h3>SAC PS STAS</h3>
+                            <p>Matériel standard</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="standard-actions">
+
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSdPNLqQEVznCv8ssJ1XHmXJHBbxI8Wp2dBcZ3Heid1VcTnd5Q/viewform"
+                            target="_blank"
+                            rel="noopener"
+                            class="standard-button"
+                        >
+
+                            <span>SAC PS</span>
+
+                            <strong>Inventaire SAC PS STAS</strong>
+
+                            <b>↗</b>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+            <div id="noResult" class="no-result">
+
+                <div>🔎</div>
+
+                <h3>Aucun résultat</h3>
+
+                <p>
+                    Aucun matériel ou formulaire ne correspond à votre recherche.
+                </p>
+
+            </div>
+
+
+            <div class="standard-back">
+
+                <a
+                    href="pages/inventaires.html"
+                    class="back-inventory-button"
+                >
+                    <span>←</span>
+                    Retour aux inventaires
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+
+            <strong>CIS VILLENAVE-D'ORNON</strong>
+
+            <span>Portail opérationnel</span>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">Accueil</a>
+            <a href="pages/inventaires.html">Inventaires</a>
+            <a href="pages/entretiens.html">Entretiens</a>
+            <a href="pages/documents.html">Documents</a>
+            <a href="pages/amicale.html">Amicale</a>
+            <a href="pages/raccourcis.html">Raccourcis</a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="standard.js"></script>
+
+</body>
+</html>
+```
