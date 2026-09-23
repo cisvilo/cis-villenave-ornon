@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DIV — CIS Villenave-d'Ornon</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="div.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <a href="index.html" class="brand">
+
+            <img
+                src="logo1.png"
+                alt="Logo CIS Villenave-d'Ornon"
+                class="brand-logo"
+            >
+
+            <div class="brand-text">
+
+                <div class="brand-title">
+                    CIS VILLENAVE-D'ORNON
+                </div>
+
+                <div class="brand-subtitle">
+                    PORTAIL OPÉRATIONNEL
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- BOUTON HAMBURGER -->
+
+        <button
+            class="mobile-toggle"
+            id="mobileToggle"
+            type="button"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+
+        <!-- MENU -->
+
+        <nav class="nav" id="mainNav">
+
+            <a
+                href="index.html"
+                class="nav-link"
+            >
+                ACCUEIL
+            </a>
+
+
+            <!-- INVENTAIRES -->
+
+            <div
+                class="nav-dropdown"
+                id="inventoryDropdown"
+            >
+
+                <button
+                    type="button"
+                    class="nav-dropdown-toggle"
+                    id="inventoryToggle"
+                    aria-expanded="false"
+                >
+
+                    <span>
+                        INVENTAIRES
+                    </span>
+
+                    <span class="dropdown-arrow">
+                        ▾
+                    </span>
+
+                </button>
+
+
+                <div
+                    class="nav-dropdown-menu"
+                    id="inventoryMenu"
+                >
+
+                    <a href="pages/inventaires.html">
+                        <span class="submenu-icon">▣</span>
+                        VUE D'ENSEMBLE
+                    </a>
+
+                    <a href="ssuap.html">
+                        <span class="submenu-icon">＋</span>
+                        SSUAP
+                    </a>
+
+                    <a href="incendie.html">
+                        <span class="submenu-icon">◆</span>
+                        INCENDIE
+                    </a>
+
+                    <a
+                        href="div.html"
+                        class="active"
+                    >
+                        <span class="submenu-icon">◇</span>
+                        DIV
+                    </a>
+
+                    <a href="fdf.html">
+                        <span class="submenu-icon">▲</span>
+                        FDF
+                    </a>
+
+                    <a href="specialites.html">
+                        <span class="submenu-icon">★</span>
+                        SPÉCIALITÉS
+                    </a>
+
+                    <a href="standard.html">
+                        <span class="submenu-icon">▤</span>
+                        STANDARD
+                    </a>
+
+                    <a href="casernement.html">
+                        <span class="submenu-icon">⌂</span>
+                        CASERNEMENT
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="pages/entretiens.html"
+                class="nav-link"
+            >
+                ENTRETIENS
+            </a>
+
+
+            <a
+                href="pages/documents.html"
+                class="nav-link"
+            >
+                DOCUMENTS
+            </a>
+
+
+            <a
+                href="pages/amicale.html"
+                class="nav-link"
+            >
+                AMICALE
+            </a>
+
+
+            <a
+                href="pages/raccourcis.html"
+                class="nav-link"
+            >
+                RACCOURCIS
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main class="div-page">
+
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+    <section class="div-hero">
+
+        <div class="div-hero-overlay"></div>
+
+        <div class="div-hero-content">
+
+            <div class="div-eyebrow">
+                CENTRE D'INCENDIE ET DE SECOURS
+            </div>
+
+            <div class="div-line"></div>
+
+            <h1>
+                DIV
+            </h1>
+
+            <p>
+                Accès direct aux formulaires d'inventaire.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTENU
+         ===================================================== -->
+
+    <section class="div-content">
+
+        <div class="div-container">
+
+
+            <!-- BREADCRUMB -->
+
+            <div class="div-breadcrumb">
+
+                <a href="index.html">
+                    Accueil
+                </a>
+
+                <span>›</span>
+
+                <a href="pages/inventaires.html">
+                    Inventaires
+                </a>
+
+                <span>›</span>
+
+                <strong>
+                    DIV
+                </strong>
+
+            </div>
+
+
+            <!-- INTRO -->
+
+            <div class="div-intro">
+
+                <div class="div-intro-icon">
+                    ◇
+                </div>
+
+                <div>
+
+                    <span class="div-label">
+                        ACCÈS RAPIDE
+                    </span>
+
+                    <h2>
+                        Inventaires DIV
+                    </h2>
+
+                    <p>
+                        Retrouvez rapidement les formulaires
+                        d'inventaire des véhicules DIV.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECHERCHE -->
+
+            <div class="div-search">
+
+                <span class="search-icon">
+                    ⌕
+                </span>
+
+                <input
+                    type="search"
+                    id="divSearch"
+                    placeholder="Rechercher un véhicule ou un formulaire..."
+                    autocomplete="off"
+                    aria-label="Rechercher un véhicule ou un formulaire"
+                >
+
+                <button
+                    id="clearSearch"
+                    type="button"
+                    aria-label="Effacer"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div
+                id="searchResult"
+                class="search-result"
+            ></div>
+
+
+            <!-- =================================================
+                 CARTES
+                 ================================================= -->
+
+            <div
+                class="div-grid"
+                id="divGrid"
+            >
+
+
+                <!-- VTU 1 -->
+
+                <article
+                    class="div-card"
+                    data-search="VTU 1 VIA DIV véhicule transport utilitaire"
+                >
+
+                    <div class="div-card-header">
+
+                        <span class="div-number">
+                            01
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                VTU 1
+                            </h3>
+
+                            <p>
+                                VIA
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="div-actions">
+
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScxACmuw41XjsE-xWaNp0hVASIMMaTYH3z3zqB-2ywrCdb6tw/viewform"
+                            target="_blank"
+                            rel="noopener"
+                            class="div-button"
+                        >
+
+                            <span>VIA</span>
+
+                            <strong>
+                                Inventaire VTU 1
+                            </strong>
+
+                            <b>
+                                ↗
+                            </b>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- VTU 2 -->
+
+                <article
+                    class="div-card"
+                    data-search="VTU 2 DIV véhicule transport utilitaire"
+                >
+
+                    <div class="div-card-header">
+
+                        <span class="div-number">
+                            02
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                VTU 2
+                            </h3>
+
+                            <p>
+                                Véhicule DIV
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="div-actions">
+
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSfx2WoNMi9p6lq8BGZL36s8l78ZDq-CU32db0z8Ej0rH0dGHg/viewform"
+                            target="_blank"
+                            rel="noopener"
+                            class="div-button"
+                        >
+
+                            <span>VTU</span>
+
+                            <strong>
+                                Inventaire VTU 2
+                            </strong>
+
+                            <b>
+                                ↗
+                            </b>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- VSR M -->
+
+                <article
+                    class="div-card"
+                    data-search="VSR M DIV véhicule secours routier"
+                >
+
+                    <div class="div-card-header">
+
+                        <span class="div-number">
+                            03
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                VSR M
+                            </h3>
+
+                            <p>
+                                Véhicule de secours
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="div-actions">
+
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSdgsz1o1LmwStk5MBDEh8DE0OjGyTTOqhAf8_8FgcMBXhzITw/viewform"
+                            target="_blank"
+                            rel="noopener"
+                            class="div-button"
+                        >
+
+                            <span>VSR</span>
+
+                            <strong>
+                                Inventaire VSR M
+                            </strong>
+
+                            <b>
+                                ↗
+                            </b>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- AUCUN RÉSULTAT -->
+
+            <div
+                id="noResult"
+                class="no-result"
+            >
+
+                <div>
+                    🔎
+                </div>
+
+                <h3>
+                    Aucun résultat
+                </h3>
+
+                <p>
+                    Aucun véhicule ou formulaire ne correspond à votre recherche.
+                </p>
+
+            </div>
+
+
+            <!-- RETOUR -->
+
+            <div class="div-back">
+
+                <a
+                    href="pages/inventaires.html"
+                    class="back-inventory-button"
+                >
+
+                    <span>←</span>
+
+                    Retour aux inventaires
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+
+            <strong>
+                CIS VILLENAVE-D'ORNON
+            </strong>
+
+            <span>
+                Portail opérationnel
+            </span>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Accueil
+            </a>
+
+            <a href="pages/inventaires.html">
+                Inventaires
+            </a>
+
+            <a href="pages/entretiens.html">
+                Entretiens
+            </a>
+
+            <a href="pages/documents.html">
+                Documents
+            </a>
+
+            <a href="pages/amicale.html">
+                Amicale
+            </a>
+
+            <a href="pages/raccourcis.html">
+                Raccourcis
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="div.js"></script>
+
+</body>
+</html>
