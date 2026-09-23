@@ -1,619 +1,844 @@
 /* =========================================================
-   SSUAP — CIS VILLENAVE-D'ORNON
-   Design portail opérationnel
-   ========================================================= */
+   SSUAP
+   DESIGN IDENTIQUE À L'ESPRIT DE LA PAGE INVENTAIRES
+========================================================= */
 
 :root {
-  --ssuap-bg: #030912;
-  --ssuap-bg-2: #071321;
-  --ssuap-card: #0c2035;
-  --ssuap-card-hover: #102b45;
-  --ssuap-border: rgba(255,255,255,0.09);
+    --ssuap-dark: #030912;
+    --ssuap-navy: #071321;
+    --ssuap-card: #0c2035;
+    --ssuap-light: #14334f;
 
-  --ssuap-red: #d71920;
-  --ssuap-red-light: #ff4148;
+    --ssuap-red: #d71920;
+    --ssuap-red-light: #ff4148;
 
-  --ssuap-white: #ffffff;
-  --ssuap-text: #edf3f8;
-  --ssuap-muted: #aab9c7;
-
-  --ssuap-shadow: 0 20px 50px rgba(0,0,0,0.35);
-}
-
-
-/* =========================================================
-   PAGE
-   ========================================================= */
-
-.ssuap-page {
-  background:
-    radial-gradient(circle at 15% 20%, rgba(215,25,32,0.08), transparent 30%),
-    radial-gradient(circle at 85% 70%, rgba(20,51,79,0.18), transparent 35%),
-    var(--ssuap-bg);
-
-  color: var(--ssuap-text);
-  min-height: 100vh;
+    --ssuap-white: #ffffff;
+    --ssuap-text: #edf3f8;
+    --ssuap-muted: #aab9c7;
 }
 
 
 /* =========================================================
    HERO
-   ========================================================= */
+========================================================= */
 
 .ssuap-hero {
-  position: relative;
-  min-height: 330px;
+    position: relative;
+    min-height: 310px;
 
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 
-  overflow: hidden;
+    overflow: hidden;
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(3,9,18,0.98) 0%,
-      rgba(3,9,18,0.88) 42%,
-      rgba(3,9,18,0.60) 100%
-    ),
-    url("photo.png") center/cover no-repeat;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 9, 18, 0.97) 0%,
+            rgba(3, 9, 18, 0.85) 45%,
+            rgba(3, 9, 18, 0.55) 100%
+        ),
+        url("photo.png") center center / cover no-repeat;
 }
 
 
 .ssuap-hero-overlay {
-  position: absolute;
-  inset: 0;
+    position: absolute;
+    inset: 0;
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(215,25,32,0.12),
-      transparent 45%
-    );
+    background:
+        linear-gradient(
+            135deg,
+            rgba(215, 25, 32, 0.12),
+            transparent 50%
+        );
 }
 
 
 .ssuap-hero-content {
-  position: relative;
-  z-index: 2;
+    position: relative;
+    z-index: 2;
 
-  width: min(1180px, calc(100% - 40px));
+    width: 1180px;
+    max-width: calc(100% - 40px);
 
-  margin: 0 auto;
+    margin: 0 auto;
 
-  padding: 70px 0;
+    padding: 70px 0;
 }
 
 
 .ssuap-eyebrow {
-  font-size: 13px;
-  font-weight: 800;
+    margin-bottom: 15px;
 
-  letter-spacing: 0.22em;
+    color: var(--ssuap-red-light);
 
-  color: var(--ssuap-red-light);
+    font-size: 13px;
+    font-weight: 800;
 
-  margin-bottom: 15px;
+    letter-spacing: 3px;
 }
 
 
 .ssuap-hero h1 {
-  margin: 0;
+    margin: 0;
 
-  font-size: clamp(52px, 8vw, 92px);
+    color: var(--ssuap-white);
 
-  line-height: 0.95;
+    font-size: clamp(55px, 8vw, 90px);
+    font-weight: 900;
 
-  font-weight: 900;
+    line-height: 0.95;
 
-  letter-spacing: -0.04em;
-
-  color: var(--ssuap-white);
-
-  text-shadow: 0 8px 30px rgba(0,0,0,0.45);
+    letter-spacing: -3px;
 }
 
 
-.ssuap-line {
-  width: 85px;
-  height: 4px;
+.ssuap-red-line {
+    width: 75px;
+    height: 4px;
 
-  margin: 25px 0 20px;
+    margin: 23px 0 18px;
 
-  background: var(--ssuap-red);
+    background: var(--ssuap-red);
 
-  border-radius: 10px;
+    border-radius: 10px;
 }
 
 
 .ssuap-hero p {
-  margin: 0;
+    margin: 0;
 
-  color: var(--ssuap-muted);
+    color: var(--ssuap-muted);
 
-  font-size: 18px;
-
-  max-width: 600px;
+    font-size: 18px;
 }
 
 
 /* =========================================================
    CONTENU
-   ========================================================= */
+========================================================= */
 
-.ssuap-content {
-  padding: 55px 0 90px;
+.ssuap-main {
+    min-height: 600px;
+
+    padding: 55px 0 90px;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(215,25,32,0.05),
+            transparent 28%
+        ),
+        var(--ssuap-dark);
 }
 
 
 .ssuap-container {
-  width: min(1180px, calc(100% - 40px));
-  margin: 0 auto;
+    width: 1180px;
+    max-width: calc(100% - 40px);
+
+    margin: 0 auto;
 }
 
 
 /* =========================================================
    BREADCRUMB
-   ========================================================= */
+========================================================= */
 
 .ssuap-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    display: flex;
+    align-items: center;
 
-  margin-bottom: 45px;
+    gap: 10px;
 
-  font-size: 14px;
+    margin-bottom: 42px;
+
+    font-size: 14px;
 }
 
 
 .ssuap-breadcrumb a {
-  color: var(--ssuap-muted);
-  text-decoration: none;
+    color: var(--ssuap-muted);
 
-  transition: color 0.2s ease;
+    text-decoration: none;
+
+    transition: 0.2s ease;
 }
 
 
 .ssuap-breadcrumb a:hover {
-  color: var(--ssuap-red-light);
+    color: var(--ssuap-red-light);
 }
 
 
 .ssuap-breadcrumb span {
-  color: #657585;
+    color: #617385;
 }
 
 
 .ssuap-breadcrumb strong {
-  color: var(--ssuap-white);
+    color: var(--ssuap-white);
 }
 
 
 /* =========================================================
-   INTRO
-   ========================================================= */
+   TITRE DE SECTION
+========================================================= */
 
-.ssuap-intro {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+.ssuap-section-title {
+    display: flex;
+    align-items: center;
 
-  margin-bottom: 35px;
+    gap: 20px;
+
+    margin-bottom: 32px;
 }
 
 
-.ssuap-intro-icon {
-  width: 58px;
-  height: 58px;
+.section-title-icon {
+    width: 58px;
+    height: 58px;
 
-  flex-shrink: 0;
+    flex-shrink: 0;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  border-radius: 16px;
+    border-radius: 15px;
 
-  background:
-    linear-gradient(
-      145deg,
-      var(--ssuap-red),
-      var(--ssuap-red-light)
-    );
+    background:
+        linear-gradient(
+            145deg,
+            var(--ssuap-red),
+            var(--ssuap-red-light)
+        );
 
-  color: white;
+    color: white;
 
-  font-size: 30px;
-  font-weight: 300;
+    font-size: 30px;
 
-  box-shadow:
-    0 12px 30px rgba(215,25,32,0.28);
+    box-shadow:
+        0 12px 30px rgba(215,25,32,0.25);
 }
 
 
-.ssuap-label {
-  margin-bottom: 5px;
+.ssuap-section-title span {
+    color: var(--ssuap-red-light);
 
-  font-size: 12px;
-  font-weight: 800;
+    font-size: 12px;
+    font-weight: 800;
 
-  letter-spacing: 0.18em;
-
-  color: var(--ssuap-red-light);
+    letter-spacing: 2px;
 }
 
 
-.ssuap-intro h2 {
-  margin: 0 0 5px;
+.ssuap-section-title h2 {
+    margin: 5px 0;
 
-  font-size: 30px;
+    color: var(--ssuap-white);
 
-  color: var(--ssuap-white);
+    font-size: 30px;
 }
 
 
-.ssuap-intro p {
-  margin: 0;
+.ssuap-section-title p {
+    margin: 0;
 
-  color: var(--ssuap-muted);
+    color: var(--ssuap-muted);
 
-  font-size: 15px;
+    font-size: 15px;
 }
 
 
 /* =========================================================
-   CARDS
-   ========================================================= */
+   BARRE DE RECHERCHE
+========================================================= */
+
+.ssuap-search-wrapper {
+    margin-bottom: 32px;
+}
+
+
+.ssuap-search {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 58px;
+
+    background: rgba(12,32,53,0.85);
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    border-radius: 14px;
+
+    transition: 0.25s ease;
+}
+
+
+.ssuap-search:focus-within {
+    border-color: rgba(215,25,32,0.65);
+
+    box-shadow:
+        0 0 0 3px rgba(215,25,32,0.08);
+}
+
+
+.search-icon {
+    margin-left: 20px;
+
+    color: var(--ssuap-red-light);
+
+    font-size: 25px;
+
+    line-height: 1;
+}
+
+
+.ssuap-search input {
+    width: 100%;
+
+    height: 56px;
+
+    padding: 0 50px 0 15px;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 15px;
+}
+
+
+.ssuap-search input::placeholder {
+    color: #7f91a1;
+}
+
+
+.clear-search {
+    position: absolute;
+
+    right: 15px;
+
+    width: 32px;
+    height: 32px;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.07);
+
+    color: #b8c5d0;
+
+    cursor: pointer;
+
+    font-size: 21px;
+
+    line-height: 1;
+}
+
+
+.clear-search:hover {
+    background: rgba(215,25,32,0.2);
+
+    color: white;
+}
+
+
+.search-result {
+    margin-top: 10px;
+
+    color: var(--ssuap-muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   GRILLE
+========================================================= */
+
+.ssuap-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   CARTE
+========================================================= */
 
 .ssuap-card {
-  position: relative;
+    position: relative;
 
-  margin-bottom: 22px;
+    padding: 26px;
 
-  padding: 28px;
+    overflow: hidden;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(12,32,53,0.98),
-      rgba(7,19,33,0.98)
-    );
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12,32,53,0.98),
+            rgba(7,19,33,0.98)
+        );
 
-  border: 1px solid var(--ssuap-border);
+    border: 1px solid rgba(255,255,255,0.08);
 
-  border-radius: 20px;
+    border-radius: 18px;
 
-  box-shadow: var(--ssuap-shadow);
+    box-shadow:
+        0 18px 45px rgba(0,0,0,0.28);
 
-  overflow: hidden;
-
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 
 .ssuap-card::before {
-  content: "";
+    content: "";
 
-  position: absolute;
+    position: absolute;
 
-  top: 0;
-  left: 0;
+    left: 0;
+    top: 0;
 
-  width: 5px;
-  height: 100%;
+    width: 4px;
+    height: 100%;
 
-  background: var(--ssuap-red);
+    background: var(--ssuap-red);
 }
 
 
 .ssuap-card:hover {
-  transform: translateY(-4px);
+    transform: translateY(-5px);
 
-  border-color: rgba(215,25,32,0.35);
+    border-color: rgba(215,25,32,0.35);
 
-  box-shadow:
-    0 25px 60px rgba(0,0,0,0.45);
+    box-shadow:
+        0 25px 55px rgba(0,0,0,0.40);
 }
 
 
 /* =========================================================
-   CARD HEADER
-   ========================================================= */
+   EN-TÊTE CARTE
+========================================================= */
 
-.ssuap-card-header {
-  display: flex;
-  align-items: center;
+.ssuap-card-top {
+    display: flex;
+    align-items: center;
 
-  gap: 20px;
+    gap: 18px;
 
-  margin-bottom: 25px;
+    margin-bottom: 23px;
 }
 
 
-.ssuap-number,
-.asu-number {
-  width: 55px;
-  height: 55px;
+.ssuap-number {
+    width: 56px;
+    height: 56px;
 
-  flex-shrink: 0;
+    flex-shrink: 0;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  border-radius: 15px;
+    border-radius: 14px;
 
-  background: rgba(215,25,32,0.10);
+    background: rgba(215,25,32,0.10);
 
-  border: 1px solid rgba(215,25,32,0.30);
+    border: 1px solid rgba(215,25,32,0.30);
 
-  color: var(--ssuap-red-light);
+    color: var(--ssuap-red-light);
 
-  font-size: 18px;
-  font-weight: 900;
+    font-size: 17px;
+    font-weight: 900;
 }
 
 
-.ssuap-card-header h2 {
-  margin: 0 0 5px;
+.card-category {
+    display: block;
 
-  color: var(--ssuap-white);
+    margin-bottom: 4px;
 
-  font-size: 24px;
+    color: var(--ssuap-red-light);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
 }
 
 
-.ssuap-card-header p {
-  margin: 0;
+.ssuap-card-title h2 {
+    margin: 0 0 4px;
 
-  color: var(--ssuap-muted);
+    color: white;
 
-  font-size: 14px;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+
+.ssuap-card-title p {
+    margin: 0;
+
+    color: var(--ssuap-muted);
+
+    font-size: 13px;
 }
 
 
 /* =========================================================
-   BOUTONS
-   ========================================================= */
+   LIENS FORMULAIRES
+========================================================= */
 
-.ssuap-actions {
-  display: grid;
+.ssuap-card-links {
+    display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 
-  gap: 14px;
+    gap: 10px;
 }
 
 
-.ssuap-button {
-  position: relative;
+.form-link {
+    position: relative;
 
-  min-height: 88px;
+    min-height: 82px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-  padding: 18px 45px 18px 20px;
+    padding: 15px 35px 15px 16px;
 
-  text-decoration: none;
+    box-sizing: border-box;
 
-  border-radius: 14px;
+    text-decoration: none;
 
-  background: rgba(255,255,255,0.035);
+    background: rgba(255,255,255,0.035);
 
-  border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.075);
 
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
+    border-radius: 11px;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
 }
 
 
-.ssuap-button:hover {
-  background:
-    linear-gradient(
-      135deg,
-      rgba(215,25,32,0.18),
-      rgba(255,255,255,0.05)
-    );
+.form-link:hover {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(215,25,32,0.18),
+            rgba(255,255,255,0.04)
+        );
 
-  border-color: rgba(215,25,32,0.50);
+    border-color: rgba(215,25,32,0.55);
 
-  transform: translateY(-2px);
+    transform: translateY(-2px);
 }
 
 
-.ssuap-button span {
-  color: var(--ssuap-white);
+.form-link span {
+    color: white;
 
-  font-size: 16px;
-  font-weight: 900;
+    font-size: 13px;
+    font-weight: 900;
 
-  letter-spacing: 0.04em;
+    line-height: 1.25;
 }
 
 
-.ssuap-button small {
-  margin-top: 5px;
+.form-link small {
+    margin-top: 5px;
 
-  color: var(--ssuap-muted);
+    color: var(--ssuap-muted);
 
-  font-size: 12px;
+    font-size: 10px;
 }
 
 
-.ssuap-button b {
-  position: absolute;
+.form-link b {
+    position: absolute;
 
-  right: 18px;
-  top: 50%;
+    right: 12px;
+    top: 50%;
 
-  transform: translateY(-50%);
+    transform: translateY(-50%);
 
-  color: var(--ssuap-red-light);
+    color: var(--ssuap-red-light);
 
-  font-size: 22px;
+    font-size: 19px;
 
-  font-weight: 400;
+    font-weight: 400;
 }
 
 
 /* =========================================================
    ASU
-   ========================================================= */
+========================================================= */
+
+.asu-card {
+    grid-column: 1 / -1;
+}
+
 
 .asu-card::before {
-  background: #b91c1c;
+    background: var(--ssuap-red);
 }
 
 
-.asu-actions {
-  grid-template-columns: repeat(2, 1fr);
+.asu-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 
-.asu-actions .ssuap-button {
-  min-height: 100px;
+.asu-links .form-link {
+    min-height: 88px;
 }
 
 
 /* =========================================================
-   RETOUR
-   ========================================================= */
+   AUCUN RÉSULTAT
+========================================================= */
 
-.back-inventory-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+.no-result {
+    padding: 50px 20px;
 
-  margin-top: 28px;
+    text-align: center;
 
-  padding: 15px 22px;
+    background: rgba(12,32,53,0.55);
 
-  color: var(--ssuap-white);
+    border: 1px solid rgba(255,255,255,0.07);
 
-  text-decoration: none;
-
-  background: rgba(255,255,255,0.04);
-
-  border: 1px solid rgba(255,255,255,0.10);
-
-  border-radius: 12px;
-
-  font-size: 14px;
-  font-weight: 700;
-
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
+    border-radius: 18px;
 }
 
 
-.back-inventory-button:hover {
-  background: rgba(215,25,32,0.12);
+.no-result-icon {
+    width: 52px;
+    height: 52px;
 
-  border-color: rgba(215,25,32,0.45);
+    margin: 0 auto 15px;
 
-  transform: translateX(-3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(215,25,32,0.12);
+
+    color: var(--ssuap-red-light);
+
+    font-size: 28px;
 }
 
 
-.back-inventory-button span {
-  color: var(--ssuap-red-light);
+.no-result h3 {
+    margin: 0 0 8px;
 
-  font-size: 20px;
+    color: white;
+
+    font-size: 21px;
+}
+
+
+.no-result p {
+    margin: 0;
+
+    color: var(--ssuap-muted);
+}
+
+
+/* =========================================================
+   RETOUR INVENTAIRES
+========================================================= */
+
+.back-inventory {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+    padding: 14px 20px;
+
+    color: white;
+
+    text-decoration: none;
+
+    background: rgba(255,255,255,0.035);
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    border-radius: 11px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: 0.2s ease;
+}
+
+
+.back-inventory:hover {
+    background: rgba(215,25,32,0.12);
+
+    border-color: rgba(215,25,32,0.45);
+
+    transform: translateX(-4px);
+}
+
+
+.back-arrow {
+    color: var(--ssuap-red-light);
+
+    font-size: 21px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+.ssuap-card {
+    opacity: 0;
+
+    transform: translateY(18px);
+}
+
+
+.ssuap-card.card-visible {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    transition:
+        opacity 0.55s ease,
+        transform 0.55s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 
 /* =========================================================
    RESPONSIVE
-   ========================================================= */
+========================================================= */
 
-@media (max-width: 850px) {
+@media (max-width: 950px) {
 
-  .ssuap-hero {
-    min-height: 280px;
-  }
+    .ssuap-grid {
+        grid-template-columns: 1fr;
+    }
 
-  .ssuap-hero-content {
-    padding: 55px 0;
-  }
-
-  .ssuap-actions {
-    grid-template-columns: 1fr;
-  }
-
-  .asu-actions {
-    grid-template-columns: 1fr;
-  }
+    .asu-card {
+        grid-column: auto;
+    }
 
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
-  .ssuap-container,
-  .ssuap-hero-content {
-    width: min(100% - 28px, 1180px);
-  }
+    .ssuap-hero {
+        min-height: 270px;
+    }
 
-  .ssuap-content {
-    padding-top: 35px;
-  }
+    .ssuap-hero-content {
+        padding: 55px 0;
+    }
 
-  .ssuap-breadcrumb {
-    margin-bottom: 30px;
-  }
+    .ssuap-container {
+        max-width: calc(100% - 28px);
+    }
 
-  .ssuap-intro {
-    align-items: flex-start;
-  }
+    .ssuap-main {
+        padding-top: 35px;
+    }
 
-  .ssuap-intro-icon {
-    width: 48px;
-    height: 48px;
+    .ssuap-section-title {
+        align-items: flex-start;
+    }
 
-    border-radius: 13px;
+    .ssuap-section-title h2 {
+        font-size: 24px;
+    }
 
-    font-size: 24px;
-  }
+    .ssuap-card {
+        padding: 21px 17px;
+    }
 
-  .ssuap-intro h2 {
-    font-size: 24px;
-  }
+    .ssuap-card-links {
+        grid-template-columns: 1fr;
+    }
 
-  .ssuap-card {
-    padding: 22px 18px;
-    border-radius: 17px;
-  }
+    .asu-links {
+        grid-template-columns: 1fr;
+    }
 
-  .ssuap-card-header {
-    gap: 14px;
-  }
+}
 
-  .ssuap-number,
-  .asu-number {
-    width: 48px;
-    height: 48px;
 
-    border-radius: 12px;
+@media (max-width: 480px) {
 
-    font-size: 15px;
-  }
+    .ssuap-hero h1 {
+        font-size: 54px;
+    }
 
-  .ssuap-card-header h2 {
-    font-size: 21px;
-  }
+    .ssuap-eyebrow {
+        font-size: 10px;
 
-  .ssuap-button {
-    min-height: 78px;
-  }
+        letter-spacing: 2px;
+    }
+
+    .ssuap-hero p {
+        font-size: 15px;
+    }
+
+    .ssuap-breadcrumb {
+        margin-bottom: 30px;
+    }
+
+    .section-title-icon {
+        width: 48px;
+        height: 48px;
+
+        font-size: 24px;
+    }
+
+    .ssuap-card-top {
+        gap: 13px;
+    }
+
+    .ssuap-number {
+        width: 48px;
+        height: 48px;
+    }
 
 }
