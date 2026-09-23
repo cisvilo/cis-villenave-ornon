@@ -1,9 +1,13 @@
-```javascript
+/* =========================================================
+   CIS VILLENAVE-D'ORNON
+   JAVASCRIPT — PAGE INVENTAIRES
+   ========================================================= */
+
 document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       MENU MOBILE
+       ÉLÉMENTS DU MENU
        ===================================================== */
 
     const mobileToggle =
@@ -12,6 +16,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const mainNav =
         document.getElementById("mainNav");
 
+    const inventoryDropdown =
+        document.getElementById("inventoryDropdown");
+
+    const inventoryToggle =
+        document.getElementById("inventoryToggle");
+
+
+    /* =====================================================
+       MENU MOBILE
+       ===================================================== */
 
     if (mobileToggle && mainNav) {
 
@@ -39,19 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       MENU INVENTAIRES
+       SOUS-MENU INVENTAIRES
        ===================================================== */
-
-    const inventoryDropdown =
-        document.getElementById(
-            "inventoryDropdown"
-        );
-
-    const inventoryToggle =
-        document.getElementById(
-            "inventoryToggle"
-        );
-
 
     if (
         inventoryDropdown &&
@@ -96,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-
         if (mobileToggle) {
 
             mobileToggle.classList.remove(
@@ -127,7 +129,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-
         if (inventoryToggle) {
 
             inventoryToggle.setAttribute(
@@ -141,12 +142,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       LIENS PRINCIPAUX
+       LIENS DU MENU
        ===================================================== */
 
-    document
-        .querySelectorAll(".nav-link")
-        .forEach(function (link) {
+    const navLinks =
+        document.querySelectorAll(
+            ".nav-link"
+        );
+
+
+    navLinks.forEach(
+        function (link) {
 
             link.addEventListener(
                 "click",
@@ -157,18 +163,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             );
 
-        });
+        }
+    );
 
 
-    /* =====================================================
-       LIENS DU SOUS-MENU
-       ===================================================== */
-
-    document
-        .querySelectorAll(
+    const submenuLinks =
+        document.querySelectorAll(
             ".nav-dropdown-menu a"
-        )
-        .forEach(function (link) {
+        );
+
+
+    submenuLinks.forEach(
+        function (link) {
 
             link.addEventListener(
                 "click",
@@ -181,11 +187,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             );
 
-        });
+        }
+    );
 
 
     /* =====================================================
-       CLIC À L'EXTÉRIEUR
+       CLIC EN DEHORS
        ===================================================== */
 
     document.addEventListener(
@@ -208,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       TOUCHE ESCAPE
+       ESCAPE
        ===================================================== */
 
     document.addEventListener(
@@ -235,7 +242,9 @@ document.addEventListener("DOMContentLoaded", function () {
         "resize",
         function () {
 
-            if (window.innerWidth > 850) {
+            if (
+                window.innerWidth > 850
+            ) {
 
                 closeMobileMenu();
 
@@ -259,92 +268,211 @@ document.addEventListener("DOMContentLoaded", function () {
             ".inventory-card"
         );
 
-    const empty =
+    const emptyMessage =
         document.getElementById(
             "inventoryEmpty"
         );
 
-
-    if (
-        searchInput &&
-        cards.length
-    ) {
-
-        searchInput.addEventListener(
-            "input",
-            function () {
-
-                const search =
-                    this.value
-                        .toLowerCase()
-                        .normalize("NFD")
-                        .replace(
-                            /[\u0300-\u036f]/g,
-                            ""
-                        )
-                        .trim();
+    const clearSearch =
+        document.getElementById(
+            "clearSearch"
+        );
 
 
-                let found = 0;
+    function filterInventories() {
+
+        if (!searchInput) {
+            return;
+        }
 
 
-                cards.forEach(
-                    function (card) {
-
-                        const content =
-                            (
-                                card.dataset.search ||
-                                ""
-                            )
-                            + " " +
-                            card.textContent;
-
-
-                        const normalized =
-                            content
-                                .toLowerCase()
-                                .normalize("NFD")
-                                .replace(
-                                    /[\u0300-\u036f]/g,
-                                    ""
-                                );
-
-
-                        if (
-                            normalized.includes(
-                                search
-                            )
-                        ) {
-
-                            card.style.display =
-                                "flex";
-
-                            found++;
-
-                        } else {
-
-                            card.style.display =
-                                "none";
-
-                        }
-
-                    }
+        const search =
+            searchInput.value
+                .trim()
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(
+                    /[\u0300-\u036f]/g,
+                    ""
                 );
 
 
-                if (empty) {
+        let visibleCards = 0;
 
-                    empty.style.display =
-                        found === 0
-                            ? "block"
-                            : "none";
+
+        cards.forEach(
+            function (card) {
+
+                const searchableText =
+                    (
+                        card.dataset.search ||
+                        card.textContent ||
+                        ""
+                    )
+                    .toLowerCase()
+                    .normalize("NFD")
+                    .replace(
+                        /[\u0300-\u036f]/g,
+                        ""
+                    );
+
+
+                const matches =
+                    search === "" ||
+                    searchableText.includes(
+                        search
+                    );
+
+
+                if (matches) {
+
+                    card.classList.remove(
+                        "hidden"
+                    );
+
+                    visibleCards++;
+
+                } else {
+
+                    card.classList.add(
+                        "hidden"
+                    );
 
                 }
 
             }
         );
 
+
+        /* Aucun résultat */
+
+        if (emptyMessage) {
+
+            if (
+                search !== "" &&
+                visibleCards === 0
+            ) {
+
+                emptyMessage.style.display =
+                    "flex";
+
+            } else {
+
+                emptyMessage.style.display =
+                    "none";
+
+            }
+
+        }
+
+
+        /* Bouton effacer */
+
+        if (clearSearch) {
+
+            clearSearch.style.display =
+                search !== ""
+                    ? "flex"
+                    : "none";
+
+        }
+
     }
 
-});
 
+    if (searchInput) {
+
+        searchInput.addEventListener(
+            "input",
+            filterInventories
+        );
+
+    }
+
+
+    /* =====================================================
+       EFFACER LA RECHERCHE
+       ===================================================== */
+
+    if (clearSearch) {
+
+        clearSearch.addEventListener(
+            "click",
+            function () {
+
+                searchInput.value = "";
+
+                filterInventories();
+
+                searchInput.focus();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       ANIMATION DES CARTES
+       ===================================================== */
+
+    if (
+        "IntersectionObserver"
+        in window
+    ) {
+
+        const observer =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "visible"
+                                );
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.08
+                }
+            );
+
+
+        cards.forEach(
+            function (card) {
+
+                observer.observe(card);
+
+            }
+        );
+
+    } else {
+
+        cards.forEach(
+            function (card) {
+
+                card.classList.add(
+                    "visible"
+                );
+
+            }
+        );
+
+    }
+
+
+});
