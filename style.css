@@ -1927,3 +1927,105 @@ footer {
     }
 }
 
+/* =========================================================
+   MENU PRINCIPAL — COMPATIBILITÉ MAIN-NAV
+   ========================================================= */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.main-nav > a,
+.main-nav .nav-dropdown-toggle {
+    position: relative;
+    min-height: 46px;
+    padding: 0 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border: 0;
+    border-radius: 6px;
+
+    background: transparent !important;
+    color: #e9f0f5 !important;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+
+/* =========================================================
+   MOBILE / HAMBURGER
+   ========================================================= */
+
+@media screen and (max-width: 850px) {
+
+    .main-nav {
+        position: fixed !important;
+
+        top: var(--header-height) !important;
+        left: 0 !important;
+
+        width: 100% !important;
+        height: calc(100dvh - var(--header-height));
+
+        overflow-y: auto;
+
+        display: none;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 8px 12px 25px;
+
+        background:
+            linear-gradient(
+                180deg,
+                #071426,
+                #030b15
+            ) !important;
+
+        border-bottom: 2px solid var(--red);
+
+        box-shadow:
+            0 20px 45px
+            rgba(0, 0, 0, 0.75);
+
+        z-index: 9998;
+    }
+
+    /* OUVERTURE DU HAMBURGER */
+    .main-nav.open {
+        display: flex !important;
+    }
+
+    .main-nav > a,
+    .main-nav .nav-dropdown-toggle {
+        width: 100% !important;
+
+        min-height: 52px;
+
+        padding: 0 16px;
+
+        justify-content: space-between;
+
+        font-size: 13px;
+    }
+
+    .main-nav .nav-dropdown {
+        width: 100%;
+    }
+
+}
