@@ -473,9 +473,11 @@
 
 </main>
 
+```html
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
+    /* MENU MOBILE */
     const mobileToggle = document.getElementById("mobileToggle");
     const mainNav = document.getElementById("mainNav");
 
@@ -485,8 +487,26 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+
+    /* SOUS-MENU INVENTAIRES */
+    const inventoryToggle = document.getElementById("inventoryToggle");
+    const inventoryDropdown = document.getElementById("inventoryDropdown");
+
+    if (inventoryToggle && inventoryDropdown) {
+        inventoryToggle.addEventListener("click", function (event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            inventoryDropdown.classList.toggle("open");
+
+        });
+    }
+
 });
 </script>
+```
+
 
 </body>
 </html>
