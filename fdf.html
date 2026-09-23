@@ -56,18 +56,12 @@
 
         <nav class="nav" id="mainNav">
 
-            <a
-                href="index.html"
-                class="nav-link"
-            >
+            <a href="index.html" class="nav-link">
                 ACCUEIL
             </a>
 
 
-            <div
-                class="nav-dropdown"
-                id="inventoryDropdown"
-            >
+            <div class="nav-dropdown" id="inventoryDropdown">
 
                 <button
                     type="button"
@@ -87,10 +81,7 @@
                 </button>
 
 
-                <div
-                    class="nav-dropdown-menu"
-                    id="inventoryMenu"
-                >
+                <div class="nav-dropdown-menu" id="inventoryMenu">
 
                     <a href="pages/inventaires.html">
                         <span class="submenu-icon">▣</span>
@@ -112,10 +103,7 @@
                         DIV
                     </a>
 
-                    <a
-                        href="fdf.html"
-                        class="active"
-                    >
+                    <a href="fdf.html" class="active">
                         <span class="submenu-icon">▲</span>
                         FDF
                     </a>
@@ -140,31 +128,19 @@
             </div>
 
 
-            <a
-                href="pages/entretiens.html"
-                class="nav-link"
-            >
+            <a href="pages/entretiens.html" class="nav-link">
                 ENTRETIENS
             </a>
 
-            <a
-                href="pages/documents.html"
-                class="nav-link"
-            >
+            <a href="pages/documents.html" class="nav-link">
                 DOCUMENTS
             </a>
 
-            <a
-                href="pages/amicale.html"
-                class="nav-link"
-            >
+            <a href="pages/amicale.html" class="nav-link">
                 AMICALE
             </a>
 
-            <a
-                href="pages/raccourcis.html"
-                class="nav-link"
-            >
+            <a href="pages/raccourcis.html" class="nav-link">
                 RACCOURCIS
             </a>
 
@@ -178,9 +154,7 @@
 <main class="fdf-page">
 
 
-    <!-- =====================================================
-         HERO
-         ===================================================== -->
+    <!-- HERO -->
 
     <section class="fdf-hero">
 
@@ -207,9 +181,7 @@
     </section>
 
 
-    <!-- =====================================================
-         CONTENU
-         ===================================================== -->
+    <!-- CONTENU -->
 
     <section class="fdf-content">
 
@@ -300,9 +272,7 @@
             ></div>
 
 
-            <!-- =================================================
-                 CARTES
-                 ================================================= -->
+            <!-- CARTES -->
 
             <div
                 class="fdf-grid"
@@ -627,8 +597,221 @@
 </footer>
 
 
-<script src="fdf.js"></script>
+<!-- =====================================================
+     JAVASCRIPT FDF
+     ===================================================== -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =========================
+       MENU MOBILE
+       ========================= */
+
+    const mobileToggle = document.getElementById("mobileToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    if (mobileToggle && mainNav) {
+
+        mobileToggle.addEventListener("click", function (event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            const opened = mainNav.classList.toggle("active");
+
+            mobileToggle.setAttribute(
+                "aria-expanded",
+                opened ? "true" : "false"
+            );
+
+        });
+
+    }
+
+
+    /* =========================
+       SOUS-MENU INVENTAIRES
+       ========================= */
+
+    const inventoryToggle = document.getElementById("inventoryToggle");
+    const inventoryDropdown = document.getElementById("inventoryDropdown");
+
+    if (inventoryToggle && inventoryDropdown) {
+
+        inventoryToggle.addEventListener("click", function (event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            const opened = inventoryDropdown.classList.toggle("open");
+
+            inventoryToggle.setAttribute(
+                "aria-expanded",
+                opened ? "true" : "false"
+            );
+
+        });
+
+
+        document.addEventListener("click", function (event) {
+
+            if (!inventoryDropdown.contains(event.target)) {
+
+                inventoryDropdown.classList.remove("open");
+
+                inventoryToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        });
+
+    }
+
+
+    /* =========================
+       RECHERCHE
+       ========================= */
+
+    const searchInput = document.getElementById("fdfSearch");
+    const clearSearch = document.getElementById("clearSearch");
+    const searchResult = document.getElementById("searchResult");
+    const cards = document.querySelectorAll(".fdf-card");
+    const noResult = document.getElementById("noResult");
+
+
+    function normalize(text) {
+
+        return text
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+
+    }
+
+
+    function filterCards() {
+
+        if (!searchInput) return;
+
+        const query = normalize(
+            searchInput.value.trim()
+        );
+
+        let visible = 0;
+
+
+        cards.forEach(function (card) {
+
+            const text = normalize(
+                card.textContent + " " +
+                (card.dataset.search || "")
+            );
+
+            const match =
+                query === "" ||
+                text.includes(query);
+
+            card.style.display = match ? "" : "none";
+
+            if (match) {
+                visible++;
+            }
+
+        });
+
+
+        if (noResult) {
+
+            noResult.classList.toggle(
+                "show",
+                visible === 0
+            );
+
+        }
+
+
+        if (searchResult) {
+
+            if (query === "") {
+
+                searchResult.textContent = "";
+
+            } else {
+
+                searchResult.textContent =
+                    visible +
+                    (visible > 1
+                        ? " résultats trouvés"
+                        : " résultat trouvé");
+
+            }
+
+        }
+
+    }
+
+
+    if (searchInput) {
+
+        searchInput.addEventListener(
+            "input",
+            filterCards
+        );
+
+    }
+
+
+    if (clearSearch) {
+
+        clearSearch.addEventListener(
+            "click",
+            function () {
+
+                if (!searchInput) return;
+
+                searchInput.value = "";
+
+                filterCards();
+
+                searchInput.focus();
+
+            }
+        );
+
+    }
+
+
+    /* =========================
+       TOUCHE ESCAPE
+       ========================= */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape" &&
+                searchInput
+            ) {
+
+                searchInput.value = "";
+
+                filterCards();
+
+            }
+
+        }
+    );
+
+});
+</script>
 
 </body>
 </html>
+```
+
 ```
