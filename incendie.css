@@ -1,13 +1,20 @@
 ```css
 /* =========================================================
    INCENDIE — CIS VILLENAVE-D'ORNON
-   Même design que SSUAP
    ========================================================= */
 
-.incendie-page {
-    min-height: 100vh;
-    background: #030912;
-    color: #edf3f8;
+:root {
+  --navy-dark: #030912;
+  --navy: #071321;
+  --navy-light: #0c2035;
+  --border: #14334f;
+
+  --red: #d71920;
+  --red-light: #ff4148;
+
+  --white: #ffffff;
+  --text: #dce6ef;
+  --muted: #aab9c7;
 }
 
 
@@ -16,104 +23,84 @@
    ========================================================= */
 
 .incendie-hero {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  padding: 70px 24px 65px;
+  background:
+    linear-gradient(
+      135deg,
+      #030912 0%,
+      #071321 55%,
+      #0c2035 100%
+    );
 
-    padding: 70px 20px 65px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #030912 0%,
-            #071321 60%,
-            #0c2035 100%
-        );
-
-    border-bottom: 1px solid rgba(215, 25, 32, 0.25);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
 }
 
 .incendie-hero::before {
-    content: "";
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: -180px;
+  top: -220px;
 
-    position: absolute;
-
-    width: 500px;
-    height: 500px;
-
-    top: -300px;
-    right: -120px;
-
-    border-radius: 50%;
-
-    background: rgba(215, 25, 32, 0.07);
+  background: rgba(215, 25, 32, 0.08);
+  border-radius: 50%;
 }
 
-.incendie-hero::after {
-    content: "";
-
-    position: absolute;
-
-    width: 350px;
-    height: 350px;
-
-    bottom: -250px;
-    left: -120px;
-
-    border-radius: 50%;
-
-    background: rgba(20, 51, 79, 0.18);
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  margin: auto;
 }
 
-.incendie-hero-content {
-    position: relative;
-    z-index: 2;
+.breadcrumb {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 
-    max-width: 1200px;
-    margin: 0 auto;
+  margin-bottom: 35px;
+
+  font-size: 13px;
+  color: var(--muted);
 }
 
-.incendie-eyebrow {
-    margin-bottom: 15px;
+.breadcrumb a {
+  color: var(--muted);
+  text-decoration: none;
+}
 
-    color: #ff4148;
+.breadcrumb a:hover {
+  color: var(--white);
+}
 
-    font-size: 13px;
-    font-weight: 800;
+.hero-icon {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
 
-    letter-spacing: 2px;
-    text-transform: uppercase;
+.eyebrow {
+  color: var(--red-light);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
 }
 
 .incendie-hero h1 {
-    margin: 0;
-
-    color: #ffffff;
-
-    font-size: clamp(42px, 7vw, 72px);
-    font-weight: 900;
-
-    line-height: 1;
-    letter-spacing: -2px;
-}
-
-.incendie-line {
-    width: 65px;
-    height: 4px;
-
-    margin: 22px 0 18px;
-
-    background: #d71920;
-
-    border-radius: 10px;
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1;
+  letter-spacing: -2px;
 }
 
 .incendie-hero p {
-    margin: 0;
-
-    color: #aab9c7;
-
-    font-size: 17px;
-    line-height: 1.6;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 17px;
 }
 
 
@@ -121,128 +108,38 @@
    CONTENU
    ========================================================= */
 
-.incendie-content {
-    padding: 35px 20px 70px;
-
-    background: #030912;
+.incendie-section {
+  background: var(--navy-dark);
+  padding: 65px 24px 80px;
 }
 
 .incendie-container {
-    max-width: 1200px;
-    margin: 0 auto;
+  max-width: 1180px;
+  margin: auto;
 }
 
-
-/* =========================================================
-   BREADCRUMB
-   ========================================================= */
-
-.incendie-breadcrumb {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-
-    gap: 9px;
-
-    margin-bottom: 30px;
-
-    color: #aab9c7;
-
-    font-size: 14px;
+.section-heading {
+  margin-bottom: 30px;
 }
 
-.incendie-breadcrumb a {
-    color: #edf3f8;
-
-    text-decoration: none;
-
-    transition: color 0.2s ease;
+.section-label {
+  color: var(--red-light);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
 }
 
-.incendie-breadcrumb a:hover {
-    color: #ff4148;
+.section-heading h2 {
+  color: var(--white);
+  font-size: 34px;
+  margin: 0 0 10px;
 }
 
-.incendie-breadcrumb strong {
-    color: #ff4148;
-}
-
-
-/* =========================================================
-   INTRO
-   ========================================================= */
-
-.incendie-intro {
-    display: flex;
-    align-items: center;
-
-    gap: 18px;
-
-    margin-bottom: 28px;
-    padding: 25px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #071321,
-            #0c2035
-        );
-
-    border: 1px solid #14334f;
-    border-left: 4px solid #d71920;
-
-    border-radius: 14px;
-
-    box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.25);
-}
-
-.incendie-intro-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 58px;
-    height: 58px;
-    min-width: 58px;
-
-    background: rgba(215, 25, 32, 0.10);
-
-    border: 1px solid rgba(215, 25, 32, 0.28);
-
-    border-radius: 14px;
-
-    font-size: 28px;
-}
-
-.incendie-label {
-    display: block;
-
-    margin-bottom: 5px;
-
-    color: #ff4148;
-
-    font-size: 11px;
-    font-weight: 900;
-
-    letter-spacing: 1.5px;
-}
-
-.incendie-intro h2 {
-    margin: 0 0 6px;
-
-    color: #ffffff;
-
-    font-size: 22px;
-    font-weight: 800;
-}
-
-.incendie-intro p {
-    margin: 0;
-
-    color: #aab9c7;
-
-    line-height: 1.6;
+.section-heading p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 16px;
 }
 
 
@@ -250,95 +147,77 @@
    RECHERCHE
    ========================================================= */
 
-.incendie-search {
-    position: relative;
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
 
-    margin-bottom: 10px;
+  max-width: 760px;
+  margin-bottom: 18px;
+
+  background: var(--navy);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease;
 }
 
-.incendie-search input {
-    width: 100%;
-    box-sizing: border-box;
-
-    padding: 17px 52px 17px 48px;
-
-    background: #071321;
-
-    border: 1px solid #14334f;
-
-    border-radius: 12px;
-
-    outline: none;
-
-    color: #ffffff;
-
-    font-family: inherit;
-    font-size: 15px;
-
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+.search-box:focus-within {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.12);
 }
 
-.incendie-search input::placeholder {
-    color: #718396;
+.search-icon {
+  margin-left: 18px;
+  color: var(--muted);
+  font-size: 25px;
 }
 
-.incendie-search input:focus {
-    border-color: #d71920;
+.search-box input {
+  width: 100%;
+  padding: 18px 50px 18px 14px;
 
-    box-shadow:
-        0 0 0 3px rgba(215, 25, 32, 0.12);
+  background: transparent;
+  border: 0;
+  outline: none;
+
+  color: var(--white);
+  font-size: 15px;
 }
 
-.incendie-search .search-icon {
-    position: absolute;
-
-    left: 18px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    color: #aab9c7;
-
-    font-size: 22px;
-
-    pointer-events: none;
+.search-box input::placeholder {
+  color: #718293;
 }
 
-.incendie-search button {
-    position: absolute;
+#clearSearch {
+  position: absolute;
+  right: 10px;
 
-    right: 15px;
-    top: 50%;
+  width: 34px;
+  height: 34px;
 
-    transform: translateY(-50%);
+  border: 0;
+  border-radius: 50%;
 
-    padding: 4px;
+  background: transparent;
+  color: var(--muted);
 
-    background: transparent;
-
-    border: none;
-
-    color: #aab9c7;
-
-    font-size: 22px;
-
-    cursor: pointer;
+  font-size: 22px;
+  cursor: pointer;
 }
 
-.incendie-search button:hover {
-    color: #ff4148;
+#clearSearch:hover {
+  color: var(--white);
+  background: rgba(255,255,255,0.06);
 }
 
 .search-result {
-    min-height: 20px;
+  min-height: 20px;
+  margin-bottom: 20px;
 
-    margin-bottom: 25px;
-
-    color: #aab9c7;
-
-    font-size: 13px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 
@@ -347,12 +226,9 @@
    ========================================================= */
 
 .incendie-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-    gap: 22px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
 }
 
 
@@ -361,209 +237,106 @@
    ========================================================= */
 
 .incendie-card {
-    position: relative;
-    overflow: hidden;
+  position: relative;
 
-    background:
-        linear-gradient(
-            145deg,
-            #0c2035,
-            #071321
-        );
+  padding: 28px;
 
-    border: 1px solid #14334f;
+  background:
+    linear-gradient(
+      145deg,
+      #071321,
+      #0a1929
+    );
 
-    border-radius: 16px;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--red);
 
-    box-shadow:
-        0 12px 35px rgba(0, 0, 0, 0.28);
+  border-radius: 14px;
 
-    transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
-}
+  min-height: 245px;
 
-.incendie-card::before {
-    content: "";
+  display: flex;
+  flex-direction: column;
 
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 3px;
-
-    background: #d71920;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .incendie-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-4px);
 
-    border-color: rgba(215, 25, 32, 0.65);
+  border-color: #245071;
 
-    box-shadow:
-        0 20px 45px rgba(0, 0, 0, 0.38),
-        0 0 25px rgba(215, 25, 32, 0.08);
+  box-shadow:
+    0 14px 35px rgba(0,0,0,0.3);
+}
+
+.card-number {
+  color: var(--red-light);
+
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+
+  margin-bottom: 15px;
+}
+
+.incendie-card h3 {
+  color: var(--white);
+  font-size: 25px;
+  margin: 0 0 8px;
+}
+
+.incendie-card p {
+  color: var(--muted);
+  margin: 0 0 25px;
+
+  line-height: 1.5;
 }
 
 
 /* =========================================================
-   HEADER CARTE
+   BOUTON INVENTAIRE
    ========================================================= */
 
-.incendie-card-header {
-    display: flex;
-    align-items: center;
+.inventory-button {
+  margin-top: auto;
 
-    gap: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
 
-    padding: 24px 25px 20px;
+  padding: 13px 15px;
 
-    border-bottom:
-        1px solid rgba(20, 51, 79, 0.8);
+  color: var(--white);
+  text-decoration: none;
+
+  background: rgba(215, 25, 32, 0.10);
+
+  border: 1px solid rgba(215, 25, 32, 0.35);
+  border-radius: 9px;
+
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
-.incendie-number {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 48px;
-    height: 36px;
-    min-width: 48px;
-
-    background: rgba(215, 25, 32, 0.10);
-
-    border: 1px solid rgba(215, 25, 32, 0.28);
-
-    border-radius: 7px;
-
-    color: #ff4148;
-
-    font-size: 11px;
-    font-weight: 900;
-
-    letter-spacing: 0.7px;
+.inventory-button span {
+  color: var(--muted);
+  font-weight: 500;
+  text-align: right;
 }
 
-.incendie-card-header h3 {
-    margin: 0 0 5px;
-
-    color: #ffffff;
-
-    font-size: 24px;
-    font-weight: 850;
-}
-
-.incendie-card-header p {
-    margin: 0;
-
-    color: #aab9c7;
-
-    font-size: 14px;
-}
-
-
-/* =========================================================
-   ACTIONS
-   ========================================================= */
-
-.incendie-actions {
-    display: grid;
-
-    gap: 10px;
-
-    padding: 20px 25px 25px;
-}
-
-
-/* =========================================================
-   BOUTONS
-   ========================================================= */
-
-.incendie-button {
-    display: grid;
-
-    grid-template-columns:
-        auto 1fr auto;
-
-    align-items: center;
-
-    gap: 14px;
-
-    min-height: 52px;
-
-    padding: 0 15px;
-
-    box-sizing: border-box;
-
-    background: #071321;
-
-    border: 1px solid #14334f;
-
-    border-radius: 10px;
-
-    color: #edf3f8;
-
-    text-decoration: none;
-
-    transition:
-        background 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.incendie-button > span {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-width: 75px;
-
-    padding: 6px 8px;
-
-    background: rgba(215, 25, 32, 0.10);
-
-    border-radius: 6px;
-
-    color: #ff4148;
-
-    font-size: 10px;
-    font-weight: 900;
-
-    letter-spacing: 0.6px;
-}
-
-.incendie-button strong {
-    color: #edf3f8;
-
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.incendie-button b {
-    color: #ff4148;
-
-    font-size: 18px;
-}
-
-.incendie-button:hover {
-    background:
-        linear-gradient(
-            90deg,
-            rgba(215, 25, 32, 0.10),
-            #071321
-        );
-
-    border-color: #d71920;
-
-    transform: translateX(4px);
-
-    box-shadow:
-        0 5px 18px rgba(0, 0, 0, 0.22);
+.inventory-button:hover {
+  background: rgba(215, 25, 32, 0.20);
+  border-color: var(--red);
 }
 
 
@@ -572,39 +345,35 @@
    ========================================================= */
 
 .no-result {
-    display: none;
+  display: none;
 
-    padding: 50px 20px;
+  padding: 50px 20px;
+  margin-top: 20px;
 
-    text-align: center;
+  text-align: center;
 
-    background: #071321;
-
-    border: 1px solid #14334f;
-
-    border-radius: 14px;
-
-    color: #aab9c7;
+  background: var(--navy);
+  border: 1px solid var(--border);
+  border-radius: 14px;
 }
 
-.no-result > div {
-    margin-bottom: 10px;
+.no-result.show {
+  display: block;
+}
 
-    font-size: 28px;
+.no-result-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
 }
 
 .no-result h3 {
-    margin: 0 0 8px;
-
-    color: #ffffff;
-
-    font-size: 20px;
+  margin: 0 0 8px;
+  color: var(--white);
 }
 
 .no-result p {
-    margin: 0;
-
-    color: #aab9c7;
+  margin: 0;
+  color: var(--muted);
 }
 
 
@@ -612,124 +381,65 @@
    RETOUR
    ========================================================= */
 
-.incendie-back {
-    margin-top: 35px;
+.back-container {
+  margin-top: 35px;
 }
 
-.back-inventory-button {
-    display: inline-flex;
-    align-items: center;
+.back-button {
+  display: inline-flex;
+  align-items: center;
 
-    gap: 9px;
+  padding: 12px 18px;
 
-    padding: 11px 16px;
+  color: var(--text);
+  text-decoration: none;
 
-    background: #071321;
+  border: 1px solid var(--border);
+  border-radius: 9px;
 
-    border: 1px solid #14334f;
+  background: var(--navy);
 
-    border-radius: 9px;
-
-    color: #aab9c7;
-
-    text-decoration: none;
-
-    font-size: 14px;
-    font-weight: 700;
-
-    transition:
-        color 0.2s ease,
-        border-color 0.2s ease,
-        background 0.2s ease,
-        transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
-.back-inventory-button:hover {
-    background: rgba(215, 25, 32, 0.08);
-
-    border-color: #d71920;
-
-    color: #ffffff;
-
-    transform: translateX(-3px);
-}
-
-.back-inventory-button span {
-    color: #ff4148;
-
-    font-size: 18px;
+.back-button:hover {
+  background: var(--navy-light);
+  border-color: #245071;
 }
 
 
 /* =========================================================
-   MOBILE
+   RESPONSIVE
    ========================================================= */
 
 @media (max-width: 850px) {
 
-    .incendie-grid {
-        grid-template-columns: 1fr;
-    }
+  .incendie-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .incendie-hero {
-        padding: 55px 20px;
-    }
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
-    .incendie-content {
-        padding: 25px 15px 50px;
-    }
+  .incendie-hero {
+    padding: 45px 18px 50px;
+  }
 
-    .incendie-hero {
-        padding: 45px 15px;
-    }
+  .incendie-section {
+    padding: 45px 18px 60px;
+  }
 
-    .incendie-hero h1 {
-        font-size: 42px;
-        letter-spacing: -1px;
-    }
+  .section-heading h2 {
+    font-size: 29px;
+  }
 
-    .incendie-hero p {
-        font-size: 15px;
-    }
+  .incendie-card {
+    padding: 23px;
+  }
 
-    .incendie-intro {
-        align-items: flex-start;
-        padding: 20px;
-    }
-
-    .incendie-intro-icon {
-        width: 48px;
-        height: 48px;
-        min-width: 48px;
-
-        font-size: 23px;
-    }
-
-    .incendie-intro h2 {
-        font-size: 18px;
-    }
-
-    .incendie-card-header {
-        padding: 21px 20px 17px;
-    }
-
-    .incendie-card-header h3 {
-        font-size: 21px;
-    }
-
-    .incendie-actions {
-        padding: 18px 20px 21px;
-    }
-
-    .incendie-button {
-        gap: 10px;
-    }
-
-    .incendie-button strong {
-        font-size: 13px;
-    }
 }
+
