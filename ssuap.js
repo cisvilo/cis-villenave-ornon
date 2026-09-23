@@ -1,335 +1,117 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* =====================================================
+     MENU MOBILE
+     ===================================================== */
+
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mainNav = document.querySelector(".main-nav");
+
+  if (menuToggle && mainNav) {
+
+    menuToggle.addEventListener("click", () => {
+      mainNav.classList.toggle("mobile-open");
+    });
+
+  }
 
 
-    /* =====================================================
-       MENU MOBILE
-       ===================================================== */
+  /* =====================================================
+     DROPDOWN INVENTAIRES
+     ===================================================== */
 
-    const mobileToggle =
-        document.getElementById("mobileToggle");
+  const dropdownButton =
+    document.querySelector(".nav-dropdown-button");
 
-    const mainNav =
-        document.getElementById("mainNav");
+  const dropdown =
+    document.querySelector(".nav-dropdown");
 
+  if (dropdownButton && dropdown) {
 
-    if (mobileToggle && mainNav) {
+    dropdownButton.addEventListener("click", (event) => {
 
-        mobileToggle.addEventListener(
-            "click",
-            function () {
+      event.preventDefault();
 
-                const isOpen =
-                    mainNav.classList.toggle("active");
+      dropdown.classList.toggle("open");
 
+    });
 
-                mobileToggle.classList.toggle(
-                    "open",
-                    isOpen
-                );
+  }
 
 
-                mobileToggle.setAttribute(
-                    "aria-expanded",
-                    isOpen ? "true" : "false"
-                );
+  /* =====================================================
+     FERMETURE DU DROPDOWN EN CLIQUANT AILLEURS
+     ===================================================== */
 
-            }
-        );
-
-    }
-
-
-
-    /* =====================================================
-       MENU INVENTAIRES
-       ===================================================== */
-
-    const inventoryDropdown =
-        document.getElementById(
-            "inventoryDropdown"
-        );
-
-
-    const inventoryToggle =
-        document.getElementById(
-            "inventoryToggle"
-        );
-
+  document.addEventListener("click", (event) => {
 
     if (
-        inventoryDropdown &&
-        inventoryToggle
+      dropdown &&
+      !dropdown.contains(event.target)
     ) {
 
-        inventoryToggle.addEventListener(
-            "click",
-            function (event) {
-
-                event.preventDefault();
-
-                event.stopPropagation();
-
-
-                const isOpen =
-                    inventoryDropdown.classList.toggle(
-                        "open"
-                    );
-
-
-                inventoryToggle.setAttribute(
-                    "aria-expanded",
-                    isOpen ? "true" : "false"
-                );
-
-            }
-        );
+      dropdown.classList.remove("open");
 
     }
 
+  });
 
 
-    /* =====================================================
-       FERMER MENU MOBILE
-       ===================================================== */
+  /* =====================================================
+     FERMETURE MENU MOBILE
+     ===================================================== */
 
-    function closeMobileMenu() {
+  document.querySelectorAll(".main-nav a").forEach(link => {
 
-        if (mainNav) {
+    link.addEventListener("click", () => {
 
-            mainNav.classList.remove(
-                "active"
-            );
+      if (mainNav) {
+        mainNav.classList.remove("mobile-open");
+      }
 
-        }
+    });
 
-
-        if (mobileToggle) {
-
-            mobileToggle.classList.remove(
-                "open"
-            );
+  });
 
 
-            mobileToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+  /* =====================================================
+     ANIMATION DES CARTES
+     ===================================================== */
 
-        }
+  const cards =
+    document.querySelectorAll(".ssuap-card");
 
-    }
+  if ("IntersectionObserver" in window) {
 
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
 
+        entries.forEach(entry => {
 
-    /* =====================================================
-       FERMER MENU INVENTAIRES
-       ===================================================== */
+          if (entry.isIntersecting) {
 
-    function closeInventoryMenu() {
+            entry.target.classList.add("ssuap-visible");
 
-        if (inventoryDropdown) {
+            observer.unobserve(entry.target);
 
-            inventoryDropdown.classList.remove(
-                "open"
-            );
+          }
 
-        }
+        });
 
-
-        if (inventoryToggle) {
-
-            inventoryToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-        }
-
-    }
-
-
-
-    /* =====================================================
-       LIENS MENU
-       ===================================================== */
-
-    const navLinks =
-        document.querySelectorAll(
-            ".nav-link"
-        );
-
-
-    navLinks.forEach(
-        function (link) {
-
-            link.addEventListener(
-                "click",
-                function () {
-
-                    closeMobileMenu();
-
-                }
-            );
-
-        }
+      },
+      {
+        threshold: 0.08
+      }
     );
 
+    cards.forEach(card => {
 
+      card.classList.add("ssuap-hidden");
 
-    /* =====================================================
-       LIENS SOUS-MENU INVENTAIRES
-       ===================================================== */
+      observer.observe(card);
 
-    const submenuLinks =
-        document.querySelectorAll(
-            ".nav-dropdown-menu a"
-        );
+    });
 
-
-    submenuLinks.forEach(
-        function (link) {
-
-            link.addEventListener(
-                "click",
-                function () {
-
-                    closeMobileMenu();
-
-                    closeInventoryMenu();
-
-                }
-            );
-
-        }
-    );
-
-
-
-    /* =====================================================
-       CLIC EN DEHORS DU MENU
-       ===================================================== */
-
-    document.addEventListener(
-        "click",
-        function (event) {
-
-            if (
-                inventoryDropdown &&
-                !inventoryDropdown.contains(
-                    event.target
-                )
-            ) {
-
-                closeInventoryMenu();
-
-            }
-
-        }
-    );
-
-
-
-    /* =====================================================
-       TOUCHE ESC
-       ===================================================== */
-
-    document.addEventListener(
-        "keydown",
-        function (event) {
-
-            if (
-                event.key === "Escape"
-            ) {
-
-                closeMobileMenu();
-
-                closeInventoryMenu();
-
-            }
-
-        }
-    );
-
-
-
-    /* =====================================================
-       REDIMENSIONNEMENT
-       ===================================================== */
-
-    window.addEventListener(
-        "resize",
-        function () {
-
-            if (
-                window.innerWidth > 850
-            ) {
-
-                closeMobileMenu();
-
-            }
-
-        }
-    );
-
-
-
-    /* =====================================================
-       ANIMATION DES CARTES
-       ===================================================== */
-
-    const cards =
-        document.querySelectorAll(
-            ".ssuap-card"
-        );
-
-
-    if (
-        "IntersectionObserver"
-        in window
-    ) {
-
-        const observer =
-            new IntersectionObserver(
-                function (entries) {
-
-                    entries.forEach(
-                        function (entry) {
-
-                            if (
-                                entry.isIntersecting
-                            ) {
-
-                                entry.target.classList.add(
-                                    "visible"
-                                );
-
-
-                                observer.unobserve(
-                                    entry.target
-                                );
-
-                            }
-
-                        }
-                    );
-
-                },
-                {
-                    threshold: 0.12
-                }
-            );
-
-
-        cards.forEach(
-            function (card) {
-
-                observer.observe(
-                    card
-                );
-
-            }
-        );
-
-    }
+  }
 
 });
