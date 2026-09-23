@@ -1,5 +1,6 @@
+```css
 /* =========================================================
-   DIV — MÊME DESIGN QUE INCENDIE
+   DIV — MÊME DESIGN, COULEURS IDENTIQUES À INCENDIE
    ========================================================= */
 
 .div-page {
@@ -24,9 +25,9 @@
     background:
         linear-gradient(
             135deg,
-            #071321 0%,
-            #0c2035 55%,
-            #071321 100%
+            #07111f 0%,
+            #101f33 55%,
+            #07111f 100%
         );
 }
 
@@ -38,7 +39,7 @@
     background:
         radial-gradient(
             circle at 20% 50%,
-            rgba(215, 25, 32, 0.16),
+            rgba(227, 38, 46, 0.16),
             transparent 35%
         ),
         radial-gradient(
@@ -55,9 +56,9 @@
     background:
         linear-gradient(
             90deg,
-            rgba(3, 9, 18, 0.85),
-            rgba(3, 9, 18, 0.25),
-            rgba(3, 9, 18, 0.85)
+            rgba(5, 12, 22, 0.85),
+            rgba(5, 12, 22, 0.25),
+            rgba(5, 12, 22, 0.85)
         );
 }
 
@@ -80,7 +81,7 @@
 .div-eyebrow {
     margin-bottom: 16px;
 
-    color: rgba(255, 255, 255, 0.72);
+    color: #e3262e;
 
     font-size: 12px;
     font-weight: 800;
@@ -95,7 +96,7 @@
 
     margin: 0 auto 20px;
 
-    background: var(--red);
+    background: #e3262e;
 }
 
 .div-hero h1 {
@@ -112,7 +113,7 @@
 .div-hero p {
     margin: 18px 0 0;
 
-    color: #aab9c7;
+    color: #aebacc;
 
     font-size: 16px;
 }
@@ -126,7 +127,7 @@
     padding: 42px 0 70px;
 
     background:
-        #071321;
+        #07111f;
 }
 
 .div-container {
@@ -149,13 +150,13 @@
 
     margin-bottom: 30px;
 
-    color: #aab9c7;
+    color: #aebacc;
 
     font-size: 13px;
 }
 
 .div-breadcrumb a {
-    color: #dce5ec !important;
+    color: #aebacc !important;
 }
 
 .div-breadcrumb a:hover {
@@ -163,7 +164,7 @@
 }
 
 .div-breadcrumb span {
-    color: var(--red);
+    color: #e3262e;
 
     font-size: 17px;
 }
@@ -187,12 +188,12 @@
     padding: 24px 26px;
 
     border:
-        1px solid rgba(255, 255, 255, 0.08);
+        1px solid #26384e;
 
     border-radius: 14px;
 
     background:
-        #0c2035;
+        #101f33;
 }
 
 .div-intro-icon {
@@ -208,12 +209,12 @@
     border-radius: 12px;
 
     background:
-        rgba(215, 25, 32, 0.15);
+        #192d44;
 
     border:
-        1px solid rgba(215, 25, 32, 0.35);
+        1px solid #26384e;
 
-    color: #ff4148;
+    color: #ff5258;
 
     font-size: 28px;
 }
@@ -223,7 +224,7 @@
 
     margin-bottom: 4px;
 
-    color: #ff4148;
+    color: #e3262e;
 
     font-size: 10px;
     font-weight: 900;
@@ -243,7 +244,7 @@
 .div-intro p {
     margin: 0;
 
-    color: #aab9c7;
+    color: #aebacc;
 
     font-size: 14px;
 }
@@ -262,17 +263,17 @@
     margin-bottom: 8px;
 
     border:
-        1px solid rgba(255, 255, 255, 0.1);
+        1px solid #26384e;
 
     border-radius: 10px;
 
     background:
-        #0c2035;
+        #101f33;
 }
 
 .div-search:focus-within {
     border-color:
-        rgba(215, 25, 32, 0.65);
+        #e3262e;
 }
 
 .div-search .search-icon {
@@ -282,7 +283,7 @@
     align-items: center;
     justify-content: center;
 
-    color: #aab9c7;
+    color: #e3262e;
 
     font-size: 23px;
 }
@@ -304,7 +305,7 @@
 }
 
 .div-search input::placeholder {
-    color: #8798a8;
+    color: #7f8da0;
 }
 
 .div-search button {
@@ -315,7 +316,7 @@
 
     background: transparent;
 
-    color: #8798a8;
+    color: #aebacc;
 
     font-size: 25px;
 
@@ -332,7 +333,7 @@
     margin-bottom: 18px;
     padding-left: 3px;
 
-    color: #ff4148;
+    color: #9eacbd;
 
     font-size: 12px;
     font-weight: 700;
@@ -368,12 +369,12 @@
     padding: 22px;
 
     border:
-        1px solid rgba(255, 255, 255, 0.08);
+        1px solid #26384e;
 
     border-radius: 14px;
 
     background:
-        #0c2035;
+        #101f33;
 
     overflow: hidden;
 
@@ -395,14 +396,14 @@
     height: 3px;
 
     background:
-        var(--red);
+        #e3262e;
 }
 
 .div-card:hover {
     transform: translateY(-4px);
 
     border-color:
-        rgba(215, 25, 32, 0.45);
+        #e3262e;
 
     box-shadow:
         0 16px 35px rgba(0, 0, 0, 0.28);
@@ -435,12 +436,12 @@
     border-radius: 10px;
 
     background:
-        rgba(215, 25, 32, 0.13);
+        #192d44;
 
     border:
-        1px solid rgba(215, 25, 32, 0.28);
+        1px solid #26384e;
 
-    color: #ff4148;
+    color: #ff5258;
 
     font-size: 12px;
     font-weight: 900;
@@ -458,7 +459,7 @@
 .div-card-header p {
     margin: 0;
 
-    color: #aab9c7;
+    color: #aebacc;
 
     font-size: 12px;
 }
@@ -489,12 +490,12 @@
     padding: 10px 13px;
 
     border:
-        1px solid rgba(255, 255, 255, 0.08);
+        1px solid #26384e;
 
     border-radius: 10px;
 
     background:
-        #071321;
+        #e3262e;
 
     color: #ffffff !important;
 
@@ -505,10 +506,10 @@
 
 .div-button:hover {
     background:
-        #102b45;
+        #bd1d25;
 
     border-color:
-        rgba(215, 25, 32, 0.5);
+        #bd1d25;
 }
 
 .div-button span {
@@ -524,9 +525,9 @@
     border-radius: 7px;
 
     background:
-        rgba(215, 25, 32, 0.15);
+        #192d44;
 
-    color: #ff4148;
+    color: #ffffff;
 
     font-size: 9px;
     font-weight: 900;
@@ -540,7 +541,7 @@
 }
 
 .div-button b {
-    color: #aab9c7;
+    color: #ffffff;
 
     font-size: 18px;
 }
@@ -563,12 +564,12 @@
     text-align: center;
 
     border:
-        1px solid rgba(255, 255, 255, 0.08);
+        1px solid #26384e;
 
     border-radius: 14px;
 
     background:
-        #0c2035;
+        #101f33;
 }
 
 .no-result.show {
@@ -592,7 +593,7 @@
 .no-result p {
     margin: 0;
 
-    color: #aab9c7;
+    color: #aebacc;
 
     font-size: 13px;
 }
@@ -618,14 +619,14 @@
     padding: 12px 20px;
 
     border:
-        1px solid rgba(255, 255, 255, 0.1);
+        1px solid #26384e;
 
     border-radius: 10px;
 
     background:
-        #0c2035;
+        #101f33;
 
-    color: #dce5ec !important;
+    color: #ffffff !important;
 
     font-size: 12px;
     font-weight: 800;
@@ -633,14 +634,14 @@
 
 .back-inventory-button:hover {
     border-color:
-        rgba(215, 25, 32, 0.45);
+        #e3262e;
 
     background:
-        #102b45;
+        #192d44;
 }
 
 .back-inventory-button span {
-    color: #ff4148;
+    color: #ff5258;
 
     font-size: 17px;
 }
@@ -729,19 +730,6 @@
 @media screen and (max-width: 450px) {
 
     .div-breadcrumb {
-        font-size: 11px;
-    }
+        font-size:
+```
 
-    .div-search {
-        height: 52px;
-    }
-
-    .div-card {
-        padding: 19px;
-    }
-
-    .div-button strong {
-        font-size: 11px;
-    }
-
-}
