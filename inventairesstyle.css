@@ -1,0 +1,376 @@
+```css
+/* =========================================================
+   PAGE INVENTAIRES
+   Même identité visuelle que l'accueil
+   ========================================================= */
+
+.inventory-page {
+    width: 100%;
+    min-height: calc(100vh - var(--header-height));
+    padding: 42px 25px 70px;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(215,25,32,0.07), transparent 35%),
+        linear-gradient(180deg, #071321 0%, #030912 100%);
+}
+
+.inventory-container {
+    width: min(1380px, 100%);
+    margin: 0 auto;
+}
+
+
+/* Fil d'Ariane */
+
+.inventory-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 25px;
+    color: #8fa1b1;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.inventory-breadcrumb a {
+    color: #aebdca !important;
+}
+
+.inventory-breadcrumb strong {
+    color: #ffffff;
+}
+
+
+/* Titre */
+
+.inventory-heading {
+    margin-bottom: 28px;
+}
+
+.inventory-eyebrow {
+    margin-bottom: 9px;
+    color: var(--red-light);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.inventory-heading h1 {
+    margin: 0 0 9px;
+    color: #ffffff;
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.inventory-heading p {
+    margin: 0;
+    color: #aab9c7;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* Recherche */
+
+.inventory-search {
+    position: relative;
+    width: 100%;
+    margin-bottom: 28px;
+}
+
+.inventory-search input {
+    width: 100%;
+    height: 56px;
+    padding: 0 20px 0 52px;
+
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    outline: none;
+
+    background: rgba(12,32,53,0.92);
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.28),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+.inventory-search input::placeholder {
+    color: #7f92a3;
+}
+
+.inventory-search input:focus {
+    border-color: rgba(215,25,32,0.75);
+
+    background: #0d243b;
+
+    box-shadow:
+        0 0 0 3px rgba(215,25,32,0.10),
+        0 14px 32px rgba(0,0,0,0.32);
+}
+
+.search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    z-index: 2;
+
+    color: #d71920;
+    font-size: 23px;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+
+/* Grille */
+
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+
+/* Cartes */
+
+.inventory-card {
+    position: relative;
+
+    min-height: 190px;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #12304b 0%,
+            #0b2034 48%,
+            #06111d 100%
+        ) !important;
+
+    border: 1px solid rgba(255,255,255,0.11);
+    border-top: 3px solid var(--red);
+    border-radius: 10px;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.48),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+
+    text-decoration: none !important;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.inventory-card::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    right: -90px;
+    bottom: -110px;
+
+    background: rgba(215,25,32,0.10);
+    border-radius: 50%;
+
+    transition: transform .3s ease;
+}
+
+.inventory-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(215,25,32,0.55);
+
+    box-shadow:
+        0 22px 42px rgba(0,0,0,0.55),
+        0 0 28px rgba(215,25,32,0.10),
+        inset 0 1px 0 rgba(255,255,255,0.10);
+}
+
+.inventory-card:hover::after {
+    transform: scale(1.35);
+}
+
+
+/* Icône */
+
+.inventory-card-icon {
+    position: relative;
+    z-index: 2;
+
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e52a31,
+            #a70f15
+        );
+
+    font-size: 25px;
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,0.25);
+}
+
+
+/* Texte */
+
+.inventory-card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.inventory-card h2 {
+    margin: 0 0 8px;
+
+    color: #ffffff !important;
+
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.3;
+    letter-spacing: .2px;
+
+    text-decoration: none !important;
+}
+
+.inventory-card p {
+    margin: 0;
+
+    color: #b8c6d1 !important;
+
+    font-size: 13px;
+    line-height: 1.55;
+
+    text-decoration: none !important;
+}
+
+
+/* Flèche */
+
+.inventory-card-arrow {
+    position: absolute;
+    z-index: 3;
+
+    right: 22px;
+    bottom: 20px;
+
+    color: #ffffff;
+
+    font-size: 20px;
+    font-weight: 900;
+
+    transition:
+        transform .25s ease,
+        color .25s ease;
+}
+
+.inventory-card:hover .inventory-card-arrow {
+    color: var(--red-light);
+    transform: translateX(5px);
+}
+
+
+/* Aucun résultat */
+
+.inventory-empty {
+    display: none;
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    color: #9eafbd;
+
+    font-size: 14px;
+}
+
+
+/* Tablette */
+
+@media (max-width: 1150px) {
+
+    .inventory-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 850px) {
+
+    .inventory-page {
+        padding: 30px 18px 55px;
+    }
+
+    .inventory-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .inventory-card {
+        min-height: 165px;
+        padding: 21px;
+    }
+
+    .inventory-heading h1 {
+        font-size: 34px;
+    }
+
+    .inventory-heading p {
+        font-size: 14px;
+    }
+
+    .inventory-search input {
+        height: 52px;
+    }
+
+}
+
+
+/* Très petit écran */
+
+@media (max-width: 480px) {
+
+    .inventory-page {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .inventory-card {
+        min-height: 155px;
+    }
+
+}
