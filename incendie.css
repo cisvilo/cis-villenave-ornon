@@ -820,3 +820,40 @@ body {
   }
 
 }
+/* =========================================================
+   CORRECTION AFFICHAGE
+   ========================================================= */
+
+.site-header {
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+main {
+  position: relative !important;
+  z-index: 1 !important;
+  display: block !important;
+}
+
+.incendie-hero,
+.incendie-section {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.incendie-grid {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.incendie-card {
+  position: relative !important;
+  z-index: 2 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.site-footer {
+  position: relative !important;
+  z-index: 1 !important;
+}
