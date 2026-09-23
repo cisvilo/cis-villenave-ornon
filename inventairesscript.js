@@ -1,6 +1,7 @@
 ```javascript
 document.addEventListener("DOMContentLoaded", function () {
 
+
     /* =====================================================
        MENU MOBILE
        ===================================================== */
@@ -42,10 +43,14 @@ document.addEventListener("DOMContentLoaded", function () {
        ===================================================== */
 
     const inventoryDropdown =
-        document.getElementById("inventoryDropdown");
+        document.getElementById(
+            "inventoryDropdown"
+        );
 
     const inventoryToggle =
-        document.getElementById("inventoryToggle");
+        document.getElementById(
+            "inventoryToggle"
+        );
 
 
     if (
@@ -58,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
             function (event) {
 
                 event.preventDefault();
+
                 event.stopPropagation();
 
                 const isOpen =
@@ -90,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
+
         if (mobileToggle) {
 
             mobileToggle.classList.remove(
@@ -107,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       FERMER LE MENU INVENTAIRES
+       FERMER LE SOUS-MENU
        ===================================================== */
 
     function closeInventoryMenu() {
@@ -119,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
         }
+
 
         if (inventoryToggle) {
 
@@ -133,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       LIENS DU MENU
+       LIENS PRINCIPAUX
        ===================================================== */
 
     document
@@ -153,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       SOUS-MENU INVENTAIRES
+       LIENS DU SOUS-MENU
        ===================================================== */
 
     document
@@ -177,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       CLIC EN DEHORS
+       CLIC À L'EXTÉRIEUR
        ===================================================== */
 
     document.addEventListener(
@@ -200,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       ESCAPE
+       TOUCHE ESCAPE
        ===================================================== */
 
     document.addEventListener(
@@ -235,11 +243,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
     );
-```
 
-### `script.js` — PARTIE 2/2
 
-```javascript
     /* =====================================================
        RECHERCHE INVENTAIRES
        ===================================================== */
@@ -288,11 +293,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         const content =
                             (
-                                card.dataset.search || ""
+                                card.dataset.search ||
+                                ""
                             )
-                            +
-                            " "
-                            +
+                            + " " +
                             card.textContent;
 
 
@@ -307,7 +311,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                         if (
-                            normalized.includes(search)
+                            normalized.includes(
+                                search
+                            )
                         ) {
 
                             card.style.display =
@@ -341,93 +347,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
-```javascript
-    /* =====================================================
-       RECHERCHE INVENTAIRES
-       ===================================================== */
-
-    const searchInput =
-        document.getElementById("inventorySearch");
-
-    const cards =
-        document.querySelectorAll(".inventory-card");
-
-    const empty =
-        document.getElementById("inventoryEmpty");
-
-
-    if (searchInput && cards.length) {
-
-        searchInput.addEventListener(
-            "input",
-            function () {
-
-                const search =
-                    this.value
-                        .toLowerCase()
-                        .normalize("NFD")
-                        .replace(
-                            /[\u0300-\u036f]/g,
-                            ""
-                        )
-                        .trim();
-
-
-                let found = 0;
-
-
-                cards.forEach(function (card) {
-
-                    const content =
-                        (
-                            card.dataset.search || ""
-                        )
-                        + " " +
-                        card.textContent;
-
-
-                    const normalized =
-                        content
-                            .toLowerCase()
-                            .normalize("NFD")
-                            .replace(
-                                /[\u0300-\u036f]/g,
-                                ""
-                            );
-
-
-                    if (
-                        normalized.includes(search)
-                    ) {
-
-                        card.style.display = "flex";
-
-                        found++;
-
-                    } else {
-
-                        card.style.display = "none";
-
-                    }
-
-                });
-
-
-                if (empty) {
-
-                    empty.style.display =
-                        found === 0
-                            ? "block"
-                            : "none";
-
-                }
-
-            }
-        );
-
-    }
-
-});
-
-
 
