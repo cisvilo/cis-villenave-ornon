@@ -1,7 +1,7 @@
 ```css
 /* =========================================================
    INCENDIE — CIS VILLENAVE-D'ORNON
-   Bleu nuit — identité visuelle SSUAP
+   Même design que SSUAP
    ========================================================= */
 
 .incendie-page {
@@ -10,6 +10,7 @@
     color: #edf3f8;
 }
 
+
 /* =========================================================
    HERO
    ========================================================= */
@@ -17,6 +18,7 @@
 .incendie-hero {
     position: relative;
     overflow: hidden;
+
     padding: 70px 20px 65px;
 
     background:
@@ -32,6 +34,7 @@
 
 .incendie-hero::before {
     content: "";
+
     position: absolute;
 
     width: 500px;
@@ -59,12 +62,6 @@
     border-radius: 50%;
 
     background: rgba(20, 51, 79, 0.18);
-}
-
-.incendie-hero-overlay {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
 }
 
 .incendie-hero-content {
@@ -106,6 +103,7 @@
     margin: 22px 0 18px;
 
     background: #d71920;
+
     border-radius: 10px;
 }
 
@@ -118,12 +116,14 @@
     line-height: 1.6;
 }
 
+
 /* =========================================================
    CONTENU
    ========================================================= */
 
 .incendie-content {
     padding: 35px 20px 70px;
+
     background: #030912;
 }
 
@@ -131,6 +131,7 @@
     max-width: 1200px;
     margin: 0 auto;
 }
+
 
 /* =========================================================
    BREADCRUMB
@@ -140,16 +141,19 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+
     gap: 9px;
 
     margin-bottom: 30px;
 
     color: #aab9c7;
+
     font-size: 14px;
 }
 
 .incendie-breadcrumb a {
     color: #edf3f8;
+
     text-decoration: none;
 
     transition: color 0.2s ease;
@@ -163,6 +167,7 @@
     color: #ff4148;
 }
 
+
 /* =========================================================
    INTRO
    ========================================================= */
@@ -170,6 +175,7 @@
 .incendie-intro {
     display: flex;
     align-items: center;
+
     gap: 18px;
 
     margin-bottom: 28px;
@@ -203,6 +209,7 @@
     background: rgba(215, 25, 32, 0.10);
 
     border: 1px solid rgba(215, 25, 32, 0.28);
+
     border-radius: 14px;
 
     font-size: 28px;
@@ -238,12 +245,14 @@
     line-height: 1.6;
 }
 
+
 /* =========================================================
    RECHERCHE
    ========================================================= */
 
 .incendie-search {
     position: relative;
+
     margin-bottom: 10px;
 }
 
@@ -256,6 +265,7 @@
     background: #071321;
 
     border: 1px solid #14334f;
+
     border-radius: 12px;
 
     outline: none;
@@ -315,8 +325,6 @@
     font-size: 22px;
 
     cursor: pointer;
-
-    transition: color 0.2s ease;
 }
 
 .incendie-search button:hover {
@@ -333,6 +341,7 @@
     font-size: 13px;
 }
 
+
 /* =========================================================
    GRILLE
    ========================================================= */
@@ -340,10 +349,12 @@
 .incendie-grid {
     display: grid;
 
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
     gap: 22px;
 }
+
 
 /* =========================================================
    CARTES
@@ -361,6 +372,7 @@
         );
 
     border: 1px solid #14334f;
+
     border-radius: 16px;
 
     box-shadow:
@@ -396,6 +408,7 @@
         0 0 25px rgba(215, 25, 32, 0.08);
 }
 
+
 /* =========================================================
    HEADER CARTE
    ========================================================= */
@@ -403,11 +416,13 @@
 .incendie-card-header {
     display: flex;
     align-items: center;
+
     gap: 17px;
 
     padding: 24px 25px 20px;
 
-    border-bottom: 1px solid rgba(20, 51, 79, 0.8);
+    border-bottom:
+        1px solid rgba(20, 51, 79, 0.8);
 }
 
 .incendie-number {
@@ -422,6 +437,7 @@
     background: rgba(215, 25, 32, 0.10);
 
     border: 1px solid rgba(215, 25, 32, 0.28);
+
     border-radius: 7px;
 
     color: #ff4148;
@@ -449,25 +465,29 @@
     font-size: 14px;
 }
 
+
 /* =========================================================
    ACTIONS
    ========================================================= */
 
 .incendie-actions {
     display: grid;
+
     gap: 10px;
 
     padding: 20px 25px 25px;
 }
 
+
 /* =========================================================
-   BOUTON
+   BOUTONS
    ========================================================= */
 
 .incendie-button {
     display: grid;
 
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns:
+        auto 1fr auto;
 
     align-items: center;
 
@@ -482,6 +502,7 @@
     background: #071321;
 
     border: 1px solid #14334f;
+
     border-radius: 10px;
 
     color: #edf3f8;
@@ -527,7 +548,6 @@
     color: #ff4148;
 
     font-size: 18px;
-    font-weight: 700;
 }
 
 .incendie-button:hover {
@@ -546,6 +566,7 @@
         0 5px 18px rgba(0, 0, 0, 0.22);
 }
 
+
 /* =========================================================
    AUCUN RÉSULTAT
    ========================================================= */
@@ -560,6 +581,7 @@
     background: #071321;
 
     border: 1px solid #14334f;
+
     border-radius: 14px;
 
     color: #aab9c7;
@@ -567,6 +589,7 @@
 
 .no-result > div {
     margin-bottom: 10px;
+
     font-size: 28px;
 }
 
@@ -584,6 +607,7 @@
     color: #aab9c7;
 }
 
+
 /* =========================================================
    RETOUR
    ========================================================= */
@@ -595,6 +619,7 @@
 .back-inventory-button {
     display: inline-flex;
     align-items: center;
+
     gap: 9px;
 
     padding: 11px 16px;
@@ -602,6 +627,7 @@
     background: #071321;
 
     border: 1px solid #14334f;
+
     border-radius: 9px;
 
     color: #aab9c7;
@@ -630,11 +656,13 @@
 
 .back-inventory-button span {
     color: #ff4148;
+
     font-size: 18px;
 }
 
+
 /* =========================================================
-   TABLETTE
+   MOBILE
    ========================================================= */
 
 @media (max-width: 850px) {
@@ -648,9 +676,6 @@
     }
 }
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
 
 @media (max-width: 600px) {
 
