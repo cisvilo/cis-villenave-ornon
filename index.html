@@ -1,29 +1,21 @@
 <!DOCTYPE html>
-
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<title>CIS VILLENAVE-D'ORNON — Portail opérationnel</title>
+    <title>CIS VILLENAVE-D'ORNON — Portail opérationnel</title>
 
-<link rel="stylesheet" href="style.css">
-```
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-```
-<!-- =========================
-     HEADER
-========================== -->
 <header class="site-header">
 
     <div class="header-inner">
 
-        <!-- LOGO + NOM -->
         <a href="index.html" class="brand">
 
             <img
@@ -32,26 +24,29 @@
                 class="brand-logo"
             >
 
-            <span class="brand-text">
-                <span class="brand-title">
-                    CIS VILLENAVE-D'ORNON
-                </span>
+            <div class="brand-text">
 
-                <span class="brand-subtitle">
+                <div class="brand-title">
+                    CIS VILLENAVE-D'ORNON
+                </div>
+
+                <div class="brand-subtitle">
                     PORTAIL OPÉRATIONNEL
-                </span>
-            </span>
+                </div>
+
+            </div>
 
         </a>
 
 
-        <!-- BOUTON MENU MOBILE -->
+        <!-- BOUTON HAMBURGER -->
+
         <button
             class="mobile-toggle"
+            id="mobileToggle"
             type="button"
             aria-label="Ouvrir le menu"
             aria-expanded="false"
-            aria-controls="mainNav"
         >
             <span></span>
             <span></span>
@@ -59,72 +54,83 @@
         </button>
 
 
-        <!-- MENU PRINCIPAL -->
+        <!-- MENU -->
+
         <nav class="nav" id="mainNav">
 
-            <!-- ACCUEIL -->
-            <a href="index.html" class="nav-link">
+            <a
+                href="index.html"
+                class="nav-link"
+            >
                 ACCUEIL
             </a>
 
 
-            <!-- INVENTAIRES + SOUS-MENU -->
-            <div class="nav-dropdown">
+            <!-- INVENTAIRES -->
+
+            <div class="nav-dropdown" id="inventoryDropdown">
 
                 <button
                     type="button"
                     class="nav-dropdown-toggle"
+                    id="inventoryToggle"
                     aria-expanded="false"
-                    aria-controls="inventairesSubmenu"
                 >
-                    <span>INVENTAIRES</span>
-                    <span class="dropdown-arrow">⌄</span>
+
+                    <span>
+                        INVENTAIRES
+                    </span>
+
+                    <span class="dropdown-arrow">
+                        ▾
+                    </span>
+
                 </button>
 
 
                 <div
                     class="nav-dropdown-menu"
-                    id="inventairesSubmenu"
+                    id="inventoryMenu"
                 >
 
                     <a href="pages/inventaires.html">
                         <span class="submenu-icon">▣</span>
-                        <span>INVENTAIRES</span>
+                        INVENTAIRES
                     </a>
 
                     <a href="pages/ssuap.html">
                         <span class="submenu-icon">＋</span>
-                        <span>SSUAP</span>
+                        SSUAP
                     </a>
 
                     <a href="pages/incendie.html">
                         <span class="submenu-icon">◆</span>
-                        <span>INCENDIE</span>
+                        INCENDIE
                     </a>
 
                     <a href="pages/div.html">
                         <span class="submenu-icon">◇</span>
-                        <span>DIV</span>
+                        DIV
                     </a>
 
                     <a href="pages/fdf.html">
                         <span class="submenu-icon">▲</span>
-                        <span>FDF</span>
+                        FDF
                     </a>
 
                     <a href="pages/specialites.html">
                         <span class="submenu-icon">★</span>
-                        <span>SPÉCIALITÉS</span>
+                        SPÉCIALITÉS
                     </a>
 
                     <a href="pages/standard.html">
                         <span class="submenu-icon">▤</span>
-                        <span>STANDARD</span>
+                        STANDARD
                     </a>
 
                     <a href="pages/casernement.html">
                         <span class="submenu-icon">⌂</span>
-                        <span>CASERNEMENT</span>
+                        CASERNEMENT
                     </a>
 
                 </div>
@@ -132,26 +138,34 @@
             </div>
 
 
-            <!-- ENTRETIENS -->
-            <a href="pages/entretiens.html" class="nav-link">
+            <a
+                href="pages/entretiens.html"
+                class="nav-link"
+            >
                 ENTRETIENS
             </a>
 
 
-            <!-- DOCUMENTS -->
-            <a href="pages/documents.html" class="nav-link">
+            <a
+                href="pages/documents.html"
+                class="nav-link"
+            >
                 DOCUMENTS
             </a>
 
 
-            <!-- AMICALE -->
-            <a href="pages/amicale.html" class="nav-link">
+            <a
+                href="pages/amicale.html"
+                class="nav-link"
+            >
                 AMICALE
             </a>
 
 
-            <!-- RACCOURCIS -->
-            <a href="pages/raccourcis.html" class="nav-link">
+            <a
+                href="pages/raccourcis.html"
+                class="nav-link"
+            >
                 RACCOURCIS
             </a>
 
@@ -162,13 +176,10 @@
 </header>
 
 
-
-<!-- =========================
-     CONTENU PRINCIPAL
-========================== -->
 <main>
 
     <!-- HERO -->
+
     <section class="hero">
 
         <div class="hero-overlay"></div>
@@ -201,15 +212,15 @@
     </section>
 
 
+    <!-- CARTES -->
 
-    <!-- =========================
-         ACCÈS PRINCIPAUX
-    ========================== -->
     <section class="quick-access">
 
         <div class="cards">
 
+
             <!-- INVENTAIRES -->
+
             <a
                 href="pages/inventaires.html"
                 class="card"
@@ -235,8 +246,8 @@
             </a>
 
 
-
             <!-- ENTRETIENS -->
+
             <a
                 href="pages/entretiens.html"
                 class="card"
@@ -260,10 +271,8 @@
                 </span>
 
             </a>
+                        <!-- DOCUMENTS -->
 
-
-
-            <!-- DOCUMENTS -->
             <a
                 href="pages/documents.html"
                 class="card"
@@ -289,8 +298,8 @@
             </a>
 
 
-
             <!-- AMICALE -->
+
             <a
                 href="pages/amicale.html"
                 class="card"
@@ -316,8 +325,8 @@
             </a>
 
 
-
             <!-- RACCOURCIS -->
+
             <a
                 href="pages/raccourcis.html"
                 class="card"
@@ -349,11 +358,11 @@
 </main>
 
 
+<!-- FOOTER -->
 
-<!-- =========================
-     FOOTER
-========================== -->
 <footer>
+
+    <div class="footer-red-band"></div>
 
     <div class="footer-inner">
 
@@ -402,17 +411,17 @@
 
 
     <div class="footer-bottom">
-        Portail opérationnel — CIS Villenave-d'Ornon
+
+        Portail opérationnel
+        —
+        CIS Villenave-d'Ornon
+
     </div>
 
 </footer>
 
 
-
-<!-- JAVASCRIPT -->
 <script src="script.js"></script>
-```
 
 </body>
 </html>
-
