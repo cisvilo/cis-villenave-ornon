@@ -1,419 +1,348 @@
 ```css
 /* =========================================================
    CIS VILLENAVE-D'ORNON
-   PORTAIL OPÉRATIONNEL
+   PAGE INVENTAIRES
    ========================================================= */
 
-:root {
-    --navy-dark: #030912;
-    --navy: #071321;
-    --navy-card: #0c2035;
-    --navy-light: #14334f;
-
-    --red: #d71920;
-    --red-light: #ff4148;
-    --red-dark: #a80f15;
-
-    --white: #ffffff;
-    --text: #edf3f8;
-    --muted: #aab9c7;
-
-    --header-height: 92px;
-}
 
 /* =========================================================
-   RESET
+   PAGE
    ========================================================= */
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+.inventory-page {
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    min-height: 100vh;
-    background: var(--navy-dark);
-    color: var(--text);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-a,
-a:hover,
-a:focus,
-a:active,
-a:visited {
-    text-decoration: none !important;
-}
-
-button,
-input {
-    font-family: inherit;
-}
-
-/* =========================================================
-   HEADER
-   ========================================================= */
-
-.site-header {
     position: relative;
-    z-index: 1000;
+
     width: 100%;
-    height: var(--header-height);
-    background: rgba(3, 9, 18, 0.98);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
-}
 
-.header-inner {
-    width: min(1400px, calc(100% - 50px));
-    height: 100%;
-    margin: 0 auto;
+    min-height: calc(100vh - 92px);
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-/* =========================================================
-   LOGO / BRAND
-   ========================================================= */
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    flex-shrink: 0;
-    color: #fff !important;
-}
-
-.brand-logo {
-    width: 58px;
-    height: 58px;
-    object-fit: contain;
-    display: block;
-}
-
-.brand-text {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.brand-title {
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 900;
-    letter-spacing: 0.8px;
-    line-height: 1.1;
-}
-
-.brand-subtitle {
-    color: #8fa2b3;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
-
-.nav {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.nav-link,
-.nav-dropdown-toggle {
-    position: relative;
-
-    display: flex;
-    align-items: center;
-    gap: 7px;
-
-    height: 44px;
-    padding: 0 15px;
-
-    border: none;
-    background: transparent;
-
-    color: #dbe4eb !important;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.8px;
-
-    cursor: pointer;
-    transition: color 0.2s ease, background 0.2s ease;
-}
-
-.nav-link:hover,
-.nav-dropdown-toggle:hover {
-    color: #ffffff !important;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.nav-dropdown {
-    position: relative;
-}
-
-.dropdown-arrow {
-    color: var(--red-light);
-    font-size: 13px;
-    transition: transform 0.2s ease;
-}
-
-.nav-dropdown.open .dropdown-arrow {
-    transform: rotate(180deg);
-}
-
-/* =========================================================
-   MENU INVENTAIRES
-   ========================================================= */
-
-.nav-dropdown-menu {
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 0;
-
-    min-width: 220px;
-    padding: 8px;
-
-    background: rgba(5, 15, 27, 0.98);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-top: 3px solid var(--red);
-
-    border-radius: 8px;
-
-    box-shadow:
-        0 20px 45px rgba(0, 0, 0, 0.55);
-
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-8px);
-
-    transition:
-        opacity 0.2s ease,
-        transform 0.2s ease,
-        visibility 0.2s ease;
-}
-
-.nav-dropdown.open .nav-dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.nav-dropdown-menu a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    min-height: 40px;
-    padding: 0 12px;
-
-    border-radius: 5px;
-
-    color: #dbe4eb !important;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-
-    transition:
-        background 0.2s ease,
-        color 0.2s ease;
-}
-
-.nav-dropdown-menu a:hover {
-    background: rgba(215, 25, 32, 0.14);
-    color: #ffffff !important;
-}
-
-.submenu-icon {
-    width: 20px;
-    color: var(--red-light);
-    text-align: center;
-}
-
-/* =========================================================
-   MOBILE BUTTON
-   ========================================================= */
-
-.mobile-toggle {
-    display: none;
-
-    width: 45px;
-    height: 45px;
-
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 7px;
-
-    background: rgba(255, 255, 255, 0.04);
-
-    cursor: pointer;
-}
-
-.mobile-toggle span {
-    display: block;
-    width: 22px;
-    height: 2px;
-
-    margin: 5px auto;
-
-    background: #ffffff;
-
-    transition: 0.25s ease;
-}
-
-.mobile-toggle.open span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-}
-
-.mobile-toggle.open span:nth-child(2) {
-    opacity: 0;
-}
-
-.mobile-toggle.open span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-}
-
-/* =========================================================
-   HOMEPAGE HERO
-   ========================================================= */
-
-.hero {
-    position: relative;
-
-    min-height: 250px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background:
-        linear-gradient(
-            rgba(3, 9, 18, 0.62),
-            rgba(3, 9, 18, 0.82)
-        ),
-        url("photo.png") center center / cover no-repeat;
+    padding: 55px 0 80px;
 
     overflow: hidden;
-}
 
-.hero-overlay {
-    position: absolute;
-    inset: 0;
+    /*
+       BLEU NUIT DOMINANT
+       La photo reste très discrète derrière.
+    */
 
     background:
         linear-gradient(
-            90deg,
-            rgba(3, 9, 18, 0.9),
-            rgba(3, 9, 18, 0.25),
-            rgba(3, 9, 18, 0.85)
-        );
-}
+            rgba(3, 9, 18, 0.96),
+            rgba(3, 9, 18, 0.98)
+        ),
+        url("photo.png") center center / cover no-repeat !important;
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-
-    width: min(1200px, calc(100% - 50px));
-
-    text-align: center;
-}
-
-.eyebrow {
-    margin-bottom: 10px;
-
-    color: #dce5eb;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 2.5px;
-}
-
-.hero h1 {
-    color: #ffffff;
-    font-size: clamp(36px, 5vw, 58px);
-    font-weight: 900;
-    letter-spacing: 1px;
-}
-
-.hero-line {
-    width: 75px;
-    height: 4px;
-
-    margin: 15px auto;
-
-    background: var(--red);
-}
-
-.hero p {
-    color: #d1dce4;
-    font-size: 14px;
-}
-
-.hero-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-top: 20px;
-    padding: 12px 22px;
-
-    border-radius: 5px;
-
-    background: var(--red);
     color: #ffffff !important;
-
-    font-size: 11px;
-    font-weight: 900;
-    letter-spacing: 1px;
-
-    box-shadow: 0 10px 25px rgba(215, 25, 32, 0.3);
-
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease;
 }
 
-.hero-button:hover {
-    background: var(--red-light);
-    transform: translateY(-2px);
-}
 
 /* =========================================================
-   HOMEPAGE CARDS
+   LIGNE ROUGE
    ========================================================= */
 
-.quick-access {
+.inventory-page::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    background: #d71920;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   CONTENEUR
+   ========================================================= */
+
+.inventory-container {
+
     position: relative;
+
+    z-index: 20;
 
     width: min(1380px, calc(100% - 50px));
 
     margin: 0 auto;
-
-    padding: 25px 0 65px;
 }
 
-.cards {
+
+/* =========================================================
+   BREADCRUMB
+   ========================================================= */
+
+.inventory-breadcrumb {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 35px;
+
+    color: #ffffff !important;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* ACCUEIL */
+
+.inventory-breadcrumb a {
+
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+
+    font-weight: 700;
+}
+
+
+.inventory-breadcrumb a:hover {
+
+    color: #ffffff !important;
+}
+
+
+/* SEPARATEUR */
+
+.inventory-breadcrumb span:nth-child(2) {
+
+    color: #d71920 !important;
+
+    font-size: 20px;
+
+    font-weight: 900;
+}
+
+
+/* INVENTAIRES */
+
+.inventory-breadcrumb span:last-child {
+
+    color: #ffffff !important;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TITRE
+   ========================================================= */
+
+.inventory-title {
+
+    margin-bottom: 35px;
+}
+
+
+.inventory-eyebrow {
+
+    margin-bottom: 11px;
+
+    color: #d6e0e7 !important;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2.5px;
+}
+
+
+.inventory-title h1 {
+
+    margin: 0;
+
+    color: #ffffff !important;
+
+    font-size: clamp(42px, 5vw, 60px);
+
+    font-weight: 900;
+
+    line-height: 1.05;
+
+    letter-spacing: 1px;
+}
+
+
+/* TRAIT ROUGE */
+
+.inventory-title h1::after {
+
+    content: "";
+
+    display: block;
+
+    width: 82px;
+
+    height: 4px;
+
+    margin-top: 17px;
+
+    background: #d71920;
+}
+
+
+.inventory-title p {
+
+    margin-top: 18px;
+
+    color: #d4dfe7 !important;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   BARRE DE RECHERCHE — GRANDE
+   ========================================================= */
+
+.inventory-search {
+
+    position: relative;
+
+    width: 100% !important;
+
+    margin: 0 0 45px !important;
+
+    padding: 0 !important;
+}
+
+
+/* INPUT */
+
+.inventory-search input {
+
+    display: block !important;
+
+    width: 100% !important;
+
+    height: 90px !important;
+
+    min-height: 90px !important;
+
+    padding: 0 35px 0 80px !important;
+
+    border: 3px solid rgba(215, 25, 32, 0.18) !important;
+
+    border-radius: 12px !important;
+
+    outline: none !important;
+
+    background: #ffffff !important;
+
+    color: #071321 !important;
+
+    font-size: 20px !important;
+
+    font-weight: 500 !important;
+
+    line-height: normal !important;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.45) !important;
+
+    appearance: none !important;
+
+    -webkit-appearance: none !important;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* PLACEHOLDER */
+
+.inventory-search input::placeholder {
+
+    color: #667783 !important;
+
+    opacity: 1 !important;
+
+    font-size: 18px !important;
+}
+
+
+/* FOCUS */
+
+.inventory-search input:focus {
+
+    border-color: #d71920 !important;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.45),
+        0 0 0 5px rgba(215, 25, 32, 0.12) !important;
+}
+
+
+/* =========================================================
+   ICÔNE RECHERCHE
+   ========================================================= */
+
+.inventory-search-icon {
+
+    position: absolute !important;
+
+    left: 27px !important;
+
+    top: 50% !important;
+
+    z-index: 30 !important;
+
+    transform: translateY(-50%) !important;
+
+    color: #d71920 !important;
+
+    font-size: 34px !important;
+
+    line-height: 1 !important;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   GRILLE
+   ========================================================= */
+
+.inventory-cards {
+
     display: grid;
 
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
 
     gap: 20px;
+
+    width: 100%;
 }
 
-/* CARTE — NE PAS MODIFIER */
-.card {
+
+/* =========================================================
+   CARTES
+   ========================================================= */
+
+.inventory-card {
+
     position: relative;
 
     min-width: 0;
+
     min-height: 245px;
 
     padding: 24px 22px;
@@ -421,6 +350,7 @@ input {
     overflow: hidden;
 
     display: flex;
+
     flex-direction: column;
 
     background:
@@ -434,7 +364,8 @@ input {
     color: #ffffff !important;
 
     border: 1px solid rgba(255, 255, 255, 0.11);
-    border-top: 3px solid var(--red);
+
+    border-top: 3px solid #d71920;
 
     border-radius: 10px;
 
@@ -450,7 +381,11 @@ input {
         border-color 0.25s ease;
 }
 
-.card:hover {
+
+/* HOVER */
+
+.inventory-card:hover {
+
     transform: translateY(-6px);
 
     border-color: rgba(255, 65, 72, 0.45);
@@ -460,20 +395,31 @@ input {
         0 0 25px rgba(215, 25, 32, 0.12);
 }
 
-.card-icon {
+
+/* =========================================================
+   ICÔNE CARTE
+   ========================================================= */
+
+.inventory-card .card-icon {
+
     position: relative;
+
     z-index: 2;
 
     width: 50px;
+
     height: 50px;
 
     min-width: 50px;
+
     min-height: 50px;
 
     margin-bottom: 17px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border: 1px solid rgba(255, 255, 255, 0.18);
@@ -490,11 +436,19 @@ input {
     color: #ffffff;
 
     font-size: 22px;
+
     line-height: 1;
 }
 
-.card h3 {
+
+/* =========================================================
+   TITRE CARTE
+   ========================================================= */
+
+.inventory-card h3 {
+
     position: relative;
+
     z-index: 2;
 
     width: 100%;
@@ -504,23 +458,35 @@ input {
     color: #ffffff !important;
 
     font-size: 15px;
+
     font-weight: 900;
 
     line-height: 1.3;
+
     letter-spacing: 0.4px;
 
     white-space: normal;
+
     overflow: visible;
+
     text-overflow: clip;
 
     word-break: normal;
+
     overflow-wrap: break-word;
 
     text-decoration: none !important;
 }
 
-.card p {
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.inventory-card p {
+
     position: relative;
+
     z-index: 2;
 
     width: 100%;
@@ -532,22 +498,33 @@ input {
     color: #b8c6d1 !important;
 
     font-size: 12px;
+
     font-weight: 400;
 
     line-height: 1.6;
 
     white-space: normal;
+
     overflow: visible;
+
     text-overflow: clip;
 
     word-break: normal;
+
     overflow-wrap: break-word;
 
     text-decoration: none !important;
 }
 
-.card-link {
+
+/* =========================================================
+   LIEN
+   ========================================================= */
+
+.inventory-card .card-link {
+
     position: relative;
+
     z-index: 2;
 
     display: block;
@@ -559,9 +536,11 @@ input {
     color: #ffffff !important;
 
     font-size: 10px;
+
     font-weight: 900;
 
     line-height: 1.3;
+
     letter-spacing: 1.2px;
 
     white-space: nowrap;
@@ -569,260 +548,28 @@ input {
     text-decoration: none !important;
 }
 
-/* =========================================================
-   PAGE INVENTAIRES
-   ========================================================= */
-
-.inventory-page {
-    position: relative;
-
-    min-height: calc(100vh - var(--header-height));
-
-    padding: 55px 0 80px;
-
-    overflow: hidden;
-
-    color: #ffffff !important;
-
-    /*
-       BLEU NUIT + PHOTO
-       La photo reste visible mais beaucoup plus sombre.
-    */
-    background:
-        linear-gradient(
-            rgba(3, 9, 18, 0.88),
-            rgba(3, 9, 18, 0.94)
-        ),
-        url("photo.png") center center / cover no-repeat !important;
-
-    background-attachment: fixed;
-}
-
-/* Ligne rouge premium en haut */
-
-.inventory-page::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-    right: 0;
-
-    height: 4px;
-
-    background: var(--red);
-
-    z-index: 2;
-}
-
-.inventory-container {
-    position: relative;
-    z-index: 3;
-
-    width: min(1380px, calc(100% - 50px));
-
-    margin: 0 auto;
-}
 
 /* =========================================================
-   BREADCRUMB
-   ========================================================= */
-
-.inventory-breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    margin-bottom: 32px;
-
-    color: #c4d0d9;
-
-    font-size: 11px;
-    font-weight: 700;
-}
-
-.inventory-breadcrumb a {
-    color: #ffffff !important;
-}
-
-.inventory-breadcrumb a:hover {
-    color: var(--red-light) !important;
-}
-
-.inventory-breadcrumb span:nth-child(2) {
-    color: var(--red-light);
-    font-size: 18px;
-}
-
-/* =========================================================
-   TITRE INVENTAIRES
-   ========================================================= */
-
-.inventory-title {
-    margin-bottom: 35px;
-}
-
-.inventory-eyebrow {
-    margin-bottom: 10px;
-
-    color: #d5dfe6;
-
-    font-size: 10px;
-    font-weight: 900;
-
-    letter-spacing: 2.5px;
-}
-
-.inventory-title h1 {
-    margin: 0;
-
-    color: #ffffff !important;
-
-    font-size: clamp(40px, 5vw, 58px);
-
-    font-weight: 900;
-
-    line-height: 1.05;
-
-    letter-spacing: 1px;
-}
-
-.inventory-title h1::after {
-    content: "";
-
-    display: block;
-
-    width: 75px;
-    height: 4px;
-
-    margin-top: 17px;
-
-    background: var(--red);
-}
-
-.inventory-title p {
-    margin-top: 18px;
-
-    color: #d2dde5 !important;
-
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-/* =========================================================
-   BARRE DE RECHERCHE
-   ========================================================= */
-
-.inventory-search {
-    position: relative;
-
-    width: 100%;
-
-    margin-bottom: 38px;
-}
-
-.inventory-search-icon {
-    position: absolute;
-
-    left: 23px;
-    top: 50%;
-
-    z-index: 5;
-
-    transform: translateY(-50%);
-
-    color: #657887;
-
-    font-size: 28px;
-    font-weight: 400;
-
-    pointer-events: none;
-}
-
-.inventory-search input {
-    width: 100%;
-
-    height: 74px;
-
-    padding:
-        0 28px 0 68px;
-
-    border: 2px solid rgba(255, 255, 255, 0.12);
-
-    border-radius: 10px;
-
-    outline: none;
-
-    background: rgba(255, 255, 255, 0.97);
-
-    color: #071321;
-
-    font-size: 17px;
-    font-weight: 500;
-
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.35);
-
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.inventory-search input::placeholder {
-    color: #71808c;
-}
-
-.inventory-search input:focus {
-    border-color: var(--red);
-
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.4),
-        0 0 0 4px rgba(215, 25, 32, 0.12);
-}
-
-/* =========================================================
-   CARTES INVENTAIRES
-   ========================================================= */
-
-.inventory-cards {
-    position: relative;
-    z-index: 3;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, minmax(0, 1fr));
-
-    gap: 20px;
-}
-
-/*
-   IMPORTANT :
-   On conserve exactement le même style
-   que les cartes de l'accueil.
-*/
-
-.inventory-card {
-    min-height: 245px;
-}
-
-/* =========================================================
-   MESSAGE AUCUN RÉSULTAT
+   AUCUN RÉSULTAT
    ========================================================= */
 
 .inventory-empty {
+
     display: none;
 
+    width: 100%;
+
     margin-top: 30px;
+
     padding: 25px;
 
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-top: 3px solid var(--red);
+
+    border-top: 3px solid #d71920;
 
     border-radius: 8px;
 
-    background: rgba(6, 17, 29, 0.8);
+    background: rgba(6, 17, 29, 0.9);
 
     color: #dce5eb;
 
@@ -831,133 +578,20 @@ input {
     font-size: 13px;
 }
 
-/* =========================================================
-   AUTRES PAGES
-   ========================================================= */
-
-.page {
-    min-height: calc(100vh - var(--header-height));
-
-    padding: 50px 0;
-
-    background: var(--navy-dark);
-}
-
-.page-container {
-    width: min(1380px, calc(100% - 50px));
-    margin: 0 auto;
-}
 
 /* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer {
-    background: #02070d;
-
-    color: #ffffff;
-}
-
-.footer-red-band {
-    width: 100%;
-    height: 4px;
-
-    background: var(--red);
-}
-
-.footer-inner {
-    width: min(1380px, calc(100% - 50px));
-
-    margin: 0 auto;
-
-    padding: 30px 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 30px;
-}
-
-.footer-brand {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.footer-brand strong {
-    color: #ffffff;
-
-    font-size: 13px;
-    font-weight: 900;
-
-    letter-spacing: 0.8px;
-}
-
-.footer-brand span {
-    color: #7f909e;
-
-    font-size: 10px;
-}
-
-.footer-links {
-    display: flex;
-    flex-wrap: wrap;
-
-    justify-content: flex-end;
-
-    gap: 18px;
-}
-
-.footer-links a {
-    color: #aebbc6 !important;
-
-    font-size: 10px;
-    font-weight: 700;
-
-    transition: color 0.2s ease;
-}
-
-.footer-links a:hover {
-    color: #ffffff !important;
-}
-
-.footer-bottom {
-    padding: 16px 20px;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
-
-    color: #687985;
-
-    font-size: 9px;
-
-    text-align: center;
-
-    letter-spacing: 0.5px;
-}
-
-/* =========================================================
-   TABLET
+   TABLETTE
    ========================================================= */
 
 @media (max-width: 1100px) {
 
-    .cards {
-        grid-template-columns:
-            repeat(3, minmax(0, 1fr));
-    }
-
     .inventory-cards {
+
         grid-template-columns:
             repeat(3, minmax(0, 1fr));
-    }
-
-    .nav-link,
-    .nav-dropdown-toggle {
-        padding: 0 10px;
-        font-size: 10px;
     }
 }
+
 
 /* =========================================================
    MOBILE
@@ -965,144 +599,69 @@ footer {
 
 @media (max-width: 850px) {
 
-    :root {
-        --header-height: 76px;
-    }
-
-    .site-header {
-        height: var(--header-height);
-    }
-
-    .header-inner {
-        width: calc(100% - 30px);
-    }
-
-    .brand-logo {
-        width: 48px;
-        height: 48px;
-    }
-
-    .brand-title {
-        font-size: 12px;
-    }
-
-    .brand-subtitle {
-        font-size: 7px;
-        letter-spacing: 1.5px;
-    }
-
-    .mobile-toggle {
-        display: block;
-    }
-
-    .nav {
-        position: absolute;
-
-        top: var(--header-height);
-        left: 0;
-        right: 0;
-
-        display: none;
-
-        flex-direction: column;
-        align-items: stretch;
-
-        padding: 10px 15px 18px;
-
-        background: rgba(3, 9, 18, 0.99);
-
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
-        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
-    }
-
-    .nav.active {
-        display: flex;
-    }
-
-    .nav-link,
-    .nav-dropdown-toggle {
-        width: 100%;
-        min-height: 48px;
-
-        justify-content: space-between;
-
-        padding: 0 12px;
-    }
-
-    .nav-dropdown-menu {
-        position: static;
-
-        width: 100%;
-
-        margin-top: 3px;
-
-        display: none;
-
-        opacity: 1;
-        visibility: visible;
-
-        transform: none;
-
-        box-shadow: none;
-    }
-
-    .nav-dropdown.open .nav-dropdown-menu {
-        display: block;
-    }
-
-    .hero {
-        min-height: 280px;
-    }
-
-    .hero-content {
-        width: calc(100% - 30px);
-    }
-
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .quick-access,
-    .inventory-container,
-    .page-container {
-        width: calc(100% - 30px);
-    }
-
-    .cards,
-    .inventory-cards {
-        grid-template-columns: 1fr;
-    }
-
     .inventory-page {
-        padding-top: 35px;
+
+        min-height: calc(100vh - 76px);
+
+        padding: 40px 0 60px;
+
         background-attachment: scroll;
     }
 
+
+    .inventory-container {
+
+        width: calc(100% - 30px);
+    }
+
+
+    .inventory-cards {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
     .inventory-title h1 {
+
         font-size: 42px;
     }
 
+
+    .inventory-search {
+
+        margin-bottom: 35px !important;
+    }
+
+
     .inventory-search input {
-        height: 68px;
 
-        font-size: 16px;
+        height: 76px !important;
 
-        padding-left: 62px;
+        min-height: 76px !important;
+
+        padding:
+            0 25px 0 65px !important;
+
+        font-size: 17px !important;
     }
 
-    .footer-inner {
-        width: calc(100% - 30px);
 
-        flex-direction: column;
+    .inventory-search input::placeholder {
 
-        align-items: flex-start;
+        font-size: 16px !important;
     }
 
-    .footer-links {
-        justify-content: flex-start;
+
+    .inventory-search-icon {
+
+        left: 22px !important;
+
+        font-size: 28px !important;
     }
 }
+
 
 /* =========================================================
    PETIT MOBILE
@@ -1110,217 +669,60 @@ footer {
 
 @media (max-width: 500px) {
 
-    .brand-title {
-        font-size: 10px;
+    .inventory-container {
+
+        width: calc(100% - 24px);
     }
 
-    .brand-subtitle {
-        font-size: 6px;
-    }
-
-    .brand-logo {
-        width: 43px;
-        height: 43px;
-    }
-
-    .hero h1 {
-        font-size: 30px;
-    }
-
-    .hero p {
-        font-size: 12px;
-    }
 
     .inventory-title h1 {
+
         font-size: 36px;
     }
 
+
     .inventory-title p {
+
         font-size: 13px;
     }
 
-    .inventory-search input {
-        height: 64px;
 
-        font-size: 15px;
+    .inventory-breadcrumb {
+
+        font-size: 11px;
     }
 
-    .card {
+
+    .inventory-search input {
+
+        height: 70px !important;
+
+        min-height: 70px !important;
+
+        padding-left: 60px !important;
+
+        font-size: 16px !important;
+    }
+
+
+    .inventory-search input::placeholder {
+
+        font-size: 15px !important;
+    }
+
+
+    .inventory-search-icon {
+
+        left: 20px !important;
+
+        font-size: 26px !important;
+    }
+
+
+    .inventory-card {
+
         min-height: 225px;
     }
 }
 
-```css
-/* =========================================================
-   INVENTAIRES — BLEU NUIT + BREADCRUMB BLANC
-   ========================================================= */
-
-/* Arrière-plan général de la page */
-.inventory-page {
-    position: relative !important;
-
-    min-height: calc(100vh - 92px) !important;
-
-    background:
-        linear-gradient(
-            rgba(3, 9, 18, 0.96),
-            rgba(3, 9, 18, 0.96)
-        ),
-        url("../photo.png") center center / cover no-repeat !important;
-
-    color: #ffffff !important;
-}
-
-/* Ligne rouge supérieure */
-.inventory-page::before {
-    content: "" !important;
-
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-
-    height: 4px !important;
-
-    background: #d71920 !important;
-}
-
-/* Contenu au-dessus du fond */
-.inventory-container {
-    position: relative !important;
-    z-index: 5 !important;
-}
-
-/* =========================================================
-   FIL D'ARIANE
-   ========================================================= */
-
-.inventory-breadcrumb {
-    color: #ffffff !important;
-}
-
-.inventory-breadcrumb a {
-    color: #ffffff !important;
-    text-decoration: none !important;
-}
-
-.inventory-breadcrumb a:hover {
-    color: #ffffff !important;
-}
-
-.inventory-breadcrumb span {
-    color: #ffffff !important;
-}
-
-/* Le symbole › en rouge */
-.inventory-breadcrumb span:nth-child(2) {
-    color: #d71920 !important;
-}
-
-/* Inventaires en blanc */
-.inventory-breadcrumb span:last-child {
-    color: #ffffff !important;
-}
-
-/* =========================================================
-   TITRE
-   ========================================================= */
-
-.inventory-eyebrow {
-    color: #d9e2e8 !important;
-}
-
-.inventory-title h1 {
-    color: #ffffff !important;
-}
-
-.inventory-title p {
-    color: #d5dfe6 !important;
-}
-
-/* =========================================================
-   GRANDE BARRE DE RECHERCHE
-   ========================================================= */
-
-.inventory-search {
-    width: 100% !important;
-    margin-bottom: 45px !important;
-}
-
-.inventory-search input {
-    width: 100% !important;
-
-    height: 88px !important;
-    min-height: 88px !important;
-
-    padding-left: 78px !important;
-    padding-right: 30px !important;
-
-    background: #ffffff !important;
-
-    border: 3px solid rgba(215, 25, 32, 0.18) !important;
-
-    border-radius: 12px !important;
-
-    color: #071321 !important;
-
-    font-size: 20px !important;
-
-    box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.45) !important;
-}
-
-.inventory-search input::placeholder {
-    color: #667783 !important;
-    font-size: 18px !important;
-}
-
-.inventory-search-icon {
-    left: 27px !important;
-
-    color: #d71920 !important;
-
-    font-size: 32px !important;
-
-    z-index: 10 !important;
-}
-
-/* =========================================================
-   CARTES : ON NE LES MODIFIE PAS
-   ========================================================= */
-
-.inventory-card {
-    background:
-        linear-gradient(
-            145deg,
-            #12304b 0%,
-            #0b2034 48%,
-            #06111d 100%
-        ) !important;
-}
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 850px) {
-
-    .inventory-page {
-        min-height: calc(100vh - 76px) !important;
-    }
-
-    .inventory-search input {
-        height: 76px !important;
-        min-height: 76px !important;
-
-        padding-left: 65px !important;
-
-        font-size: 17px !important;
-    }
-
-    .inventory-search-icon {
-        left: 22px !important;
-        font-size: 28px !important;
-    }
-}
 
