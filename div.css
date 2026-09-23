@@ -1,6 +1,5 @@
 /* =========================================================
-   DIV — CIS VILLENAVE-D'ORNON
-   MÊME DESIGN QUE SSUAP / INCENDIE
+   DIV — MÊME DESIGN QUE INCENDIE
    ========================================================= */
 
 .div-page {
@@ -14,7 +13,7 @@
 
 .div-hero {
     position: relative;
-    min-height: 360px;
+    min-height: 330px;
 
     display: flex;
     align-items: center;
@@ -25,9 +24,9 @@
     background:
         linear-gradient(
             135deg,
-            #030912 0%,
-            #071321 55%,
-            #0c2035 100%
+            #071321 0%,
+            #0c2035 55%,
+            #071321 100%
         );
 }
 
@@ -38,14 +37,14 @@
 
     background:
         radial-gradient(
-            circle at 20% 40%,
-            rgba(215, 25, 32, 0.14),
-            transparent 38%
+            circle at 20% 50%,
+            rgba(215, 25, 32, 0.16),
+            transparent 35%
         ),
         radial-gradient(
-            circle at 80% 60%,
-            rgba(20, 51, 79, 0.35),
-            transparent 42%
+            circle at 80% 40%,
+            rgba(255, 255, 255, 0.04),
+            transparent 35%
         );
 }
 
@@ -56,9 +55,9 @@
     background:
         linear-gradient(
             90deg,
-            rgba(3, 9, 18, 0.92),
-            rgba(3, 9, 18, 0.35),
-            rgba(3, 9, 18, 0.92)
+            rgba(3, 9, 18, 0.85),
+            rgba(3, 9, 18, 0.25),
+            rgba(3, 9, 18, 0.85)
         );
 }
 
@@ -68,37 +67,35 @@
 
     width: min(1100px, calc(100% - 40px));
 
-    padding: 90px 0 65px;
+    padding: 80px 0 60px;
 
     text-align: center;
 }
 
 
 /* =========================================================
-   HERO TEXT
+   HERO TEXTE
    ========================================================= */
 
 .div-eyebrow {
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 
-    color: rgba(255, 255, 255, 0.68);
+    color: rgba(255, 255, 255, 0.72);
 
     font-size: 12px;
     font-weight: 800;
 
-    letter-spacing: 4px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 .div-line {
-    width: 70px;
+    width: 58px;
     height: 3px;
 
-    margin: 0 auto 22px;
+    margin: 0 auto 20px;
 
     background: var(--red);
-
-    box-shadow:
-        0 0 18px rgba(215, 25, 32, 0.45);
 }
 
 .div-hero h1 {
@@ -106,24 +103,18 @@
 
     color: #ffffff;
 
-    font-size: clamp(48px, 7vw, 82px);
-    line-height: 1;
-
+    font-size: clamp(48px, 7vw, 76px);
     font-weight: 900;
 
-    letter-spacing: 5px;
-
-    text-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.45);
+    letter-spacing: 4px;
 }
 
 .div-hero p {
-    margin: 24px 0 0;
+    margin: 18px 0 0;
 
-    color: var(--muted);
+    color: #aab9c7;
 
-    font-size: 17px;
-    line-height: 1.6;
+    font-size: 16px;
 }
 
 
@@ -132,18 +123,14 @@
    ========================================================= */
 
 .div-content {
-    padding: 55px 0 80px;
+    padding: 42px 0 70px;
 
     background:
-        linear-gradient(
-            180deg,
-            #071321 0%,
-            #030912 100%
-        );
+        #071321;
 }
 
 .div-container {
-    width: min(1200px, calc(100% - 40px));
+    width: min(1180px, calc(100% - 40px));
 
     margin: 0 auto;
 }
@@ -158,20 +145,17 @@
     align-items: center;
     flex-wrap: wrap;
 
-    gap: 10px;
+    gap: 9px;
 
-    margin-bottom: 38px;
+    margin-bottom: 30px;
 
-    color: var(--muted);
+    color: #aab9c7;
 
     font-size: 13px;
-    font-weight: 600;
 }
 
 .div-breadcrumb a {
-    color: #cbd7e2 !important;
-
-    transition: color 0.2s ease;
+    color: #dce5ec !important;
 }
 
 .div-breadcrumb a:hover {
@@ -181,7 +165,7 @@
 .div-breadcrumb span {
     color: var(--red);
 
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .div-breadcrumb strong {
@@ -190,37 +174,30 @@
 
 
 /* =========================================================
-   INTRODUCTION
+   INTRO
    ========================================================= */
 
 .div-intro {
     display: flex;
     align-items: center;
 
-    gap: 22px;
+    gap: 18px;
 
-    margin-bottom: 30px;
-    padding: 28px 30px;
+    margin-bottom: 25px;
+    padding: 24px 26px;
 
     border:
-        1px solid rgba(255, 255, 255, 0.07);
+        1px solid rgba(255, 255, 255, 0.08);
 
-    border-radius: 18px;
+    border-radius: 14px;
 
     background:
-        linear-gradient(
-            135deg,
-            rgba(12, 32, 53, 0.95),
-            rgba(7, 19, 33, 0.82)
-        );
-
-    box-shadow:
-        0 18px 50px rgba(0, 0, 0, 0.22);
+        #0c2035;
 }
 
 .div-intro-icon {
-    width: 62px;
-    height: 62px;
+    width: 58px;
+    height: 58px;
 
     flex-shrink: 0;
 
@@ -228,53 +205,47 @@
     align-items: center;
     justify-content: center;
 
-    border-radius: 16px;
+    border-radius: 12px;
 
     background:
-        linear-gradient(
-            135deg,
-            var(--red),
-            var(--red-dark)
-        );
+        rgba(215, 25, 32, 0.15);
 
-    color: #ffffff;
+    border:
+        1px solid rgba(215, 25, 32, 0.35);
 
-    font-size: 30px;
-    font-weight: 900;
+    color: #ff4148;
 
-    box-shadow:
-        0 10px 28px rgba(215, 25, 32, 0.28);
+    font-size: 28px;
 }
 
 .div-label {
     display: block;
 
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 
-    color: var(--red-light);
+    color: #ff4148;
 
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 900;
 
     letter-spacing: 2px;
 }
 
 .div-intro h2 {
-    margin: 0 0 7px;
+    margin: 0 0 6px;
 
     color: #ffffff;
 
-    font-size: 28px;
-    line-height: 1.2;
+    font-size: 25px;
+    font-weight: 900;
 }
 
 .div-intro p {
     margin: 0;
 
-    color: var(--muted);
+    color: #aab9c7;
 
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 14px;
 }
 
 
@@ -283,59 +254,42 @@
    ========================================================= */
 
 .div-search {
-    position: relative;
-
     display: flex;
     align-items: center;
 
-    width: 100%;
-    height: 58px;
+    height: 54px;
 
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 
     border:
-        1px solid rgba(255, 255, 255, 0.09);
+        1px solid rgba(255, 255, 255, 0.1);
 
-    border-radius: 14px;
+    border-radius: 10px;
 
     background:
-        rgba(12, 32, 53, 0.82);
-
-    box-shadow:
-        0 12px 35px rgba(0, 0, 0, 0.16);
-
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+        #0c2035;
 }
 
 .div-search:focus-within {
     border-color:
         rgba(215, 25, 32, 0.65);
-
-    box-shadow:
-        0 0 0 3px rgba(215, 25, 32, 0.08),
-        0 14px 40px rgba(0, 0, 0, 0.2);
 }
 
 .div-search .search-icon {
-    width: 58px;
+    width: 52px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    color: #91a5b7;
+    color: #aab9c7;
 
-    font-size: 25px;
-
-    pointer-events: none;
+    font-size: 23px;
 }
 
 .div-search input {
     flex: 1;
 
-    width: 100%;
     height: 100%;
 
     border: 0;
@@ -346,28 +300,26 @@
     color: #ffffff;
 
     font-family: inherit;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .div-search input::placeholder {
-    color: #718394;
+    color: #8798a8;
 }
 
 .div-search button {
-    width: 50px;
+    width: 48px;
     height: 100%;
 
     border: 0;
 
     background: transparent;
 
-    color: #718394;
+    color: #8798a8;
 
-    font-size: 27px;
+    font-size: 25px;
 
     cursor: pointer;
-
-    transition: color 0.2s ease;
 }
 
 .div-search button:hover {
@@ -375,14 +327,14 @@
 }
 
 .search-result {
-    min-height: 24px;
+    min-height: 22px;
 
-    margin-bottom: 20px;
-    padding-left: 4px;
+    margin-bottom: 18px;
+    padding-left: 3px;
 
-    color: var(--red-light);
+    color: #ff4148;
 
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
 }
 
@@ -397,12 +349,12 @@
     grid-template-columns:
         repeat(3, minmax(0, 1fr));
 
-    gap: 22px;
+    gap: 20px;
 }
 
 
 /* =========================================================
-   CARTES
+   CARTES VÉHICULES
    ========================================================= */
 
 .div-card {
@@ -411,31 +363,24 @@
     display: flex;
     flex-direction: column;
 
-    min-height: 245px;
+    min-height: 225px;
 
-    padding: 24px;
+    padding: 22px;
 
     border:
         1px solid rgba(255, 255, 255, 0.08);
 
-    border-radius: 18px;
+    border-radius: 14px;
 
     background:
-        linear-gradient(
-            145deg,
-            rgba(12, 32, 53, 0.98),
-            rgba(7, 19, 33, 0.96)
-        );
+        #0c2035;
 
     overflow: hidden;
 
-    box-shadow:
-        0 15px 45px rgba(0, 0, 0, 0.2);
-
     transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .div-card::before {
@@ -450,41 +395,36 @@
     height: 3px;
 
     background:
-        linear-gradient(
-            90deg,
-            var(--red),
-            rgba(215, 25, 32, 0.05)
-        );
+        var(--red);
 }
 
 .div-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-4px);
 
     border-color:
-        rgba(215, 25, 32, 0.38);
+        rgba(215, 25, 32, 0.45);
 
     box-shadow:
-        0 22px 55px rgba(0, 0, 0, 0.3),
-        0 0 30px rgba(215, 25, 32, 0.06);
+        0 16px 35px rgba(0, 0, 0, 0.28);
 }
 
 
 /* =========================================================
-   EN-TÊTE DES CARTES
+   EN-TÊTE CARTE
    ========================================================= */
 
 .div-card-header {
     display: flex;
     align-items: center;
 
-    gap: 16px;
+    gap: 14px;
 
-    margin-bottom: 24px;
+    margin-bottom: 22px;
 }
 
 .div-number {
-    width: 48px;
-    height: 48px;
+    width: 45px;
+    height: 45px;
 
     flex-shrink: 0;
 
@@ -492,42 +432,40 @@
     align-items: center;
     justify-content: center;
 
-    border-radius: 13px;
+    border-radius: 10px;
 
     background:
-        rgba(215, 25, 32, 0.11);
+        rgba(215, 25, 32, 0.13);
 
     border:
-        1px solid rgba(215, 25, 32, 0.24);
+        1px solid rgba(215, 25, 32, 0.28);
 
-    color: var(--red-light);
+    color: #ff4148;
 
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 900;
-
-    letter-spacing: 1px;
 }
 
 .div-card-header h3 {
-    margin: 0 0 5px;
+    margin: 0 0 4px;
 
     color: #ffffff;
 
-    font-size: 21px;
+    font-size: 20px;
     font-weight: 900;
 }
 
 .div-card-header p {
     margin: 0;
 
-    color: var(--muted);
+    color: #aab9c7;
 
-    font-size: 13px;
+    font-size: 12px;
 }
 
 
 /* =========================================================
-   BOUTONS FORM
+   BOUTON INVENTAIRE
    ========================================================= */
 
 .div-actions {
@@ -542,83 +480,73 @@
 
     align-items: center;
 
-    gap: 13px;
+    gap: 12px;
 
     width: 100%;
-    min-height: 62px;
 
-    padding: 12px 15px;
+    min-height: 58px;
+
+    padding: 10px 13px;
 
     border:
         1px solid rgba(255, 255, 255, 0.08);
 
-    border-radius: 13px;
+    border-radius: 10px;
 
     background:
-        rgba(3, 9, 18, 0.55);
+        #071321;
 
     color: #ffffff !important;
 
     transition:
         background 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
+        border-color 0.2s ease;
 }
 
 .div-button:hover {
     background:
-        rgba(215, 25, 32, 0.13);
+        #102b45;
 
     border-color:
         rgba(215, 25, 32, 0.5);
-
-    transform: translateX(3px);
 }
 
 .div-button span {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 
-    min-width: 48px;
-    height: 34px;
+    min-width: 44px;
+    height: 31px;
 
-    padding: 0 9px;
+    padding: 0 8px;
 
-    border-radius: 8px;
+    border-radius: 7px;
 
     background:
-        rgba(215, 25, 32, 0.16);
+        rgba(215, 25, 32, 0.15);
 
-    color: var(--red-light);
+    color: #ff4148;
 
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 900;
-
-    letter-spacing: 0.5px;
 }
 
 .div-button strong {
     color: #ffffff;
 
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 800;
 }
 
 .div-button b {
-    color: #91a5b7;
+    color: #aab9c7;
 
-    font-size: 19px;
-
-    transition:
-        color 0.2s ease,
-        transform 0.2s ease;
+    font-size: 18px;
 }
 
 .div-button:hover b {
     color: #ffffff;
-
-    transform: translateX(3px);
 }
 
 
@@ -629,18 +557,18 @@
 .no-result {
     display: none;
 
-    margin-top: 20px;
-    padding: 55px 25px;
+    margin-top: 18px;
+    padding: 45px 20px;
 
     text-align: center;
 
     border:
-        1px solid rgba(255, 255, 255, 0.07);
+        1px solid rgba(255, 255, 255, 0.08);
 
-    border-radius: 18px;
+    border-radius: 14px;
 
     background:
-        rgba(12, 32, 53, 0.65);
+        #0c2035;
 }
 
 .no-result.show {
@@ -648,25 +576,25 @@
 }
 
 .no-result > div {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 
-    font-size: 35px;
+    font-size: 30px;
 }
 
 .no-result h3 {
-    margin: 0 0 8px;
+    margin: 0 0 7px;
 
     color: #ffffff;
 
-    font-size: 21px;
+    font-size: 20px;
 }
 
 .no-result p {
     margin: 0;
 
-    color: var(--muted);
+    color: #aab9c7;
 
-    font-size: 14px;
+    font-size: 13px;
 }
 
 
@@ -678,50 +606,43 @@
     display: flex;
     justify-content: center;
 
-    margin-top: 42px;
+    margin-top: 35px;
 }
 
 .back-inventory-button {
     display: inline-flex;
     align-items: center;
 
-    gap: 10px;
+    gap: 9px;
 
-    padding: 13px 22px;
+    padding: 12px 20px;
 
     border:
         1px solid rgba(255, 255, 255, 0.1);
 
-    border-radius: 12px;
+    border-radius: 10px;
 
     background:
-        rgba(12, 32, 53, 0.72);
+        #0c2035;
 
-    color: #dce6ee !important;
+    color: #dce5ec !important;
 
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 800;
-
-    transition:
-        background 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
 }
 
 .back-inventory-button:hover {
-    background:
-        rgba(215, 25, 32, 0.12);
-
     border-color:
-        rgba(215, 25, 32, 0.4);
+        rgba(215, 25, 32, 0.45);
 
-    transform: translateY(-2px);
+    background:
+        #102b45;
 }
 
 .back-inventory-button span {
-    color: var(--red-light);
+    color: #ff4148;
 
-    font-size: 18px;
+    font-size: 17px;
 }
 
 
@@ -742,7 +663,7 @@
 @media screen and (max-width: 650px) {
 
     .div-hero {
-        min-height: 310px;
+        min-height: 290px;
     }
 
     .div-hero-content {
@@ -751,12 +672,11 @@
 
     .div-eyebrow {
         font-size: 9px;
-        letter-spacing: 2.5px;
+        letter-spacing: 2px;
     }
 
     .div-hero h1 {
-        font-size: 52px;
-        letter-spacing: 3px;
+        font-size: 50px;
     }
 
     .div-hero p {
@@ -764,48 +684,43 @@
     }
 
     .div-content {
-        padding: 35px 0 60px;
+        padding: 32px 0 55px;
     }
 
     .div-container {
-        width: min(100% - 24px, 1200px);
+        width: calc(100% - 24px);
     }
 
     .div-intro {
-        align-items: flex-start;
-
         padding: 20px;
 
-        gap: 15px;
+        align-items: flex-start;
     }
 
     .div-intro-icon {
-        width: 50px;
-        height: 50px;
+        width: 48px;
+        height: 48px;
 
-        font-size: 24px;
+        font-size: 23px;
     }
 
     .div-intro h2 {
-        font-size: 22px;
+        font-size: 21px;
     }
 
     .div-intro p {
         font-size: 13px;
+        line-height: 1.5;
     }
 
     .div-grid {
         grid-template-columns: 1fr;
 
-        gap: 16px;
+        gap: 15px;
     }
 
     .div-card {
-        min-height: 220px;
-    }
-
-    .div-card-header h3 {
-        font-size: 19px;
+        min-height: 210px;
     }
 
 }
@@ -814,23 +729,19 @@
 @media screen and (max-width: 450px) {
 
     .div-breadcrumb {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .div-search {
-        height: 54px;
-    }
-
-    .div-search .search-icon {
-        width: 48px;
+        height: 52px;
     }
 
     .div-card {
-        padding: 20px;
+        padding: 19px;
     }
 
     .div-button strong {
-        font-size: 12px;
+        font-size: 11px;
     }
 
 }
