@@ -19,7 +19,7 @@ body {
             rgba(3, 9, 18, 0.78),
             rgba(3, 9, 18, 0.88)
         ),
-        url("images/photo.png");
+     url("photo.png");
 
     background-position: center;
     background-size: cover;
