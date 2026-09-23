@@ -5,23 +5,29 @@ document.addEventListener("DOMContentLoaded", function () {
        MENU MOBILE
     ========================= */
 
-    const mobileToggle = document.getElementById("mobileToggle");
-    const mainNav = document.getElementById("mainNav");
+```javascript id="lqv7rm"
+const mobileToggle = document.getElementById("mobileToggle");
+const mainNav = document.getElementById("mainNav");
 
-    if (mobileToggle && mainNav) {
+if (mobileToggle && mainNav) {
 
-        mobileToggle.addEventListener("click", function () {
+    mobileToggle.addEventListener("click", function (event) {
 
-            const opened = mainNav.classList.toggle("active");
+        event.preventDefault();
+        event.stopPropagation();
 
-            mobileToggle.setAttribute(
-                "aria-expanded",
-                opened ? "true" : "false"
-            );
+        const opened = mainNav.classList.toggle("active");
 
-        });
+        mobileToggle.setAttribute(
+            "aria-expanded",
+            opened ? "true" : "false"
+        );
 
-    }
+    });
+
+}
+```
+
 
 
     /* =========================
