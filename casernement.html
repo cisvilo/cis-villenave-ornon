@@ -22,7 +22,7 @@
 
             <img
                 src="logo1.png"
-                alt="Logo CIS Villenave-d'Ornon"
+                alt="CIS Villenave-d'Ornon"
                 class="brand-logo"
             >
 
@@ -41,6 +41,8 @@
         </a>
 
 
+        <!-- BOUTON HAMBURGER -->
+
         <button
             class="mobile-toggle"
             id="mobileToggle"
@@ -54,14 +56,24 @@
         </button>
 
 
+        <!-- MENU -->
+
         <nav class="nav" id="mainNav">
 
-            <a href="index.html" class="nav-link">
+            <a
+                href="index.html"
+                class="nav-link"
+            >
                 ACCUEIL
             </a>
 
 
-            <div class="nav-dropdown" id="inventoryDropdown">
+            <!-- INVENTAIRES -->
+
+            <div
+                class="nav-dropdown"
+                id="inventoryDropdown"
+            >
 
                 <button
                     type="button"
@@ -69,11 +81,15 @@
                     id="inventoryToggle"
                     aria-expanded="false"
                 >
-                    <span>INVENTAIRES</span>
+
+                    <span>
+                        INVENTAIRES
+                    </span>
 
                     <span class="dropdown-arrow">
                         ▾
                     </span>
+
                 </button>
 
 
@@ -117,7 +133,10 @@
                         STANDARD
                     </a>
 
-                    <a href="casernement.html" class="active">
+                    <a
+                        href="casernement.html"
+                        class="active"
+                    >
                         <span class="submenu-icon">⌂</span>
                         CASERNEMENT
                     </a>
@@ -127,19 +146,34 @@
             </div>
 
 
-            <a href="pages/entretiens.html" class="nav-link">
+            <a
+                href="pages/entretiens.html"
+                class="nav-link"
+            >
                 ENTRETIENS
             </a>
 
-            <a href="pages/documents.html" class="nav-link">
+
+            <a
+                href="pages/documents.html"
+                class="nav-link"
+            >
                 DOCUMENTS
             </a>
 
-            <a href="pages/amicale.html" class="nav-link">
+
+            <a
+                href="pages/amicale.html"
+                class="nav-link"
+            >
                 AMICALE
             </a>
 
-            <a href="pages/raccourcis.html" class="nav-link">
+
+            <a
+                href="pages/raccourcis.html"
+                class="nav-link"
+            >
                 RACCOURCIS
             </a>
 
@@ -153,6 +187,8 @@
 <main class="casernement-page">
 
 
+    <!-- HERO -->
+
     <section class="casernement-hero">
 
         <div class="casernement-hero-overlay"></div>
@@ -165,7 +201,9 @@
 
             <div class="casernement-line"></div>
 
-            <h1>CASERNEMENT</h1>
+            <h1>
+                CASERNEMENT
+            </h1>
 
             <p>
                 Accès direct aux formulaires d'inventaire.
@@ -176,10 +214,14 @@
     </section>
 
 
+    <!-- CONTENU -->
+
     <section class="casernement-content">
 
         <div class="casernement-container">
 
+
+            <!-- BREADCRUMB -->
 
             <div class="casernement-breadcrumb">
 
@@ -201,6 +243,8 @@
 
             </div>
 
+
+            <!-- INTRO -->
 
             <div class="casernement-intro">
 
@@ -226,6 +270,8 @@
 
             </div>
 
+
+            <!-- RECHERCHE -->
 
             <div class="casernement-search">
 
@@ -258,11 +304,15 @@
             ></div>
 
 
+            <!-- CARTES -->
+
             <div
                 class="casernement-grid"
                 id="casernementGrid"
             >
 
+
+                <!-- RÉSERVE OPÉRATIONNELLE -->
 
                 <article
                     class="casernement-card"
@@ -297,6 +347,7 @@
                             target="_blank"
                             rel="noopener"
                             class="casernement-button"
+                            data-search="réserve opérationnelle réserve"
                         >
 
                             <span>
@@ -318,102 +369,274 @@
                 </article>
 
 
+                <!-- PHARMACIE / ASU -->
+
                 <article
                     class="casernement-card"
                     data-search="pharmacie ASU Meducore Pompy casernement inventaire"
                 >
 
-              ```html
-<div class="casernement-card-header">
+                    <div class="casernement-card-header">
 
-    <span class="casernement-number">
-        02
-    </span>
+                        <span class="casernement-number">
+                            02
+                        </span>
 
-    <div>
+                        <div>
 
-        <h3>
-            Pharmacie / ASU
-        </h3>
+                            <h3>
+                                Pharmacie / ASU
+                            </h3>
 
-        <p>
-            Meducore & Pompy
-        </p>
+                            <p>
+                                Meducore &amp; Pompy
+                            </p>
 
-    </div>
+                        </div>
 
-</div>
-
-
-<div class="casernement-actions">
-
-    <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLScQ4mzrZjtt0AR9aKFWobl8DNGo-sbTzUiu4pML1xfWlsdzSg/viewform"
-        target="_blank"
-        rel="noopener"
-        class="casernement-button"
-    >
-
-        <span>
-            PHARMACIE / ASU
-        </span>
-
-        <strong>
-            Inventaire Meducore & Pompy
-        </strong>
-
-        <b>
-            ↗
-        </b>
-
-    </a>
-
-</div>
-
-</article>
+                    </div>
 
 
-</div>
+                    <div class="casernement-actions">
+
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScQ4mzrZjtt0AR9aKFWobl8DNGo-sbTzUiu4pML1xfWlsdzSg/viewform"
+                            target="_blank"
+                            rel="noopener"
+                            class="casernement-button"
+                            data-search="pharmacie ASU Meducore Pompy"
+                        >
+
+                            <span>
+                                PHARMACIE / ASU
+                            </span>
+
+                            <strong>
+                                Inventaire Meducore &amp; Pompy
+                            </strong>
+
+                            <b>
+                                ↗
+                            </b>
+
+                        </a>
+
+                    </div>
+
+                </article>
 
 
-<div
-    id="noResult"
-    class="no-result"
->
-    Aucun matériel trouvé.
-</div>
+            </div>
 
 
-</div>
+            <!-- AUCUN RÉSULTAT -->
 
-</section>
+            <div
+                id="noResult"
+                class="no-result"
+            >
+
+                <div>
+                    🔎
+                </div>
+
+                <h3>
+                    Aucun résultat
+                </h3>
+
+                <p>
+                    Aucun matériel ou formulaire ne correspond à votre recherche.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
 
 </main>
 
 
-<footer class="site-footer">
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
-    <div class="footer-inner">
+    /* =====================================================
+       MENU MOBILE
+       ===================================================== */
 
-        <span>
-            CIS VILLENAVE-D'ORNON
-        </span>
+    const mobileToggle = document.getElementById("mobileToggle");
+    const mainNav = document.getElementById("mainNav");
 
-        <span>
-            PORTAIL OPÉRATIONNEL
-        </span>
+    if (mobileToggle && mainNav) {
 
-    </div>
+        mobileToggle.addEventListener("click", () => {
 
-</footer>
+            mainNav.classList.toggle("active");
+
+        });
+
+    }
 
 
-<script src="casernement.js"></script>
+    /* =====================================================
+       MENU INVENTAIRES
+       ===================================================== */
+
+    const inventoryDropdown =
+        document.getElementById("inventoryDropdown");
+
+    const inventoryToggle =
+        document.getElementById("inventoryToggle");
+
+    if (inventoryDropdown && inventoryToggle) {
+
+        inventoryToggle.addEventListener("click", (event) => {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            inventoryDropdown.classList.toggle("open");
+
+        });
+
+    }
+
+
+    /* =====================================================
+       RECHERCHE CASERNEMENT
+       ===================================================== */
+
+    const searchInput =
+        document.getElementById("casernementSearch");
+
+    const clearSearch =
+        document.getElementById("clearSearch");
+
+    const cards =
+        document.querySelectorAll(".casernement-card");
+
+    const noResult =
+        document.getElementById("noResult");
+
+    const searchResult =
+        document.getElementById("searchResult");
+
+
+    if (!searchInput) return;
+
+
+    function normalize(text) {
+
+        return text
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+
+    }
+
+
+    function performSearch() {
+
+        const query =
+            normalize(searchInput.value.trim());
+
+        let visibleCards = 0;
+
+
+        cards.forEach(card => {
+
+            const cardText =
+                normalize(
+                    card.innerText + " " +
+                    Array.from(
+                        card.querySelectorAll("[data-search]")
+                    )
+                    .map(element => element.dataset.search)
+                    .join(" ")
+                );
+
+
+            const match =
+                query === "" ||
+                cardText.includes(query);
+
+
+            card.style.display =
+                match ? "" : "none";
+
+
+            if (match) {
+                visibleCards++;
+            }
+
+        });
+
+
+        if (query !== "") {
+
+            searchResult.textContent =
+                visibleCards === 0
+                    ? ""
+                    : `${visibleCards} résultat${visibleCards > 1 ? "s" : ""}`;
+
+        } else {
+
+            searchResult.textContent = "";
+
+        }
+
+
+        if (query !== "" && visibleCards === 0) {
+
+            noResult.classList.add("show");
+
+        } else {
+
+            noResult.classList.remove("show");
+
+        }
+
+    }
+
+
+    searchInput.addEventListener(
+        "input",
+        performSearch
+    );
+
+
+    if (clearSearch) {
+
+        clearSearch.addEventListener("click", () => {
+
+            searchInput.value = "";
+
+            performSearch();
+
+            searchInput.focus();
+
+        });
+
+    }
+
+
+    searchInput.addEventListener("keydown", (event) => {
+
+        if (event.key === "Escape") {
+
+            searchInput.value = "";
+
+            performSearch();
+
+        }
+
+    });
+
+});
+</script>
+
 
 </body>
 </html>
-```
 
-```
-
-```
