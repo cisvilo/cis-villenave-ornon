@@ -461,5 +461,35 @@
                         </a>
 
                     </div>
-```
+
+```html
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const mobileToggle = document.getElementById("mobileToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    if (mobileToggle && mainNav) {
+        mobileToggle.addEventListener("click", function () {
+            mainNav.classList.toggle("active");
+        });
+    }
+
+});
+</script>
+
+</body>
+</html>
+
+
 
