@@ -1,20 +1,20 @@
 /* =========================================================
    CIS VILLENAVE-D'ORNON
    PAGE INVENTAIRES
-   DESIGN ALIGNÉ SUR L'ACCUEIL
    ========================================================= */
 
 
 /* =========================================================
-   PAGE
+   PAGE PRINCIPALE
    ========================================================= */
 
 .inventory-page {
     min-height: calc(100vh - 92px);
+
     background:
         radial-gradient(
-            circle at 85% 15%,
-            rgba(215, 25, 32, 0.10),
+            circle at 85% 20%,
+            rgba(215, 25, 32, 0.08),
             transparent 35%
         ),
         linear-gradient(
@@ -32,7 +32,7 @@
 .inventory-hero {
     position: relative;
 
-    min-height: 250px;
+    height: 250px;
 
     display: flex;
     align-items: center;
@@ -43,25 +43,36 @@
     overflow: hidden;
 
     background:
-        linear-gradient(
-            rgba(3, 9, 18, 0.82),
-            rgba(3, 9, 18, 0.92)
-        ),
-        url("../photo.png") center / cover no-repeat;
+        url("../photo.png")
+        center center /
+        cover
+        no-repeat;
 }
 
 
-/* ligne rouge sous le hero */
+.inventory-hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(3, 9, 18, 0.70),
+            rgba(3, 9, 18, 0.90)
+        );
+}
+
 
 .inventory-hero::after {
     content: "";
 
     position: absolute;
 
-    bottom: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
 
-    width: 100%;
     height: 3px;
 
     background: linear-gradient(
@@ -74,7 +85,7 @@
     );
 
     box-shadow:
-        0 0 15px rgba(215, 25, 32, 0.55);
+        0 0 15px rgba(215, 25, 32, 0.6);
 }
 
 
@@ -83,7 +94,7 @@
 
     z-index: 2;
 
-    padding: 40px 20px;
+    padding: 30px 20px;
 }
 
 
@@ -93,6 +104,7 @@
     color: #ff4148;
 
     font-size: 11px;
+
     font-weight: 700;
 
     letter-spacing: 3px;
@@ -118,12 +130,13 @@
 
     margin: 15px auto 18px;
 
-    background: linear-gradient(
-        90deg,
-        #a80f15,
-        #ff4148,
-        #a80f15
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #a80f15,
+            #ff4148,
+            #a80f15
+        );
 
     box-shadow:
         0 0 12px rgba(215, 25, 32, 0.5);
@@ -150,6 +163,7 @@
 
 .inventory-container {
     width: 100%;
+
     max-width: 1400px;
 
     margin: 0 auto;
@@ -162,6 +176,7 @@
 
 .inventory-breadcrumb {
     display: flex;
+
     align-items: center;
 
     gap: 10px;
@@ -179,7 +194,7 @@
 
     text-decoration: none;
 
-    transition: 0.25s ease;
+    transition: color 0.25s ease;
 }
 
 
@@ -201,13 +216,14 @@
 
 
 /* =========================================================
-   INTRO + RECHERCHE
+   INTRODUCTION
    ========================================================= */
 
 .inventory-top {
     display: flex;
 
     align-items: flex-end;
+
     justify-content: space-between;
 
     gap: 40px;
@@ -229,6 +245,7 @@
     color: #ff4148;
 
     font-size: 11px;
+
     font-weight: 700;
 
     letter-spacing: 3px;
@@ -241,6 +258,7 @@
     color: #ffffff;
 
     font-size: 30px;
+
     font-weight: 800;
 }
 
@@ -264,6 +282,7 @@
     position: relative;
 
     width: 100%;
+
     max-width: 420px;
 
     flex-shrink: 0;
@@ -272,11 +291,16 @@
 
 .inventory-search input {
     width: 100%;
+
     height: 52px;
 
     box-sizing: border-box;
 
-    padding: 0 48px 0 48px;
+    padding:
+        0
+        48px
+        0
+        48px;
 
     border: 1px solid #14334f;
 
@@ -300,7 +324,9 @@
     box-shadow:
         0 10px 25px rgba(0, 0, 0, 0.25);
 
-    transition: 0.25s ease;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 
@@ -314,7 +340,7 @@
 
     box-shadow:
         0 0 0 3px rgba(215, 25, 32, 0.12),
-        0 10px 30px rgba(0, 0, 0, 0.3);
+        0 10px 30px rgba(0, 0, 0, 0.30);
 }
 
 
@@ -322,6 +348,7 @@
     position: absolute;
 
     left: 17px;
+
     top: 50%;
 
     transform: translateY(-50%);
@@ -330,18 +357,17 @@
 
     font-size: 23px;
 
-    z-index: 2;
-
     pointer-events: none;
+
+    z-index: 2;
 }
 
-
-/* bouton X */
 
 .clear-search {
     position: absolute;
 
     right: 10px;
+
     top: 50%;
 
     transform: translateY(-50%);
@@ -349,9 +375,11 @@
     display: none;
 
     align-items: center;
+
     justify-content: center;
 
     width: 30px;
+
     height: 30px;
 
     border: 0;
@@ -365,26 +393,26 @@
     font-size: 22px;
 
     cursor: pointer;
-
-    transition: 0.2s ease;
 }
 
 
 .clear-search:hover {
     color: #ffffff;
 
-    background: rgba(215, 25, 32, 0.2);
+    background:
+        rgba(215, 25, 32, 0.20);
 }
 
 
 /* =========================================================
-   LES CARTES
+   GRILLE DES CARTES
    ========================================================= */
 
 .inventory-cards {
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
 
     gap: 22px;
 
@@ -393,13 +421,14 @@
 
 
 /* =========================================================
-   CARTE INDIVIDUELLE
+   CARTE
    ========================================================= */
 
 .inventory-card {
     position: relative;
 
     display: flex;
+
     flex-direction: column;
 
     min-height: 250px;
@@ -412,12 +441,6 @@
 
     overflow: hidden;
 
-    border: 1px solid rgba(255, 255, 255, 0.05);
-
-    border-top: 3px solid #d71920;
-
-    border-radius: 10px;
-
     background:
         linear-gradient(
             145deg,
@@ -425,21 +448,26 @@
             #071321 100%
         );
 
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.05);
+
+    border-top:
+        3px solid #d71920;
+
+    border-radius: 10px;
+
     box-shadow:
         0 12px 30px rgba(0, 0, 0, 0.30);
 
-    opacity: 1;
-
-    transform: translateY(0);
-
     transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
+        transform 0.30s ease,
+        box-shadow 0.30s ease,
+        border-color 0.30s ease;
 }
 
 
-/* lumière */
+/* effet lumière */
 
 .inventory-card::after {
     content: "";
@@ -447,17 +475,20 @@
     position: absolute;
 
     top: 0;
+
     left: -120%;
 
     width: 70%;
+
     height: 100%;
 
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.055),
-        transparent
-    );
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.06),
+            transparent
+        );
 
     transform: skewX(-20deg);
 
@@ -486,16 +517,18 @@
 
 
 /* =========================================================
-   ICÔNE DES CARTES
+   ICÔNE
    ========================================================= */
 
 .inventory-card-icon {
     width: 58px;
+
     height: 58px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     margin-bottom: 18px;
@@ -509,31 +542,27 @@
             #a80f15
         );
 
-    color: #ffffff;
-
     font-size: 28px;
 
     line-height: 1;
 
     box-shadow:
-        0 8px 18px rgba(215, 25, 32, 0.25);
+        0 8px 18px
+        rgba(215, 25, 32, 0.25);
 
     transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+        transform 0.30s ease;
 }
 
 
-.inventory-card:hover .inventory-card-icon {
+.inventory-card:hover
+.inventory-card-icon {
     transform: scale(1.08);
-
-    box-shadow:
-        0 10px 25px rgba(215, 25, 32, 0.35);
 }
 
 
 /* =========================================================
-   CONTENU CARTE
+   CONTENU DE LA CARTE
    ========================================================= */
 
 .inventory-card-content {
@@ -592,6 +621,7 @@
     position: absolute;
 
     right: 22px;
+
     bottom: 20px;
 
     color: #ff4148;
@@ -606,7 +636,8 @@
 }
 
 
-.inventory-card:hover .inventory-card-arrow {
+.inventory-card:hover
+.inventory-card-arrow {
     color: #ffffff;
 
     transform: translateX(6px);
@@ -614,7 +645,7 @@
 
 
 /* =========================================================
-   RECHERCHE : CARTES CACHÉES
+   CARTES MASQUÉES PAR LA RECHERCHE
    ========================================================= */
 
 .inventory-card.hidden {
@@ -632,6 +663,7 @@
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 8px;
@@ -672,7 +704,8 @@
 @media (max-width: 1150px) {
 
     .inventory-cards {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
     }
 
 }
@@ -699,7 +732,8 @@
 
 
     .inventory-cards {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 
 }
@@ -712,12 +746,15 @@
 @media (max-width: 850px) {
 
     .inventory-hero {
-        min-height: 210px;
+        height: 210px;
     }
 
 
     .inventory-content {
-        padding: 35px 20px 60px;
+        padding:
+            35px
+            20px
+            60px;
     }
 
 
@@ -748,6 +785,7 @@
 
     .inventory-content {
         padding-left: 15px;
+
         padding-right: 15px;
     }
 
