@@ -1,277 +1,213 @@
 ```javascript
-/* =========================================================
-   INCENDIE — CIS VILLENAVE-D'ORNON
-   Menu + recherche
-   ========================================================= */
+document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener("DOMContentLoaded", () => {
+  /* =====================================================
+     MENU MOBILE
+     ===================================================== */
 
+  const mobileToggle = document.getElementById("mobileToggle");
+  const mainNav = document.getElementById("mainNav");
 
-    /* =====================================================
-       MENU MOBILE
-       ===================================================== */
+  if (mobileToggle && mainNav) {
 
-    const mobileToggle =
-        document.getElementById("mobileToggle");
+    mobileToggle.addEventListener("click", function () {
 
-    const mainNav =
-        document.getElementById("mainNav");
+      const isOpen = mainNav.classList.toggle("open");
 
+      mobileToggle.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
 
-    if (mobileToggle && mainNav) {
+    });
 
-        mobileToggle.addEventListener("click", () => {
-
-            const isOpen =
-                mainNav.classList.toggle("open");
-
-            mobileToggle.setAttribute(
-                "aria-expanded",
-                isOpen ? "true" : "false"
-            );
-
-        });
-
-    }
+  }
 
 
-    /* =====================================================
-       MENU INVENTAIRES
-       ===================================================== */
+  /* =====================================================
+     MENU INVENTAIRES
+     ===================================================== */
 
-    const inventoryDropdown =
-        document.getElementById("inventoryDropdown");
+  const inventoryDropdown =
+    document.getElementById("inventoryDropdown");
 
-    const inventoryToggle =
-        document.getElementById("inventoryToggle");
+  const inventoryToggle =
+    document.getElementById("inventoryToggle");
+
+  if (inventoryDropdown && inventoryToggle) {
+
+    inventoryToggle.addEventListener("click", function (event) {
+
+      event.stopPropagation();
+
+      const isOpen =
+        inventoryDropdown.classList.toggle("open");
+
+      inventoryToggle.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
+
+    });
 
 
-    if (
-        inventoryDropdown &&
-        inventoryToggle
-    ) {
+    document.addEventListener("click", function (event) {
 
-        inventoryToggle.addEventListener(
-            "click",
-            (event) => {
+      if (!inventoryDropdown.contains(event.target)) {
 
-                event.stopPropagation();
+        inventoryDropdown.classList.remove("open");
 
-                const isOpen =
-                    inventoryDropdown.classList.toggle("open");
-
-                inventoryToggle.setAttribute(
-                    "aria-expanded",
-                    isOpen ? "true" : "false"
-                );
-
-            }
+        inventoryToggle.setAttribute(
+          "aria-expanded",
+          "false"
         );
 
+      }
 
-        document.addEventListener(
-            "click",
-            (event) => {
+    });
 
-                if (
-                    !inventoryDropdown.contains(
-                        event.target
-                    )
-                ) {
+  }
 
-                    inventoryDropdown.classList.remove(
-                        "open"
-                    );
 
-                    inventoryToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
+  /* =====================================================
+     RECHERCHE
+     ===================================================== */
 
-                }
+  const searchInput =
+    document.getElementById("incendieSearch");
 
-            }
+  const clearSearch =
+    document.getElementById("clearSearch");
+
+  const searchResult =
+    document.getElementById("searchResult");
+
+  const cards =
+    document.querySelectorAll(".incendie-card");
+
+  const noResult =
+    document.getElementById("noResult");
+
+
+  function normalize(text) {
+
+    return text
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+
+  }
+
+
+  function filterCards() {
+
+    if (!searchInput) return;
+
+    const query =
+      normalize(searchInput.value.trim());
+
+    let visibleCards = 0;
+
+
+    cards.forEach(function (card) {
+
+      const content =
+        normalize(
+          card.textContent +
+          " " +
+          (card.dataset.search || "")
         );
 
-    }
+      const match =
+        query === "" ||
+        content.includes(query);
+
+      card.style.display =
+        match ? "" : "none";
+
+      if (match) {
+        visibleCards++;
+      }
+
+    });
 
 
-    /* =====================================================
-       RECHERCHE
-       ===================================================== */
+    if (noResult) {
 
-    const searchInput =
-        document.getElementById("incendieSearch");
-
-    const clearButton =
-        document.getElementById("clearSearch");
-
-    const cards =
-        document.querySelectorAll(
-            ".incendie-card"
-        );
-
-    const searchResult =
-        document.getElementById("searchResult");
-
-    const noResult =
-        document.getElementById("noResult");
-
-
-    function normalize(text) {
-
-        return text
-            .toLowerCase()
-            .normalize("NFD")
-            .replace(
-                /[\u0300-\u036f]/g,
-                ""
-            )
-            .trim();
+      noResult.classList.toggle(
+        "show",
+        visibleCards === 0
+      );
 
     }
 
 
-    function performSearch() {
+    if (searchResult) {
 
-        if (!searchInput) {
-            return;
-        }
+      if (query === "") {
 
+        searchResult.textContent = "";
 
-        const query =
-            normalize(searchInput.value);
+      } else {
 
+        searchResult.textContent =
+          visibleCards +
+          (visibleCards > 1
+            ? " véhicules trouvés"
+            : " véhicule trouvé");
 
-        let visibleCards = 0;
-
-
-        cards.forEach((card) => {
-
-            const searchableText =
-                normalize(
-                    card.innerText +
-                    " " +
-                    (
-                        card.dataset.search ||
-                        ""
-                    )
-                );
-
-
-            const match =
-                query === "" ||
-                searchableText.includes(query);
-
-
-            if (match) {
-
-                card.style.display = "";
-
-                visibleCards++;
-
-            } else {
-
-                card.style.display = "none";
-
-            }
-
-        });
-
-
-        if (noResult) {
-
-            noResult.style.display =
-                visibleCards === 0
-                    ? "block"
-                    : "none";
-
-        }
-
-
-        if (searchResult) {
-
-            if (query === "") {
-
-                searchResult.textContent = "";
-
-            } else if (visibleCards === 1) {
-
-                searchResult.textContent =
-                    "1 résultat trouvé";
-
-            } else {
-
-                searchResult.textContent =
-                    visibleCards +
-                    " résultats trouvés";
-
-            }
-
-        }
+      }
 
     }
 
-
-    if (searchInput) {
-
-        searchInput.addEventListener(
-            "input",
-            performSearch
-        );
-
-    }
+  }
 
 
-    /* =====================================================
-       EFFACER
-       ===================================================== */
+  if (searchInput) {
 
-    if (
-        clearButton &&
+    searchInput.addEventListener(
+      "input",
+      filterCards
+    );
+
+  }
+
+
+  if (clearSearch) {
+
+    clearSearch.addEventListener(
+      "click",
+      function () {
+
+        searchInput.value = "";
+
+        filterCards();
+
+        searchInput.focus();
+
+      }
+    );
+
+  }
+
+
+  document.addEventListener(
+    "keydown",
+    function (event) {
+
+      if (
+        event.key === "Escape" &&
         searchInput
-    ) {
+      ) {
 
-        clearButton.addEventListener(
-            "click",
-            () => {
+        searchInput.value = "";
 
-                searchInput.value = "";
+        filterCards();
 
-                performSearch();
-
-                searchInput.focus();
-
-            }
-        );
+      }
 
     }
-
-
-    /* =====================================================
-       ESCAPE
-       ===================================================== */
-
-    if (searchInput) {
-
-        searchInput.addEventListener(
-            "keydown",
-            (event) => {
-
-                if (event.key === "Escape") {
-
-                    searchInput.value = "";
-
-                    performSearch();
-
-                    searchInput.blur();
-
-                }
-
-            }
-        );
-
-    }
+  );
 
 });
 
