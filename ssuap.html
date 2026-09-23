@@ -26,6 +26,7 @@
             >
 
             <div class="brand-text">
+
                 <div class="brand-title">
                     CIS VILLENAVE-D'ORNON
                 </div>
@@ -33,10 +34,13 @@
                 <div class="brand-subtitle">
                     PORTAIL OPÉRATIONNEL
                 </div>
+
             </div>
 
         </a>
 
+
+        <!-- BOUTON HAMBURGER -->
 
         <button
             class="mobile-toggle"
@@ -45,16 +49,25 @@
             aria-label="Ouvrir le menu"
             aria-expanded="false"
         >
-            ☰
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
 
 
+        <!-- MENU -->
+
         <nav class="nav" id="mainNav">
 
-            <a href="index.html" class="nav-link">
+            <a
+                href="index.html"
+                class="nav-link"
+            >
                 ACCUEIL
             </a>
 
+
+            <!-- INVENTAIRES -->
 
             <div
                 class="nav-dropdown"
@@ -67,8 +80,15 @@
                     id="inventoryToggle"
                     aria-expanded="false"
                 >
-                    INVENTAIRES
-                    <span class="dropdown-arrow">▾</span>
+
+                    <span>
+                        INVENTAIRES
+                    </span>
+
+                    <span class="dropdown-arrow">
+                        ▾
+                    </span>
+
                 </button>
 
 
@@ -78,34 +98,45 @@
                 >
 
                     <a href="pages/inventaires.html">
-                        Vue d'ensemble
+                        <span class="submenu-icon">▣</span>
+                        VUE D'ENSEMBLE
                     </a>
 
-                    <a href="ssuap.html" class="active">
+                    <a
+                        href="ssuap.html"
+                        class="active"
+                    >
+                        <span class="submenu-icon">＋</span>
                         SSUAP
                     </a>
 
-                    <a href="pages/incendie.html">
+                    <a href="incendie.html">
+                        <span class="submenu-icon">◆</span>
                         INCENDIE
                     </a>
 
-                    <a href="pages/div.html">
+                    <a href="div.html">
+                        <span class="submenu-icon">◇</span>
                         DIV
                     </a>
 
-                    <a href="pages/fdf.html">
+                    <a href="fdf.html">
+                        <span class="submenu-icon">▲</span>
                         FDF
                     </a>
 
-                    <a href="pages/specialites.html">
+                    <a href="specialites.html">
+                        <span class="submenu-icon">★</span>
                         SPÉCIALITÉS
                     </a>
 
-                    <a href="pages/standard.html">
+                    <a href="standard.html">
+                        <span class="submenu-icon">▤</span>
                         STANDARD
                     </a>
 
-                    <a href="pages/casernement.html">
+                    <a href="casernement.html">
+                        <span class="submenu-icon">⌂</span>
                         CASERNEMENT
                     </a>
 
@@ -114,19 +145,34 @@
             </div>
 
 
-            <a href="pages/entretiens.html" class="nav-link">
+            <a
+                href="pages/entretiens.html"
+                class="nav-link"
+            >
                 ENTRETIENS
             </a>
 
-            <a href="pages/documents.html" class="nav-link">
+
+            <a
+                href="pages/documents.html"
+                class="nav-link"
+            >
                 DOCUMENTS
             </a>
 
-            <a href="pages/amicale.html" class="nav-link">
+
+            <a
+                href="pages/amicale.html"
+                class="nav-link"
+            >
                 AMICALE
             </a>
 
-            <a href="pages/raccourcis.html" class="nav-link">
+
+            <a
+                href="pages/raccourcis.html"
+                class="nav-link"
+            >
                 RACCOURCIS
             </a>
 
@@ -272,9 +318,7 @@
             >
 
 
-                <!-- =================================================
-                     VSAV 1
-                     ================================================= -->
+                <!-- VSAV 1 -->
 
                 <article class="ssuap-card">
 
@@ -301,7 +345,6 @@
 
                     <div class="ssuap-actions">
 
-
                         <a
                             href="https://docs.google.com/forms/d/e/1FAIpQLSfL36QKhU4DK_iWfPn4x19gmU9dLKnTLWVugFOpg3ryMzXapg/viewform?ouid=105918993275116743934&usp=sharing"
                             target="_blank"
@@ -309,19 +352,9 @@
                             class="ssuap-button"
                             data-search="VSAV 1 navette cestas CA chef agréé conducteur équipier"
                         >
-
-                            <span>
-                                CA
-                            </span>
-
-                            <strong>
-                                Inventaire CA
-                            </strong>
-
-                            <b>
-                                ↗
-                            </b>
-
+                            <span>CA</span>
+                            <strong>Inventaire CA</strong>
+                            <b>↗</b>
                         </a>
 
 
@@ -332,19 +365,9 @@
                             class="ssuap-button"
                             data-search="VSAV 1 navette cestas COND conducteur"
                         >
-
-                            <span>
-                                COND
-                            </span>
-
-                            <strong>
-                                Inventaire COND
-                            </strong>
-
-                            <b>
-                                ↗
-                            </b>
-
+                            <span>COND</span>
+                            <strong>Inventaire COND</strong>
+                            <b>↗</b>
                         </a>
 
 
@@ -355,19 +378,9 @@
                             class="ssuap-button"
                             data-search="VSAV 1 navette cestas EQUIPIER équipier"
                         >
-
-                            <span>
-                                ÉQUIPIER
-                            </span>
-
-                            <strong>
-                                Inventaire ÉQUIPIER
-                            </strong>
-
-                            <b>
-                                ↗
-                            </b>
-
+                            <span>ÉQUIPIER</span>
+                            <strong>Inventaire ÉQUIPIER</strong>
+                            <b>↗</b>
                         </a>
 
                     </div>
@@ -375,9 +388,7 @@
                 </article>
 
 
-                <!-- =================================================
-                     VSAV 2
-                     ================================================= -->
+                <!-- VSAV 2 -->
 
                 <article class="ssuap-card">
 
@@ -404,7 +415,6 @@
 
                     <div class="ssuap-actions">
 
-
                         <a
                             href="https://docs.google.com/forms/d/e/1FAIpQLSe1eA0Huf_T1sYWfYJLW9qUiCo8_IYR5ksxcDNwUbu9nNtDWg/viewform?ouid=105918993275116743934&usp=sharing"
                             target="_blank"
@@ -412,19 +422,9 @@
                             class="ssuap-button"
                             data-search="VSAV 2 CA chef agréé"
                         >
-
-                            <span>
-                                CA
-                            </span>
-
-                            <strong>
-                                Inventaire CA
-                            </strong>
-
-                            <b>
-                                ↗
-                            </b>
-
+                            <span>CA</span>
+                            <strong>Inventaire CA</strong>
+                            <b>↗</b>
                         </a>
 
 
@@ -435,19 +435,9 @@
                             class="ssuap-button"
                             data-search="VSAV 2 COND conducteur"
                         >
-
-                            <span>
-                                COND
-                            </span>
-
-                            <strong>
-                                Inventaire COND
-                            </strong>
-
-                            <b>
-                                ↗
-                            </b>
-
+                            <span>COND</span>
+                            <strong>Inventaire COND</strong>
+                            <b>↗</b>
                         </a>
 
 
@@ -458,19 +448,9 @@
                             class="ssuap-button"
                             data-search="VSAV 2 EQUIPIER équipier"
                         >
-
-                            <span>
-                                ÉQUIPIER
-                            </span>
-
-                            <strong>
-                                Inventaire ÉQUIPIER
-                            </strong>
-
-                            <b>
-                                ↗
-                            </b>
-
+                            <span>ÉQUIPIER</span>
+                            <strong>Inventaire ÉQUIPIER</strong>
+                            <b>↗</b>
                         </a>
 
                     </div>
@@ -478,9 +458,7 @@
                 </article>
 
 
-                <!-- =================================================
-                     VSAV 3
-                     ================================================= -->
+                <!-- VSAV 3 -->
 
                 <article class="ssuap-card">
 
@@ -507,7 +485,6 @@
 
                     <div class="ssuap-actions">
 
-
                         <a
                             href="https://docs.google.com/forms/d/e/1FAIpQLScgbGPy4RV--YguFozawOFSlJ7zzAFMduGsnY6KHvA_nMTxsw/viewform?ouid=105918993275116743934&usp=sharing"
                             target="_blank"
@@ -515,19 +492,9 @@
                             class="ssuap-button"
                             data-search="VSAV 3 CA chef agréé"
                         >
-
-                            <span>
-                                CA
-                            </span>
-
-                            <strong>
-                                Inventaire CA
-                            </strong>
-
-                            <b>
-                                ↗
-                            </b>
-
+                            <span>CA</span>
+                            <strong>Inventaire CA</strong>
+                            <b>↗</b>
                         </a>
 
 
@@ -538,19 +505,9 @@
                             class="ssuap-button"
                             data-search="VSAV 3 COND conducteur"
                         >
-
-                            <span>
-                                COND
-                            </span>
-
-                            <strong>
-                                Inventaire COND
-                            </strong>
-
-                            <b>
-                                ↗
-                            </b>
-
+                            <span>COND</span>
+                            <strong>Inventaire COND</strong>
+                            <b>↗</b>
                         </a>
 
 
@@ -561,19 +518,9 @@
                             class="ssuap-button"
                             data-search="VSAV 3 EQUIPIER équipier"
                         >
-
-                            <span>
-                                ÉQUIPIER
-                            </span>
-
-                            <strong>
-                                Inventaire ÉQUIPIER
-                            </strong>
-
-                            <b>
-                                ↗
-                            </b>
-
+                            <span>ÉQUIPIER</span>
+                            <strong>Inventaire ÉQUIPIER</strong>
+                            <b>↗</b>
                         </a>
 
                     </div>
@@ -581,9 +528,7 @@
                 </article>
 
 
-                <!-- =================================================
-                     ASU
-                     ================================================= -->
+                <!-- ASU -->
 
                 <article class="ssuap-card asu-card">
 
@@ -610,7 +555,6 @@
 
                     <div class="ssuap-actions">
 
-
                         <a
                             href="https://docs.google.com/forms/d/e/1FAIpQLSe7PR0zvF8s1S_6WXaZ1bjyqoSbXXyRkYZxFiTqp1Z2TjZkoA/viewform?ouid=109470243720371980618&usp=sharing"
                             target="_blank"
@@ -618,19 +562,9 @@
                             class="ssuap-button"
                             data-search="ASU prise de garde matériel"
                         >
-
-                            <span>
-                                GARDE
-                            </span>
-
-                            <strong>
-                                Prise de garde ASU
-                            </strong>
-
-                            <b>
-                                ↗
-                            </b>
-
+                            <span>GARDE</span>
+                            <strong>Prise de garde ASU</strong>
+                            <b>↗</b>
                         </a>
 
 
@@ -641,19 +575,9 @@
                             class="ssuap-button"
                             data-search="ASU utilisation intervention matériel"
                         >
-
-                            <span>
-                                INTERVENTION
-                            </span>
-
-                            <strong>
-                                Utilisation ASU sur intervention
-                            </strong>
-
-                            <b>
-                                ↗
-                            </b>
-
+                            <span>INTERVENTION</span>
+                            <strong>Utilisation ASU sur intervention</strong>
+                            <b>↗</b>
                         </a>
 
                     </div>
@@ -663,9 +587,7 @@
             </div>
 
 
-            <!-- =================================================
-                 AUCUN RÉSULTAT
-                 ================================================= -->
+            <!-- AUCUN RÉSULTAT -->
 
             <div
                 id="noResult"
@@ -687,9 +609,7 @@
             </div>
 
 
-            <!-- =================================================
-                 RETOUR
-                 ================================================= -->
+            <!-- RETOUR -->
 
             <div class="ssuap-back">
 
@@ -698,9 +618,7 @@
                     class="back-inventory-button"
                 >
 
-                    <span>
-                        ←
-                    </span>
+                    <span>←</span>
 
                     Retour aux inventaires
 
@@ -715,9 +633,7 @@
 </main>
 
 
-<!-- =========================================================
-     FOOTER
-     ========================================================= -->
+<!-- FOOTER -->
 
 <footer class="site-footer">
 
