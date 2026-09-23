@@ -330,7 +330,35 @@
 
 
 <script src="standard.js"></script>
+    <script src="standard.js"></script>
+
+<!-- CODE MENU MOBILE -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const toggle = document.getElementById("mobileToggle");
+    const nav = document.getElementById("mainNav");
+
+    if (toggle && nav) {
+
+        toggle.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            nav.classList.toggle("active");
+
+            toggle.setAttribute(
+                "aria-expanded",
+                nav.classList.contains("active") ? "true" : "false"
+            );
+        });
+
+    }
+
+});
+</script>
 
 </body>
 </html>
-```
+
+
