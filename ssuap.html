@@ -4,181 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SSUAP | CIS Villenave-d'Ornon</title>
+    <title>SSUAP — CIS Villenave-d'Ornon</title>
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="ssuapstyle.css">
+    <link rel="stylesheet" href="ssuap.css">
 </head>
 
 <body>
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
-<header class="main-header">
-
+<header class="site-header">
     <div class="header-inner">
 
         <a href="index.html" class="brand">
-            <img src="logo1.png" alt="CIS Villenave-d'Ornon">
+            <img src="logo1.png" alt="CIS Villenave-d'Ornon" class="brand-logo">
 
             <div class="brand-text">
-                <strong>CIS VILLENAVE-D'ORNON</strong>
-                <span>PORTAIL OPÉRATIONNEL</span>
+                <div class="brand-title">CIS VILLENAVE-D'ORNON</div>
+                <div class="brand-subtitle">PORTAIL OPÉRATIONNEL</div>
             </div>
         </a>
 
-        <button class="menu-toggle" aria-label="Menu">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu">
             ☰
         </button>
 
-        <nav class="main-nav">
+        <nav class="nav" id="mainNav">
 
-            <a href="index.html">ACCUEIL</a>
+            <a href="index.html" class="nav-link">ACCUEIL</a>
 
-            <div class="nav-dropdown">
+            <div class="nav-dropdown" id="inventoryDropdown">
 
-                <button class="nav-dropdown-button">
+                <button class="nav-dropdown-toggle" id="inventoryToggle">
                     INVENTAIRES
-                    <span>⌄</span>
+                    <span class="dropdown-arrow">▾</span>
                 </button>
 
-                <div class="nav-dropdown-menu">
+                <div class="nav-dropdown-menu" id="inventoryMenu">
 
-                    <a href="pages/inventaires.html">
-                        Tous les inventaires
-                    </a>
+                    <a href="pages/inventaires.html">Vue d'ensemble</a>
+                    <a href="ssuap.html" class="active">SSUAP</a>
+                    <a href="pages/incendie.html">INCENDIE</a>
+                    <a href="pages/div.html">DIV</a>
+                    <a href="pages/fdf.html">FDF</a>
+                    <a href="pages/specialites.html">SPÉCIALITÉS</a>
+                    <a href="pages/standard.html">STANDARD</a>
+                    <a href="pages/casernement.html">CASERNEMENT</a>
 
-                    <a href="ssuap.html">
-                        SSUAP
-                    </a>
+                </div>
+            </div>
 
-                    <a href="pages/incendie.html">
-                        INCENDIE
-                    </a>
+            <a href="pages/entretiens.html" class="nav-link">ENTRETIENS</a>
+            <a href="pages/documents.html" class="nav-link">DOCUMENTS</a>
+            <a href="pages/amicale.html" class="nav-link">AMICALE</a>
+            <a href="pages/raccourcis.html" class="nav-link">RACCOURCIS</a>
 
-                    <a href="pages/div.html">
-                        DIV
-                    </a>
+        </nav>
+    </div>
+</header>
 
-                    <a href="pages/fdf.html">
-                        FDF
-                    </a>
 
-                    <a href="pages/specialites.html">
-                        SPÉCIALITÉS
-                    </a>
+<main class="ssuap-page">
 
-                    <a href="pages/standard.html">
-                        STANDARD
-                    </a>
+    <!-- HERO -->
+    <section class="ssuap-hero">
 
-                    <a href="pages/casernement.html">
-                        CASERNEMENT
-                    </a>
+        <div class="ssuap-hero-overlay"></div>
 
+        <div class="ssuap-hero-content">
+
+            <div class="ssuap-eyebrow">
+                CENTRE D'INCENDIE ET DE SECOURS
+            </div>
+
+            <div class="ssuap-line"></div>
+
+            <h1>SSUAP</h1>
+
+            <p>
+                Accès direct aux formulaires d'inventaire.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="ssuap-content">
+
+        <div class="ssuap-container">
+
+            <!-- BREADCRUMB -->
+            <div class="ssuap-breadcrumb">
+
+                <a href="index.html">Accueil</a>
+
+                <span>›</span>
+
+                <a href="pages/inventaires.html">Inventaires</a>
+
+                <span>›</span>
+
+                <strong>SSUAP</strong>
+
+            </div>
+
+
+            <!-- INTRO -->
+            <div class="ssuap-intro">
+
+                <div class="ssuap-intro-icon">🚑</div>
+
+                <div>
+                    <span class="ssuap-label">ACCÈS RAPIDE</span>
+
+                    <h2>
+                        Inventaires SSUAP
+                    </h2>
+
+                    <p>
+                        Retrouvez rapidement les formulaires d'inventaire
+                        des VSAV et du matériel ASU.
+                    </p>
                 </div>
 
             </div>
 
-            <a href="pages/entretiens.html">ENTRETIENS</a>
-            <a href="pages/documents.html">DOCUMENTS</a>
-            <a href="pages/amicale.html">AMICALE</a>
-            <a href="pages/raccourcis.html">RACCOURCIS</a>
 
-        </nav>
-
-    </div>
-
-</header>
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="ssuap-hero">
-
-    <div class="ssuap-hero-overlay"></div>
-
-    <div class="ssuap-hero-content">
-
-        <div class="ssuap-eyebrow">
-            CENTRE D'INCENDIE ET DE SECOURS
-        </div>
-
-        <h1>SSUAP</h1>
-
-        <div class="ssuap-red-line"></div>
-
-        <p>
-            Accès direct aux formulaires d'inventaire.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     CONTENU
-===================================================== -->
-
-<main class="ssuap-main">
-
-    <div class="ssuap-container">
-
-
-        <!-- BREADCRUMB -->
-
-        <div class="ssuap-breadcrumb">
-
-            <a href="pages/inventaires.html">
-                Inventaires
-            </a>
-
-            <span>›</span>
-
-            <strong>SSUAP</strong>
-
-        </div>
-
-
-        <!-- TITRE -->
-
-        <div class="ssuap-section-title">
-
-            <div class="section-title-icon">
-                +
-            </div>
-
-            <div>
-
-                <span>
-                    ACCÈS RAPIDE
-                </span>
-
-                <h2>
-                    Inventaires SSUAP
-                </h2>
-
-                <p>
-                    Retrouvez rapidement les formulaires d'inventaire
-                    des VSAV et du matériel ASU.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- =================================================
-             RECHERCHE
-        ================================================== -->
-
-        <div class="ssuap-search-wrapper">
-
+            <!-- RECHERCHE -->
             <div class="ssuap-search">
 
                 <span class="search-icon">⌕</span>
@@ -190,12 +142,7 @@
                     autocomplete="off"
                 >
 
-                <button
-                    type="button"
-                    id="clearSearch"
-                    class="clear-search"
-                    aria-label="Effacer la recherche"
-                >
+                <button id="clearSearch" type="button" aria-label="Effacer">
                     ×
                 </button>
 
@@ -203,354 +150,276 @@
 
             <div id="searchResult" class="search-result"></div>
 
-        </div>
+
+            <!-- CARTES -->
+            <div class="ssuap-grid" id="ssuapGrid">
 
 
-        <!-- =================================================
-             CARTES
-        ================================================== -->
+                <!-- VSAV 1 -->
+                <article class="ssuap-card">
 
-        <div class="ssuap-grid" id="ssuapGrid">
+                    <div class="ssuap-card-header">
 
+                        <span class="ssuap-number">01</span>
 
-            <!-- ================= VSAV 1 ================= -->
-
-            <article class="ssuap-card">
-
-                <div class="ssuap-card-top">
-
-                    <div class="ssuap-number">
-                        01
-                    </div>
-
-                    <div class="ssuap-card-title">
-
-                        <span class="card-category">
-                            SSUAP
-                        </span>
-
-                        <h2>
-                            VSAV 1
-                        </h2>
-
-                        <p>
-                            Navette Cestas
-                        </p>
+                        <div>
+                            <h3>VSAV 1</h3>
+                            <p>Navette Cestas</p>
+                        </div>
 
                     </div>
 
-                </div>
+                    <div class="ssuap-actions">
 
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSfL36QKhU4DK_iWfPn4x19gmU9dLKnTLWVugFOpg3ryMzXapg/viewform?ouid=105918993275116743934&usp=sharing"
+                            target="_blank"
+                            rel="noopener"
+                            class="ssuap-button"
+                            data-search="VSAV 1 navette cestas CA chef agréé conducteur équipier"
+                        >
+                            <span>CA</span>
+                            <strong>Inventaire CA</strong>
+                            <b>↗</b>
+                        </a>
 
-                <div class="ssuap-card-links">
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSfN9bmArWPwC8NEfdnblLJE0y_ZaOb0yOlnw8BgW_F55drkiQ/viewform?ouid=105918993275116743934&usp=sharing"
+                            target="_blank"
+                            rel="noopener"
+                            class="ssuap-button"
+                            data-search="VSAV 1 navette cestas COND conducteur"
+                        >
+                            <span>COND</span>
+                            <strong>Inventaire COND</strong>
+                            <b>↗</b>
+                        </a>
 
-                    <a
-                        class="form-link"
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSfL36QKhU4DK_iWfPn4x19gmU9dLKnTLWVugFOpg3ryMzXapg/viewform?ouid=105918993275116743934&usp=sharing"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        <span>CA</span>
-                        <small>Inventaire</small>
-                        <b>↗</b>
-                    </a>
-
-
-                    <a
-                        class="form-link"
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSfN9bmArWPwC8NEfdnblLJE0y_ZaOb0yOlnw8BgW_F55drkiQ/viewform?ouid=105918993275116743934&usp=sharing"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        <span>COND</span>
-                        <small>Inventaire</small>
-                        <b>↗</b>
-                    </a>
-
-
-                    <a
-                        class="form-link"
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSebAsFhD7KUh9XLMHKAeTNGjriSt-GvxNeqYLgoTC3nS7K8uA/viewform?ouid=105918993275116743934&usp=sharing"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        <span>ÉQUIPIER</span>
-                        <small>Inventaire</small>
-                        <b>↗</b>
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- ================= VSAV 2 ================= -->
-
-            <article class="ssuap-card">
-
-                <div class="ssuap-card-top">
-
-                    <div class="ssuap-number">
-                        02
-                    </div>
-
-                    <div class="ssuap-card-title">
-
-                        <span class="card-category">
-                            SSUAP
-                        </span>
-
-                        <h2>
-                            VSAV 2
-                        </h2>
-
-                        <p>
-                            Véhicule de secours et d'assistance
-                        </p>
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSebAsFhD7KUh9XLMHKAeTNGjriSt-GvxNeqYLgoTC3nS7K8uA/viewform?ouid=105918993275116743934&usp=sharing"
+                            target="_blank"
+                            rel="noopener"
+                            class="ssuap-button"
+                            data-search="VSAV 1 navette cestas EQUIPIER équipier"
+                        >
+                            <span>ÉQUIPIER</span>
+                            <strong>Inventaire ÉQUIPIER</strong>
+                            <b>↗</b>
+                        </a>
 
                     </div>
 
-                </div>
+                </article>
 
 
-                <div class="ssuap-card-links">
+                <!-- VSAV 2 -->
+                <article class="ssuap-card">
 
-                    <a
-                        class="form-link"
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSe1eA0Huf_T1sYWfYJLW9qUiCo8_IYR5ksxcDNwUbu9nNtDWg/viewform?ouid=105918993275116743934&usp=sharing"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        <span>CA</span>
-                        <small>Inventaire</small>
-                        <b>↗</b>
-                    </a>
+                    <div class="ssuap-card-header">
 
+                        <span class="ssuap-number">02</span>
 
-                    <a
-                        class="form-link"
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSeNDvuMxyEKKqKmP8QXnKiAqz2-etivAUsY8djY-1vpnywdUg/viewform?ouid=105918993275116743934&usp=sharing"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        <span>COND</span>
-                        <small>Inventaire</small>
-                        <b>↗</b>
-                    </a>
-
-
-                    <a
-                        class="form-link"
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSez3wjIVUbJyvEF3fLr3ypWshs6PR-rdwWS8wSdeNRq307w3w/viewform?ouid=105918993275116743934&usp=sharing"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        <span>ÉQUIPIER</span>
-                        <small>Inventaire</small>
-                        <b>↗</b>
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- ================= VSAV 3 ================= -->
-
-            <article class="ssuap-card">
-
-                <div class="ssuap-card-top">
-
-                    <div class="ssuap-number">
-                        03
-                    </div>
-
-                    <div class="ssuap-card-title">
-
-                        <span class="card-category">
-                            SSUAP
-                        </span>
-
-                        <h2>
-                            VSAV 3
-                        </h2>
-
-                        <p>
-                            Véhicule de secours et d'assistance
-                        </p>
+                        <div>
+                            <h3>VSAV 2</h3>
+                            <p>Véhicule de secours</p>
+                        </div>
 
                     </div>
 
-                </div>
+                    <div class="ssuap-actions">
 
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSe1eA0Huf_T1sYWfYJLW9qUiCo8_IYR5ksxcDNwUbu9nNtDWg/viewform?ouid=105918993275116743934&usp=sharing"
+                            target="_blank"
+                            rel="noopener"
+                            class="ssuap-button"
+                            data-search="VSAV 2 CA chef agréé"
+                        >
+                            <span>CA</span>
+                            <strong>Inventaire CA</strong>
+                            <b>↗</b>
+                        </a>
 
-                <div class="ssuap-card-links">
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSeNDvuMxyEKKqKmP8QXnKiAqz2-etivAUsY8djY-1vpnywdUg/viewform?ouid=105918993275116743934&usp=sharing"
+                            target="_blank"
+                            rel="noopener"
+                            class="ssuap-button"
+                            data-search="VSAV 2 COND conducteur"
+                        >
+                            <span>COND</span>
+                            <strong>Inventaire COND</strong>
+                            <b>↗</b>
+                        </a>
 
-                    <a
-                        class="form-link"
-                        href="https://docs.google.com/forms/d/e/1FAIpQLScgbGPy4RV--YguFozawOFSlJ7zzAFMduGsnY6KHvA_nMTxsw/viewform?ouid=105918993275116743934&usp=sharing"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        <span>CA</span>
-                        <small>Inventaire</small>
-                        <b>↗</b>
-                    </a>
-
-
-                    <a
-                        class="form-link"
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSe3hYxzlyHCIg_xiC_oHxIFeVI5MkSlTYq70egr3Y94Ct8h9w/viewform?ouid=105918993275116743934&usp=sharing"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        <span>COND</span>
-                        <small>Inventaire</small>
-                        <b>↗</b>
-                    </a>
-
-
-                    <a
-                        class="form-link"
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSdRylJ0WaeCGLISlIBWq0tO3GZoghE-7KpfD2e5SPOXARe_pA/viewform?ouid=105918993275116743934&usp=sharing"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        <span>ÉQUIPIER</span>
-                        <small>Inventaire</small>
-                        <b>↗</b>
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- ================= ASU ================= -->
-
-            <article class="ssuap-card asu-card">
-
-                <div class="ssuap-card-top">
-
-                    <div class="ssuap-number">
-                        04
-                    </div>
-
-                    <div class="ssuap-card-title">
-
-                        <span class="card-category">
-                            SSUAP
-                        </span>
-
-                        <h2>
-                            ASU
-                        </h2>
-
-                        <p>
-                            Matériel ASU
-                        </p>
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSez3wjIVUbJyvEF3fLr3ypWshs6PR-rdwWS8wSdeNRq307w3w/viewform?ouid=105918993275116743934&usp=sharing"
+                            target="_blank"
+                            rel="noopener"
+                            class="ssuap-button"
+                            data-search="VSAV 2 EQUIPIER équipier"
+                        >
+                            <span>ÉQUIPIER</span>
+                            <strong>Inventaire ÉQUIPIER</strong>
+                            <b>↗</b>
+                        </a>
 
                     </div>
 
-                </div>
+                </article>
 
 
-                <div class="ssuap-card-links asu-links">
+                <!-- VSAV 3 -->
+                <article class="ssuap-card">
 
-                    <a
-                        class="form-link"
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSe7PR0zvF8s1S_6WXaZ1bjyqoSbXXyRkYZxFiTqp1Z2TjZkoA/viewform?ouid=109470243720371980618&usp=sharing"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        <span>PRISE DE GARDE</span>
-                        <small>ASU</small>
-                        <b>↗</b>
-                    </a>
+                    <div class="ssuap-card-header">
+
+                        <span class="ssuap-number">03</span>
+
+                        <div>
+                            <h3>VSAV 3</h3>
+                            <p>Véhicule de secours</p>
+                        </div>
+
+                    </div>
+
+                    <div class="ssuap-actions">
+
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScgbGPy4RV--YguFozawOFSlJ7zzAFMduGsnY6KHvA_nMTxsw/viewform?ouid=105918993275116743934&usp=sharing"
+                            target="_blank"
+                            rel="noopener"
+                            class="ssuap-button"
+                            data-search="VSAV 3 CA chef agréé"
+                        >
+                            <span>CA</span>
+                            <strong>Inventaire CA</strong>
+                            <b>↗</b>
+                        </a>
+
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSe3hYxzlyHCIg_xiC_oHxIFeVI5MkSlTYq70egr3Y94Ct8h9w/viewform?ouid=105918993275116743934&usp=sharing"
+                            target="_blank"
+                            rel="noopener"
+                            class="ssuap-button"
+                            data-search="VSAV 3 COND conducteur"
+                        >
+                            <span>COND</span>
+                            <strong>Inventaire COND</strong>
+                            <b>↗</b>
+                        </a>
+
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSdRylJ0WaeCGLISlIBWq0tO3GZoghE-7KpfD2e5SPOXARe_pA/viewform?ouid=105918993275116743934&usp=sharing"
+                            target="_blank"
+                            rel="noopener"
+                            class="ssuap-button"
+                            data-search="VSAV 3 EQUIPIER équipier"
+                        >
+                            <span>ÉQUIPIER</span>
+                            <strong>Inventaire ÉQUIPIER</strong>
+                            <b>↗</b>
+                        </a>
+
+                    </div>
+
+                </article>
 
 
-                    <a
-                        class="form-link"
-                        href="https://docs.google.com/forms/d/e/1FAIpQLScziBdaxCw204Pgq3e08IISIgJmAzAKsDHjrKkI0FuoFDjxeg/viewform?ouid=109470243720371980618&usp=sharing"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        <span>UTILISATION</span>
-                        <small>ASU sur intervention</small>
-                        <b>↗</b>
-                    </a>
+                <!-- ASU -->
+                <article class="ssuap-card asu-card">
 
-                </div>
+                    <div class="ssuap-card-header">
 
-            </article>
+                        <span class="ssuap-number">04</span>
 
+                        <div>
+                            <h3>ASU</h3>
+                            <p>Matériel ASU</p>
+                        </div>
 
-        </div>
+                    </div>
 
+                    <div class="ssuap-actions">
 
-        <!-- Aucun résultat -->
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSe7PR0zvF8s1S_6WXaZ1bjyqoSbXXyRkYZxFiTqp1Z2TjZkoA/viewform?ouid=109470243720371980618&usp=sharing"
+                            target="_blank"
+                            rel="noopener"
+                            class="ssuap-button"
+                            data-search="ASU prise de garde matériel"
+                        >
+                            <span>GARDE</span>
+                            <strong>Prise de garde ASU</strong>
+                            <b>↗</b>
+                        </a>
 
-        <div
-            id="noResult"
-            class="no-result"
-            style="display:none;"
-        >
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScziBdaxCw204Pgq3e08IISIgJmAzAKsDHjrKkI0FuoFDjxeg/viewform?ouid=109470243720371980618&usp=sharing"
+                            target="_blank"
+                            rel="noopener"
+                            class="ssuap-button"
+                            data-search="ASU utilisation intervention matériel"
+                        >
+                            <span>INTERVENTION</span>
+                            <strong>Utilisation ASU sur intervention</strong>
+                            <b>↗</b>
+                        </a>
 
-            <div class="no-result-icon">
-                ×
+                    </div>
+
+                </article>
+
             </div>
 
-            <h3>
-                Aucun résultat
-            </h3>
 
-            <p>
-                Aucun véhicule ou formulaire ne correspond à votre recherche.
-            </p>
+            <!-- AUCUN RESULTAT -->
+            <div id="noResult" class="no-result">
+
+                <div>🔎</div>
+
+                <h3>Aucun résultat</h3>
+
+                <p>
+                    Aucun véhicule ou formulaire ne correspond à votre recherche.
+                </p>
+
+            </div>
+
+
+            <!-- RETOUR -->
+            <div class="ssuap-back">
+
+                <a href="pages/inventaires.html" class="back-inventory-button">
+                    <span>←</span>
+                    Retour aux inventaires
+                </a>
+
+            </div>
 
         </div>
 
-
-        <!-- =================================================
-             RETOUR
-        ================================================== -->
-
-        <a
-            href="pages/inventaires.html"
-            class="back-inventory"
-        >
-
-            <span class="back-arrow">
-                ←
-            </span>
-
-            <span>
-                Retour aux inventaires
-            </span>
-
-        </a>
-
-
-    </div>
+    </section>
 
 </main>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer class="main-footer">
+<footer class="site-footer">
 
     <div class="footer-inner">
 
-        <div>
+        <div class="footer-brand">
             <strong>CIS VILLENAVE-D'ORNON</strong>
-            <p>Portail opérationnel</p>
+            <span>Portail opérationnel</span>
         </div>
 
-        <div>
-            <p>© 2026 — Tous droits réservés</p>
+        <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="pages/inventaires.html">Inventaires</a>
+            <a href="pages/entretiens.html">Entretiens</a>
+            <a href="pages/documents.html">Documents</a>
+            <a href="pages/amicale.html">Amicale</a>
+            <a href="pages/raccourcis.html">Raccourcis</a>
         </div>
 
     </div>
