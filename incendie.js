@@ -1,9 +1,8 @@
-```javascript
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* =====================================================
+  /* =========================
      MENU MOBILE
-     ===================================================== */
+  ========================= */
 
   const mobileToggle = document.getElementById("mobileToggle");
   const mainNav = document.getElementById("mainNav");
@@ -24,9 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  /* =====================================================
+  /* =========================
      MENU INVENTAIRES
-     ===================================================== */
+  ========================= */
 
   const inventoryDropdown =
     document.getElementById("inventoryDropdown");
@@ -50,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-
     document.addEventListener("click", function (event) {
 
       if (!inventoryDropdown.contains(event.target)) {
@@ -69,9 +67,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  /* =====================================================
+  /* =========================
      RECHERCHE
-     ===================================================== */
+  ========================= */
 
   const searchInput =
     document.getElementById("incendieSearch");
@@ -111,12 +109,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     cards.forEach(function (card) {
 
-      const content =
-        normalize(
-          card.textContent +
-          " " +
-          (card.dataset.search || "")
-        );
+      const content = normalize(
+        card.textContent +
+        " " +
+        (card.dataset.search || "")
+      );
 
       const match =
         query === "" ||
@@ -152,9 +149,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         searchResult.textContent =
           visibleCards +
-          (visibleCards > 1
-            ? " véhicules trouvés"
-            : " véhicule trouvé");
+          (
+            visibleCards > 1
+              ? " véhicules trouvés"
+              : " véhicule trouvé"
+          );
 
       }
 
@@ -178,6 +177,8 @@ document.addEventListener("DOMContentLoaded", function () {
     clearSearch.addEventListener(
       "click",
       function () {
+
+        if (!searchInput) return;
 
         searchInput.value = "";
 
@@ -210,4 +211,3 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
 });
-
