@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SSUAP — CIS Villenave-d'Ornon</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="ssuapstyle.css">
+    <title>SSUAP — CIS Villenave-d'Ornon</title>
+
+    <!-- STYLE PRINCIPAL DU PORTAIL -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- STYLE DE LA PAGE SSUAP -->
+    <link rel="stylesheet" href="ssuapstyle.css">
+
 </head>
 
+
 <body>
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
 
 <header class="site-header">
 
     <div class="header-inner">
 
+
+        <!-- LOGO -->
+
         <a href="index.html" class="brand">
+
             <img
                 src="logo1.png"
                 alt="Logo CIS Villenave-d'Ornon"
@@ -24,6 +40,7 @@
             >
 
             <div class="brand-text">
+
                 <div class="brand-title">
                     CIS VILLENAVE-D'ORNON
                 </div>
@@ -31,8 +48,13 @@
                 <div class="brand-subtitle">
                     PORTAIL OPÉRATIONNEL
                 </div>
+
             </div>
+
         </a>
+
+
+        <!-- MENU MOBILE -->
 
         <button
             class="mobile-toggle"
@@ -41,18 +63,33 @@
             aria-label="Ouvrir le menu"
             aria-expanded="false"
         >
+
             <span></span>
             <span></span>
             <span></span>
+
         </button>
+
+
+        <!-- NAVIGATION -->
 
         <nav class="nav" id="mainNav">
 
-            <a href="index.html" class="nav-link">
+
+            <a
+                href="index.html"
+                class="nav-link"
+            >
                 ACCUEIL
             </a>
 
-            <div class="nav-dropdown" id="inventoryDropdown">
+
+            <!-- INVENTAIRES -->
+
+            <div
+                class="nav-dropdown"
+                id="inventoryDropdown"
+            >
 
                 <button
                     type="button"
@@ -60,66 +97,133 @@
                     id="inventoryToggle"
                     aria-expanded="false"
                 >
+
                     <span>INVENTAIRES</span>
-                    <span class="dropdown-arrow">▾</span>
+
+                    <span class="dropdown-arrow">
+                        ▾
+                    </span>
+
                 </button>
 
-                <div class="nav-dropdown-menu" id="inventoryMenu">
+
+                <div
+                    class="nav-dropdown-menu"
+                    id="inventoryMenu"
+                >
 
                     <a href="ssuap.html">
-                        <span class="submenu-icon">＋</span>
+
+                        <span class="submenu-icon">
+                            ＋
+                        </span>
+
                         SSUAP
+
                     </a>
 
-                    <a href="incendie.html">
-                        <span class="submenu-icon">◆</span>
+
+                    <a href="pages/incendie.html">
+
+                        <span class="submenu-icon">
+                            ◆
+                        </span>
+
                         INCENDIE
+
                     </a>
 
-                    <a href="div.html">
-                        <span class="submenu-icon">◇</span>
+
+                    <a href="pages/div.html">
+
+                        <span class="submenu-icon">
+                            ◇
+                        </span>
+
                         DIV
+
                     </a>
 
-                    <a href="fdf.html">
-                        <span class="submenu-icon">▲</span>
+
+                    <a href="pages/fdf.html">
+
+                        <span class="submenu-icon">
+                            ▲
+                        </span>
+
                         FDF
+
                     </a>
 
-                    <a href="specialites.html">
-                        <span class="submenu-icon">★</span>
+
+                    <a href="pages/specialites.html">
+
+                        <span class="submenu-icon">
+                            ★
+                        </span>
+
                         SPÉCIALITÉS
+
                     </a>
 
-                    <a href="standard.html">
-                        <span class="submenu-icon">▤</span>
+
+                    <a href="pages/standard.html">
+
+                        <span class="submenu-icon">
+                            ▤
+                        </span>
+
                         STANDARD
+
                     </a>
 
-                    <a href="casernement.html">
-                        <span class="submenu-icon">⌂</span>
+
+                    <a href="pages/casernement.html">
+
+                        <span class="submenu-icon">
+                            ⌂
+                        </span>
+
                         CASERNEMENT
+
                     </a>
 
                 </div>
 
             </div>
 
-            <a href="entretiens.html" class="nav-link">
+
+            <a
+                href="pages/entretiens.html"
+                class="nav-link"
+            >
                 ENTRETIENS
             </a>
 
-            <a href="documents.html" class="nav-link">
+
+            <a
+                href="pages/documents.html"
+                class="nav-link"
+            >
                 DOCUMENTS
             </a>
 
-            <a href="amicale.html" class="nav-link">
+
+            <a
+                href="pages/amicale.html"
+                class="nav-link"
+            >
                 AMICALE
             </a>
 
-            <a href="raccourcis.html" class="nav-link">
+
+            <a
+                href="pages/raccourcis.html"
+                class="nav-link"
+            >
                 RACCOURCIS
             </a>
+
 
         </nav>
 
@@ -128,23 +232,37 @@
 </header>
 
 
+
+<!-- =========================================================
+     CONTENU
+     ========================================================= -->
+
 <main class="ssuap-page">
 
-    <!-- HERO -->
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
 
     <section class="ssuap-hero">
 
         <div class="ssuap-hero-overlay"></div>
 
+
         <div class="ssuap-hero-content">
 
             <div class="ssuap-eyebrow">
-                INVENTAIRE • SSUAP
+                CENTRE D'INCENDIE ET DE SECOURS
             </div>
 
-            <h1>SSUAP</h1>
+
+            <h1>
+                SSUAP
+            </h1>
+
 
             <div class="ssuap-line"></div>
+
 
             <p>
                 Accès direct aux formulaires d'inventaire.
@@ -155,42 +273,47 @@
     </section>
 
 
-    <!-- CONTENU -->
+
+    <!-- =====================================================
+         CONTENU
+         ===================================================== -->
 
     <section class="ssuap-content">
 
         <div class="ssuap-container">
 
-            <!-- BREADCRUMB -->
+
+            <!-- FIL D'ARIANE -->
 
             <div class="ssuap-breadcrumb">
 
-                <a href="index.html">Accueil</a>
+                <a href="index.html">
+                    Accueil
+                </a>
 
                 <span>›</span>
 
-                <a href="inventaires.html">
+                <a href="pages/inventaires.html">
                     Inventaires
                 </a>
 
                 <span>›</span>
 
-                <strong>SSUAP</strong>
+                <strong>
+                    SSUAP
+                </strong>
 
             </div>
 
 
-            <!-- INTRO -->
 
-            <div class="ssuap-intro">
+            <!-- TITRE -->
 
-                <div class="ssuap-intro-icon">
-                    🩺
-                </div>
+            <div class="ssuap-top">
 
-                <div>
+                <div class="ssuap-intro">
 
-                    <span class="ssuap-label">
+                    <span>
                         ACCÈS RAPIDE
                     </span>
 
@@ -199,8 +322,8 @@
                     </h2>
 
                     <p>
-                        Sélectionnez le véhicule ou le matériel à inventorier
-                        et accédez directement au formulaire correspondant.
+                        Retrouvez rapidement les formulaires
+                        d'inventaire des VSAV et du matériel ASU.
                     </p>
 
                 </div>
@@ -208,27 +331,42 @@
             </div>
 
 
-            <!-- VSAV 1 -->
+
+            <!-- =================================================
+                 VSAV 1
+                 ================================================= -->
 
             <article class="ssuap-card">
 
+
                 <div class="ssuap-card-header">
 
-                    <div class="ssuap-number">
-                        01
+                    <div class="ssuap-card-icon">
+                        🩺
                     </div>
 
-                    <div>
-                        <h3>VSAV 1</h3>
+
+                    <div class="ssuap-card-content">
+
+                        <span class="ssuap-number">
+                            01
+                        </span>
+
+                        <h3>
+                            VSAV 1
+                        </h3>
 
                         <p>
                             Navette Cestas
                         </p>
+
                     </div>
 
                 </div>
 
+
                 <div class="ssuap-actions">
+
 
                     <a
                         href="https://docs.google.com/forms/d/e/1FAIpQLSfL36QKhU4DK_iWfPn4x19gmU9dLKnTLWVugFOpg3ryMzXapg/viewform?ouid=105918993275116743934&usp=sharing"
@@ -236,10 +374,21 @@
                         rel="noopener noreferrer"
                         class="ssuap-button"
                     >
-                        <span>CA</span>
-                        <small>inventaire</small>
-                        <b>↗</b>
+
+                        <strong>
+                            CA
+                        </strong>
+
+                        <span>
+                            Inventaire
+                        </span>
+
+                        <b>
+                            →
+                        </b>
+
                     </a>
+
 
                     <a
                         href="https://docs.google.com/forms/d/e/1FAIpQLSfN9bmArWPwC8NEfdnblLJE0y_ZaOb0yOlnw8BgW_F55drkiQ/viewform?ouid=105918993275116743934&usp=sharing"
@@ -247,10 +396,21 @@
                         rel="noopener noreferrer"
                         class="ssuap-button"
                     >
-                        <span>COND</span>
-                        <small>inventaire</small>
-                        <b>↗</b>
+
+                        <strong>
+                            COND
+                        </strong>
+
+                        <span>
+                            Inventaire
+                        </span>
+
+                        <b>
+                            →
+                        </b>
+
                     </a>
+
 
                     <a
                         href="https://docs.google.com/forms/d/e/1FAIpQLSebAsFhD7KUh9XLMHKAeTNGjriSt-GvxNeqYLgoTC3nS7K8uA/viewform?ouid=105918993275116743934&usp=sharing"
@@ -258,37 +418,63 @@
                         rel="noopener noreferrer"
                         class="ssuap-button"
                     >
-                        <span>ÉQUIPIER</span>
-                        <small>inventaire</small>
-                        <b>↗</b>
+
+                        <strong>
+                            ÉQUIPIER
+                        </strong>
+
+                        <span>
+                            Inventaire
+                        </span>
+
+                        <b>
+                            →
+                        </b>
+
                     </a>
+
 
                 </div>
 
             </article>
 
 
-            <!-- VSAV 2 -->
+
+            <!-- =================================================
+                 VSAV 2
+                 ================================================= -->
 
             <article class="ssuap-card">
 
+
                 <div class="ssuap-card-header">
 
-                    <div class="ssuap-number">
-                        02
+                    <div class="ssuap-card-icon">
+                        🩺
                     </div>
 
-                    <div>
-                        <h3>VSAV 2</h3>
+
+                    <div class="ssuap-card-content">
+
+                        <span class="ssuap-number">
+                            02
+                        </span>
+
+                        <h3>
+                            VSAV 2
+                        </h3>
 
                         <p>
                             Inventaire véhicule
                         </p>
+
                     </div>
 
                 </div>
 
+
                 <div class="ssuap-actions">
+
 
                     <a
                         href="https://docs.google.com/forms/d/e/1FAIpQLSe1eA0Huf_T1sYWfYJLW9qUiCo8_IYR5ksxcDNwUbu9nNtDWg/viewform?ouid=105918993275116743934&usp=sharing"
@@ -296,10 +482,21 @@
                         rel="noopener noreferrer"
                         class="ssuap-button"
                     >
-                        <span>CA</span>
-                        <small>inventaire</small>
-                        <b>↗</b>
+
+                        <strong>
+                            CA
+                        </strong>
+
+                        <span>
+                            Inventaire
+                        </span>
+
+                        <b>
+                            →
+                        </b>
+
                     </a>
+
 
                     <a
                         href="https://docs.google.com/forms/d/e/1FAIpQLSeNDvuMxyEKKqKmP8QXnKiAqz2-etivAUsY8djY-1vpnywdUg/viewform?ouid=105918993275116743934&usp=sharing"
@@ -307,10 +504,21 @@
                         rel="noopener noreferrer"
                         class="ssuap-button"
                     >
-                        <span>COND</span>
-                        <small>inventaire</small>
-                        <b>↗</b>
+
+                        <strong>
+                            COND
+                        </strong>
+
+                        <span>
+                            Inventaire
+                        </span>
+
+                        <b>
+                            →
+                        </b>
+
                     </a>
+
 
                     <a
                         href="https://docs.google.com/forms/d/e/1FAIpQLSez3wjIVUbJyvEF3fLr3ypWshs6PR-rdwWS8wSdeNRq307w3w/viewform?ouid=105918993275116743934&usp=sharing"
@@ -318,37 +526,63 @@
                         rel="noopener noreferrer"
                         class="ssuap-button"
                     >
-                        <span>ÉQUIPIER</span>
-                        <small>inventaire</small>
-                        <b>↗</b>
+
+                        <strong>
+                            ÉQUIPIER
+                        </strong>
+
+                        <span>
+                            Inventaire
+                        </span>
+
+                        <b>
+                            →
+                        </b>
+
                     </a>
+
 
                 </div>
 
             </article>
 
 
-            <!-- VSAV 3 -->
+
+            <!-- =================================================
+                 VSAV 3
+                 ================================================= -->
 
             <article class="ssuap-card">
 
+
                 <div class="ssuap-card-header">
 
-                    <div class="ssuap-number">
-                        03
+                    <div class="ssuap-card-icon">
+                        🩺
                     </div>
 
-                    <div>
-                        <h3>VSAV 3</h3>
+
+                    <div class="ssuap-card-content">
+
+                        <span class="ssuap-number">
+                            03
+                        </span>
+
+                        <h3>
+                            VSAV 3
+                        </h3>
 
                         <p>
                             Inventaire véhicule
                         </p>
+
                     </div>
 
                 </div>
 
+
                 <div class="ssuap-actions">
+
 
                     <a
                         href="https://docs.google.com/forms/d/e/1FAIpQLScgbGPy4RV--YguFozawOFSlJ7zzAFMduGsnY6KHvA_nMTxsw/viewform?ouid=105918993275116743934&usp=sharing"
@@ -356,10 +590,21 @@
                         rel="noopener noreferrer"
                         class="ssuap-button"
                     >
-                        <span>CA</span>
-                        <small>inventaire</small>
-                        <b>↗</b>
+
+                        <strong>
+                            CA
+                        </strong>
+
+                        <span>
+                            Inventaire
+                        </span>
+
+                        <b>
+                            →
+                        </b>
+
                     </a>
+
 
                     <a
                         href="https://docs.google.com/forms/d/e/1FAIpQLSe3hYxzlyHCIg_xiC_oHxIFeVI5MkSlTYq70egr3Y94Ct8h9w/viewform?ouid=105918993275116743934&usp=sharing"
@@ -367,10 +612,21 @@
                         rel="noopener noreferrer"
                         class="ssuap-button"
                     >
-                        <span>COND</span>
-                        <small>inventaire</small>
-                        <b>↗</b>
+
+                        <strong>
+                            COND
+                        </strong>
+
+                        <span>
+                            Inventaire
+                        </span>
+
+                        <b>
+                            →
+                        </b>
+
                     </a>
+
 
                     <a
                         href="https://docs.google.com/forms/d/e/1FAIpQLSdRylJ0WaeCGLISlIBWq0tO3GZoghE-7KpfD2e5SPOXARe_pA/viewform?ouid=105918993275116743934&usp=sharing"
@@ -378,37 +634,63 @@
                         rel="noopener noreferrer"
                         class="ssuap-button"
                     >
-                        <span>ÉQUIPIER</span>
-                        <small>inventaire</small>
-                        <b>↗</b>
+
+                        <strong>
+                            ÉQUIPIER
+                        </strong>
+
+                        <span>
+                            Inventaire
+                        </span>
+
+                        <b>
+                            →
+                        </b>
+
                     </a>
+
 
                 </div>
 
             </article>
 
 
-            <!-- ASU -->
 
-            <article class="ssuap-card asu-card">
+            <!-- =================================================
+                 ASU
+                 ================================================= -->
+
+            <article class="ssuap-card">
+
 
                 <div class="ssuap-card-header">
 
-                    <div class="ssuap-number asu-number">
-                        ASU
+                    <div class="ssuap-card-icon">
+                        🚑
                     </div>
 
-                    <div>
-                        <h3>Matériel ASU</h3>
+
+                    <div class="ssuap-card-content">
+
+                        <span class="ssuap-number">
+                            04
+                        </span>
+
+                        <h3>
+                            MATÉRIEL ASU
+                        </h3>
 
                         <p>
-                            Formulaires dédiés au matériel ASU
+                            Formulaires ASU
                         </p>
+
                     </div>
 
                 </div>
 
-                <div class="ssuap-actions">
+
+                <div class="ssuap-actions ssuap-actions-two">
+
 
                     <a
                         href="https://docs.google.com/forms/d/e/1FAIpQLSe7PR0zvF8s1S_6WXaZ1bjyqoSbXXyRkYZxFiTqp1Z2TjZkoA/viewform?ouid=109470243720371980618&usp=sharing"
@@ -416,10 +698,21 @@
                         rel="noopener noreferrer"
                         class="ssuap-button"
                     >
-                        <span>PRISE DE GARDE</span>
-                        <small>ASU</small>
-                        <b>↗</b>
+
+                        <strong>
+                            PRISE DE GARDE
+                        </strong>
+
+                        <span>
+                            ASU
+                        </span>
+
+                        <b>
+                            →
+                        </b>
+
                     </a>
+
 
                     <a
                         href="https://docs.google.com/forms/d/e/1FAIpQLScziBdaxCw204Pgq3e08IISIgJmAzAKsDHjrKkI0FuoFDjxeg/viewform?ouid=109470243720371980618&usp=sharing"
@@ -427,32 +720,51 @@
                         rel="noopener noreferrer"
                         class="ssuap-button"
                     >
-                        <span>UTILISATION</span>
-                        <small>ASU sur intervention</small>
-                        <b>↗</b>
+
+                        <strong>
+                            UTILISATION ASU
+                        </strong>
+
+                        <span>
+                            Sur intervention
+                        </span>
+
+                        <b>
+                            →
+                        </b>
+
                     </a>
+
 
                 </div>
 
             </article>
 
 
-            <!-- RETOUR INVENTAIRES -->
+
+            <!-- =================================================
+                 RETOUR
+                 ================================================= -->
 
             <div class="ssuap-back">
 
                 <a
-                    href="inventaires.html"
+                    href="pages/inventaires.html"
                     class="back-inventory-button"
                 >
-                    <span class="back-arrow">←</span>
+
+                    <span class="back-arrow">
+                        ←
+                    </span>
 
                     <span>
                         Retour aux inventaires
                     </span>
+
                 </a>
 
             </div>
+
 
         </div>
 
@@ -461,11 +773,18 @@
 </main>
 
 
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
 <footer>
 
     <div class="footer-red-band"></div>
 
+
     <div class="footer-inner">
+
 
         <div class="footer-brand">
 
@@ -479,18 +798,37 @@
 
         </div>
 
+
         <div class="footer-links">
 
-            <a href="index.html">Accueil</a>
-            <a href="inventaires.html">Inventaires</a>
-            <a href="entretiens.html">Entretiens</a>
-            <a href="documents.html">Documents</a>
-            <a href="amicale.html">Amicale</a>
-            <a href="raccourcis.html">Raccourcis</a>
+            <a href="index.html">
+                Accueil
+            </a>
+
+            <a href="pages/inventaires.html">
+                Inventaires
+            </a>
+
+            <a href="pages/entretiens.html">
+                Entretiens
+            </a>
+
+            <a href="pages/documents.html">
+                Documents
+            </a>
+
+            <a href="pages/amicale.html">
+                Amicale
+            </a>
+
+            <a href="pages/raccourcis.html">
+                Raccourcis
+            </a>
 
         </div>
 
     </div>
+
 
     <div class="footer-bottom">
 
@@ -502,7 +840,9 @@
 </footer>
 
 
+
 <script src="ssuap.js"></script>
 
 </body>
+
 </html>
