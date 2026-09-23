@@ -1,20 +1,25 @@
-```css
+```css id="p1css"
 :root {
     --navy: #050d18;
-    --navy-2: #081525;
-    --navy-3: #0c1d31;
-    --navy-4: #102942;
+    --navy-dark: #030912;
+    --navy-card: #0b1c2f;
+    --navy-light: #14304a;
 
     --red: #d71920;
-    --red-light: #ff3b42;
+    --red-light: #ff3b43;
     --red-dark: #a80f15;
 
     --white: #ffffff;
     --text: #edf3f8;
-    --muted: #9eafbf;
+    --muted: #a7b6c4;
 
     --header-height: 94px;
 }
+
+
+/* =========================================
+   RESET
+   ========================================= */
 
 * {
     margin: 0;
@@ -39,17 +44,30 @@ body {
         sans-serif;
 
     color: var(--text);
-    background: var(--navy);
+
+    background:
+        var(--navy-dark);
 }
 
-a {
-    color: inherit;
+
+/* =========================================
+   SUPPRESSION DES SOULIGNEMENTS
+   ========================================= */
+
+a,
+a:hover,
+a:focus,
+a:active,
+button,
+button:hover,
+button:focus {
     text-decoration: none !important;
 }
 
-button {
-    font-family: inherit;
-}
+
+/* =========================================
+   IMAGES
+   ========================================= */
 
 img {
     max-width: 100%;
@@ -57,9 +75,9 @@ img {
 }
 
 
-/* =====================================
-   HEADER PREMIUM
-   ===================================== */
+/* =========================================
+   HEADER
+   ========================================= */
 
 .site-header {
     position: fixed;
@@ -75,8 +93,8 @@ img {
     background:
         linear-gradient(
             180deg,
-            rgba(5, 13, 24, 0.98),
-            rgba(5, 13, 24, 0.94)
+            rgba(4, 12, 23, 0.99),
+            rgba(5, 14, 26, 0.97)
         );
 
     border-bottom:
@@ -84,9 +102,12 @@ img {
         rgba(255, 255, 255, 0.08);
 
     box-shadow:
-        0 12px 40px
-        rgba(0, 0, 0, 0.60);
+        0 10px 35px
+        rgba(0, 0, 0, 0.65);
 }
+
+
+/* ligne rouge lumineuse */
 
 .site-header::after {
     content: "";
@@ -102,23 +123,24 @@ img {
     background:
         linear-gradient(
             90deg,
-            transparent 0%,
-            var(--red-dark) 15%,
-            var(--red-light) 50%,
-            var(--red-dark) 85%,
-            transparent 100%
+            transparent,
+            var(--red-dark),
+            var(--red-light),
+            var(--red-dark),
+            transparent
         );
 
     box-shadow:
-        0 0 14px
-        rgba(215, 25, 32, 0.65);
+        0 0 12px
+        rgba(255, 59, 67, 0.65);
 }
+
 
 .header-inner {
     width:
         min(
-            1440px,
-            calc(100% - 50px)
+            1400px,
+            calc(100% - 40px)
         );
 
     height: 100%;
@@ -131,20 +153,20 @@ img {
 
     justify-content: space-between;
 
-    gap: 30px;
+    gap: 25px;
 }
 
 
-/* =====================================
-   LOGO / MARQUE
-   ===================================== */
+/* =========================================
+   LOGO
+   ========================================= */
 
 .brand {
     display: flex;
 
     align-items: center;
 
-    gap: 14px;
+    gap: 13px;
 
     min-width: 0;
 
@@ -177,31 +199,33 @@ img {
 }
 
 .brand-title {
-    color: #ffffff;
+    color:
+        #ffffff;
 
     font-size: 19px;
 
     font-weight: 900;
 
-    letter-spacing: 1.2px;
+    letter-spacing: 1px;
 
     line-height: 1;
 }
 
 .brand-subtitle {
-    color: #ff4a50;
+    color:
+        var(--red-light);
 
     font-size: 9px;
 
     font-weight: 800;
 
-    letter-spacing: 3.5px;
+    letter-spacing: 3px;
 }
 
 
-/* =====================================
+/* =========================================
    NAVIGATION
-   ===================================== */
+   ========================================= */
 
 .nav {
     display: flex;
@@ -215,10 +239,10 @@ img {
 .nav-dropdown-toggle {
     position: relative;
 
-    min-height: 48px;
+    min-height: 46px;
 
     padding:
-        0 15px;
+        0 14px;
 
     display: flex;
 
@@ -236,13 +260,13 @@ img {
         transparent !important;
 
     color:
-        #dfe7ee !important;
+        #e7edf3 !important;
 
     font-size: 11px;
 
     font-weight: 800;
 
-    letter-spacing: 0.9px;
+    letter-spacing: 0.8px;
 
     cursor: pointer;
 
@@ -253,8 +277,25 @@ img {
         background 0.25s ease;
 }
 
-.nav-link::before,
-.nav-dropdown-toggle::before {
+.nav-link:hover,
+.nav-dropdown-toggle:hover {
+    color:
+        #ffffff !important;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.045
+        ) !important;
+}
+
+
+/* petite ligne rouge au survol */
+
+.nav-link::after,
+.nav-dropdown-toggle::after {
     content: "";
 
     position: absolute;
@@ -273,24 +314,15 @@ img {
 
     box-shadow:
         0 0 8px
-        rgba(255, 59, 66, 0.8);
+        rgba(255, 59, 67, 0.75);
 
     transition:
         width 0.25s ease;
 }
 
-.nav-link:hover,
-.nav-dropdown-toggle:hover {
-    color:
-        #ffffff !important;
-
-    background:
-        rgba(255, 255, 255, 0.045) !important;
-}
-
-.nav-link:hover::before,
-.nav-dropdown-toggle:hover::before {
-    width: 48%;
+.nav-link:hover::after,
+.nav-dropdown-toggle:hover::after {
+    width: 45%;
 }
 
 .nav-dropdown {
@@ -314,49 +346,54 @@ img {
 }
 
 
-/* =====================================
-   SOUS-MENU
-   ===================================== */
+/* =========================================
+   SOUS-MENU INVENTAIRES
+   ========================================= */
 
 .nav-dropdown-menu {
     position: absolute;
 
     top:
-        calc(100% + 12px);
+        calc(100% + 10px);
 
     left: 50%;
 
-    width: 250px;
+    width: 245px;
 
     padding: 7px;
 
     background:
         linear-gradient(
             145deg,
-            #0c2037,
-            #050e1b
+            #0c2138,
+            #050d18
         );
 
     border:
         1px solid
-        rgba(255, 255, 255, 0.10);
+        rgba(
+            255,
+            255,
+            255,
+            0.10
+        );
 
     border-top:
         2px solid
         var(--red-light);
 
     border-radius:
-        8px;
+        0 0 8px 8px;
 
     box-shadow:
-        0 25px 55px
-        rgba(0, 0, 0, 0.72),
-        0 0 30px
-        rgba(215, 25, 32, 0.10);
+        0 22px 50px
+        rgba(0, 0, 0, 0.70),
+        0 0 25px
+        rgba(215, 25, 32, 0.12);
 
     transform:
         translateX(-50%)
-        translateY(-8px);
+        translateY(-7px);
 
     opacity: 0;
 
@@ -365,8 +402,8 @@ img {
     pointer-events: none;
 
     transition:
-        opacity 0.22s ease,
-        transform 0.22s ease;
+        opacity 0.2s ease,
+        transform 0.2s ease;
 }
 
 .nav-dropdown:hover
@@ -385,13 +422,11 @@ img {
 }
 
 .nav-dropdown-menu a {
-    position: relative;
-
     display: flex;
 
     align-items: center;
 
-    gap: 11px;
+    gap: 10px;
 
     min-height: 43px;
 
@@ -401,13 +436,14 @@ img {
     border-radius: 5px;
 
     color:
-        #e7edf3 !important;
+        #e5edf4 !important;
 
     font-size: 11px;
 
     font-weight: 700;
 
-    text-decoration: none !important;
+    text-decoration:
+        none !important;
 
     transition:
         background 0.2s ease,
@@ -419,14 +455,14 @@ img {
     color:
         #ffffff !important;
 
+    padding-left: 18px;
+
     background:
         linear-gradient(
             90deg,
             rgba(215, 25, 32, 0.20),
-            rgba(215, 25, 32, 0.05)
+            rgba(215, 25, 32, 0.03)
         );
-
-    padding-left: 18px;
 }
 
 .submenu-icon {
@@ -436,14 +472,12 @@ img {
         var(--red-light);
 
     text-align: center;
-
-    font-size: 13px;
 }
 
 
-/* =====================================
-   BOUTON HAMBURGER
-   ===================================== */
+/* =========================================
+   HAMBURGER
+   ========================================= */
 
 .mobile-toggle {
     display: none;
@@ -462,7 +496,12 @@ img {
 
     border:
         1px solid
-        rgba(255, 255, 255, 0.12);
+        rgba(
+            255,
+            255,
+            255,
+            0.14
+        );
 
     border-radius: 7px;
 
@@ -470,14 +509,14 @@ img {
         linear-gradient(
             145deg,
             #102942,
-            #071523
+            #071522
         ) !important;
 
     cursor: pointer;
 
     box-shadow:
         0 8px 20px
-        rgba(0, 0, 0, 0.35);
+        rgba(0, 0, 0, 0.40);
 
     z-index: 10001;
 }
@@ -498,25 +537,29 @@ img {
         opacity 0.25s ease;
 }
 
-.mobile-toggle.open span:nth-child(1) {
+.mobile-toggle.open
+span:nth-child(1) {
     transform:
         translateY(7px)
         rotate(45deg);
 }
 
-.mobile-toggle.open span:nth-child(2) {
+.mobile-toggle.open
+span:nth-child(2) {
     opacity: 0;
 }
 
-.mobile-toggle.open span:nth-child(3) {
+.mobile-toggle.open
+span:nth-child(3) {
     transform:
         translateY(-7px)
         rotate(-45deg);
 }
-```css
-/* =====================================
-   CONTENU
-   ===================================== */
+
+
+/* =========================================
+   MAIN
+   ========================================= */
 
 main {
     width: 100%;
@@ -527,22 +570,23 @@ main {
     background:
         linear-gradient(
             180deg,
-            #050d18 0%,
-            #071321 100%
+            #050d18,
+            #071321
         );
 }
 
 
-/* =====================================
-   HERO
-   ===================================== */
+/* =========================================
+   HERO — PHOTO 250 PX
+   ========================================= */
 
 .hero {
     position: relative;
 
     width: 100%;
 
-    height: 500px;
+    height: 250px;
+    min-height: 250px;
 
     display: flex;
 
@@ -551,7 +595,7 @@ main {
     justify-content: center;
 
     padding:
-        60px 25px;
+        20px 25px;
 
     text-align: center;
 
@@ -562,53 +606,42 @@ main {
 
     background-image:
         linear-gradient(
-            180deg,
-            rgba(2, 7, 14, 0.10),
-            rgba(2, 7, 14, 0.30)
+            rgba(3, 9, 18, 0.04),
+            rgba(3, 9, 18, 0.10)
         ),
         url("photo.png");
-
-    /*
-       Image visible et naturelle.
-       Pas de gros zoom.
-    */
 
     background-size:
         cover;
 
     background-position:
-        center 38%;
+        center center;
 
     background-repeat:
         no-repeat;
 }
 
 
-/* Lumière supérieure */
+/* lumière très légère */
 
-.hero::before {
-    content: "";
-
+.hero-overlay {
     position: absolute;
 
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
+    inset: 0;
 
     background:
-        radial-gradient(
-            ellipse at center 35%,
-            rgba(255, 255, 255, 0.08),
-            transparent 48%
+        rgba(
+            0,
+            0,
+            0,
+            0.04
         );
 
     pointer-events: none;
 }
 
 
-/* Fondu inférieur */
+/* léger fondu inférieur */
 
 .hero::after {
     content: "";
@@ -619,28 +652,12 @@ main {
     bottom: 0;
 
     width: 100%;
-    height: 100px;
+    height: 35px;
 
     background:
         linear-gradient(
             transparent,
-            #050d18
-        );
-
-    pointer-events: none;
-}
-
-.hero-overlay {
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(3, 10, 18, 0.16),
-            transparent 45%,
-            rgba(3, 10, 18, 0.16)
+            rgba(5, 13, 24, 0.85)
         );
 
     pointer-events: none;
@@ -661,25 +678,24 @@ main {
 
     align-items: center;
 
-    transform:
-        translateY(-5px);
+    justify-content: center;
 }
 
 .eyebrow {
-    margin-bottom: 18px;
+    margin-bottom: 10px;
 
     color:
-        rgba(255, 255, 255, 0.92);
+        #ffffff;
 
-    font-size: 11px;
+    font-size: 10px;
 
     font-weight: 800;
 
-    letter-spacing: 4px;
+    letter-spacing: 3px;
 
     text-shadow:
-        0 3px 15px
-        rgba(0, 0, 0, 0.9);
+        0 2px 10px
+        rgba(0, 0, 0, 0.95);
 }
 
 .hero h1 {
@@ -688,31 +704,29 @@ main {
 
     font-size:
         clamp(
-            40px,
-            6vw,
-            76px
+            34px,
+            5vw,
+            62px
         );
 
     line-height: 1;
 
     font-weight: 900;
 
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
 
     text-shadow:
-        0 5px 25px
-        rgba(0, 0, 0, 0.95),
-        0 0 35px
-        rgba(255, 255, 255, 0.08);
+        0 4px 18px
+        rgba(0, 0, 0, 0.95);
 }
 
 .hero-line {
-    width: 90px;
+    width: 70px;
 
     height: 3px;
 
     margin:
-        25px 0 20px;
+        14px 0;
 
     border-radius: 10px;
 
@@ -725,39 +739,39 @@ main {
         );
 
     box-shadow:
-        0 0 14px
-        rgba(255, 59, 66, 0.70);
+        0 0 13px
+        rgba(255, 59, 67, 0.70);
 }
 
 .hero p {
-    margin-bottom: 28px;
+    margin-bottom: 14px;
 
     color:
         #ffffff;
 
-    font-size: 16px;
+    font-size: 13px;
 
-    line-height: 1.6;
+    line-height: 1.4;
 
     text-shadow:
-        0 3px 15px
+        0 2px 10px
         rgba(0, 0, 0, 0.95);
 }
 
 
-/* =====================================
-   BOUTON HERO
-   ===================================== */
+/* =========================================
+   BOUTON
+   ========================================= */
 
 .hero-button {
     position: relative;
 
-    min-width: 195px;
+    min-width: 160px;
 
-    min-height: 52px;
+    min-height: 40px;
 
     padding:
-        0 30px;
+        0 24px;
 
     display: inline-flex;
 
@@ -769,32 +783,38 @@ main {
 
     border:
         1px solid
-        rgba(255, 255, 255, 0.18);
+        rgba(
+            255,
+            255,
+            255,
+            0.20
+        );
 
-    border-radius: 6px;
+    border-radius: 5px;
 
     background:
         linear-gradient(
             135deg,
-            #ef2930,
+            #e82229,
             #a90f15
         );
 
     color:
         #ffffff !important;
 
-    font-size: 12px;
+    font-size: 10px;
 
     font-weight: 900;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 1.3px;
 
-    text-decoration: none !important;
+    text-decoration:
+        none !important;
 
     box-shadow:
-        0 12px 30px
-        rgba(0, 0, 0, 0.50),
-        0 0 20px
+        0 8px 22px
+        rgba(0, 0, 0, 0.45),
+        0 0 16px
         rgba(215, 25, 32, 0.20);
 
     transition:
@@ -810,7 +830,7 @@ main {
     top: 0;
     left: -100%;
 
-    width: 70%;
+    width: 65%;
     height: 100%;
 
     background:
@@ -825,18 +845,18 @@ main {
         skewX(-20deg);
 
     transition:
-        left 0.6s ease;
+        left 0.55s ease;
 }
 
 .hero-button:hover {
     transform:
-        translateY(-3px);
+        translateY(-2px);
 
     box-shadow:
-        0 17px 38px
+        0 12px 28px
         rgba(0, 0, 0, 0.55),
-        0 0 28px
-        rgba(215, 25, 32, 0.35);
+        0 0 22px
+        rgba(215, 25, 32, 0.32);
 }
 
 .hero-button:hover::before {
@@ -844,9 +864,9 @@ main {
 }
 
 
-/* =====================================
-   ZONE CARTES
-   ===================================== */
+/* =========================================
+   CARTES
+   ========================================= */
 
 .quick-access {
     position: relative;
@@ -860,10 +880,7 @@ main {
     margin: 0 auto;
 
     padding:
-        20px 0 75px;
-
-    background:
-        transparent;
+        25px 0 70px;
 }
 
 .cards {
@@ -878,15 +895,10 @@ main {
     gap: 18px;
 }
 
-
-/* =====================================
-   CARTE PREMIUM
-   ===================================== */
-
 .card {
     position: relative;
 
-    min-height: 235px;
+    min-height: 225px;
 
     overflow: hidden;
 
@@ -895,13 +907,14 @@ main {
     flex-direction: column;
 
     padding:
-        25px 22px;
+        23px 21px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(20, 45, 70, 0.98),
-            rgba(6, 17, 29, 0.98)
+            #102b45 0%,
+            #0a1b2c 48%,
+            #050e19 100%
         ) !important;
 
     color:
@@ -909,7 +922,12 @@ main {
 
     border:
         1px solid
-        rgba(255, 255, 255, 0.10);
+        rgba(
+            255,
+            255,
+            255,
+            0.10
+        );
 
     border-top:
         2px solid
@@ -919,108 +937,89 @@ main {
         9px;
 
     box-shadow:
-        0 18px 40px
-        rgba(0, 0, 0, 0.48),
+        0 16px 35px
+        rgba(0, 0, 0, 0.50),
         inset 0 1px 0
-        rgba(255, 255, 255, 0.06);
+        rgba(255, 255, 255, 0.07);
 
     text-decoration:
         none !important;
 
-    transform:
-        translateY(0);
-
     transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease;
+        transform 0.30s ease,
+        box-shadow 0.30s ease,
+        border-color 0.30s ease;
 }
 
 
-/* Halo extérieur */
-
-.card::after {
-    content: "";
-
-    position: absolute;
-
-    inset: -1px;
-
-    border-radius:
-        9px;
-
-    box-shadow:
-        inset 0 0 0 1px
-        rgba(255, 255, 255, 0.02);
-
-    pointer-events: none;
-}
-
-
-/* Reflet */
+/* reflet brillant */
 
 .card::before {
     content: "";
 
     position: absolute;
 
-    top: -20%;
-
+    top: -30%;
     left: -130%;
 
-    width: 75%;
-
-    height: 150%;
+    width: 70%;
+    height: 170%;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(255, 255, 255, 0.10),
+            rgba(255, 255, 255, 0.11),
             transparent
         );
 
     transform:
-        rotate(12deg);
+        rotate(14deg);
 
     transition:
-        left 0.7s ease;
+        left 0.70s ease;
 
     pointer-events: none;
 }
 
 .card:hover::before {
-    left: 140%;
+    left: 145%;
 }
 
 .card:hover {
     transform:
-        translateY(-8px);
+        translateY(-7px);
 
     border-color:
-        rgba(255, 255, 255, 0.18);
+        rgba(
+            255,
+            255,
+            255,
+            0.18
+        );
 
     box-shadow:
-        0 25px 50px
-        rgba(0, 0, 0, 0.60),
-        0 0 30px
-        rgba(215, 25, 32, 0.16),
+        0 24px 48px
+        rgba(0, 0, 0, 0.62),
+        0 0 28px
+        rgba(215, 25, 32, 0.18),
         inset 0 1px 0
-        rgba(255, 255, 255, 0.09);
+        rgba(255, 255, 255, 0.10);
 }
-
-
-/* =====================================
-   ICONE
-   ===================================== */
+```css id="p2css"
+/* =========================================
+   ICONES DES CARTES
+   ========================================= */
 
 .card-icon {
     position: relative;
 
-    width: 49px;
-    height: 49px;
+    z-index: 2;
 
-    margin-bottom: 17px;
+    width: 47px;
+    height: 47px;
+
+    margin-bottom: 15px;
 
     display: flex;
 
@@ -1029,7 +1028,12 @@ main {
 
     border:
         1px solid
-        rgba(255, 255, 255, 0.15);
+        rgba(
+            255,
+            255,
+            255,
+            0.16
+        );
 
     border-radius:
         8px;
@@ -1037,8 +1041,8 @@ main {
     background:
         linear-gradient(
             145deg,
-            #ef2930,
-            #9d0c12
+            #ed2930,
+            #9f0d13
         );
 
     color:
@@ -1047,14 +1051,14 @@ main {
     font-size: 21px;
 
     box-shadow:
-        0 9px 22px
-        rgba(0, 0, 0, 0.38),
-        0 0 16px
+        0 8px 20px
+        rgba(0, 0, 0, 0.40),
+        0 0 14px
         rgba(215, 25, 32, 0.18);
 
     transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+        transform 0.30s ease,
+        box-shadow 0.30s ease;
 }
 
 .card:hover .card-icon {
@@ -1062,31 +1066,32 @@ main {
         translateY(-3px);
 
     box-shadow:
-        0 12px 26px
-        rgba(0, 0, 0, 0.45),
+        0 12px 25px
+        rgba(0, 0, 0, 0.48),
         0 0 22px
-        rgba(215, 25, 32, 0.32);
+        rgba(215, 25, 32, 0.30);
 }
-```css
-/* =====================================
+
+
+/* =========================================
    TEXTE DES CARTES
-   ===================================== */
+   ========================================= */
 
 .card h3 {
     position: relative;
 
     z-index: 2;
 
-    margin-bottom: 10px;
+    margin-bottom: 9px;
 
     color:
         #ffffff !important;
 
-    font-size: 16px;
+    font-size: 15px;
 
     font-weight: 900;
 
-    letter-spacing: 0.8px;
+    letter-spacing: 0.7px;
 
     text-decoration:
         none !important;
@@ -1102,7 +1107,7 @@ main {
     color:
         #aebdca !important;
 
-    font-size: 13px;
+    font-size: 12px;
 
     line-height: 1.55;
 
@@ -1117,7 +1122,7 @@ main {
 
     display: block;
 
-    margin-top: 18px;
+    margin-top: 16px;
 
     color:
         #ffffff !important;
@@ -1126,7 +1131,7 @@ main {
 
     font-weight: 900;
 
-    letter-spacing: 1.4px;
+    letter-spacing: 1.3px;
 
     text-decoration:
         none !important;
@@ -1141,9 +1146,9 @@ main {
 }
 
 
-/* =====================================
-   FOOTER PREMIUM
-   ===================================== */
+/* =========================================
+   FOOTER
+   ========================================= */
 
 footer {
     width: 100%;
@@ -1189,7 +1194,7 @@ footer {
     margin: 0 auto;
 
     padding:
-        34px 0;
+        30px 0;
 
     display: flex;
 
@@ -1205,7 +1210,7 @@ footer {
 
     flex-direction: column;
 
-    gap: 6px;
+    gap: 5px;
 }
 
 .footer-brand strong {
@@ -1234,7 +1239,7 @@ footer {
     justify-content: flex-end;
 
     gap:
-        8px 20px;
+        8px 18px;
 }
 
 .footer-links a {
@@ -1261,14 +1266,24 @@ footer {
     width: 100%;
 
     padding:
-        13px 20px;
+        12px 20px;
 
     border-top:
         1px solid
-        rgba(255, 255, 255, 0.06);
+        rgba(
+            255,
+            255,
+            255,
+            0.06
+        );
 
     background:
-        rgba(0, 0, 0, 0.22);
+        rgba(
+            0,
+            0,
+            0,
+            0.22
+        );
 
     color:
         #617384;
@@ -1281,17 +1296,15 @@ footer {
 }
 
 
-/* =====================================
+/* =========================================
    TABLETTE
-   ===================================== */
+   ========================================= */
 
 @media screen and (max-width: 1150px) {
 
     .header-inner {
         width:
             calc(100% - 30px);
-
-        gap: 15px;
     }
 
     .brand-title {
@@ -1321,9 +1334,9 @@ footer {
 }
 
 
-/* =====================================
+/* =========================================
    MOBILE
-   ===================================== */
+   ========================================= */
 
 @media screen and (max-width: 850px) {
 
@@ -1334,7 +1347,6 @@ footer {
     html,
     body {
         width: 100%;
-
         overflow-x: hidden;
     }
 
@@ -1398,7 +1410,9 @@ footer {
     }
 
 
-    /* MENU MOBILE */
+    /* =====================================
+       MENU MOBILE
+       ===================================== */
 
     .nav {
         position: fixed !important;
@@ -1441,7 +1455,7 @@ footer {
             linear-gradient(
                 180deg,
                 #071426,
-                #040d18
+                #030b15
             ) !important;
 
         border-bottom:
@@ -1487,8 +1501,8 @@ footer {
             none !important;
     }
 
-    .nav-link::before,
-    .nav-dropdown-toggle::before {
+    .nav-link::after,
+    .nav-dropdown-toggle::after {
         display: none;
     }
 
@@ -1519,14 +1533,14 @@ footer {
         margin: 0;
 
         padding:
-            5px 0 8px 12px;
+            4px 0 8px 12px;
 
         background:
             rgba(
                 0,
                 0,
                 0,
-                0.16
+                0.18
             ) !important;
 
         border: 0 !important;
@@ -1590,13 +1604,11 @@ footer {
                 0.14
             ) !important;
     }
-}
-```css
-/* =====================================
-   HERO MOBILE
-   ===================================== */
 
-@media screen and (max-width: 850px) {
+
+    /* =====================================
+       HERO MOBILE
+       ===================================== */
 
     main {
         width: 100%;
@@ -1608,133 +1620,100 @@ footer {
     .hero {
         width: 100%;
 
-        /*
-           Zone photo compacte et élégante.
-        */
+        height: 250px;
 
-        height: 430px;
-
-        min-height: 430px;
+        min-height: 250px;
 
         padding:
-            30px 18px;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        background-color:
-            #050d18;
+            20px 15px;
 
         background-image:
             linear-gradient(
-                180deg,
-                rgba(2, 7, 14, 0.08),
-                rgba(2, 7, 14, 0.25)
+                rgba(3, 9, 18, 0.03),
+                rgba(3, 9, 18, 0.08)
             ),
             url("photo.png");
-
-        /*
-           Sur mobile on garde
-           davantage de l'image.
-        */
 
         background-size:
             cover;
 
         background-position:
-            center 28%;
+            center center;
 
         background-repeat:
             no-repeat;
     }
 
     .hero::after {
-        height:
-            80px;
+        height: 25px;
     }
 
     .hero-content {
         width: 100%;
 
         max-width: 500px;
-
-        transform:
-            translateY(-3px);
     }
 
     .eyebrow {
-        margin-bottom: 13px;
+        margin-bottom: 8px;
 
         font-size: 8px;
 
-        line-height: 1.5;
-
-        letter-spacing: 2.4px;
+        letter-spacing: 2px;
     }
 
     .hero h1 {
-        width: 100%;
-
         font-size:
             clamp(
-                29px,
-                9.5vw,
-                46px
+                27px,
+                9vw,
+                43px
             );
 
-        line-height: 1.08;
+        line-height: 1.05;
 
-        letter-spacing: 0.4px;
+        letter-spacing: 0.3px;
     }
 
     .hero-line {
-        width: 65px;
+        width: 55px;
 
-        height: 3px;
+        height: 2px;
 
         margin:
-            18px 0;
+            12px 0;
     }
 
     .hero p {
-        max-width: 320px;
+        margin-bottom: 13px;
 
-        margin-bottom: 22px;
+        max-width: 300px;
 
-        font-size: 13px;
-
-        line-height: 1.5;
+        font-size: 12px;
     }
 
     .hero-button {
-        min-width: 175px;
+        min-width: 150px;
 
-        min-height: 49px;
+        min-height: 39px;
 
         padding:
-            0 22px;
+            0 20px;
 
-        font-size: 11px;
-
-        letter-spacing: 1.2px;
+        font-size: 10px;
     }
 
 
-    /* =================================
+    /* =====================================
        CARTES MOBILE
-       ================================= */
+       ===================================== */
 
     .quick-access {
         width:
             calc(100% - 22px);
 
-        margin: 0 auto;
-
         padding:
-            12px 0 45px;
+            15px 0 45px;
     }
 
     .cards {
@@ -1749,10 +1728,10 @@ footer {
     .card {
         width: 100%;
 
-        min-height: 185px;
+        min-height: 180px;
 
         padding:
-            21px 20px;
+            20px;
 
         border-radius:
             9px;
@@ -1762,7 +1741,7 @@ footer {
         width: 45px;
         height: 45px;
 
-        margin-bottom: 15px;
+        margin-bottom: 14px;
 
         font-size: 20px;
     }
@@ -1778,22 +1757,20 @@ footer {
     }
 
     .card-link {
-        margin-top: 16px;
-
         font-size: 10px;
     }
 
 
-    /* =================================
+    /* =====================================
        FOOTER MOBILE
-       ================================= */
+       ===================================== */
 
     .footer-inner {
         width:
             calc(100% - 24px);
 
         padding:
-            28px 0;
+            27px 0;
 
         flex-direction:
             column;
@@ -1811,21 +1788,19 @@ footer {
             flex-start;
 
         gap:
-            12px 18px;
+            12px 17px;
     }
 
     .footer-bottom {
         padding:
             12px 14px;
-
-        font-size: 9px;
     }
 }
 
 
-/* =====================================
-   TRES PETITS TELEPHONES
-   ===================================== */
+/* =========================================
+   PETITS TELEPHONES
+   ========================================= */
 
 @media screen and (max-width: 420px) {
 
@@ -1858,23 +1833,23 @@ footer {
     }
 
     .hero {
-        height: 390px;
+        height: 250px;
 
-        min-height: 390px;
+        min-height: 250px;
 
         padding:
-            25px 15px;
+            18px 14px;
 
         background-position:
-            center 28%;
+            center center;
     }
 
     .hero h1 {
-        font-size: 29px;
+        font-size: 28px;
     }
 
     .hero p {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .quick-access {
@@ -1882,45 +1857,31 @@ footer {
             calc(100% - 18px);
 
         padding:
-            10px 0 40px;
+            12px 0 40px;
     }
 
     .card {
         padding:
-            19px;
+            18px;
 
         min-height:
-            178px;
-    }
-
-    .card-icon {
-        width: 44px;
-        height: 44px;
-
-        font-size: 19px;
+            175px;
     }
 }
 
 
-/* =====================================
-   ACCESSIBILITÉ / MOTION
-   ===================================== */
+/* =========================================
+   REDUCTION DES ANIMATIONS SI NECESSAIRE
+   ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
     *,
     *::before,
     *::after {
-        scroll-behavior: auto !important;
-
-        transition-duration:
-            0.01ms !important;
-
-        animation-duration:
-            0.01ms !important;
-
-        animation-iteration-count:
-            1 !important;
+        transition:
+            none !important;
     }
 }
+
 
