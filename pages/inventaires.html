@@ -3,20 +3,20 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Inventaires — CIS Villenave-d'Ornon</title>
+<title>Inventaires — CIS Villenave-d'Ornon</title>
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="cssinventaire.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="cssinventaire.css">
 </head>
 
 <body>
 
-<!-- ==============================
+<!-- =====================================================
      HEADER
-     ============================== -->
+     ===================================================== -->
 
 <header class="site-header">
 
@@ -45,6 +45,8 @@
         </a>
 
 
+        <!-- MENU MOBILE -->
+
         <button
             class="mobile-toggle"
             id="mobileToggle"
@@ -58,14 +60,24 @@
         </button>
 
 
+        <!-- MENU -->
+
         <nav class="nav" id="mainNav">
 
-            <a href="index.html" class="nav-link">
+            <a
+                href="index.html"
+                class="nav-link"
+            >
                 ACCUEIL
             </a>
 
 
-            <div class="nav-dropdown" id="inventoryDropdown">
+            <!-- INVENTAIRES -->
+
+            <div
+                class="nav-dropdown"
+                id="inventoryDropdown"
+            >
 
                 <button
                     type="button"
@@ -73,8 +85,13 @@
                     id="inventoryToggle"
                     aria-expanded="false"
                 >
+
                     <span>INVENTAIRES</span>
-                    <span class="dropdown-arrow">▾</span>
+
+                    <span class="dropdown-arrow">
+                        ▾
+                    </span>
+
                 </button>
 
 
@@ -123,19 +140,34 @@
             </div>
 
 
-            <a href="entretiens.html" class="nav-link">
+            <a
+                href="entretiens.html"
+                class="nav-link"
+            >
                 ENTRETIENS
             </a>
 
-            <a href="documents.html" class="nav-link">
+
+            <a
+                href="documents.html"
+                class="nav-link"
+            >
                 DOCUMENTS
             </a>
 
-            <a href="amicale.html" class="nav-link">
+
+            <a
+                href="amicale.html"
+                class="nav-link"
+            >
                 AMICALE
             </a>
 
-            <a href="raccourcis.html" class="nav-link">
+
+            <a
+                href="raccourcis.html"
+                class="nav-link"
+            >
                 RACCOURCIS
             </a>
 
@@ -146,274 +178,285 @@
 </header>
 
 
-<!-- ==============================
-     PAGE INVENTAIRES
-     ============================== -->
+<!-- =====================================================
+     CONTENU
+     ===================================================== -->
 
 <main>
 
-    <section class="inventory-page">
+<section class="inventory-page">
 
-        <div class="inventory-container">
+    <div class="inventory-container">
 
 
-            <!-- FIL D'ARIANE -->
+        <!-- FIL D'ARIANE -->
 
-            <div class="inventory-breadcrumb">
+        <div class="inventory-breadcrumb">
 
-                <a href="index.html">
-                    Accueil
-                </a>
+            <a href="index.html">
+                Accueil
+            </a>
 
-                <span>›</span>
+            <span>›</span>
 
-                <span>
-                    Inventaires
-                </span>
-
-            </div>
-
-
-            <!-- TITRE -->
-
-            <div class="inventory-title">
-
-                <div class="inventory-eyebrow">
-                    CENTRE D'INCENDIE ET DE SECOURS
-                </div>
-
-                <h1>
-                    INVENTAIRES
-                </h1>
-
-                <p>
-                    Tous les inventaires de votre Centre de Secours.
-                </p>
-
-            </div>
-
-
-            <!-- RECHERCHE -->
-
-            <div class="inventory-search">
-
-                <span class="inventory-search-icon">
-                    ⌕
-                </span>
-
-                <input
-                    type="search"
-                    id="inventorySearch"
-                    placeholder="Rechercher un inventaire..."
-                    autocomplete="off"
-                    aria-label="Rechercher un inventaire"
-                >
-
-            </div>
-
-
-            <!-- CARTES -->
-
-            <div
-                class="cards inventory-cards"
-                id="inventoryGrid"
-            >
-
-
-                <a
-                    href="ssuap.html"
-                    class="card inventory-card"
-                    data-search="ssuap vsav matériel asu"
-                >
-
-                    <div class="card-icon">
-                        🩺
-                    </div>
-
-                    <h3>
-                        SSUAP
-                    </h3>
-
-                    <p>
-                        VSAV et matériel ASU
-                    </p>
-
-                    <span class="card-link">
-                        ACCÉDER →
-                    </span>
-
-                </a>
-
-
-                <a
-                    href="incendie.html"
-                    class="card inventory-card"
-                    data-search="incendie fpt fptgp ech fmogp"
-                >
-
-                    <div class="card-icon">
-                        🔥
-                    </div>
-
-                    <h3>
-                        INCENDIE
-                    </h3>
-
-                    <p>
-                        FPT, FPTGP, ECH, FMOGP…
-                    </p>
-
-                    <span class="card-link">
-                        ACCÉDER →
-                    </span>
-
-                </a>
-
-
-                <a
-                    href="div.html"
-                    class="card inventory-card"
-                    data-search="div vtu vsr"
-                >
-
-                    <div class="card-icon">
-                        🛠️
-                    </div>
-
-                    <h3>
-                        DIV
-                    </h3>
-
-                    <p>
-                        VTU et VSR
-                    </p>
-
-                    <span class="card-link">
-                        ACCÉDER →
-                    </span>
-
-                </a>
-
-
-                <a
-                    href="fdf.html"
-                    class="card inventory-card"
-                    data-search="fdf ccf vlhr amsec"
-                >
-
-                    <div class="card-icon">
-                        🌲
-                    </div>
-
-                    <h3>
-                        FDF
-                    </h3>
-
-                    <p>
-                        CCF, VLHR, AMSEC
-                    </p>
-
-                    <span class="card-link">
-                        ACCÉDER →
-                    </span>
-
-                </a>
-
-
-                <a
-                    href="specialites.html"
-                    class="card inventory-card"
-                    data-search="specialites spécialités eld drone"
-                >
-
-                    <div class="card-icon">
-                        ⚡
-                    </div>
-
-                    <h3>
-                        SPÉCIALITÉS
-                    </h3>
-
-                    <p>
-                        ELD et Drone
-                    </p>
-
-                    <span class="card-link">
-                        ACCÉDER →
-                    </span>
-
-                </a>
-
-
-                <a
-                    href="standard.html"
-                    class="card inventory-card"
-                    data-search="standard stationnaire sac ps stas"
-                >
-
-                    <div class="card-icon">
-                        📦
-                    </div>
-
-                    <h3>
-                        STANDARD
-                    </h3>
-
-                    <p>
-                        Stationnaire et sac PS
-                    </p>
-
-                    <span class="card-link">
-                        ACCÉDER →
-                    </span>
-
-                </a>
-
-
-                <a
-                    href="casernement.html"
-                    class="card inventory-card"
-                    data-search="casernement réserve pharmacie meducore pompy"
-                >
-
-                    <div class="card-icon">
-                        🏠
-                    </div>
-
-                    <h3>
-                        CASERNEMENT
-                    </h3>
-
-                    <p>
-                        Réserve et pharmacie
-                    </p>
-
-                    <span class="card-link">
-                        ACCÉDER →
-                    </span>
-
-                </a>
-
-            </div>
-
-
-            <div
-                class="inventory-empty"
-                id="inventoryEmpty"
-            >
-                Aucun inventaire trouvé.
-            </div>
+            <span>
+                Inventaires
+            </span>
 
         </div>
 
-    </section>
+
+        <!-- TITRE -->
+
+        <div class="inventory-title">
+
+            <div class="inventory-eyebrow">
+                PORTAIL OPÉRATIONNEL
+            </div>
+
+            <h1>
+                INVENTAIRES
+            </h1>
+
+            <p>
+                Tous les inventaires de votre Centre de Secours.
+            </p>
+
+        </div>
+
+
+        <!-- RECHERCHE -->
+
+        <div class="inventory-search">
+
+            <span class="inventory-search-icon">
+                ⌕
+            </span>
+
+            <input
+                type="search"
+                id="inventorySearch"
+                placeholder="Rechercher un inventaire..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <!-- CARTES -->
+
+        <div class="inventory-cards">
+
+
+            <!-- SSUAP -->
+
+            <a
+                href="ssuap.html"
+                class="inventory-card"
+                data-search="ssuap secours victimes assistance personnes vsav"
+            >
+
+                <div class="card-icon">
+                    ＋
+                </div>
+
+                <h3>
+                    SSUAP
+                </h3>
+
+                <p>
+                    Secours d'urgence aux personnes et inventaires des véhicules SSUAP.
+                </p>
+
+                <span class="card-link">
+                    ACCÉDER →
+                </span>
+
+            </a>
+
+
+            <!-- INCENDIE -->
+
+            <a
+                href="incendie.html"
+                class="inventory-card"
+                data-search="incendie fourgon fpt materiel incendie"
+            >
+
+                <div class="card-icon">
+                    ◆
+                </div>
+
+                <h3>
+                    INCENDIE
+                </h3>
+
+                <p>
+                    Inventaires et équipements destinés aux interventions incendie.
+                </p>
+
+                <span class="card-link">
+                    ACCÉDER →
+                </span>
+
+            </a>
+
+
+            <!-- DIV -->
+
+            <a
+                href="div.html"
+                class="inventory-card"
+                data-search="div divers matériel intervention"
+            >
+
+                <div class="card-icon">
+                    ◇
+                </div>
+
+                <h3>
+                    DIV
+                </h3>
+
+                <p>
+                    Inventaires des matériels et équipements divers.
+                </p>
+
+                <span class="card-link">
+                    ACCÉDER →
+                </span>
+
+            </a>
+
+
+            <!-- FDF -->
+
+            <a
+                href="fdf.html"
+                class="inventory-card"
+                data-search="fdf feu de forêt forêt incendie"
+            >
+
+                <div class="card-icon">
+                    ▲
+                </div>
+
+                <h3>
+                    FDF
+                </h3>
+
+                <p>
+                    Matériels et équipements dédiés aux feux de forêt.
+                </p>
+
+                <span class="card-link">
+                    ACCÉDER →
+                </span>
+
+            </a>
+```html id="n4rjkp"
+            <!-- SPECIALITES -->
+
+            <a
+                href="specialites.html"
+                class="inventory-card"
+                data-search="specialites spécialités plongee nautique sauvetage"
+            >
+
+                <div class="card-icon">
+                    ★
+                </div>
+
+                <h3>
+                    SPECIALITES
+                </h3>
+
+                <p>
+                    Inventaires liés aux différentes spécialités du centre.
+                </p>
+
+                <span class="card-link">
+                    ACCÉDER →
+                </span>
+
+            </a>
+
+
+            <!-- STANDARD -->
+
+            <a
+                href="standard.html"
+                class="inventory-card"
+                data-search="standard matériel standard"
+            >
+
+                <div class="card-icon">
+                    ▤
+                </div>
+
+                <h3>
+                    STANDARD
+                </h3>
+
+                <p>
+                    Inventaires du matériel et des équipements standards.
+                </p>
+
+                <span class="card-link">
+                    ACCÉDER →
+                </span>
+
+            </a>
+
+
+            <!-- CASERNEMENT -->
+
+            <a
+                href="casernement.html"
+                class="inventory-card"
+                data-search="casernement locaux bâtiment caserne"
+            >
+
+                <div class="card-icon">
+                    ⌂
+                </div>
+
+                <h3>
+                    CASERNEMENT
+                </h3>
+
+                <p>
+                    Inventaires et équipements du casernement.
+                </p>
+
+                <span class="card-link">
+                    ACCÉDER →
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- AUCUN RÉSULTAT -->
+
+        <div
+            class="inventory-empty"
+            id="inventoryEmpty"
+        >
+            Aucun inventaire ne correspond à votre recherche.
+        </div>
+
+    </div>
+
+</section>
 
 </main>
 
 
-<!-- ==============================
+<!-- =====================================================
      FOOTER
-     ============================== -->
+     ===================================================== -->
 
 <footer>
 
@@ -472,10 +515,431 @@
 </footer>
 
 
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
 <script src="script.js"></script>
 
 </body>
 </html>
+```
+
+### Maintenant CSS partie 1/2
+
+👉 **Dans `cssinventaire.css`**, colle cette première partie :
+
+```css id="k2m8pf"
+/* =========================================================
+   PAGE INVENTAIRES
+   ========================================================= */
+
+.inventory-page {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 92px);
+
+    padding: 55px 0 70px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(3, 9, 18, 0.94),
+            rgba(3, 9, 18, 0.97)
+        ),
+        url("photo.png") center center / cover no-repeat;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   LIGNE ROUGE
+   ========================================================= */
+
+.inventory-page::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    background: #d71920;
+}
+
+
+/* =========================================================
+   CONTENEUR
+   ========================================================= */
+
+.inventory-container {
+    position: relative;
+    z-index: 2;
+
+    width: min(1380px, calc(100% - 50px));
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+   ========================================================= */
+
+.inventory-breadcrumb {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 32px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+
+.inventory-breadcrumb a {
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+}
+
+
+.inventory-breadcrumb a:hover {
+    color: #ffffff !important;
+}
+
+
+.inventory-breadcrumb span:nth-child(2) {
+    color: #d71920;
+
+    font-size: 20px;
+    font-weight: 900;
+}
+
+
+.inventory-breadcrumb span:last-child {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   TITRE
+   ========================================================= */
+
+.inventory-title {
+    margin-bottom: 32px;
+}
+
+
+.inventory-eyebrow {
+    margin-bottom: 10px;
+
+    color: #d6e0e7;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 2.5px;
+}
+
+
+.inventory-title h1 {
+    margin: 0;
+
+    color: #ffffff !important;
+
+    font-size: clamp(42px, 5vw, 58px);
+
+    font-weight: 900;
+
+    line-height: 1.05;
+
+    letter-spacing: 1px;
+}
+
+
+.inventory-title h1::after {
+    content: "";
+
+    display: block;
+
+    width: 78px;
+    height: 4px;
+
+    margin-top: 16px;
+
+    background: #d71920;
+}
+
+
+.inventory-title p {
+    margin-top: 17px;
+
+    color: #d0dce4;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   BARRE DE RECHERCHE
+   ========================================================= */
+
+.inventory-search {
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: 42px;
+}
+
+
+.inventory-search input {
+    display: block;
+
+    width: 100%;
+    height: 88px;
+
+    padding: 0 32px 0 78px;
+
+    box-sizing: border-box;
+
+    border: 2px solid rgba(255,255,255,0.18);
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #071321;
+
+    font-family: inherit;
+
+    font-size: 19px;
+    font-weight: 500;
+
+    box-shadow:
+        0 16px 38px rgba(0,0,0,0.42);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.inventory-search input::placeholder {
+    color: #71818d;
+
+    opacity: 1;
+
+    font-size: 18px;
+}
+
+
+.inventory-search input:focus {
+    border-color: #d71920;
+
+    box-shadow:
+        0 16px 38px rgba(0,0,0,0.42),
+        0 0 0 4px rgba(215,25,32,0.12);
+}
+
+
+/* =========================================================
+   ICÔNE RECHERCHE
+   ========================================================= */
+
+.inventory-search-icon {
+    position: absolute;
+
+    left: 27px;
+    top: 50%;
+
+    z-index: 5;
+
+    transform: translateY(-50%);
+
+    color: #d71920;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   GRILLE
+   ========================================================= */
+
+.inventory-cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   CARTES
+   ========================================================= */
+
+.inventory-card {
+    position: relative;
+
+    min-width: 0;
+    min-height: 245px;
+
+    padding: 24px 22px;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        linear-gradient(
+            145deg,
+            #12304b 0%,
+            #0b2034 48%,
+            #06111d 100%
+        ) !important;
+
+    color: #ffffff !important;
+
+    border: 1px solid rgba(255,255,255,0.11);
+
+    border-top: 3px solid #d71920;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.48),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+
+    text-decoration: none !important;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.inventory-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(255,65,72,0.45);
+
+    box-shadow:
+        0 22px 45px rgba(0,0,0,0.55),
+        0 0 25px rgba(215,25,32,0.12);
+}
+
+
+/* =========================================================
+   ICÔNE CARTE
+   ========================================================= */
+
+.inventory-card .card-icon {
+    position: relative;
+    z-index: 2;
+
+    width: 50px;
+    height: 50px;
+
+    min-width: 50px;
+    min-height: 50px;
+
+    margin-bottom: 17px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,0.18);
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e52a31,
+            #a70f15
+        );
+
+    color: #ffffff;
+
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   TITRE CARTE
+   ========================================================= */
+
+.inventory-card h3 {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    margin: 0 0 10px;
+
+    color: #ffffff !important;
+
+    font-size: 15px;
+    font-weight: 900;
+
+    line-height: 1.3;
+
+    letter-spacing: 0.4px;
+
+    text-decoration: none !important;
+}
+
+
+/* =========================================================
+   TEXTE CARTE
+   ========================================================= */
+
+.inventory-card p {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    margin: 0;
+
+    flex: 1;
+
+    color: #b8c6d1 !important;
+
+    font-size: 12px;
+    font-weight: 400;
+
+    line-height: 1.6;
+
+    text-decoration: none !important;
+}
+
 
 
 
