@@ -4,18 +4,23 @@ document.addEventListener("DOMContentLoaded", function () {
      MENU MOBILE
   ========================= */
 
-  const mobileToggle = document.getElementById("mobileToggle");
-  const mainNav = document.getElementById("mainNav");
+  const mobileToggle =
+    document.getElementById("mobileToggle");
+
+  const mainNav =
+    document.getElementById("mainNav");
+
 
   if (mobileToggle && mainNav) {
 
     mobileToggle.addEventListener("click", function () {
 
-      const isOpen = mainNav.classList.toggle("open");
+      const opened =
+        mainNav.classList.toggle("open");
 
       mobileToggle.setAttribute(
         "aria-expanded",
-        isOpen ? "true" : "false"
+        opened ? "true" : "false"
       );
 
     });
@@ -33,36 +38,48 @@ document.addEventListener("DOMContentLoaded", function () {
   const inventoryToggle =
     document.getElementById("inventoryToggle");
 
+
   if (inventoryDropdown && inventoryToggle) {
 
-    inventoryToggle.addEventListener("click", function (event) {
+    inventoryToggle.addEventListener(
+      "click",
+      function (event) {
 
-      event.stopPropagation();
+        event.preventDefault();
 
-      const isOpen =
-        inventoryDropdown.classList.toggle("open");
+        event.stopPropagation();
 
-      inventoryToggle.setAttribute(
-        "aria-expanded",
-        isOpen ? "true" : "false"
-      );
-
-    });
-
-    document.addEventListener("click", function (event) {
-
-      if (!inventoryDropdown.contains(event.target)) {
-
-        inventoryDropdown.classList.remove("open");
+        const opened =
+          inventoryDropdown.classList.toggle("open");
 
         inventoryToggle.setAttribute(
           "aria-expanded",
-          "false"
+          opened ? "true" : "false"
         );
 
       }
+    );
 
-    });
+
+    document.addEventListener(
+      "click",
+      function (event) {
+
+        if (
+          !inventoryDropdown.contains(event.target)
+        ) {
+
+          inventoryDropdown.classList.remove("open");
+
+          inventoryToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        }
+
+      }
+    );
 
   }
 
@@ -99,31 +116,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function filterCards() {
 
-    if (!searchInput) return;
+    if (!searchInput) {
+      return;
+    }
+
 
     const query =
       normalize(searchInput.value.trim());
 
-    let visibleCards = 0;
+
+    let visible = 0;
 
 
     cards.forEach(function (card) {
 
-      const content = normalize(
-        card.textContent +
-        " " +
-        (card.dataset.search || "")
-      );
+      const text =
+        normalize(
+          card.textContent +
+          " " +
+          (card.dataset.search || "")
+        );
+
 
       const match =
         query === "" ||
-        content.includes(query);
+        text.includes(query);
+
 
       card.style.display =
         match ? "" : "none";
 
+
       if (match) {
-        visibleCards++;
+        visible++;
       }
 
     });
@@ -133,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       noResult.classList.toggle(
         "show",
-        visibleCards === 0
+        visible === 0
       );
 
     }
@@ -148,9 +173,9 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
 
         searchResult.textContent =
-          visibleCards +
+          visible +
           (
-            visibleCards > 1
+            visible > 1
               ? " véhicules trouvés"
               : " véhicule trouvé"
           );
@@ -178,7 +203,9 @@ document.addEventListener("DOMContentLoaded", function () {
       "click",
       function () {
 
-        if (!searchInput) return;
+        if (!searchInput) {
+          return;
+        }
 
         searchInput.value = "";
 
