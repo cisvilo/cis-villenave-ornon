@@ -1,8 +1,4 @@
-/* =========================================================
-   CIS VILLENAVE-D'ORNON — STYLE PREMIUM RESPONSIVE
-   PC + TABLETTE + TÉLÉPHONE
-   ========================================================= */
-
+```css
 :root {
     --navy: #071426;
     --navy-dark: #040d18;
@@ -20,11 +16,6 @@
     --header-height: 94px;
 }
 
-
-/* =========================================================
-   RESET
-   ========================================================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -40,20 +31,12 @@ html {
 body {
     width: 100%;
     min-height: 100vh;
-
     overflow-x: hidden;
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family: Arial, Helvetica, sans-serif;
     color: var(--white);
-
-    background-color: var(--navy-dark);
-
-    /*
-       PHOTO VISIBLE
+    background: var(--navy-dark);
+}
 
 img {
     max-width: 100%;
@@ -69,13 +52,12 @@ button {
 }
 
 
-/* =========================================================
-   HEADER
-   ========================================================= */
+/* ============================= */
+/* HEADER */
+/* ============================= */
 
 .site-header {
     position: fixed;
-
     top: 0;
     left: 0;
 
@@ -84,22 +66,16 @@ button {
 
     z-index: 9999;
 
-    background:
-        rgba(4, 13, 25, 0.97);
+    background: rgba(4, 13, 25, 0.97);
 
-    border-bottom:
-        3px solid var(--red);
+    border-bottom: 3px solid var(--red);
 
     box-shadow:
-        0 7px 28px rgba(0,0,0,0.55);
+        0 7px 28px rgba(0, 0, 0, 0.55);
 }
 
 .header-inner {
-    width:
-        min(
-            1400px,
-            calc(100% - 40px)
-        );
+    width: min(1400px, calc(100% - 40px));
 
     height: 100%;
 
@@ -113,11 +89,6 @@ button {
 
     gap: 20px;
 }
-
-
-/* =========================================================
-   IDENTITÉ
-   ========================================================= */
 
 .brand {
     display: flex;
@@ -139,8 +110,7 @@ button {
 
     filter:
         drop-shadow(
-            0 4px 9px
-            rgba(0,0,0,0.55)
+            0 4px 9px rgba(0, 0, 0, 0.55)
         );
 }
 
@@ -175,9 +145,9 @@ button {
 }
 
 
-/* =========================================================
-   NAVIGATION PC
-   ========================================================= */
+/* ============================= */
+/* NAVIGATION */
+/* ============================= */
 
 .nav {
     display: flex;
@@ -193,8 +163,7 @@ button {
 
     min-height: 46px;
 
-    padding:
-        0 14px;
+    padding: 0 14px;
 
     display: flex;
 
@@ -224,12 +193,8 @@ button {
 .nav-link:hover,
 .nav-dropdown-toggle:hover {
     background:
-        rgba(215,25,32,0.16)
-        !important;
+        rgba(215, 25, 32, 0.16) !important;
 }
-
-
-/* Ligne rouge */
 
 .nav-link::after,
 .nav-dropdown-toggle::after {
@@ -243,11 +208,9 @@ button {
     width: 0;
     height: 2px;
 
-    background:
-        var(--red-light);
+    background: var(--red-light);
 
-    transform:
-        translateX(-50%);
+    transform: translateX(-50%);
 
     transition:
         width 0.25s ease;
@@ -258,18 +221,12 @@ button {
     width: 55%;
 }
 
-
-/* =========================================================
-   INVENTAIRES
-   ========================================================= */
-
 .nav-dropdown {
     position: relative;
 }
 
 .dropdown-arrow {
-    color:
-        var(--red-light);
+    color: var(--red-light);
 
     font-size: 14px;
 
@@ -277,22 +234,19 @@ button {
         transform 0.25s ease;
 }
 
-.nav-dropdown.open
-.dropdown-arrow {
-    transform:
-        rotate(180deg);
+.nav-dropdown.open .dropdown-arrow {
+    transform: rotate(180deg);
 }
 
 
-/* =========================================================
-   SOUS-MENU PC
-   ========================================================= */
+/* ============================= */
+/* SOUS-MENU */
+/* ============================= */
 
 .nav-dropdown-menu {
     position: absolute;
 
-    top:
-        calc(100% + 8px);
+    top: calc(100% + 8px);
 
     left: 50%;
 
@@ -300,23 +254,19 @@ button {
 
     padding: 8px;
 
-    background:
-        #071426;
+    background: #071426;
 
     border:
-        1px solid
-        rgba(215,25,32,0.50);
+        1px solid rgba(215, 25, 32, 0.50);
 
     border-top:
-        3px solid
-        var(--red);
+        3px solid var(--red);
 
     border-radius:
         0 0 10px 10px;
 
     box-shadow:
-        0 20px 45px
-        rgba(0,0,0,0.65);
+        0 20px 45px rgba(0, 0, 0, 0.65);
 
     transform:
         translateX(-50%)
@@ -333,11 +283,8 @@ button {
         transform 0.2s ease;
 }
 
-.nav-dropdown:hover
-.nav-dropdown-menu,
-
-.nav-dropdown.open
-.nav-dropdown-menu {
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown.open .nav-dropdown-menu {
     opacity: 1;
 
     visibility: visible;
@@ -358,13 +305,11 @@ button {
 
     min-height: 44px;
 
-    padding:
-        0 13px;
+    padding: 0 13px;
 
     border-radius: 6px;
 
-    color:
-        #ffffff !important;
+    color: #ffffff !important;
 
     font-size: 12px;
 
@@ -373,7 +318,7 @@ button {
 
 .nav-dropdown-menu a:hover {
     background:
-        rgba(215,25,32,0.18);
+        rgba(215, 25, 32, 0.18);
 
     padding-left: 18px;
 }
@@ -381,16 +326,15 @@ button {
 .submenu-icon {
     width: 20px;
 
-    color:
-        var(--red-light);
+    color: var(--red-light);
 
     text-align: center;
 }
 
 
-/* =========================================================
-   HAMBURGER
-   ========================================================= */
+/* ============================= */
+/* BOUTON MOBILE */
+/* ============================= */
 
 .mobile-toggle {
     display: none;
@@ -401,6 +345,7 @@ button {
     flex-shrink: 0;
 
     align-items: center;
+
     justify-content: center;
 
     flex-direction: column;
@@ -408,13 +353,11 @@ button {
     gap: 5px;
 
     border:
-        1px solid
-        rgba(255,255,255,0.20);
+        1px solid rgba(255, 255, 255, 0.20);
 
     border-radius: 8px;
 
-    background:
-        #0c2037 !important;
+    background: #0c2037 !important;
 
     cursor: pointer;
 
@@ -427,8 +370,7 @@ button {
     width: 23px;
     height: 2px;
 
-    background:
-        #ffffff;
+    background: #ffffff;
 
     border-radius: 5px;
 
@@ -437,29 +379,26 @@ button {
         opacity 0.25s ease;
 }
 
-.mobile-toggle.open
-span:nth-child(1) {
+.mobile-toggle.open span:nth-child(1) {
     transform:
         translateY(7px)
         rotate(45deg);
 }
 
-.mobile-toggle.open
-span:nth-child(2) {
+.mobile-toggle.open span:nth-child(2) {
     opacity: 0;
 }
 
-.mobile-toggle.open
-span:nth-child(3) {
+.mobile-toggle.open span:nth-child(3) {
     transform:
         translateY(-7px)
         rotate(-45deg);
 }
 
 
-/* =========================================================
-   MAIN
-   ========================================================= */
+/* ============================= */
+/* CONTENU */
+/* ============================= */
 
 main {
     width: 100%;
@@ -469,16 +408,16 @@ main {
 }
 
 
-/* =========================================================
-   HERO
-   ========================================================= */
+/* ============================= */
+/* HERO + PHOTO */
+/* ============================= */
 
 .hero {
     position: relative;
 
     width: 100%;
 
-    min-height: 500px;
+    min-height: 470px;
 
     display: flex;
 
@@ -487,12 +426,37 @@ main {
     justify-content: center;
 
     padding:
-        70px 25px
-        50px;
+        60px 25px
+        45px;
 
     text-align: center;
 
     overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            rgba(3, 9, 18, 0.12),
+            rgba(3, 9, 18, 0.20)
+        ),
+        url("photo.png");
+
+    /*
+       La photo est volontairement moins zoomée.
+       "contain" permet de voir beaucoup plus
+       de l'image.
+    */
+
+    background-size:
+        100% auto;
+
+    background-position:
+        center top;
+
+    background-repeat:
+        no-repeat;
+
+    background-color:
+        var(--navy-dark);
 }
 
 .hero-overlay {
@@ -501,7 +465,7 @@ main {
     inset: 0;
 
     background:
-        rgba(4,12,23,0.08);
+        rgba(4, 12, 23, 0.04);
 
     pointer-events: none;
 }
@@ -525,8 +489,7 @@ main {
 .eyebrow {
     margin-bottom: 17px;
 
-    color:
-        #ffffff;
+    color: #ffffff;
 
     font-size: 12px;
 
@@ -535,20 +498,14 @@ main {
     letter-spacing: 3px;
 
     text-shadow:
-        0 3px 10px
-        rgba(0,0,0,0.85);
+        0 3px 10px rgba(0, 0, 0, 0.85);
 }
 
 .hero h1 {
-    color:
-        #ffffff;
+    color: #ffffff;
 
     font-size:
-        clamp(
-            38px,
-            6vw,
-            76px
-        );
+        clamp(38px, 6vw, 76px);
 
     line-height: 1;
 
@@ -557,8 +514,7 @@ main {
     letter-spacing: 2px;
 
     text-shadow:
-        0 6px 25px
-        rgba(0,0,0,0.85);
+        0 6px 25px rgba(0, 0, 0, 0.85);
 }
 
 .hero-line {
@@ -566,8 +522,7 @@ main {
     height: 4px;
 
     margin:
-        25px 0
-        21px;
+        25px 0 21px;
 
     background:
         var(--red-light);
@@ -576,28 +531,21 @@ main {
 
     box-shadow:
         0 0 18px
-        rgba(215,25,32,0.65);
+        rgba(215, 25, 32, 0.65);
 }
 
 .hero p {
     margin-bottom: 27px;
 
-    color:
-        #ffffff;
+    color: #ffffff;
 
     font-size: 17px;
 
     line-height: 1.6;
 
     text-shadow:
-        0 3px 12px
-        rgba(0,0,0,0.85);
+        0 3px 12px rgba(0, 0, 0, 0.85);
 }
-
-
-/* =========================================================
-   BOUTON
-   ========================================================= */
 
 .hero-button {
     min-width: 190px;
@@ -615,7 +563,7 @@ main {
 
     border:
         1px solid
-        rgba(255,255,255,0.20);
+        rgba(255, 255, 255, 0.20);
 
     border-radius: 7px;
 
@@ -626,8 +574,7 @@ main {
             #b30f15
         );
 
-    color:
-        #ffffff;
+    color: #ffffff;
 
     font-size: 13px;
 
@@ -637,13 +584,13 @@ main {
 
     box-shadow:
         0 10px 30px
-        rgba(0,0,0,0.45);
+        rgba(0, 0, 0, 0.45);
 }
 
 
-/* =========================================================
-   CARTES
-   ========================================================= */
+/* ============================= */
+/* CARTES */
+/* ============================= */
 
 .quick-access {
     width:
@@ -655,8 +602,7 @@ main {
     margin: 0 auto;
 
     padding:
-        10px 0
-        70px;
+        10px 0 70px;
 }
 
 .cards {
@@ -665,7 +611,7 @@ main {
     grid-template-columns:
         repeat(
             5,
-            minmax(0,1fr)
+            minmax(0, 1fr)
         );
 
     gap: 18px;
@@ -682,8 +628,7 @@ main {
 
     flex-direction: column;
 
-    padding:
-        24px 21px;
+    padding: 24px 21px;
 
     background:
         linear-gradient(
@@ -692,22 +637,20 @@ main {
             #071522
         ) !important;
 
-    color:
-        #ffffff !important;
+    color: #ffffff !important;
 
     border:
         1px solid
-        rgba(255,255,255,0.13);
+        rgba(255, 255, 255, 0.13);
 
     border-top:
-        3px solid
-        var(--red);
+        3px solid var(--red);
 
     border-radius: 10px;
 
     box-shadow:
         0 15px 35px
-        rgba(0,0,0,0.45);
+        rgba(0, 0, 0, 0.45);
 
     transition:
         transform 0.3s ease,
@@ -720,9 +663,9 @@ main {
 
     box-shadow:
         0 22px 45px
-        rgba(0,0,0,0.55),
+        rgba(0, 0, 0, 0.55),
         0 0 28px
-        rgba(215,25,32,0.20);
+        rgba(215, 25, 32, 0.20);
 }
 
 .card-icon {
@@ -734,6 +677,7 @@ main {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     border-radius: 9px;
@@ -745,24 +689,13 @@ main {
             #9d0c12
         );
 
-    color:
-        #ffffff;
-
-    font-size: 22px;
-
-    box-shadow:
-        0 8px 20px
-        rgba(0,0,0,0.35);
-}
-/* =========================================================
-   CARTES — TEXTE
-   ========================================================= */
-
+    color: #ffffff
+   font-size: 22px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35); }
+```css
 .card h3 {
     margin-bottom: 10px;
 
-    color:
-        #ffffff !important;
+    color: #ffffff !important;
 
     font-size: 16px;
 
@@ -774,8 +707,7 @@ main {
 .card p {
     flex: 1;
 
-    color:
-        #b9c5d1 !important;
+    color: #b9c5d1 !important;
 
     font-size: 13px;
 
@@ -787,8 +719,7 @@ main {
 
     margin-top: 18px;
 
-    color:
-        #ffffff !important;
+    color: #ffffff !important;
 
     font-size: 11px;
 
@@ -798,9 +729,9 @@ main {
 }
 
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+/* ============================= */
+/* FOOTER */
+/* ============================= */
 
 footer {
     width: 100%;
@@ -812,8 +743,7 @@ footer {
             #040d18
         );
 
-    color:
-        #ffffff;
+    color: #ffffff;
 }
 
 .footer-red-band {
@@ -839,8 +769,7 @@ footer {
 
     margin: 0 auto;
 
-    padding:
-        32px 0;
+    padding: 32px 0;
 
     display: flex;
 
@@ -860,8 +789,7 @@ footer {
 }
 
 .footer-brand strong {
-    color:
-        #ffffff;
+    color: #ffffff;
 
     font-size: 14px;
 
@@ -869,8 +797,7 @@ footer {
 }
 
 .footer-brand span {
-    color:
-        #9eabb8;
+    color: #9eabb8;
 
     font-size: 11px;
 }
@@ -882,13 +809,11 @@ footer {
 
     justify-content: flex-end;
 
-    gap:
-        8px 18px;
+    gap: 8px 18px;
 }
 
 .footer-links a {
-    color:
-        #cbd4dd;
+    color: #cbd4dd;
 
     font-size: 11px;
 
@@ -903,13 +828,12 @@ footer {
 
     border-top:
         1px solid
-        rgba(255,255,255,0.08);
+        rgba(255, 255, 255, 0.08);
 
     background:
-        rgba(0,0,0,0.22);
+        rgba(0, 0, 0, 0.22);
 
-    color:
-        #7f8d9b;
+    color: #7f8d9b;
 
     text-align: center;
 
@@ -917,28 +841,17 @@ footer {
 
     line-height: 1.5;
 }
-   background-image:
-    linear-gradient(
-        rgba(3, 9, 18, 0.25),
-        rgba(3, 9, 18, 0.32)
-    ),
-    url("photo.png");
-
-background-position: center 25%;
-background-size: cover;
-background-repeat: no-repeat;
 
 
-/* =========================================================
-   TABLETTE
-   ========================================================= */
+/* ============================= */
+/* TABLETTE */
+/* ============================= */
 
 @media screen and (max-width: 1150px) {
 
     .nav-link,
     .nav-dropdown-toggle {
-        padding:
-            0 8px;
+        padding: 0 8px;
 
         font-size: 11px;
     }
@@ -947,24 +860,21 @@ background-repeat: no-repeat;
         grid-template-columns:
             repeat(
                 3,
-                minmax(0,1fr)
+                minmax(0, 1fr)
             );
     }
 }
 
 
-/* =========================================================
-   TÉLÉPHONE
-   ========================================================= */
+/* ============================= */
+/* MOBILE */
+/* ============================= */
 
 @media screen and (max-width: 850px) {
 
     :root {
         --header-height: 76px;
     }
-
-
-    /* ---------- PAGE ---------- */
 
     html,
     body {
@@ -974,24 +884,9 @@ background-repeat: no-repeat;
     }
 
     body {
-        background-attachment: scroll;
-
-        background-image:
-            linear-gradient(
-                rgba(3,9,18,0.25),
-                rgba(3,9,18,0.32)
-            ),
-            url("photo.png");
-
-        background-position:
-            center center;
-
-        background-size:
-            cover;
+        background:
+            var(--navy-dark);
     }
-
-
-    /* ---------- HEADER ---------- */
 
     .site-header {
         height:
@@ -1008,9 +903,6 @@ background-repeat: no-repeat;
 
         gap: 8px;
     }
-
-
-    /* ---------- LOGO ---------- */
 
     .brand {
         gap: 9px;
@@ -1047,9 +939,6 @@ background-repeat: no-repeat;
         display: none;
     }
 
-
-    /* ---------- HAMBURGER ---------- */
-
     .mobile-toggle {
         display: flex !important;
 
@@ -1060,7 +949,7 @@ background-repeat: no-repeat;
     }
 
 
-    /* ---------- MENU ---------- */
+    /* MENU MOBILE */
 
     .nav {
         position: fixed !important;
@@ -1097,19 +986,17 @@ background-repeat: no-repeat;
         gap: 0;
 
         padding:
-            8px 12px
-            25px;
+            8px 12px 25px;
 
         background:
             #071426 !important;
 
         border-bottom:
-            3px solid
-            var(--red);
+            3px solid var(--red);
 
         box-shadow:
             0 18px 40px
-            rgba(0,0,0,0.70);
+            rgba(0, 0, 0, 0.70);
 
         z-index: 9998;
     }
@@ -1117,9 +1004,6 @@ background-repeat: no-repeat;
     .nav.active {
         display: flex !important;
     }
-
-
-    /* ---------- LIENS ---------- */
 
     .nav-link,
     .nav-dropdown-toggle {
@@ -1138,8 +1022,7 @@ background-repeat: no-repeat;
         background:
             transparent !important;
 
-        color:
-            #ffffff !important;
+        color: #ffffff !important;
 
         font-size: 13px;
 
@@ -1151,17 +1034,11 @@ background-repeat: no-repeat;
         display: none !important;
     }
 
-
-    /* ---------- INVENTAIRES ---------- */
-
     .nav-dropdown {
         width: 100%;
 
         flex-shrink: 0;
     }
-
-
-    /* ---------- SOUS-MENU ---------- */
 
     .nav-dropdown-menu {
         position: static !important;
@@ -1173,8 +1050,7 @@ background-repeat: no-repeat;
         margin: 0;
 
         padding:
-            4px 0
-            8px 12px;
+            4px 0 8px 12px;
 
         background:
             #0a1b2e !important;
@@ -1182,8 +1058,7 @@ background-repeat: no-repeat;
         border: 0 !important;
 
         border-left:
-            2px solid
-            var(--red) !important;
+            2px solid var(--red) !important;
 
         border-radius: 0 !important;
 
@@ -1198,8 +1073,7 @@ background-repeat: no-repeat;
         pointer-events: auto !important;
     }
 
-    .nav-dropdown.open
-    .nav-dropdown-menu {
+    .nav-dropdown.open .nav-dropdown-menu {
         display: block !important;
     }
 
@@ -1217,8 +1091,7 @@ background-repeat: no-repeat;
 
         gap: 10px;
 
-        color:
-            #ffffff !important;
+        color: #ffffff !important;
 
         background:
             transparent !important;
@@ -1228,12 +1101,16 @@ background-repeat: no-repeat;
 
     .nav-dropdown-menu a:active {
         background:
-            rgba(215,25,32,0.20)
-            !important;
+            rgba(
+                215,
+                25,
+                32,
+                0.20
+            ) !important;
     }
 
 
-    /* ---------- MAIN ---------- */
+    /* HERO MOBILE */
 
     main {
         width: 100%;
@@ -1242,21 +1119,38 @@ background-repeat: no-repeat;
             var(--header-height);
     }
 
-
-    /* ---------- HERO ---------- */
-
     .hero {
         width: 100%;
 
-        min-height:
-            calc(
-                100dvh -
-                var(--header-height)
-            );
+        min-height: 430px;
 
         padding:
             45px 18px
             40px;
+
+        /*
+           Photo moins zoomée sur téléphone.
+           On montre davantage de l'image.
+        */
+
+        background-image:
+            linear-gradient(
+                rgba(3, 9, 18, 0.10),
+                rgba(3, 9, 18, 0.18)
+            ),
+            url("photo.png");
+
+        background-size:
+            100% auto;
+
+        background-position:
+            center top;
+
+        background-repeat:
+            no-repeat;
+
+        background-color:
+            var(--navy-dark);
     }
 
     .hero-content {
@@ -1321,15 +1215,14 @@ background-repeat: no-repeat;
     }
 
 
-    /* ---------- CARTES ---------- */
+    /* CARTES MOBILE */
 
     .quick-access {
         width:
             calc(100% - 24px);
 
         padding:
-            5px 0
-            45px;
+            5px 0 45px;
     }
 
     .cards {
@@ -1346,8 +1239,7 @@ background-repeat: no-repeat;
 
         min-height: 180px;
 
-        padding:
-            20px;
+        padding: 20px;
 
         border-radius: 10px;
     }
@@ -1365,7 +1257,7 @@ background-repeat: no-repeat;
     }
 
 
-    /* ---------- FOOTER ---------- */
+    /* FOOTER MOBILE */
 
     .footer-inner {
         width:
@@ -1398,9 +1290,9 @@ background-repeat: no-repeat;
 }
 
 
-/* =========================================================
-   TRÈS PETIT TÉLÉPHONE
-   ========================================================= */
+/* ============================= */
+/* PETITS TELEPHONES */
+/* ============================= */
 
 @media screen and (max-width: 420px) {
 
@@ -1429,14 +1321,20 @@ background-repeat: no-repeat;
 
     .nav {
         padding:
-            7px 10px
-            22px;
+            7px 10px 22px;
     }
 
     .hero {
+        min-height: 400px;
+
         padding:
-            40px 15px
-            35px;
+            40px 15px 35px;
+
+        background-size:
+            100% auto;
+
+        background-position:
+            center top;
     }
 
     .hero h1 {
@@ -1465,3 +1363,5 @@ background-repeat: no-repeat;
         font-size: 20px;
     }
 }
+
+
