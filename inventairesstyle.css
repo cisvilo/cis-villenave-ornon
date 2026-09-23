@@ -1,16 +1,22 @@
 ```css
 /* =========================================================
-   PAGE INVENTAIRES
-   Même identité visuelle que l'accueil
+   INVENTAIRES
+   REPRISE DU DESIGN EXACT DES CARTES DE L'ACCUEIL
    ========================================================= */
 
 .inventory-page {
     width: 100%;
     min-height: calc(100vh - var(--header-height));
-    padding: 42px 25px 70px;
+
+    padding: 38px 25px 65px;
+
     background:
-        radial-gradient(circle at 50% 0%, rgba(215,25,32,0.07), transparent 35%),
-        linear-gradient(180deg, #071321 0%, #030912 100%);
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(215, 25, 32, 0.07),
+            transparent 38%
+        ),
+        var(--navy-dark);
 }
 
 .inventory-container {
@@ -19,89 +25,100 @@
 }
 
 
-/* Fil d'Ariane */
+/* FIL D'ARIANE */
 
 .inventory-breadcrumb {
     display: flex;
     align-items: center;
-    gap: 9px;
-    margin-bottom: 25px;
+    gap: 8px;
+
+    margin-bottom: 22px;
+
     color: #8fa1b1;
     font-size: 12px;
     font-weight: 600;
 }
 
 .inventory-breadcrumb a {
-    color: #aebdca !important;
+    color: #aab9c7 !important;
 }
 
-.inventory-breadcrumb strong {
+.inventory-breadcrumb span:last-child {
     color: #ffffff;
 }
 
 
-/* Titre */
+/* TITRE */
 
-.inventory-heading {
+.inventory-title {
     margin-bottom: 28px;
 }
 
 .inventory-eyebrow {
     margin-bottom: 9px;
+
     color: var(--red-light);
+
     font-size: 10px;
     font-weight: 900;
     letter-spacing: 2px;
 }
 
-.inventory-heading h1 {
+.inventory-title h1 {
     margin: 0 0 9px;
+
     color: #ffffff;
-    font-size: clamp(30px, 4vw, 46px);
+
+    font-size: clamp(32px, 4vw, 46px);
     font-weight: 900;
     line-height: 1;
     letter-spacing: -1px;
 }
 
-.inventory-heading p {
+.inventory-title p {
     margin: 0;
+
     color: #aab9c7;
+
     font-size: 15px;
     line-height: 1.6;
 }
 
 
-/* Recherche */
+/* RECHERCHE */
 
 .inventory-search {
     position: relative;
+
     width: 100%;
-    margin-bottom: 28px;
+
+    margin-bottom: 25px;
 }
 
 .inventory-search input {
     width: 100%;
-    height: 56px;
-    padding: 0 20px 0 52px;
+    height: 52px;
 
-    border: 1px solid rgba(255,255,255,0.12);
+    padding: 0 20px 0 50px;
+
+    border: 1px solid rgba(255,255,255,0.11);
     border-radius: 10px;
     outline: none;
 
-    background: rgba(12,32,53,0.92);
+    background: #0c2035;
+
     color: #ffffff;
 
-    font-family: inherit;
-    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
 
     box-shadow:
-        0 12px 30px rgba(0,0,0,0.28),
-        inset 0 1px 0 rgba(255,255,255,0.05);
+        0 12px 28px rgba(0,0,0,0.32),
+        inset 0 1px 0 rgba(255,255,255,0.06);
 
     transition:
         border-color .25s ease,
-        box-shadow .25s ease,
-        background .25s ease;
+        box-shadow .25s ease;
 }
 
 .inventory-search input::placeholder {
@@ -109,52 +126,54 @@
 }
 
 .inventory-search input:focus {
-    border-color: rgba(215,25,32,0.75);
-
-    background: #0d243b;
+    border-color: rgba(215,25,32,0.65);
 
     box-shadow:
-        0 0 0 3px rgba(215,25,32,0.10),
-        0 14px 32px rgba(0,0,0,0.32);
+        0 0 0 3px rgba(215,25,32,0.08),
+        0 15px 32px rgba(0,0,0,0.35);
 }
 
-.search-icon {
+.inventory-search-icon {
     position: absolute;
-    left: 20px;
+
+    left: 18px;
     top: 50%;
+
     transform: translateY(-50%);
 
-    z-index: 2;
+    color: var(--red-light);
 
-    color: #d71920;
-    font-size: 23px;
+    font-size: 22px;
     font-weight: 700;
+
     pointer-events: none;
 }
 
 
-/* Grille */
+/* =========================================================
+   CARTES
+   MÊMES PROPRIÉTÉS QUE L'ACCUEIL
+   ========================================================= */
 
-.inventory-grid {
+.inventory-cards {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
     gap: 20px;
 }
 
 
-/* Cartes */
+/*
+   On reprend volontairement les mêmes valeurs
+   que .card de l'accueil.
+*/
 
 .inventory-card {
-    position: relative;
+    min-height: 245px;
 
-    min-height: 190px;
-    padding: 25px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    overflow: hidden;
+    padding: 24px 22px;
 
     background:
         linear-gradient(
@@ -164,11 +183,13 @@
             #06111d 100%
         ) !important;
 
-    border: 1px solid rgba(255,255,255,0.11);
-    border-top: 3px solid var(--red);
-    border-radius: 10px;
-
     color: #ffffff !important;
+
+    border: 1px solid rgba(255,255,255,0.11);
+
+    border-top: 3px solid var(--red);
+
+    border-radius: 10px;
 
     box-shadow:
         0 15px 35px rgba(0,0,0,0.48),
@@ -178,23 +199,103 @@
 
     transition:
         transform .25s ease,
-        border-color .25s ease,
-        box-shadow .25s ease;
+        box-shadow .25s ease,
+        border-color .25s ease;
 }
 
-.inventory-card::after {
-    content: "";
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    right: -90px;
-    bottom: -110px;
 
-    background: rgba(215,25,32,0.10);
-    border-radius: 50%;
+/* ICÔNES IDENTIQUES À L'ACCUEIL */
 
-    transition: transform .3s ease;
+.inventory-card .card-icon {
+    width: 50px;
+    height: 50px;
+
+    min-width: 50px;
+    min-height: 50px;
+
+    margin-bottom: 17px;
+
+    border: 1px solid rgba(255,255,255,0.18);
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e52a31,
+            #a70f15
+        );
+
+    color: #ffffff;
+
+    font-size: 22px;
+    line-height: 1;
 }
+
+
+/* TITRES IDENTIQUES */
+
+.inventory-card h3 {
+    width: 100%;
+
+    margin: 0 0 10px;
+
+    color: #ffffff !important;
+
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 1.3;
+
+    letter-spacing: .4px;
+
+    white-space: normal;
+    overflow: visible;
+
+    text-decoration: none !important;
+}
+
+
+/* DESCRIPTIONS IDENTIQUES */
+
+.inventory-card p {
+    width: 100%;
+
+    margin: 0;
+
+    flex: 1;
+
+    color: #b8c6d1 !important;
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.6;
+
+    text-decoration: none !important;
+}
+
+
+/* ACCÉDER IDENTIQUE */
+
+.inventory-card .card-link {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    color: #ffffff !important;
+
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 1.3;
+
+    letter-spacing: 1.2px;
+
+    text-decoration: none !important;
+}
+
+
+/* SURVOL IDENTIQUE À L'ACCUEIL */
 
 .inventory-card:hover {
     transform: translateY(-6px);
@@ -207,101 +308,12 @@
         inset 0 1px 0 rgba(255,255,255,0.10);
 }
 
-.inventory-card:hover::after {
-    transform: scale(1.35);
+.inventory-card:hover .card-link {
+    color: var(--red-light) !important;
 }
 
 
-/* Icône */
-
-.inventory-card-icon {
-    position: relative;
-    z-index: 2;
-
-    width: 56px;
-    height: 56px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 22px;
-
-    border: 1px solid rgba(255,255,255,0.14);
-    border-radius: 10px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #e52a31,
-            #a70f15
-        );
-
-    font-size: 25px;
-
-    box-shadow:
-        0 8px 18px rgba(0,0,0,0.25);
-}
-
-
-/* Texte */
-
-.inventory-card-content {
-    position: relative;
-    z-index: 2;
-}
-
-.inventory-card h2 {
-    margin: 0 0 8px;
-
-    color: #ffffff !important;
-
-    font-size: 18px;
-    font-weight: 900;
-    line-height: 1.3;
-    letter-spacing: .2px;
-
-    text-decoration: none !important;
-}
-
-.inventory-card p {
-    margin: 0;
-
-    color: #b8c6d1 !important;
-
-    font-size: 13px;
-    line-height: 1.55;
-
-    text-decoration: none !important;
-}
-
-
-/* Flèche */
-
-.inventory-card-arrow {
-    position: absolute;
-    z-index: 3;
-
-    right: 22px;
-    bottom: 20px;
-
-    color: #ffffff;
-
-    font-size: 20px;
-    font-weight: 900;
-
-    transition:
-        transform .25s ease,
-        color .25s ease;
-}
-
-.inventory-card:hover .inventory-card-arrow {
-    color: var(--red-light);
-    transform: translateX(5px);
-}
-
-
-/* Aucun résultat */
+/* AUCUN RÉSULTAT */
 
 .inventory-empty {
     display: none;
@@ -316,18 +328,19 @@
 }
 
 
-/* Tablette */
+/* TABLETTE */
 
 @media (max-width: 1150px) {
 
-    .inventory-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .inventory-cards {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 
 }
 
 
-/* Mobile */
+/* MOBILE */
 
 @media (max-width: 850px) {
 
@@ -335,32 +348,19 @@
         padding: 30px 18px 55px;
     }
 
-    .inventory-grid {
+    .inventory-cards {
         grid-template-columns: 1fr;
         gap: 16px;
     }
 
     .inventory-card {
-        min-height: 165px;
-        padding: 21px;
-    }
-
-    .inventory-heading h1 {
-        font-size: 34px;
-    }
-
-    .inventory-heading p {
-        font-size: 14px;
-    }
-
-    .inventory-search input {
-        height: 52px;
+        min-height: 245px;
     }
 
 }
 
 
-/* Très petit écran */
+/* PETITS MOBILES */
 
 @media (max-width: 480px) {
 
@@ -369,8 +369,5 @@
         padding-right: 14px;
     }
 
-    .inventory-card {
-        min-height: 155px;
-    }
-
 }
+
