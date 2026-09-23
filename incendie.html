@@ -1,663 +1,337 @@
 ```html
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Incendie — CIS Villenave-d'Ornon</title>
+  <title>Incendie — CIS Villenave-d'Ornon</title>
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="incendie.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="incendie.css">
 </head>
 
 <body>
 
 <header class="site-header">
 
-    <div class="header-inner">
+  <div class="header-inner">
 
-        <a href="index.html" class="brand">
+    <a href="index.html" class="brand">
+      <img src="logo1.png" alt="CIS Villenave-d'Ornon">
+      <div>
+        <strong>CIS VILLENAVE-D'ORNON</strong>
+        <span>PORTAIL OPÉRATIONNEL</span>
+      </div>
+    </a>
 
-            <img
-                src="logo1.png"
-                alt="Logo CIS Villenave-d'Ornon"
-                class="brand-logo"
-            >
+    <!-- BOUTON MOBILE -->
+    <button
+      id="mobileToggle"
+      class="mobile-toggle"
+      type="button"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false">
+      ☰
+    </button>
 
-            <div class="brand-text">
+    <!-- MENU -->
+    <nav id="mainNav" class="main-nav">
 
-                <div class="brand-title">
-                    CIS VILLENAVE-D'ORNON
-                </div>
+      <a href="index.html">ACCUEIL</a>
 
-                <div class="brand-subtitle">
-                    PORTAIL OPÉRATIONNEL
-                </div>
-
-            </div>
-
-        </a>
-
+      <!-- INVENTAIRES -->
+      <div id="inventoryDropdown" class="nav-dropdown">
 
         <button
-            class="mobile-toggle"
-            id="mobileToggle"
-            type="button"
-            aria-label="Ouvrir le menu"
-            aria-expanded="false"
-        >
-            <span></span>
-            <span></span>
-            <span></span>
+          id="inventoryToggle"
+          class="nav-dropdown-toggle"
+          type="button"
+          aria-expanded="false">
+          INVENTAIRES ▾
         </button>
 
+        <div id="inventoryMenu" class="nav-dropdown-menu">
 
-        <nav class="nav" id="mainNav">
+          <a href="pages/inventaires.html">Vue d'ensemble</a>
 
-            <a
-                href="index.html"
-                class="nav-link"
-            >
-                ACCUEIL
-            </a>
+          <a href="ssuap.html">SSUAP</a>
 
+          <a href="incendie.html" class="active">
+            INCENDIE
+          </a>
 
-            <div
-                class="nav-dropdown"
-                id="inventoryDropdown"
-            >
+          <a href="div.html">DIV</a>
 
-                <button
-                    type="button"
-                    class="nav-dropdown-toggle"
-                    id="inventoryToggle"
-                    aria-expanded="false"
-                >
+          <a href="fdf.html">FDF</a>
 
-                    <span>INVENTAIRES</span>
+          <a href="specialites.html">SPÉCIALITÉS</a>
 
-                    <span class="dropdown-arrow">
-                        ▾
-                    </span>
+          <a href="standard.html">STANDARD</a>
 
-                </button>
+          <a href="casernement.html">CASERNEMENT</a>
 
+        </div>
 
-                <div
-                    class="nav-dropdown-menu"
-                    id="inventoryMenu"
-                >
+      </div>
 
-                    <a href="pages/inventaires.html">
-                        <span class="submenu-icon">▣</span>
-                        VUE D'ENSEMBLE
-                    </a>
+      <a href="pages/entretiens.html">ENTRETIENS</a>
+      <a href="pages/documents.html">DOCUMENTS</a>
+      <a href="pages/amicale.html">AMICALE</a>
+      <a href="pages/raccourcis.html">RACCOURCIS</a>
 
-                    <a href="ssuap.html">
-                        <span class="submenu-icon">＋</span>
-                        SSUAP
-                    </a>
+    </nav>
 
-                    <a href="incendie.html" class="active">
-                        <span class="submenu-icon">◆</span>
-                        INCENDIE
-                    </a>
-
-                    <a href="div.html">
-                        <span class="submenu-icon">◇</span>
-                        DIV
-                    </a>
-
-                    <a href="fdf.html">
-                        <span class="submenu-icon">▲</span>
-                        FDF
-                    </a>
-
-                    <a href="specialites.html">
-                        <span class="submenu-icon">★</span>
-                        SPÉCIALITÉS
-                    </a>
-
-                    <a href="standard.html">
-                        <span class="submenu-icon">▤</span>
-                        STANDARD
-                    </a>
-
-                    <a href="casernement.html">
-                        <span class="submenu-icon">⌂</span>
-                        CASERNEMENT
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <a
-                href="pages/entretiens.html"
-                class="nav-link"
-            >
-                ENTRETIENS
-            </a>
-
-            <a
-                href="pages/documents.html"
-                class="nav-link"
-            >
-                DOCUMENTS
-            </a>
-
-            <a
-                href="pages/amicale.html"
-                class="nav-link"
-            >
-                AMICALE
-            </a>
-
-            <a
-                href="pages/raccourcis.html"
-                class="nav-link"
-            >
-                RACCOURCIS
-            </a>
-
-        </nav>
-
-    </div>
+  </div>
 
 </header>
 
 
-<main class="incendie-page">
+<main>
 
-    <section class="incendie-hero">
+  <!-- HERO -->
+  <section class="page-hero incendie-hero">
 
-        <div class="incendie-hero-overlay"></div>
+    <div class="hero-content">
 
-        <div class="incendie-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Accueil</a>
+        <span>›</span>
+        <a href="pages/inventaires.html">Inventaires</a>
+        <span>›</span>
+        <strong>Incendie</strong>
+      </div>
 
-            <div class="incendie-eyebrow">
-                CENTRE D'INCENDIE ET DE SECOURS
-            </div>
+      <div class="hero-icon">🔥</div>
 
-            <h1>
-                INCENDIE
-            </h1>
+      <div class="eyebrow">CENTRE D'INCENDIE ET DE SECOURS</div>
 
-            <div class="incendie-line"></div>
+      <h1>INCENDIE</h1>
 
-            <p>
-                Accès direct aux inventaires.
-            </p>
+      <p>Accès direct aux inventaires.</p>
 
+    </div>
+
+  </section>
+
+
+  <!-- CONTENU -->
+  <section class="incendie-section">
+
+    <div class="incendie-container">
+
+      <div class="section-heading">
+
+        <div class="section-label">
+          ACCÈS RAPIDE
         </div>
 
-    </section>
+        <h2>Inventaires Incendie</h2>
 
+        <p>
+          Retrouvez rapidement les formulaires d'inventaire
+          des véhicules incendie.
+        </p>
 
-    <section class="incendie-content">
+      </div>
 
-        <div class="incendie-container">
 
+      <!-- RECHERCHE -->
+      <div class="search-box">
 
-            <div class="incendie-breadcrumb">
+        <span class="search-icon">⌕</span>
 
-                <a href="index.html">
-                    Accueil
-                </a>
+        <input
+          type="search"
+          id="incendieSearch"
+          placeholder="Rechercher un véhicule ou un formulaire..."
+          autocomplete="off">
 
-                <span>›</span>
+        <button
+          id="clearSearch"
+          type="button"
+          aria-label="Effacer la recherche">
+          ×
+        </button>
 
-                <a href="pages/inventaires.html">
-                    Inventaires
-                </a>
+      </div>
 
-                <span>›</span>
+      <div id="searchResult" class="search-result"></div>
 
-                <strong>
-                    Incendie
-                </strong>
 
-            </div>
+      <!-- CARTES -->
+      <div id="incendieGrid" class="incendie-grid">
 
 
-            <div class="incendie-intro">
+        <!-- FPT 01 -->
+        <article
+          class="incendie-card"
+          data-search="F1 FPT 01 Fourgon Pompe Tonne inventaire">
 
-                <div class="incendie-intro-icon">
-                    🔥
-                </div>
+          <div class="card-number">F1</div>
 
-                <div>
+          <h3>FPT 01</h3>
 
-                    <span class="incendie-label">
-                        ACCÈS RAPIDE
-                    </span>
+          <p>Fourgon Pompe Tonne</p>
 
-                    <h2>
-                        Inventaires Incendie
-                    </h2>
+          <a
+            class="inventory-button"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSd9eU-5nNT6gkXeXWvM4jl7qaxTKc8Hu_hd_CGGYWYdc3MpHg/viewform"
+            target="_blank"
+            rel="noopener">
+            INVENTAIRE
+            <span>Inventaire FPT 01 ↗</span>
+          </a>
 
-                    <p>
-                        Retrouvez rapidement les formulaires
-                        d'inventaire des véhicules incendie.
-                    </p>
+        </article>
 
-                </div>
 
-            </div>
+        <!-- FPTGP 02 -->
+        <article
+          class="incendie-card"
+          data-search="GP FPTGP 02 Fourgon Pompe Grande Puissance inventaire">
 
+          <div class="card-number">GP</div>
 
-            <div class="incendie-search">
+          <h3>FPTGP 02</h3>
 
-                <span
-                    class="search-icon"
-                    aria-hidden="true"
-                >
-                    ⌕
-                </span>
+          <p>Fourgon Pompe Grande Puissance</p>
 
-                <input
-                    type="search"
-                    id="incendieSearch"
-                    placeholder="Rechercher un véhicule ou un formulaire..."
-                    autocomplete="off"
-                    aria-label="Rechercher un véhicule ou un formulaire"
-                >
+          <a
+            class="inventory-button"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfYTSP2b4F6XAgsyKSXNlQE8WmGoWypcZfZNSa2CI6vs2N3Lw/viewform"
+            target="_blank"
+            rel="noopener">
+            INVENTAIRE
+            <span>Inventaire FPTGP 02 ↗</span>
+          </a>
 
-                <button
-                    id="clearSearch"
-                    type="button"
-                    aria-label="Effacer"
-                >
-                    ×
-                </button>
+        </article>
 
-            </div>
 
+        <!-- ECH -->
+        <article
+          class="incendie-card"
+          data-search="ECH échelle inventaire">
 
-            <div
-                id="searchResult"
-                class="search-result"
-            ></div>
+          <div class="card-number">ECH</div>
 
+          <h3>ECH</h3>
 
-            <div
-                class="incendie-grid"
-                id="incendieGrid"
-            >
+          <p>Échelle</p>
 
+          <a
+            class="inventory-button"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSe5RfSPqzXc39O40FYURZxkLmjuwQ1jBlEEKpgJZPCCtjn39A/viewform"
+            target="_blank"
+            rel="noopener">
+            INVENTAIRE
+            <span>Inventaire ECH ↗</span>
+          </a>
 
-                <!-- FPT 01 -->
+        </article>
 
-                <article
-                    class="incendie-card"
-                    data-search="FPT 01 F1 incendie fourgon pompe tonne"
-                >
 
-                    <div class="incendie-card-header">
+        <!-- FMOGP -->
+        <article
+          class="incendie-card"
+          data-search="FM FMOGP Fourgon Mousse Grande Puissance inventaire">
 
-                        <div class="incendie-number">
-                            F1
-                        </div>
+          <div class="card-number">FM</div>
 
-                        <div>
+          <h3>FMOGP</h3>
 
-                            <h3>
-                                FPT 01
-                            </h3>
+          <p>Fourgon Mousse Grande Puissance</p>
 
-                            <p>
-                                Fourgon Pompe Tonne
-                            </p>
+          <a
+            class="inventory-button"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdsKyJJkTkoiJEL1euuLlERXf1S8NMHm4DnjmsZSfvnbQll1w/viewform"
+            target="_blank"
+            rel="noopener">
+            INVENTAIRE
+            <span>Inventaire FMOGP ↗</span>
+          </a>
 
-                        </div>
+        </article>
 
-                    </div>
 
+        <!-- VL CDGG -->
+        <article
+          class="incendie-card"
+          data-search="CG VL CDGG Véhicule Chef de Groupe inventaire">
 
-                    <div class="incendie-actions">
+          <div class="card-number">CG</div>
 
-                        <a
-                            href="https://docs.google.com/forms/d/e/1FAIpQLSd9eU-5nNT6gkXeXWvM4jl7qaxTKc8Hu_hd_CGGYWYdc3MpHg/viewform"
-                            class="incendie-button"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
+          <h3>VL CDGG</h3>
 
-                            <span>
-                                INVENTAIRE
-                            </span>
+          <p>Véhicule Chef de Groupe</p>
 
-                            <strong>
-                                Inventaire FPT 01
-                            </strong>
+          <a
+            class="inventory-button"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdmcnS6v5ICCbmuHJ9lJDz1taCs1w9tKfj-Pz1_ie6bzsLd9w/viewform"
+            target="_blank"
+            rel="noopener">
+            INVENTAIRE
+            <span>Inventaire VL CDGG ↗</span>
+          </a>
 
-                            <b>
-                                ↗
-                            </b>
+        </article>
 
-                        </a>
+      </div>
 
-                    </div>
 
-                </article>
+      <!-- AUCUN RÉSULTAT -->
+      <div id="noResult" class="no-result">
 
+        <div class="no-result-icon">🔎</div>
 
-                <!-- FPTGP 02 -->
+        <h3>Aucun résultat</h3>
 
-                <article
-                    class="incendie-card"
-                    data-search="FPTGP 02 GP fourgon pompe grande puissance incendie"
-                >
+        <p>
+          Aucun véhicule ou formulaire ne correspond
+          à votre recherche.
+        </p>
 
-                    <div class="incendie-card-header">
+      </div>
 
-                        <div class="incendie-number">
-                            GP
-                        </div>
 
-                        <div>
+      <div class="back-container">
 
-                            <h3>
-                                FPTGP 02
-                            </h3>
+        <a
+          href="pages/inventaires.html"
+          class="back-button">
+          ← Retour aux inventaires
+        </a>
 
-                            <p>
-                                Fourgon Pompe Grande Puissance
-                            </p>
+      </div>
 
-                        </div>
+    </div>
 
-                    </div>
-
-
-                    <div class="incendie-actions">
-
-                        <a
-                            href="https://docs.google.com/forms/d/e/1FAIpQLSfYTSP2b4F6XAgsyKSXNlQE8WmGoWypcZfZNSa2CI6vs2N3Lw/viewform"
-                            class="incendie-button"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-
-                            <span>
-                                INVENTAIRE
-                            </span>
-
-                            <strong>
-                                Inventaire FPTGP 02
-                            </strong>
-
-                            <b>
-                                ↗
-                            </b>
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- ECH -->
-
-                <article
-                    class="incendie-card"
-                    data-search="ECH échelle incendie"
-                >
-
-                    <div class="incendie-card-header">
-
-                        <div class="incendie-number">
-                            ECH
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                ECH
-                            </h3>
-
-                            <p>
-                                Échelle
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="incendie-actions">
-
-                        <a
-                            href="https://docs.google.com/forms/d/e/1FAIpQLSe5RfSPqzXc39O40FYURZxkLmjuwQ1jBlEEKpgJZPCCtjn39A/viewform"
-                            class="incendie-button"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-
-                            <span>
-                                INVENTAIRE
-                            </span>
-
-                            <strong>
-                                Inventaire ECH
-                            </strong>
-
-                            <b>
-                                ↗
-                            </b>
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- FMOGP -->
-
-                <article
-                    class="incendie-card"
-                    data-search="FM FMOGP incendie fourgon mousse grande puissance"
-                >
-
-                    <div class="incendie-card-header">
-
-                        <div class="incendie-number">
-                            FM
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                FMOGP
-                            </h3>
-
-                            <p>
-                                Fourgon Mousse Grande Puissance
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="incendie-actions">
-
-                        <a
-                            href="https://docs.google.com/forms/d/e/1FAIpQLSdsKyJJkTkoiJEL1euuLlERXf1S8NMHm4DnjmsZSfvnbQll1w/viewform"
-                            class="incendie-button"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-
-                            <span>
-                                INVENTAIRE
-                            </span>
-
-                            <strong>
-                                Inventaire FMOGP
-                            </strong>
-
-                            <b>
-                                ↗
-                            </b>
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- VL CDGG -->
-
-                <article
-                    class="incendie-card"
-                    data-search="CG VL CDGG chef de groupe incendie"
-                >
-
-                    <div class="incendie-card-header">
-
-                        <div class="incendie-number">
-                            CG
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                VL CDGG
-                            </h3>
-
-                            <p>
-                                Véhicule Chef de Groupe
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="incendie-actions">
-
-                        <a
-                            href="https://docs.google.com/forms/d/e/1FAIpQLSdmcnS6v5ICCbmuHJ9lJDz1taCs1w9tKfj-Pz1_ie6bzsLd9w/viewform"
-                            class="incendie-button"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-
-                            <span>
-                                INVENTAIRE
-                            </span>
-
-                            <strong>
-                                Inventaire VL CDGG
-                            </strong>
-
-                            <b>
-                                ↗
-                            </b>
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-
-            <div
-                id="noResult"
-                class="no-result"
-            >
-
-                <div>🔎</div>
-
-                <h3>
-                    Aucun résultat
-                </h3>
-
-                <p>
-                    Aucun véhicule ou formulaire ne correspond
-                    à votre recherche.
-                </p>
-
-            </div>
-
-
-            <div class="incendie-back">
-
-                <a
-                    href="pages/inventaires.html"
-                    class="back-inventory-button"
-                >
-
-                    <span>←</span>
-
-                    Retour aux inventaires
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
+  </section>
 
 </main>
 
 
 <footer class="site-footer">
 
-    <div class="footer-inner">
+  <div class="footer-inner">
 
-        <div class="footer-brand">
+    <strong>CIS VILLENAVE-D'ORNON</strong>
 
-            <strong>
-                CIS VILLENAVE-D'ORNON
-            </strong>
+    <span>Portail opérationnel</span>
 
-            <span>
-                Portail opérationnel
-            </span>
+    <div class="footer-links">
 
-        </div>
-
-
-        <div class="footer-links">
-
-            <a href="index.html">
-                Accueil
-            </a>
-
-            <a href="pages/inventaires.html">
-                Inventaires
-            </a>
-
-            <a href="pages/entretiens.html">
-                Entretiens
-            </a>
-
-            <a href="pages/documents.html">
-                Documents
-            </a>
-
-            <a href="pages/amicale.html">
-                Amicale
-            </a>
-
-            <a href="pages/raccourcis.html">
-                Raccourcis
-            </a>
-
-        </div>
+      <a href="index.html">Accueil</a>
+      <a href="pages/inventaires.html">Inventaires</a>
+      <a href="pages/entretiens.html">Entretiens</a>
+      <a href="pages/documents.html">Documents</a>
+      <a href="pages/amicale.html">Amicale</a>
+      <a href="pages/raccourcis.html">Raccourcis</a>
 
     </div>
+
+  </div>
 
 </footer>
 
@@ -666,6 +340,5 @@
 <script src="incendie.js"></script>
 
 </body>
-
 </html>
-```
+
