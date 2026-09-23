@@ -1,822 +1,275 @@
+/* =========================================================
+   INCENDIE — CIS VILLENAVE-D'ORNON
+   Design sombre / professionnel
+   ========================================================= */
+
 :root {
   --navy: #07111f;
-  --navy-2: #0d1b2e;
-  --red: #c62828;
-  --red-light: #fff1f1;
+  --navy-2: #0b1728;
+  --navy-3: #101f33;
+  --red: #e3262e;
+  --red-dark: #b91c24;
   --white: #ffffff;
-  --text: #17212d;
-  --muted: #667085;
-  --border: #e4e7ec;
-  --background: #f5f7fa;
+  --text: #e8edf5;
+  --muted: #9caabd;
+  --border: rgba(255,255,255,0.10);
+  --shadow: 0 15px 35px rgba(0,0,0,0.28);
 }
 
-
-* {
-  box-sizing: border-box;
-}
-
+/* =========================
+   PAGE
+   ========================= */
 
 body {
-  margin: 0;
-  background: var(--background);
+  background:
+    radial-gradient(circle at top right, rgba(227,38,46,0.12), transparent 35%),
+    linear-gradient(135deg, #050d18, #0a1626 55%, #07111f);
   color: var(--text);
 }
-
-
-/* =========================
-   HEADER
-========================= */
-
-.site-header {
-  position: relative;
-  z-index: 1000;
-  background: var(--navy);
-  color: white;
-}
-
-
-.header-inner {
-  width: min(1200px, calc(100% - 40px));
-  min-height: 76px;
-  margin: auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-}
-
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-
-  color: white;
-  text-decoration: none;
-  font-weight: 900;
-  font-size: 14px;
-  letter-spacing: .5px;
-}
-
-
-.brand img {
-  width: 46px;
-  height: 46px;
-  object-fit: contain;
-}
-
-
-.mobile-toggle {
-  display: none;
-
-  border: 0;
-  background: transparent;
-  color: white;
-
-  font-size: 27px;
-  cursor: pointer;
-}
-
-
-.main-nav {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-
-.main-nav > a,
-.nav-dropdown-toggle {
-  border: 0;
-  background: transparent;
-
-  color: #d9e0ea;
-  text-decoration: none;
-
-  padding: 12px 10px;
-
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: .4px;
-
-  cursor: pointer;
-}
-
-
-.main-nav > a:hover,
-.nav-dropdown-toggle:hover,
-.main-nav > a.active {
-  color: white;
-}
-
-
-/* =========================
-   DROPDOWN
-========================= */
-
-.nav-dropdown {
-  position: relative;
-}
-
-
-.nav-dropdown-menu {
-  position: absolute;
-
-  top: calc(100% + 8px);
-  left: 0;
-
-  min-width: 215px;
-
-  padding: 8px;
-
-  background: white;
-
-  border-radius: 12px;
-
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, .2);
-
-  display: none;
-}
-
-
-.nav-dropdown.open .nav-dropdown-menu {
-  display: block;
-}
-
-
-.nav-dropdown-menu a {
-  display: block;
-
-  padding: 11px 13px;
-
-  border-radius: 8px;
-
-  color: var(--navy);
-
-  text-decoration: none;
-
-  font-size: 13px;
-  font-weight: 700;
-}
-
-
-.nav-dropdown-menu a:hover,
-.nav-dropdown-menu a.active {
-  background: var(--red-light);
-  color: var(--red);
-}
-
 
 /* =========================
    HERO
-========================= */
+   ========================= */
 
-.incendie-hero {
-  padding: 45px 20px 65px;
-
-  text-align: center;
-
-  color: white;
-
-  background:
-    radial-gradient(
-      circle at 85% 15%,
-      rgba(198, 40, 40, .28),
-      transparent 35%
-    ),
-    linear-gradient(
-      135deg,
-      #07111f,
-      #0d1b2e
-    );
+.page-hero {
+  position: relative;
+  overflow: hidden;
 }
 
-
-.breadcrumb {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-
-  gap: 9px;
-
-  margin-bottom: 30px;
-
-  font-size: 13px;
+.page-hero::after {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  right: -100px;
+  top: -120px;
+  background: rgba(227,38,46,0.10);
+  border-radius: 50%;
+  filter: blur(10px);
+  pointer-events: none;
 }
 
-
-.breadcrumb a {
-  color: #cbd5e1;
-  text-decoration: none;
+.page-hero h1 {
+  color: #fff;
+  letter-spacing: 0.04em;
 }
 
-
-.breadcrumb strong {
-  color: white;
+.page-hero p {
+  color: #b8c3d3;
 }
-
-
-.hero-icon {
-  margin-bottom: 12px;
-
-  font-size: 48px;
-}
-
-
-.hero-eyebrow {
-  margin: 0 0 9px;
-
-  color: #ff7777;
-
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 2px;
-}
-
-
-.incendie-hero h1 {
-  margin: 0;
-
-  font-size: clamp(45px, 8vw, 78px);
-
-  line-height: 1;
-
-  font-weight: 950;
-
-  letter-spacing: 3px;
-}
-
-
-.incendie-hero > p:last-child {
-  margin: 18px 0 0;
-
-  color: #d3dae5;
-
-  font-size: 17px;
-}
-
 
 /* =========================
-   CONTENT
-========================= */
+   ZONE INVENTAIRES
+   ========================= */
 
 .incendie-section {
-  width: min(1120px, calc(100% - 40px));
-
-  margin: auto;
-
-  padding: 55px 0 70px;
+  background: transparent;
 }
 
-
-.section-heading {
-  margin-bottom: 28px;
+.incendie-section h2 {
+  color: #fff;
 }
 
-
-.section-heading > span {
-  color: var(--red);
-
-  font-size: 12px;
-  font-weight: 900;
-
-  letter-spacing: 1.7px;
-}
-
-
-.section-heading h2 {
-  margin: 7px 0 8px;
-
-  color: var(--navy);
-
-  font-size: 32px;
-}
-
-
-.section-heading p {
-  margin: 0;
-
+.incendie-section > p {
   color: var(--muted);
-
-  font-size: 16px;
 }
-
 
 /* =========================
-   SEARCH
-========================= */
+   RECHERCHE
+   ========================= */
 
-.search-area {
-  margin-bottom: 30px;
+.incendie-search {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.20);
+  backdrop-filter: blur(10px);
 }
 
-
-.search-box {
-  display: flex;
-  align-items: center;
-
-  background: white;
-
-  border: 1px solid var(--border);
-
-  border-radius: 14px;
-
-  overflow: hidden;
-
-  box-shadow:
-    0 8px 25px rgba(7, 17, 31, .07);
-}
-
-
-.search-icon {
-  width: 52px;
-
-  text-align: center;
-
-  color: var(--red);
-
-  font-size: 27px;
-}
-
-
-#incendieSearch {
-  flex: 1;
-
-  min-width: 0;
-
-  padding: 17px 8px;
-
-  border: 0;
-  outline: 0;
-
+.incendie-search input {
   background: transparent;
-
-  color: var(--text);
-
-  font-size: 16px;
+  color: #fff;
 }
 
-
-#incendieSearch::placeholder {
-  color: #98a2b3;
+.incendie-search input::placeholder {
+  color: #8997aa;
 }
 
-
-#clearSearch {
-  width: 52px;
-  height: 52px;
-
-  border: 0;
-
-  background: transparent;
-
-  color: #98a2b3;
-
-  font-size: 25px;
-
-  cursor: pointer;
+.incendie-search button {
+  color: #aeb9c9;
 }
-
-
-#clearSearch:hover {
-  color: var(--red);
-}
-
-
-.search-result {
-  min-height: 19px;
-
-  margin-top: 9px;
-  padding-left: 5px;
-
-  color: var(--muted);
-
-  font-size: 13px;
-  font-weight: 700;
-}
-
 
 /* =========================
-   CARDS
-========================= */
-
-.incendie-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 22px;
-}
-
+   CARTES
+   ========================= */
 
 .incendie-card {
   position: relative;
 
-  padding: 28px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18,34,54,0.98),
+      rgba(9,22,37,0.98)
+    ) !important;
 
-  background: white;
-
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255,255,255,0.10) !important;
 
   border-radius: 18px;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.28),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+
+  color: #fff !important;
 
   overflow: hidden;
 
-  box-shadow:
-    0 8px 25px rgba(7, 17, 31, .06);
-
   transition:
-    transform .2s ease,
-    box-shadow .2s ease;
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
+/* petite ligne rouge en haut */
 
 .incendie-card::before {
   content: "";
-
   position: absolute;
-
   left: 0;
   top: 0;
-  bottom: 0;
-
-  width: 5px;
-
-  background: var(--red);
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #b91c24,
+    #e3262e,
+    #ff4b51
+  );
 }
 
+/* effet au survol */
 
 .incendie-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+
+  border-color: rgba(227,38,46,0.45) !important;
 
   box-shadow:
-    0 16px 35px rgba(7, 17, 31, .12);
+    0 20px 45px rgba(0,0,0,0.38),
+    0 0 25px rgba(227,38,46,0.08);
 }
 
+/* =========================
+   ICÔNE / BADGE
+   ========================= */
 
-.card-top {
-  display: flex;
-  justify-content: flex-end;
+.incendie-card .vehicle-icon,
+.incendie-card .card-icon {
+  background: rgba(227,38,46,0.12) !important;
+  color: #ff4b51 !important;
+  border: 1px solid rgba(227,38,46,0.20);
 }
 
-
-.card-number {
-  color: #98a2b3;
-
-  font-size: 12px;
-  font-weight: 900;
-
-  letter-spacing: 1px;
-}
-
-
-.vehicle-icon {
-  width: 58px;
-  height: 58px;
-
-  display: grid;
-  place-items: center;
-
-  margin: 5px 0 17px;
-
-  border-radius: 15px;
-
-  background: var(--red-light);
-
-  font-size: 29px;
-}
-
+/* =========================
+   TEXTE CARTES
+   ========================= */
 
 .incendie-card h3 {
-  margin: 0 0 6px;
-
-  color: var(--navy);
-
-  font-size: 25px;
-  font-weight: 900;
+  color: #ffffff !important;
 }
-
 
 .incendie-card p {
-  margin: 0 0 24px;
-
-  color: var(--muted);
-
-  font-size: 15px;
+  color: #aebacc !important;
 }
 
+.incendie-card .vehicle-code,
+.incendie-card .card-code {
+  color: #ff5258 !important;
+  font-weight: 700;
+}
 
-.inventory-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
+/* =========================
+   BOUTON INVENTAIRE
+   ========================= */
 
-  min-height: 48px;
+.incendie-card a {
+  background: linear-gradient(
+    135deg,
+    #c91f28,
+    #e3262e
+  ) !important;
 
-  padding: 12px 16px;
+  color: #ffffff !important;
 
-  border-radius: 11px;
+  border: 1px solid rgba(255,255,255,0.08);
 
-  background: var(--navy);
-
-  color: white;
-
-  text-decoration: none;
-
-  font-size: 12px;
-  font-weight: 900;
+  box-shadow:
+    0 8px 18px rgba(227,38,46,0.22);
 
   transition:
-    background .2s ease,
-    transform .2s ease;
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
+.incendie-card a:hover {
+  background: linear-gradient(
+    135deg,
+    #e3262e,
+    #f13a41
+  ) !important;
 
-.inventory-button span {
-  font-weight: 700;
-  opacity: .9;
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 25px rgba(227,38,46,0.35);
 }
-
-
-.inventory-button:hover {
-  background: var(--red);
-
-  transform: translateY(-1px);
-}
-
 
 /* =========================
-   NO RESULT
-========================= */
+   AUCUN RÉSULTAT
+   ========================= */
 
-.no-result {
-  display: none;
-
-  margin-top: 25px;
-
-  padding: 45px 20px;
-
-  text-align: center;
-
-  background: white;
-
-  border: 1px solid var(--border);
-
-  border-radius: 18px;
+#noResult {
+  color: #aebacc;
 }
 
-
-.no-result.show {
-  display: block;
+#noResult h3 {
+  color: #ffffff;
 }
-
-
-.no-result > div {
-  font-size: 30px;
-}
-
-
-.no-result h3 {
-  margin: 10px 0 5px;
-
-  color: var(--navy);
-}
-
-
-.no-result p {
-  margin: 0;
-
-  color: var(--muted);
-}
-
 
 /* =========================
-   BACK
-========================= */
+   RETOUR INVENTAIRES
+   ========================= */
 
-.back-wrapper {
-  display: flex;
-
-  justify-content: center;
-
-  margin-top: 40px;
+.back-link {
+  color: #ff4b51;
 }
 
-
-.back-button {
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  min-height: 48px;
-
-  padding: 0 22px;
-
-  background: white;
-
-  border: 1px solid var(--border);
-
-  border-radius: 11px;
-
-  color: var(--navy);
-
-  text-decoration: none;
-
-  font-weight: 800;
+.back-link:hover {
+  color: #ffffff;
 }
-
-
-.back-button:hover {
-  color: var(--red);
-
-  border-color: var(--red);
-}
-
 
 /* =========================
    FOOTER
-========================= */
+   ========================= */
 
-.site-footer {
-  background: var(--navy);
-
-  color: white;
+footer {
+  background: #050c16;
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
-
-
-.footer-inner {
-  width: min(1120px, calc(100% - 40px));
-
-  margin: auto;
-
-  padding: 30px 0;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 25px;
-}
-
-
-.footer-inner strong {
-  display: block;
-
-  font-size: 13px;
-}
-
-
-.footer-inner span {
-  display: block;
-
-  margin-top: 5px;
-
-  color: #9ca9ba;
-
-  font-size: 12px;
-}
-
-
-.footer-links {
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 15px;
-}
-
-
-.footer-links a {
-  color: #cbd5e1;
-
-  text-decoration: none;
-
-  font-size: 12px;
-}
-
-
-.footer-links a:hover {
-  color: white;
-}
-
 
 /* =========================
    MOBILE
-========================= */
+   ========================= */
 
-@media (max-width: 900px) {
-
-  .mobile-toggle {
-    display: block;
-  }
-
-
-  .main-nav {
-    position: absolute;
-
-    top: 76px;
-    left: 0;
-    right: 0;
-
-    display: none;
-
-    flex-direction: column;
-
-    align-items: stretch;
-
-    padding: 12px 20px 20px;
-
-    background: var(--navy);
-
-    box-shadow:
-      0 15px 30px rgba(0,0,0,.25);
-  }
-
-
-  .main-nav.open {
-    display: flex;
-  }
-
-
-  .main-nav > a,
-  .nav-dropdown-toggle {
-    width: 100%;
-
-    padding: 14px;
-
-    text-align: left;
-  }
-
-
-  .nav-dropdown-menu {
-    position: static;
-
-    margin: 5px 0 8px;
-
-    box-shadow: none;
-
-    border-radius: 10px;
-  }
-
-
-  .nav-dropdown.open .nav-dropdown-menu {
-    display: block;
-  }
-
-
-  .incendie-grid {
-    grid-template-columns: 1fr;
-  }
-
-
-  .footer-inner {
-    flex-direction: column;
-
-    align-items: flex-start;
-  }
-
-}
-
-
-@media (max-width: 600px) {
-
-  .header-inner {
-    width: calc(100% - 25px);
-  }
-
-
-  .brand span {
-    font-size: 12px;
-  }
-
-
-  .incendie-hero {
-    padding: 35px 18px 50px;
-  }
-
-
-  .incendie-section {
-    width: calc(100% - 28px);
-
-    padding-top: 38px;
-  }
-
-
-  .section-heading h2 {
-    font-size: 27px;
-  }
-
+@media (max-width: 768px) {
 
   .incendie-card {
-    padding: 24px;
+    border-radius: 15px;
+  }
+
+  .incendie-card:hover {
+    transform: none;
   }
 
 }
