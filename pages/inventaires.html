@@ -1,0 +1,307 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Inventaires — CIS VILLENAVE-D'ORNON</title>
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+
+        <a href="../index.html" class="brand">
+            <img src="../logo1.png"
+                 alt="Logo CIS Villenave-d'Ornon"
+                 class="brand-logo">
+
+            <div class="brand-text">
+                <div class="brand-title">CIS VILLENAVE-D'ORNON</div>
+                <div class="brand-subtitle">PORTAIL OPÉRATIONNEL</div>
+            </div>
+        </a>
+
+        <button class="mobile-toggle"
+                id="mobileToggle"
+                type="button"
+                aria-label="Ouvrir le menu"
+                aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav" id="mainNav">
+
+            <a href="../index.html" class="nav-link">ACCUEIL</a>
+
+            <div class="nav-dropdown" id="inventoryDropdown">
+
+                <button type="button"
+                        class="nav-dropdown-toggle"
+                        id="inventoryToggle"
+                        aria-expanded="false">
+
+                    <span>INVENTAIRES</span>
+                    <span class="dropdown-arrow">▾</span>
+
+                </button>
+
+                <div class="nav-dropdown-menu" id="inventoryMenu">
+
+                    <a href="ssuap.html">
+                        <span class="submenu-icon">＋</span>
+                        SSUAP
+                    </a>
+
+                    <a href="incendie.html">
+                        <span class="submenu-icon">◆</span>
+                        INCENDIE
+                    </a>
+
+                    <a href="div.html">
+                        <span class="submenu-icon">◇</span>
+                        DIV
+                    </a>
+
+                    <a href="fdf.html">
+                        <span class="submenu-icon">▲</span>
+                        FDF
+                    </a>
+
+                    <a href="specialites.html">
+                        <span class="submenu-icon">★</span>
+                        SPÉCIALITÉS
+                    </a>
+
+                    <a href="standard.html">
+                        <span class="submenu-icon">▤</span>
+                        STANDARD
+                    </a>
+
+                    <a href="casernement.html">
+                        <span class="submenu-icon">⌂</span>
+                        CASERNEMENT
+                    </a>
+
+                </div>
+            </div>
+
+            <a href="entretiens.html" class="nav-link">ENTRETIENS</a>
+
+            <a href="documents.html" class="nav-link">DOCUMENTS</a>
+
+            <a href="amicale.html" class="nav-link">AMICALE</a>
+
+            <a href="raccourcis.html" class="nav-link">RACCOURCIS</a>
+
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section class="inventory-page">
+
+        <div class="inventory-container">
+
+            <div class="inventory-breadcrumb">
+                <a href="../index.html">Accueil</a>
+                <span>›</span>
+                <strong>Inventaires</strong>
+            </div>
+
+            <div class="inventory-heading">
+
+                <div>
+                    <div class="inventory-eyebrow">
+                        PORTAIL OPÉRATIONNEL
+                    </div>
+
+                    <h1>Inventaires</h1>
+
+                    <p>
+                        Tous les inventaires de votre Centre de Secours.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="inventory-search">
+
+                <span class="search-icon">⌕</span>
+
+                <input
+                    type="search"
+                    id="inventorySearch"
+                    placeholder="Rechercher un inventaire..."
+                    autocomplete="off">
+
+            </div>
+```html
+            <div class="inventory-grid" id="inventoryGrid">
+
+                <a href="ssuap.html"
+                   class="inventory-card"
+                   data-search="ssuap vsav matériel asu">
+
+                    <div class="inventory-card-icon">🩺</div>
+
+                    <div class="inventory-card-content">
+                        <h2>SSUAP</h2>
+                        <p>VSAV et matériel ASU</p>
+                    </div>
+
+                    <span class="inventory-card-arrow">→</span>
+
+                </a>
+
+
+                <a href="incendie.html"
+                   class="inventory-card"
+                   data-search="incendie fpt fptgp ech fmogp">
+
+                    <div class="inventory-card-icon">🔥</div>
+
+                    <div class="inventory-card-content">
+                        <h2>Incendie</h2>
+                        <p>FPT, FPTGP, ECH, FMOGP…</p>
+                    </div>
+
+                    <span class="inventory-card-arrow">→</span>
+
+                </a>
+
+
+                <a href="div.html"
+                   class="inventory-card"
+                   data-search="div vtu vsr">
+
+                    <div class="inventory-card-icon">🛠️</div>
+
+                    <div class="inventory-card-content">
+                        <h2>DIV</h2>
+                        <p>VTU et VSR</p>
+                    </div>
+
+                    <span class="inventory-card-arrow">→</span>
+
+                </a>
+
+
+                <a href="fdf.html"
+                   class="inventory-card"
+                   data-search="fdf ccf vlhr amsec">
+
+                    <div class="inventory-card-icon">🌲</div>
+
+                    <div class="inventory-card-content">
+                        <h2>FDF</h2>
+                        <p>CCF, VLHR, AMSEC</p>
+                    </div>
+
+                    <span class="inventory-card-arrow">→</span>
+
+                </a>
+
+
+                <a href="specialites.html"
+                   class="inventory-card"
+                   data-search="specialites spécialités eld drone">
+
+                    <div class="inventory-card-icon">⚡</div>
+
+                    <div class="inventory-card-content">
+                        <h2>Spécialités</h2>
+                        <p>ELD et Drone</p>
+                    </div>
+
+                    <span class="inventory-card-arrow">→</span>
+
+                </a>
+
+
+                <a href="standard.html"
+                   class="inventory-card"
+                   data-search="standard stationnaire sac ps">
+
+                    <div class="inventory-card-icon">📦</div>
+
+                    <div class="inventory-card-content">
+                        <h2>Standard</h2>
+                        <p>Stationnaire et sac PS</p>
+                    </div>
+
+                    <span class="inventory-card-arrow">→</span>
+
+                </a>
+
+
+                <a href="casernement.html"
+                   class="inventory-card"
+                   data-search="casernement réserve pharmacie meducore pompy">
+
+                    <div class="inventory-card-icon">🏠</div>
+
+                    <div class="inventory-card-content">
+                        <h2>Casernement</h2>
+                        <p>Réserve et pharmacie</p>
+                    </div>
+
+                    <span class="inventory-card-arrow">→</span>
+
+                </a>
+
+            </div>
+
+            <div class="inventory-empty" id="inventoryEmpty">
+                Aucun inventaire trouvé.
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-red-band"></div>
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+            <strong>CIS VILLENAVE-D'ORNON</strong>
+            <span>Centre d'incendie et de secours</span>
+        </div>
+
+        <div class="footer-links">
+
+            <a href="../index.html">Accueil</a>
+            <a href="inventaires.html">Inventaires</a>
+            <a href="entretiens.html">Entretiens</a>
+            <a href="documents.html">Documents</a>
+            <a href="amicale.html">Amicale</a>
+            <a href="raccourcis.html">Raccourcis</a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        Portail opérationnel — CIS Villenave-d'Ornon
+    </div>
+
+</footer>
+
+
+<script src="../script.js"></script>
+
+</body>
+</html>
