@@ -1,139 +1,88 @@
 ```css
 /* =========================================================
-   CIS VILLENAVE-D'ORNON
    PAGE INVENTAIRES
    ========================================================= */
 
-
-/* =========================================================
-   PAGE
-   ========================================================= */
-
 .inventory-page {
-
     position: relative;
-
     width: 100%;
-
     min-height: calc(100vh - 92px);
-
-    padding: 55px 0 80px;
-
+    padding: 55px 0 70px;
     overflow: hidden;
-
-    /*
-       BLEU NUIT DOMINANT
-       La photo reste très discrète derrière.
-    */
 
     background:
         linear-gradient(
-            rgba(3, 9, 18, 0.96),
-            rgba(3, 9, 18, 0.98)
+            rgba(3, 9, 18, 0.94),
+            rgba(3, 9, 18, 0.97)
         ),
-        url("photo.png") center center / cover no-repeat !important;
+        url("photo.png") center center / cover no-repeat;
 
-    color: #ffffff !important;
+    color: #ffffff;
 }
 
 
-/* =========================================================
-   LIGNE ROUGE
-   ========================================================= */
+/* LIGNE ROUGE */
 
 .inventory-page::before {
-
     content: "";
-
     position: absolute;
-
     top: 0;
     left: 0;
     right: 0;
-
     height: 4px;
-
     background: #d71920;
-
-    z-index: 10;
 }
 
 
-/* =========================================================
-   CONTENEUR
-   ========================================================= */
+/* CONTENEUR */
 
 .inventory-container {
-
     position: relative;
-
-    z-index: 20;
+    z-index: 2;
 
     width: min(1380px, calc(100% - 50px));
-
     margin: 0 auto;
 }
 
 
 /* =========================================================
-   BREADCRUMB
+   ACCUEIL / BREADCRUMB
    ========================================================= */
 
 .inventory-breadcrumb {
-
     display: flex;
-
     align-items: center;
-
     gap: 10px;
 
-    margin-bottom: 35px;
-
-    color: #ffffff !important;
+    margin-bottom: 32px;
 
     font-size: 12px;
-
     font-weight: 700;
+
+    color: #ffffff;
 }
 
 
-/* ACCUEIL */
-
 .inventory-breadcrumb a {
-
     color: #ffffff !important;
-
     text-decoration: none !important;
-
-    font-weight: 700;
 }
 
 
 .inventory-breadcrumb a:hover {
-
     color: #ffffff !important;
 }
 
 
-/* SEPARATEUR */
-
 .inventory-breadcrumb span:nth-child(2) {
-
-    color: #d71920 !important;
-
+    color: #d71920;
     font-size: 20px;
-
     font-weight: 900;
 }
 
 
-/* INVENTAIRES */
-
 .inventory-breadcrumb span:last-child {
-
-    color: #ffffff !important;
-
-    font-weight: 700;
+    color: #ffffff;
 }
 
 
@@ -142,19 +91,16 @@
    ========================================================= */
 
 .inventory-title {
-
-    margin-bottom: 35px;
+    margin-bottom: 32px;
 }
 
 
 .inventory-eyebrow {
+    margin-bottom: 10px;
 
-    margin-bottom: 11px;
-
-    color: #d6e0e7 !important;
+    color: #d6e0e7;
 
     font-size: 10px;
-
     font-weight: 900;
 
     letter-spacing: 2.5px;
@@ -162,103 +108,83 @@
 
 
 .inventory-title h1 {
-
     margin: 0;
 
     color: #ffffff !important;
 
-    font-size: clamp(42px, 5vw, 60px);
-
+    font-size: clamp(42px, 5vw, 58px);
     font-weight: 900;
 
     line-height: 1.05;
-
     letter-spacing: 1px;
 }
 
 
-/* TRAIT ROUGE */
-
 .inventory-title h1::after {
-
     content: "";
 
     display: block;
 
-    width: 82px;
-
+    width: 78px;
     height: 4px;
 
-    margin-top: 17px;
+    margin-top: 16px;
 
     background: #d71920;
 }
 
 
 .inventory-title p {
+    margin-top: 17px;
 
-    margin-top: 18px;
+    color: #d0dce4;
 
-    color: #d4dfe7 !important;
-
-    font-size: 15px;
-
+    font-size: 14px;
     line-height: 1.6;
 }
 
 
 /* =========================================================
-   BARRE DE RECHERCHE — GRANDE
+   GRANDE BARRE DE RECHERCHE
    ========================================================= */
 
 .inventory-search {
-
     position: relative;
 
-    width: 100% !important;
+    width: 100%;
 
-    margin: 0 0 45px !important;
-
-    padding: 0 !important;
+    margin-bottom: 42px;
 }
 
 
-/* INPUT */
-
 .inventory-search input {
+    display: block;
 
-    display: block !important;
+    width: 100%;
 
-    width: 100% !important;
+    height: 88px;
 
-    height: 90px !important;
+    padding: 0 32px 0 78px;
 
-    min-height: 90px !important;
+    box-sizing: border-box;
 
-    padding: 0 35px 0 80px !important;
+    border: 2px solid rgba(255,255,255,0.18);
 
-    border: 3px solid rgba(215, 25, 32, 0.18) !important;
+    border-radius: 12px;
 
-    border-radius: 12px !important;
+    outline: none;
 
-    outline: none !important;
+    background: #ffffff;
 
-    background: #ffffff !important;
+    color: #071321;
 
-    color: #071321 !important;
+    font-family: inherit;
 
-    font-size: 20px !important;
-
-    font-weight: 500 !important;
-
-    line-height: normal !important;
+    font-size: 19px;
+    font-weight: 500;
 
     box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.45) !important;
-
-    appearance: none !important;
-
-    -webkit-appearance: none !important;
+        0 16px 38px rgba(0,0,0,0.42);
 
     transition:
         border-color 0.2s ease,
@@ -266,70 +192,42 @@
 }
 
 
-/* PLACEHOLDER */
-
 .inventory-search input::placeholder {
-
-    color: #667783 !important;
-
-    opacity: 1 !important;
-
-    font-size: 18px !important;
+    color: #71818d;
+    opacity: 1;
+    font-size: 18px;
 }
 
-
-/* FOCUS */
 
 .inventory-search input:focus {
-
-    border-color: #d71920 !important;
+    border-color: #d71920;
 
     box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.45),
-        0 0 0 5px rgba(215, 25, 32, 0.12) !important;
+        0 16px 38px rgba(0,0,0,0.42),
+        0 0 0 4px rgba(215,25,32,0.12);
 }
 
 
-/* =========================================================
-   ICÔNE RECHERCHE
-   ========================================================= */
+/* ICÔNE */
 
 .inventory-search-icon {
+    position: absolute;
 
-    position: absolute !important;
+    left: 27px;
+    top: 50%;
 
-    left: 27px !important;
+    z-index: 5;
 
-    top: 50% !important;
+    transform: translateY(-50%);
 
-    z-index: 30 !important;
+    color: #d71920;
 
-    transform: translateY(-50%) !important;
+    font-size: 32px;
+    font-weight: 700;
 
-    color: #d71920 !important;
-
-    font-size: 34px !important;
-
-    line-height: 1 !important;
+    line-height: 1;
 
     pointer-events: none;
-}
-
-
-/* =========================================================
-   GRILLE
-   ========================================================= */
-
-.inventory-cards {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, minmax(0, 1fr));
-
-    gap: 20px;
-
-    width: 100%;
 }
 
 
@@ -337,12 +235,24 @@
    CARTES
    ========================================================= */
 
-.inventory-card {
+.inventory-cards {
+    display: grid;
 
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/*
+   Même design que les cartes de l'accueil
+*/
+
+.inventory-card {
     position: relative;
 
     min-width: 0;
-
     min-height: 245px;
 
     padding: 24px 22px;
@@ -350,7 +260,6 @@
     overflow: hidden;
 
     display: flex;
-
     flex-direction: column;
 
     background:
@@ -363,15 +272,15 @@
 
     color: #ffffff !important;
 
-    border: 1px solid rgba(255, 255, 255, 0.11);
+    border: 1px solid rgba(255,255,255,0.11);
 
     border-top: 3px solid #d71920;
 
     border-radius: 10px;
 
     box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.48),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        0 15px 35px rgba(0,0,0,0.48),
+        inset 0 1px 0 rgba(255,255,255,0.08);
 
     text-decoration: none !important;
 
@@ -382,47 +291,36 @@
 }
 
 
-/* HOVER */
-
 .inventory-card:hover {
-
     transform: translateY(-6px);
 
-    border-color: rgba(255, 65, 72, 0.45);
+    border-color: rgba(255,65,72,0.45);
 
     box-shadow:
-        0 22px 45px rgba(0, 0, 0, 0.55),
-        0 0 25px rgba(215, 25, 32, 0.12);
+        0 22px 45px rgba(0,0,0,0.55),
+        0 0 25px rgba(215,25,32,0.12);
 }
 
 
-/* =========================================================
-   ICÔNE CARTE
-   ========================================================= */
+/* ICÔNE */
 
 .inventory-card .card-icon {
-
     position: relative;
-
     z-index: 2;
 
     width: 50px;
-
     height: 50px;
 
     min-width: 50px;
-
     min-height: 50px;
 
     margin-bottom: 17px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255,255,255,0.18);
 
     border-radius: 9px;
 
@@ -436,19 +334,13 @@
     color: #ffffff;
 
     font-size: 22px;
-
-    line-height: 1;
 }
 
 
-/* =========================================================
-   TITRE CARTE
-   ========================================================= */
+/* TITRE CARTE */
 
 .inventory-card h3 {
-
     position: relative;
-
     z-index: 2;
 
     width: 100%;
@@ -458,35 +350,19 @@
     color: #ffffff !important;
 
     font-size: 15px;
-
     font-weight: 900;
 
     line-height: 1.3;
-
     letter-spacing: 0.4px;
-
-    white-space: normal;
-
-    overflow: visible;
-
-    text-overflow: clip;
-
-    word-break: normal;
-
-    overflow-wrap: break-word;
 
     text-decoration: none !important;
 }
 
 
-/* =========================================================
-   DESCRIPTION
-   ========================================================= */
+/* TEXTE */
 
 .inventory-card p {
-
     position: relative;
-
     z-index: 2;
 
     width: 100%;
@@ -498,33 +374,18 @@
     color: #b8c6d1 !important;
 
     font-size: 12px;
-
     font-weight: 400;
 
     line-height: 1.6;
-
-    white-space: normal;
-
-    overflow: visible;
-
-    text-overflow: clip;
-
-    word-break: normal;
-
-    overflow-wrap: break-word;
 
     text-decoration: none !important;
 }
 
 
-/* =========================================================
-   LIEN
-   ========================================================= */
+/* ACCÉDER */
 
 .inventory-card .card-link {
-
     position: relative;
-
     z-index: 2;
 
     display: block;
@@ -536,14 +397,11 @@
     color: #ffffff !important;
 
     font-size: 10px;
-
     font-weight: 900;
 
     line-height: 1.3;
 
     letter-spacing: 1.2px;
-
-    white-space: nowrap;
 
     text-decoration: none !important;
 }
@@ -554,22 +412,19 @@
    ========================================================= */
 
 .inventory-empty {
-
     display: none;
-
-    width: 100%;
 
     margin-top: 30px;
 
     padding: 25px;
 
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255,255,255,0.10);
 
     border-top: 3px solid #d71920;
 
     border-radius: 8px;
 
-    background: rgba(6, 17, 29, 0.9);
+    background: rgba(6,17,29,0.90);
 
     color: #dce5eb;
 
@@ -586,10 +441,10 @@
 @media (max-width: 1100px) {
 
     .inventory-cards {
-
         grid-template-columns:
             repeat(3, minmax(0, 1fr));
     }
+
 }
 
 
@@ -600,66 +455,44 @@
 @media (max-width: 850px) {
 
     .inventory-page {
-
         min-height: calc(100vh - 76px);
-
         padding: 40px 0 60px;
-
-        background-attachment: scroll;
     }
 
 
     .inventory-container {
-
         width: calc(100% - 30px);
     }
 
 
     .inventory-cards {
-
         grid-template-columns: 1fr;
-
         gap: 18px;
     }
 
 
     .inventory-title h1 {
-
         font-size: 42px;
     }
 
 
-    .inventory-search {
-
-        margin-bottom: 35px !important;
-    }
-
-
     .inventory-search input {
-
-        height: 76px !important;
-
-        min-height: 76px !important;
-
-        padding:
-            0 25px 0 65px !important;
-
-        font-size: 17px !important;
+        height: 76px;
+        padding-left: 65px;
+        font-size: 17px;
     }
 
 
     .inventory-search input::placeholder {
-
-        font-size: 16px !important;
+        font-size: 16px;
     }
 
 
     .inventory-search-icon {
-
-        left: 22px !important;
-
-        font-size: 28px !important;
+        left: 22px;
+        font-size: 28px;
     }
+
 }
 
 
@@ -670,59 +503,37 @@
 @media (max-width: 500px) {
 
     .inventory-container {
-
         width: calc(100% - 24px);
     }
 
 
     .inventory-title h1 {
-
         font-size: 36px;
     }
 
 
     .inventory-title p {
-
         font-size: 13px;
     }
 
 
-    .inventory-breadcrumb {
-
-        font-size: 11px;
-    }
-
-
     .inventory-search input {
-
-        height: 70px !important;
-
-        min-height: 70px !important;
-
-        padding-left: 60px !important;
-
-        font-size: 16px !important;
+        height: 70px;
+        padding-left: 60px;
+        font-size: 16px;
     }
 
 
     .inventory-search input::placeholder {
-
-        font-size: 15px !important;
+        font-size: 15px;
     }
 
 
     .inventory-search-icon {
-
-        left: 20px !important;
-
-        font-size: 26px !important;
+        left: 20px;
+        font-size: 26px;
     }
 
-
-    .inventory-card {
-
-        min-height: 225px;
-    }
 }
 
 
