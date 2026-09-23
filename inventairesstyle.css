@@ -1,20 +1,28 @@
 ```css
 /* =========================================================
    PAGE INVENTAIRES
+   DESIGN PREMIUM CIS VILLENAVE-D'ORNON
+   ========================================================= */
+
+
+/* =========================================================
+   CONTENEUR PRINCIPAL
    ========================================================= */
 
 .inventory-page {
+
     position: relative;
+
     width: 100%;
     min-height: calc(100vh - 92px);
 
-    padding: 55px 0 70px;
+    padding: 45px 0 65px;
 
     overflow: hidden;
 
     background:
         linear-gradient(
-            rgba(3, 9, 18, 0.94),
+            rgba(3, 9, 18, 0.93),
             rgba(3, 9, 18, 0.97)
         ),
         url("photo.png") center center / cover no-repeat;
@@ -23,11 +31,10 @@
 }
 
 
-/* =========================================================
-   LIGNE ROUGE
-   ========================================================= */
+/* Ligne rouge supérieure */
 
 .inventory-page::before {
+
     content: "";
 
     position: absolute;
@@ -42,61 +49,74 @@
 }
 
 
-/* =========================================================
-   CONTENEUR
-   ========================================================= */
-
 .inventory-container {
+
     position: relative;
+
     z-index: 2;
 
-    width: min(1380px, calc(100% - 50px));
+    width: min(
+        1380px,
+        calc(100% - 50px)
+    );
 
     margin: 0 auto;
 }
 
 
 /* =========================================================
-   BREADCRUMB
+   FIL D'ARIANE
    ========================================================= */
 
 .inventory-breadcrumb {
+
     display: flex;
+
     align-items: center;
 
     gap: 10px;
 
-    margin-bottom: 32px;
+    margin-bottom: 25px;
 
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 11px;
 
-    color: #ffffff;
+    font-weight: 800;
+
+    letter-spacing: 0.4px;
 }
 
 
 .inventory-breadcrumb a {
+
     color: #ffffff !important;
 
     text-decoration: none !important;
+
+    transition: color 0.2s ease;
 }
 
 
 .inventory-breadcrumb a:hover {
-    color: #ffffff !important;
+
+    color: #ff4148 !important;
 }
 
 
-.inventory-breadcrumb span:nth-child(2) {
+.inventory-breadcrumb span {
+
     color: #d71920;
 
-    font-size: 20px;
+    font-size: 16px;
+
     font-weight: 900;
 }
 
 
-.inventory-breadcrumb span:last-child {
-    color: #ffffff;
+.inventory-breadcrumb strong {
+
+    color: #aab9c7;
+
+    font-weight: 700;
 }
 
 
@@ -104,29 +124,37 @@
    TITRE
    ========================================================= */
 
-.inventory-title {
-    margin-bottom: 32px;
+.inventory-heading {
+
+    margin-bottom: 30px;
 }
 
 
 .inventory-eyebrow {
-    margin-bottom: 10px;
 
-    color: #d6e0e7;
+    margin-bottom: 9px;
+
+    color: #aab9c7;
 
     font-size: 10px;
+
     font-weight: 900;
 
-    letter-spacing: 2.5px;
+    letter-spacing: 2px;
 }
 
 
-.inventory-title h1 {
+.inventory-heading h1 {
+
     margin: 0;
 
     color: #ffffff !important;
 
-    font-size: clamp(42px, 5vw, 58px);
+    font-size: clamp(
+        38px,
+        4.5vw,
+        54px
+    );
 
     font-weight: 900;
 
@@ -136,26 +164,27 @@
 }
 
 
-.inventory-title h1::after {
-    content: "";
+.inventory-line {
 
-    display: block;
+    width: 70px;
 
-    width: 78px;
     height: 4px;
 
-    margin-top: 16px;
+    margin-top: 14px;
 
     background: #d71920;
 }
 
 
-.inventory-title p {
-    margin-top: 17px;
+.inventory-heading p {
 
-    color: #d0dce4;
+    max-width: 650px;
 
-    font-size: 14px;
+    margin: 15px 0 0;
+
+    color: #b8c6d1;
+
+    font-size: 13px;
 
     line-height: 1.6;
 }
@@ -166,41 +195,56 @@
    ========================================================= */
 
 .inventory-search {
+
     position: relative;
 
     width: 100%;
 
-    margin-bottom: 42px;
+    margin-bottom: 28px;
 }
 
 
 .inventory-search input {
+
     display: block;
 
     width: 100%;
-    height: 88px;
 
-    padding: 0 32px 0 78px;
+    height: 68px;
 
     box-sizing: border-box;
 
-    border: 2px solid rgba(255,255,255,0.18);
+    padding: 0 25px 0 65px;
 
-    border-radius: 12px;
+    border: 1px solid rgba(
+        255,
+        255,
+        255,
+        0.18
+    );
+
+    border-radius: 10px;
 
     outline: none;
 
-    background: #ffffff;
+    background: rgba(
+        255,
+        255,
+        255,
+        0.97
+    );
 
     color: #071321;
 
     font-family: inherit;
 
-    font-size: 19px;
+    font-size: 16px;
+
     font-weight: 500;
 
     box-shadow:
-        0 16px 38px rgba(0,0,0,0.42);
+        0 12px 30px
+        rgba(0, 0, 0, 0.35);
 
     transition:
         border-color 0.2s ease,
@@ -209,40 +253,45 @@
 
 
 .inventory-search input::placeholder {
+
     color: #71818d;
 
     opacity: 1;
 
-    font-size: 18px;
+    font-size: 15px;
 }
 
 
 .inventory-search input:focus {
+
     border-color: #d71920;
 
     box-shadow:
-        0 16px 38px rgba(0,0,0,0.42),
-        0 0 0 4px rgba(215,25,32,0.12);
+        0 12px 30px
+        rgba(0, 0, 0, 0.40),
+
+        0 0 0 3px
+        rgba(215, 25, 32, 0.12);
 }
 
 
-/* =========================================================
-   ICÔNE RECHERCHE
-   ========================================================= */
-
 .inventory-search-icon {
+
     position: absolute;
 
-    left: 27px;
+    left: 24px;
+
     top: 50%;
 
     z-index: 5;
 
-    transform: translateY(-50%);
+    transform:
+        translateY(-50%);
 
     color: #d71920;
 
-    font-size: 32px;
+    font-size: 27px;
+
     font-weight: 700;
 
     line-height: 1;
@@ -252,27 +301,33 @@
 
 
 /* =========================================================
-   GRILLE
+   GRILLE DES CARTES
    ========================================================= */
 
 .inventory-cards {
+
     display: grid;
 
     grid-template-columns:
-        repeat(4, minmax(0, 1fr));
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
 
     gap: 20px;
 }
 
 
 /* =========================================================
-   CARTES
+   CARTE
    ========================================================= */
 
 .inventory-card {
+
     position: relative;
 
     min-width: 0;
+
     min-height: 245px;
 
     padding: 24px 22px;
@@ -280,6 +335,7 @@
     overflow: hidden;
 
     display: flex;
+
     flex-direction: column;
 
     background:
@@ -292,15 +348,32 @@
 
     color: #ffffff !important;
 
-    border: 1px solid rgba(255,255,255,0.11);
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.11
+        );
 
-    border-top: 3px solid #d71920;
+    border-top:
+        3px solid
+        #d71920;
 
     border-radius: 10px;
 
     box-shadow:
-        0 15px 35px rgba(0,0,0,0.48),
-        inset 0 1px 0 rgba(255,255,255,0.08);
+        0 15px 35px
+        rgba(0, 0, 0, 0.48),
+
+        inset 0 1px 0
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
 
     text-decoration: none !important;
 
@@ -312,28 +385,48 @@
 
 
 .inventory-card:hover {
-    transform: translateY(-6px);
 
-    border-color: rgba(255,65,72,0.45);
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(
+            255,
+            65,
+            72,
+            0.45
+        );
 
     box-shadow:
-        0 22px 45px rgba(0,0,0,0.55),
-        0 0 25px rgba(215,25,32,0.12);
+        0 22px 45px
+        rgba(0, 0, 0, 0.55),
+
+        0 0 25px
+        rgba(
+            215,
+            25,
+            32,
+            0.12
+        );
 }
 
 
 /* =========================================================
-   ICÔNE CARTE
+   ICÔNE
    ========================================================= */
 
 .inventory-card .card-icon {
+
     position: relative;
+
     z-index: 2;
 
     width: 50px;
+
     height: 50px;
 
     min-width: 50px;
+
     min-height: 50px;
 
     margin-bottom: 17px;
@@ -341,9 +434,17 @@
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    border: 1px solid rgba(255,255,255,0.18);
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.18
+        );
 
     border-radius: 9px;
 
@@ -357,6 +458,8 @@
     color: #ffffff;
 
     font-size: 22px;
+
+    line-height: 1;
 }
 
 
@@ -365,7 +468,9 @@
    ========================================================= */
 
 .inventory-card h3 {
+
     position: relative;
+
     z-index: 2;
 
     width: 100%;
@@ -375,6 +480,7 @@
     color: #ffffff !important;
 
     font-size: 15px;
+
     font-weight: 900;
 
     line-height: 1.3;
@@ -386,11 +492,13 @@
 
 
 /* =========================================================
-   TEXTE CARTE
+   DESCRIPTION
    ========================================================= */
 
 .inventory-card p {
+
     position: relative;
+
     z-index: 2;
 
     width: 100%;
@@ -402,18 +510,23 @@
     color: #b8c6d1 !important;
 
     font-size: 12px;
+
     font-weight: 400;
 
     line-height: 1.6;
 
     text-decoration: none !important;
-```css
+}
+
+
 /* =========================================================
-   LIEN ACCÉDER
+   LIEN CARTE
    ========================================================= */
 
 .inventory-card .card-link {
+
     position: relative;
+
     z-index: 2;
 
     display: block;
@@ -425,6 +538,7 @@
     color: #ffffff !important;
 
     font-size: 10px;
+
     font-weight: 900;
 
     line-height: 1.3;
@@ -440,19 +554,35 @@
    ========================================================= */
 
 .inventory-empty {
+
     display: none;
 
-    margin-top: 30px;
+    margin-top: 25px;
 
-    padding: 25px;
+    padding: 22px;
 
-    border: 1px solid rgba(255,255,255,0.10);
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.10
+        );
 
-    border-top: 3px solid #d71920;
+    border-top:
+        3px solid
+        #d71920;
 
     border-radius: 8px;
 
-    background: rgba(6,17,29,0.90);
+    background:
+        rgba(
+            6,
+            17,
+            29,
+            0.90
+        );
 
     color: #dce5eb;
 
@@ -469,10 +599,13 @@
 @media (max-width: 1100px) {
 
     .inventory-cards {
-        grid-template-columns:
-            repeat(3, minmax(0, 1fr));
-    }
 
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+    }
 }
 
 
@@ -483,49 +616,58 @@
 @media (max-width: 850px) {
 
     .inventory-page {
-        min-height: calc(100vh - 76px);
 
-        padding: 40px 0 60px;
+        min-height:
+            calc(100vh - 76px);
+
+        padding:
+            40px 0 60px;
     }
 
 
     .inventory-container {
-        width: calc(100% - 30px);
+
+        width:
+            calc(100% - 30px);
     }
 
 
     .inventory-cards {
+
         grid-template-columns: 1fr;
 
         gap: 18px;
     }
 
 
-    .inventory-title h1 {
+    .inventory-heading h1 {
+
         font-size: 42px;
     }
 
 
     .inventory-search input {
-        height: 76px;
 
-        padding-left: 65px;
+        height: 68px;
 
-        font-size: 17px;
-    }
+        padding-left: 60px;
 
-
-    .inventory-search input::placeholder {
         font-size: 16px;
     }
 
 
-    .inventory-search-icon {
-        left: 22px;
+    .inventory-search input::placeholder {
 
-        font-size: 28px;
+        font-size: 15px;
     }
 
+
+    .inventory-search-icon {
+
+        left: 21px;
+
+        font-size: 26px;
+    }
 }
 
 
@@ -536,414 +678,53 @@
 @media (max-width: 500px) {
 
     .inventory-container {
-        width: calc(100% - 24px);
+
+        width:
+            calc(100% - 24px);
     }
 
 
-    .inventory-title h1 {
+    .inventory-heading h1 {
+
         font-size: 36px;
     }
 
 
-    .inventory-title p {
+    .inventory-heading p {
+
         font-size: 13px;
     }
 
 
     .inventory-search input {
-        height: 70px;
 
-        padding-left: 60px;
+        height: 64px;
 
-        font-size: 16px;
-    }
+        padding-left: 56px;
 
-
-    .inventory-search input::placeholder {
         font-size: 15px;
     }
 
 
+    .inventory-search input::placeholder {
+
+        font-size: 14px;
+    }
+
+
     .inventory-search-icon {
-        left: 20px;
 
-        font-size: 26px;
+        left: 19px;
+
+        font-size: 24px;
     }
 
+
+    .inventory-card {
+
+        min-height: 225px;
+    }
 }
-```
 
----
-
-## `script.js` — partie 1/2
-
-⚠️ Ici, **on garde le menu du site + le menu INVENTAIRES**.
-
-```javascript
-document.addEventListener("DOMContentLoaded", function () {
-
-
-    /* =====================================================
-       MENU MOBILE
-       ===================================================== */
-
-    const mobileToggle =
-        document.getElementById("mobileToggle");
-
-    const mainNav =
-        document.getElementById("mainNav");
-
-
-    if (mobileToggle && mainNav) {
-
-        mobileToggle.addEventListener(
-            "click",
-            function () {
-
-                const isOpen =
-                    mainNav.classList.toggle("active");
-
-
-                mobileToggle.classList.toggle(
-                    "open",
-                    isOpen
-                );
-
-
-                mobileToggle.setAttribute(
-                    "aria-expanded",
-                    isOpen ? "true" : "false"
-                );
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       MENU INVENTAIRES
-       ===================================================== */
-
-    const inventoryDropdown =
-        document.getElementById("inventoryDropdown");
-
-    const inventoryToggle =
-        document.getElementById("inventoryToggle");
-
-
-    if (
-        inventoryDropdown &&
-        inventoryToggle
-    ) {
-
-        inventoryToggle.addEventListener(
-            "click",
-            function (event) {
-
-                event.preventDefault();
-
-                event.stopPropagation();
-
-
-                const isOpen =
-                    inventoryDropdown.classList.toggle(
-                        "open"
-                    );
-
-
-                inventoryToggle.setAttribute(
-                    "aria-expanded",
-                    isOpen ? "true" : "false"
-                );
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       FERMER LE MENU MOBILE
-       ===================================================== */
-
-    function closeMobileMenu() {
-
-        if (mainNav) {
-
-            mainNav.classList.remove(
-                "active"
-            );
-
-        }
-
-
-        if (mobileToggle) {
-
-            mobileToggle.classList.remove(
-                "open"
-            );
-
-
-            mobileToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-        }
-
-    }
-
-
-    /* =====================================================
-       FERMER LE MENU INVENTAIRES
-       ===================================================== */
-
-    function closeInventoryMenu() {
-
-        if (inventoryDropdown) {
-
-            inventoryDropdown.classList.remove(
-                "open"
-            );
-
-        }
-
-
-        if (inventoryToggle) {
-
-            inventoryToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-        }
-
-    }
-
-
-    /* =====================================================
-       LIENS DU MENU
-       ===================================================== */
-
-    document
-        .querySelectorAll(".nav-link")
-        .forEach(function (link) {
-
-            link.addEventListener(
-                "click",
-                function () {
-
-                    closeMobileMenu();
-
-                }
-            );
-
-        });
-
-
-    /* =====================================================
-       SOUS-MENU INVENTAIRES
-       ===================================================== */
-
-    document
-        .querySelectorAll(
-            ".nav-dropdown-menu a"
-        )
-        .forEach(function (link) {
-
-            link.addEventListener(
-                "click",
-                function () {
-
-                    closeMobileMenu();
-
-                    closeInventoryMenu();
-
-                }
-            );
-
-        });
-
-
-    /* =====================================================
-       CLIC EN DEHORS DU MENU
-       ===================================================== */
-
-    document.addEventListener(
-        "click",
-        function (event) {
-
-            if (
-                inventoryDropdown &&
-                !inventoryDropdown.contains(
-                    event.target
-                )
-            ) {
-
-                closeInventoryMenu();
-
-            }
-
-        }
-    );
-
-
-    /* =====================================================
-       TOUCHE ESCAPE
-       ===================================================== */
-
-    document.addEventListener(
-        "keydown",
-        function (event) {
-
-            if (event.key === "Escape") {
-
-                closeMobileMenu();
-
-                closeInventoryMenu();
-
-            }
-
-        }
-    );
-
-
-    /* =====================================================
-       REDIMENSIONNEMENT
-       ===================================================== */
-
-    window.addEventListener(
-        "resize",
-        function () {
-
-            if (
-                window.innerWidth > 850
-            ) {
-
-                closeMobileMenu();
-
-            }
-
-        }
-    );
-```
-
----
-
-## `script.js` — partie 2/2
-
-C'est la partie qui fait fonctionner **la recherche des inventaires**.
-
-```javascript
-    /* =====================================================
-       RECHERCHE INVENTAIRES
-       ===================================================== */
-
-    const searchInput =
-        document.getElementById(
-            "inventorySearch"
-        );
-
-
-    const cards =
-        document.querySelectorAll(
-            ".inventory-card"
-        );
-
-
-    const empty =
-        document.getElementById(
-            "inventoryEmpty"
-        );
-
-
-    if (
-        searchInput &&
-        cards.length
-    ) {
-
-        searchInput.addEventListener(
-            "input",
-            function () {
-
-
-                const search =
-                    this.value
-                        .toLowerCase()
-                        .normalize("NFD")
-                        .replace(
-                            /[\u0300-\u036f]/g,
-                            ""
-                        )
-                        .trim();
-
-
-                let found = 0;
-
-
-                cards.forEach(
-                    function (card) {
-
-
-                        const content =
-                            (
-                                card.dataset.search ||
-                                ""
-                            )
-                            +
-                            " "
-                            +
-                            card.textContent;
-
-
-                        const normalized =
-                            content
-                                .toLowerCase()
-                                .normalize("NFD")
-                                .replace(
-                                    /[\u0300-\u036f]/g,
-                                    ""
-                                );
-
-
-                        if (
-                            normalized.includes(
-                                search
-                            )
-                        ) {
-
-                            card.style.display =
-                                "flex";
-
-                            found++;
-
-                        } else {
-
-                            card.style.display =
-                                "none";
-
-                        }
-
-                    }
-                );
-
-
-                if (empty) {
-
-                    empty.style.display =
-                        found === 0
-                            ? "block"
-                            : "none";
-
-                }
-
-            }
-        );
-
-    }
-
-
-});
 
 
