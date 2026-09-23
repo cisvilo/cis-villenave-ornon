@@ -1,859 +1,389 @@
 /* =========================================================
-   INCENDIE — CIS VILLENAVE-D'ORNON
-   DESIGN PROFESSIONNEL
-   ========================================================= */
-
-:root {
-  --inc-navy: #07111f;
-  --inc-navy-2: #0b1728;
-  --inc-card: #101d2d;
-  --inc-card-2: #0c1827;
-  --inc-red: #e3262e;
-  --inc-red-dark: #b71921;
-  --inc-white: #ffffff;
-  --inc-text: #e8edf5;
-  --inc-muted: #9eacbd;
-}
-
-/* =========================================================
-   PAGE
+   INCENDIE - CIS VILLENAVE-D'ORNON
    ========================================================= */
 
 body {
-  background:
-    radial-gradient(
-      circle at 85% 5%,
-      rgba(227, 38, 46, 0.13),
-      transparent 30%
-    ),
-    linear-gradient(
-      135deg,
-      #050c16 0%,
-      #091625 50%,
-      #07111f 100%
-    );
-
-  color: var(--inc-text);
+  background: #07111f !important;
+  color: #ffffff !important;
 }
 
-/* =========================================================
-   HERO INCENDIE
-   ========================================================= */
+/* HERO */
 
 .incendie-hero {
-  position: relative;
-  overflow: hidden;
+  display: block !important;
+  position: relative !important;
 
-  padding: 70px 24px 65px;
+  padding: 60px 20px !important;
 
-  text-align: center;
+  text-align: center !important;
 
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(227, 38, 46, 0.13),
-      transparent 45%
-    );
+  background: #07111f !important;
+
+  color: #ffffff !important;
 }
-
-/* halo décoratif */
-
-.incendie-hero::before {
-  content: "";
-
-  position: absolute;
-
-  width: 420px;
-  height: 420px;
-
-  top: -250px;
-  right: -130px;
-
-  border-radius: 50%;
-
-  background: rgba(227, 38, 46, 0.08);
-
-  filter: blur(5px);
-
-  pointer-events: none;
-}
-
-/* =========================================================
-   BREADCRUMB
-   ========================================================= */
 
 .incendie-hero .breadcrumb {
-  position: relative;
-  z-index: 2;
+  display: flex !important;
+  justify-content: center !important;
+  gap: 10px !important;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-
-  margin-bottom: 28px;
-
-  font-size: 14px;
+  margin-bottom: 25px !important;
 }
 
 .incendie-hero .breadcrumb a {
-  color: #aebacc;
-  text-decoration: none;
-
-  transition: color 0.2s ease;
-}
-
-.incendie-hero .breadcrumb a:hover {
-  color: #ffffff;
-}
-
-.incendie-hero .breadcrumb span {
-  color: #68778a;
+  color: #aebacc !important;
 }
 
 .incendie-hero .breadcrumb strong {
-  color: #ffffff;
+  color: #ffffff !important;
 }
-
-/* =========================================================
-   ICÔNE HERO
-   ========================================================= */
 
 .hero-icon {
-  position: relative;
-  z-index: 2;
+  display: flex !important;
 
-  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
 
-  align-items: center;
-  justify-content: center;
+  width: 70px !important;
+  height: 70px !important;
 
-  width: 76px;
-  height: 76px;
+  margin: 0 auto 20px !important;
 
-  margin: 0 auto 22px;
+  border-radius: 16px !important;
 
-  border-radius: 20px;
+  background: #182a40 !important;
 
-  font-size: 38px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(227, 38, 46, 0.20),
-      rgba(227, 38, 46, 0.07)
-    );
-
-  border: 1px solid rgba(227, 38, 46, 0.30);
-
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.30),
-    0 0 35px rgba(227, 38, 46, 0.08);
+  font-size: 35px !important;
 }
 
-/* =========================================================
-   TITRE HERO
-   ========================================================= */
-
 .hero-eyebrow {
-  position: relative;
-  z-index: 2;
+  color: #e3262e !important;
 
-  margin: 0 0 10px;
-
-  color: #ff555c;
-
-  font-size: 12px;
-  font-weight: 800;
-
-  letter-spacing: 0.18em;
+  font-size: 12px !important;
+  font-weight: bold !important;
 }
 
 .incendie-hero h1 {
-  position: relative;
-  z-index: 2;
+  color: #ffffff !important;
 
-  margin: 0;
+  font-size: 55px !important;
 
-  color: #ffffff;
-
-  font-size: clamp(42px, 6vw, 68px);
-
-  font-weight: 900;
-
-  letter-spacing: 0.08em;
-
-  text-shadow:
-    0 8px 30px rgba(0, 0, 0, 0.35);
+  margin: 10px 0 !important;
 }
 
 .incendie-hero > p:last-child {
-  position: relative;
-  z-index: 2;
-
-  margin: 14px 0 0;
-
-  color: #aebacc;
-
-  font-size: 17px;
+  color: #aebacc !important;
 }
 
-/* =========================================================
-   SECTION
-   ========================================================= */
+/* SECTION */
 
 .incendie-section {
-  width: min(1200px, calc(100% - 40px));
+  display: block !important;
 
-  margin: 0 auto;
+  width: min(1100px, calc(100% - 40px)) !important;
 
-  padding: 20px 0 80px;
+  margin: 0 auto !important;
+
+  padding: 40px 0 70px !important;
+
+  background: transparent !important;
 }
 
-/* =========================================================
-   TITRE SECTION
-   ========================================================= */
-
 .section-heading {
-  margin-bottom: 35px;
+  display: block !important;
 
-  text-align: center;
+  text-align: center !important;
+
+  margin-bottom: 30px !important;
 }
 
 .section-heading > span {
-  display: inline-block;
+  color: #e3262e !important;
 
-  margin-bottom: 10px;
-
-  color: #ff4b52;
-
-  font-size: 12px;
-  font-weight: 800;
-
-  letter-spacing: 0.18em;
+  font-size: 12px !important;
+  font-weight: bold !important;
 }
 
 .section-heading h2 {
-  margin: 0;
+  color: #ffffff !important;
 
-  color: #ffffff;
+  font-size: 34px !important;
 
-  font-size: clamp(28px, 4vw, 40px);
-
-  font-weight: 800;
+  margin: 10px 0 !important;
 }
 
 .section-heading p {
-  max-width: 650px;
-
-  margin: 12px auto 0;
-
-  color: #9eacbd;
-
-  line-height: 1.7;
+  color: #9eacbd !important;
 }
 
-/* =========================================================
-   RECHERCHE
-   ========================================================= */
+/* RECHERCHE */
 
 .search-area {
-  max-width: 720px;
+  display: block !important;
 
-  margin: 0 auto 42px;
+  max-width: 700px !important;
+
+  margin: 0 auto 35px !important;
 }
 
 .search-box {
-  display: flex;
-  align-items: center;
+  display: flex !important;
 
-  width: 100%;
+  align-items: center !important;
 
-  min-height: 58px;
+  min-height: 55px !important;
 
-  padding: 0 16px;
+  padding: 0 15px !important;
 
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 
-  background:
-    rgba(255, 255, 255, 0.055);
+  background: #101f33 !important;
 
-  border:
-    1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid #26384e !important;
 
-  border-radius: 15px;
-
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.22);
-
-  backdrop-filter: blur(12px);
-
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.search-box:focus-within {
-  border-color: rgba(227, 38, 46, 0.55);
-
-  box-shadow:
-    0 12px 35px rgba(0, 0, 0, 0.28),
-    0 0 0 3px rgba(227, 38, 46, 0.08);
+  border-radius: 12px !important;
 }
 
 .search-icon {
-  flex-shrink: 0;
+  color: #e3262e !important;
 
-  margin-right: 12px;
-
-  color: #ff4b52;
-
-  font-size: 25px;
+  margin-right: 10px !important;
 }
 
 .search-box input {
-  flex: 1;
+  flex: 1 !important;
 
-  width: 100%;
+  background: transparent !important;
 
-  padding: 16px 0;
+  border: none !important;
 
-  border: none;
-  outline: none;
+  outline: none !important;
 
-  background: transparent;
-
-  color: #ffffff;
-
-  font-size: 15px;
+  color: #ffffff !important;
 }
 
 .search-box input::placeholder {
-  color: #7f8da0;
+  color: #7f8da0 !important;
 }
 
 .search-box button {
-  flex-shrink: 0;
+  background: transparent !important;
 
-  width: 32px;
-  height: 32px;
-
-  border: none;
-
-  background: transparent;
-
-  color: #9eacbd;
-
-  font-size: 24px;
-
-  cursor: pointer;
-
-  border-radius: 50%;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
-}
-
-.search-box button:hover {
-  background: rgba(255, 255, 255, 0.08);
-
-  color: #ffffff;
-}
-
-.search-result {
-  min-height: 20px;
-
-  margin-top: 10px;
-
-  padding-left: 5px;
-
-  color: #8f9daf;
-
-  font-size: 13px;
-}
-
-/* =========================================================
-   GRILLE DES CARTES
-   ========================================================= */
-
-.incendie-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: 22px;
-}
-
-/* =========================================================
-   CARTES — FOND SOMBRE
-   ========================================================= */
-
-.incendie-card {
-  position: relative;
-
-  display: flex;
-
-  flex-direction: column;
-
-  min-height: 300px;
-
-  padding: 26px;
-
-  box-sizing: border-box;
-
-  overflow: hidden;
-
-  background:
-    linear-gradient(
-      145deg,
-      #13243a 0%,
-      #0d1b2c 55%,
-      #0a1726 100%
-    ) !important;
-
-  border:
-    1px solid rgba(255, 255, 255, 0.10) !important;
-
-  border-radius: 20px !important;
-
-  color: #ffffff !important;
-
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.035);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
-}
-
-/* ligne rouge supérieure */
-
-.incendie-card::before {
-  content: "";
-
-  position: absolute;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 3px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #a9161e,
-      #e3262e,
-      #ff555c
-    );
-}
-
-/* lumière décorative */
-
-.incendie-card::after {
-  content: "";
-
-  position: absolute;
-
-  width: 150px;
-  height: 150px;
-
-  right: -75px;
-  bottom: -75px;
-
-  border-radius: 50%;
-
-  background: rgba(227, 38, 46, 0.07);
-
-  filter: blur(15px);
-
-  pointer-events: none;
-}
-
-/* =========================================================
-   SURVOL
-   ========================================================= */
-
-.incendie-card:hover {
-  transform: translateY(-7px);
-
-  border-color:
-    rgba(227, 38, 46, 0.40) !important;
-
-  box-shadow:
-    0 22px 45px rgba(0, 0, 0, 0.38),
-    0 0 30px rgba(227, 38, 46, 0.07);
-}
-
-/* =========================================================
-   HAUT DE CARTE
-   ========================================================= */
-
-.card-top {
-  display: flex;
-
-  justify-content: flex-end;
-
-  min-height: 28px;
-
-  margin-bottom: 8px;
-}
-
-.card-number {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  min-width: 42px;
-  height: 28px;
-
-  padding: 0 10px;
-
-  box-sizing: border-box;
-
-  border-radius: 8px;
-
-  background:
-    rgba(227, 38, 46, 0.12);
-
-  border:
-    1px solid rgba(227, 38, 46, 0.25);
-
-  color: #ff5960;
-
-  font-size: 11px;
-  font-weight: 900;
-
-  letter-spacing: 0.08em;
-}
-
-/* =========================================================
-   ICÔNE VÉHICULE
-   ========================================================= */
-
-.incendie-card .vehicle-icon {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  width: 62px;
-  height: 62px;
-
-  margin-bottom: 18px;
-
-  border-radius: 16px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(227, 38, 46, 0.17),
-      rgba(227, 38, 46, 0.06)
-    ) !important;
-
-  border:
-    1px solid rgba(227, 38, 46, 0.22);
-
-  font-size: 31px;
-
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.18);
-}
-
-/* =========================================================
-   TITRE CARTE
-   ========================================================= */
-
-.incendie-card h3 {
-  margin: 0 0 8px;
-
-  color: #ffffff !important;
-
-  font-size: 23px;
-
-  font-weight: 850;
-
-  letter-spacing: 0.01em;
-}
-
-/* =========================================================
-   DESCRIPTION
-   ========================================================= */
-
-.incendie-card p {
-  margin: 0;
+  border: none !important;
 
   color: #aebacc !important;
 
-  font-size: 14px;
+  cursor: pointer !important;
+}
 
-  line-height: 1.6;
+.search-result {
+  color: #9eacbd !important;
 }
 
 /* =========================================================
-   BOUTON
+   CARTES
    ========================================================= */
 
-.incendie-card .inventory-button {
-  display: flex;
+.incendie-grid {
+  display: grid !important;
 
-  align-items: center;
-  justify-content: space-between;
+  grid-template-columns: repeat(3, 1fr) !important;
 
-  gap: 10px;
+  gap: 20px !important;
+}
 
-  margin-top: auto;
+.incendie-card {
+  display: flex !important;
 
-  padding: 13px 15px;
+  flex-direction: column !important;
 
-  box-sizing: border-box;
+  min-height: 280px !important;
 
-  text-decoration: none;
+  padding: 24px !important;
 
-  background:
-    linear-gradient(
-      135deg,
-      #bd1d25,
-      #e3262e
-    ) !important;
+  box-sizing: border-box !important;
 
-  border:
-    1px solid rgba(255, 255, 255, 0.08);
+  background: #101f33 !important;
 
-  border-radius: 11px;
+  border: 1px solid #26384e !important;
+
+  border-radius: 16px !important;
 
   color: #ffffff !important;
 
-  font-size: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25) !important;
 
-  font-weight: 850;
+  opacity: 1 !important;
 
-  letter-spacing: 0.04em;
-
-  box-shadow:
-    0 8px 20px rgba(227, 38, 46, 0.20);
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    filter 0.2s ease;
+  visibility: visible !important;
 }
 
-.incendie-card .inventory-button span {
-  flex: 1;
+.incendie-card:hover {
+  border-color: #e3262e !important;
 
-  color: rgba(255, 255, 255, 0.82);
+  transform: translateY(-4px) !important;
+}
 
-  font-size: 11px;
+.card-top {
+  display: flex !important;
 
-  font-weight: 500;
+  justify-content: flex-end !important;
+}
 
-  letter-spacing: 0;
+.card-number {
+  padding: 6px 10px !important;
+
+  border-radius: 7px !important;
+
+  background: #192d44 !important;
+
+  color: #ff5258 !important;
+
+  font-size: 11px !important;
+
+  font-weight: bold !important;
+}
+
+.vehicle-icon {
+  display: flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: 60px !important;
+  height: 60px !important;
+
+  margin: 15px 0 !important;
+
+  border-radius: 14px !important;
+
+  background: #192d44 !important;
+
+  font-size: 30px !important;
+}
+
+.incendie-card h3 {
+  margin: 0 0 8px !important;
+
+  color: #ffffff !important;
+
+  font-size: 22px !important;
+}
+
+.incendie-card p {
+  margin: 0 !important;
+
+  color: #aebacc !important;
+}
+
+/* BOUTON */
+
+.incendie-card .inventory-button {
+  display: flex !important;
+
+  align-items: center !important;
+
+  gap: 8px !important;
+
+  margin-top: auto !important;
+
+  padding: 13px !important;
+
+  background: #e3262e !important;
+
+  border-radius: 9px !important;
+
+  color: #ffffff !important;
+
+  text-decoration: none !important;
+
+  font-weight: bold !important;
 }
 
 .incendie-card .inventory-button:hover {
-  transform: translateY(-2px);
-
-  filter: brightness(1.08);
-
-  box-shadow:
-    0 12px 25px rgba(227, 38, 46, 0.32);
+  background: #bd1d25 !important;
 }
 
-/* =========================================================
-   AUCUN RÉSULTAT
-   ========================================================= */
+.incendie-card .inventory-button span {
+  flex: 1 !important;
+
+  color: #ffffff !important;
+
+  font-size: 11px !important;
+
+  font-weight: normal !important;
+}
+
+/* AUCUN RESULTAT */
 
 .no-result {
-  display: none;
+  display: none !important;
 
-  padding: 45px 20px;
+  text-align: center !important;
 
-  text-align: center;
+  padding: 40px !important;
 
-  color: #9eacbd;
+  color: #9eacbd !important;
 }
 
 .no-result.show {
-  display: block;
-}
-
-.no-result > div {
-  margin-bottom: 10px;
-
-  font-size: 35px;
+  display: block !important;
 }
 
 .no-result h3 {
-  margin: 0 0 8px;
-
-  color: #ffffff;
-}
-
-.no-result p {
-  margin: 0;
-
-  color: #8f9daf;
-}
-
-/* =========================================================
-   RETOUR
-   ========================================================= */
-
-.back-wrapper {
-  display: flex;
-
-  justify-content: center;
-
-  margin-top: 45px;
-}
-
-.back-button {
-  display: inline-flex;
-
-  align-items: center;
-
-  padding: 12px 18px;
-
-  border:
-    1px solid rgba(255, 255, 255, 0.10);
-
-  border-radius: 10px;
-
-  background:
-    rgba(255, 255, 255, 0.045);
-
-  color: #c6d0de !important;
-
-  text-decoration: none;
-
-  font-size: 13px;
-
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease;
-}
-
-.back-button:hover {
-  background:
-    rgba(227, 38, 46, 0.10);
-
-  border-color:
-    rgba(227, 38, 46, 0.30);
-
   color: #ffffff !important;
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+/* RETOUR */
+
+.back-wrapper {
+  display: flex !important;
+
+  justify-content: center !important;
+
+  margin-top: 40px !important;
+}
+
+.back-button {
+  padding: 12px 18px !important;
+
+  background: #101f33 !important;
+
+  border: 1px solid #26384e !important;
+
+  border-radius: 9px !important;
+
+  color: #ffffff !important;
+
+  text-decoration: none !important;
+}
+
+/* FOOTER */
 
 .site-footer {
   background: #050c16 !important;
 
-  border-top:
-    1px solid rgba(255, 255, 255, 0.08);
+  color: #ffffff !important;
 }
 
-/* =========================================================
-   RESPONSIVE TABLETTE
-   ========================================================= */
+/* MOBILE */
 
-@media (max-width: 950px) {
+@media (max-width: 900px) {
 
   .incendie-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 
 }
 
-/* =========================================================
-   RESPONSIVE MOBILE
-   ========================================================= */
-
-@media (max-width: 650px) {
-
-  .incendie-hero {
-    padding: 50px 20px 45px;
-  }
-
-  .incendie-hero .breadcrumb {
-    font-size: 12px;
-  }
-
-  .hero-icon {
-    width: 64px;
-    height: 64px;
-
-    font-size: 31px;
-  }
-
-  .incendie-section {
-    width: min(100% - 28px, 1200px);
-
-    padding-bottom: 55px;
-  }
+@media (max-width: 600px) {
 
   .incendie-grid {
-    grid-template-columns: 1fr;
-
-    gap: 16px;
+    grid-template-columns: 1fr !important;
   }
 
-  .incendie-card {
-    min-height: 285px;
-
-    padding: 22px;
-
-    border-radius: 17px !important;
+  .incendie-hero h1 {
+    font-size: 42px !important;
   }
 
-  .incendie-card:hover {
-    transform: none;
-  }
-
-}
-/* =========================================================
-   CORRECTION AFFICHAGE
-   ========================================================= */
-
-.site-header {
-  position: relative !important;
-  z-index: 100 !important;
-}
-
-main {
-  position: relative !important;
-  z-index: 1 !important;
-  display: block !important;
-}
-
-.incendie-hero,
-.incendie-section {
-  position: relative !important;
-  z-index: 1 !important;
-}
-
-.incendie-grid {
-  position: relative !important;
-  z-index: 2 !important;
-}
-
-.incendie-card {
-  position: relative !important;
-  z-index: 2 !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.site-footer {
-  position: relative !important;
-  z-index: 1 !important;
 }
