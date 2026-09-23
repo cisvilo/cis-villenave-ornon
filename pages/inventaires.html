@@ -3,503 +3,502 @@
 <html lang="fr">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inventaires — CIS Villenave-d'Ornon</title>
+    <title>Inventaires — CIS Villenave-d'Ornon</title>
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="cssinventaire.css">
+    <!-- CSS général du site -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS spécifique à la page Inventaires -->
+    <link rel="stylesheet" href="cssinventaire.css">
 </head>
 
 <body>
 
-<!-- =====================================================
-     HEADER
-     ===================================================== -->
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
 
-<header class="site-header">
+    <header class="site-header">
 
-    <div class="header-inner">
+        <div class="header-inner">
 
-        <a href="index.html" class="brand">
+            <a href="index.html" class="brand">
 
-            <img
-                src="logo1.png"
-                alt="Logo CIS Villenave-d'Ornon"
-                class="brand-logo"
-            >
+                <img
+                    src="logo1.png"
+                    alt="Logo CIS Villenave-d'Ornon"
+                    class="brand-logo"
+                >
 
-            <div class="brand-text">
+                <div class="brand-text">
+                    <div class="brand-title">
+                        CIS VILLENAVE-D'ORNON
+                    </div>
 
-                <div class="brand-title">
-                    CIS VILLENAVE-D'ORNON
+                    <div class="brand-subtitle">
+                        PORTAIL OPÉRATIONNEL
+                    </div>
                 </div>
 
-                <div class="brand-subtitle">
-                    PORTAIL OPÉRATIONNEL
-                </div>
-
-            </div>
-
-        </a>
-
-
-        <!-- MENU MOBILE -->
-
-        <button
-            class="mobile-toggle"
-            id="mobileToggle"
-            type="button"
-            aria-label="Ouvrir le menu"
-            aria-expanded="false"
-        >
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-
-        <!-- MENU -->
-
-        <nav class="nav" id="mainNav">
-
-            <a
-                href="index.html"
-                class="nav-link"
-            >
-                ACCUEIL
             </a>
 
 
-            <!-- INVENTAIRES -->
+            <!-- MENU MOBILE -->
 
-            <div
-                class="nav-dropdown"
-                id="inventoryDropdown"
+            <button
+                class="mobile-toggle"
+                id="mobileToggle"
+                type="button"
+                aria-label="Ouvrir le menu"
+                aria-expanded="false"
             >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-                <button
-                    type="button"
-                    class="nav-dropdown-toggle"
-                    id="inventoryToggle"
-                    aria-expanded="false"
+
+            <!-- NAVIGATION -->
+
+            <nav class="nav" id="mainNav">
+
+                <a href="index.html" class="nav-link">
+                    ACCUEIL
+                </a>
+
+
+                <!-- MENU INVENTAIRES -->
+
+                <div class="nav-dropdown" id="inventoryDropdown">
+
+                    <button
+                        type="button"
+                        class="nav-dropdown-toggle"
+                        id="inventoryToggle"
+                        aria-expanded="false"
+                    >
+                        <span>INVENTAIRES</span>
+                        <span class="dropdown-arrow">▾</span>
+                    </button>
+
+
+                    <div
+                        class="nav-dropdown-menu"
+                        id="inventoryMenu"
+                    >
+
+                        <a href="ssuap.html">
+                            <span class="submenu-icon">＋</span>
+                            SSUAP
+                        </a>
+
+                        <a href="incendie.html">
+                            <span class="submenu-icon">◆</span>
+                            INCENDIE
+                        </a>
+
+                        <a href="div.html">
+                            <span class="submenu-icon">◇</span>
+                            DIV
+                        </a>
+
+                        <a href="fdf.html">
+                            <span class="submenu-icon">▲</span>
+                            FDF
+                        </a>
+
+                        <a href="specialites.html">
+                            <span class="submenu-icon">★</span>
+                            SPECIALITES
+                        </a>
+
+                        <a href="standard.html">
+                            <span class="submenu-icon">▤</span>
+                            STANDARD
+                        </a>
+
+                        <a href="casernement.html">
+                            <span class="submenu-icon">⌂</span>
+                            CASERNEMENT
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a href="entretiens.html" class="nav-link">
+                    ENTRETIENS
+                </a>
+
+                <a href="documents.html" class="nav-link">
+                    DOCUMENTS
+                </a>
+
+                <a href="amicale.html" class="nav-link">
+                    AMICALE
+                </a>
+
+                <a href="raccourcis.html" class="nav-link">
+                    RACCOURCIS
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTENU
+         ===================================================== -->
+
+    <main class="inventory-page">
+
+        <div class="inventory-container">
+
+
+            <!-- FIL D'ARIANE -->
+
+            <div class="inventory-breadcrumb">
+
+                <a href="index.html">
+                    Accueil
+                </a>
+
+                <span>›</span>
+
+                <strong>
+                    Inventaires
+                </strong>
+
+            </div>
+
+
+            <!-- TITRE -->
+
+            <section class="inventory-heading">
+
+                <div class="inventory-eyebrow">
+                    GESTION DES ÉQUIPEMENTS
+                </div>
+
+                <h1>
+                    INVENTAIRES
+                </h1>
+
+                <div class="inventory-line"></div>
+
+                <p>
+                    Tous les inventaires de votre Centre de Secours.
+                    Sélectionnez une catégorie pour accéder rapidement
+                    aux équipements et matériels concernés.
+                </p>
+
+            </section>
+
+
+            <!-- RECHERCHE -->
+
+            <div class="inventory-search">
+
+                <span class="inventory-search-icon">
+                    ⌕
+                </span>
+
+                <input
+                    type="search"
+                    id="inventorySearch"
+                    placeholder="Rechercher un inventaire..."
+                    autocomplete="off"
+                    aria-label="Rechercher un inventaire"
                 >
 
-                    <span>INVENTAIRES</span>
+            </div>
 
-                    <span class="dropdown-arrow">
-                        ▾
+
+            <!-- CARTES -->
+
+            <section class="inventory-cards" id="inventoryCards">
+
+
+                <!-- SSUAP -->
+
+                <a
+                    href="ssuap.html"
+                    class="inventory-card"
+                    data-search="SSUAP secours soins urgence personnes"
+                >
+
+                    <div class="card-icon">
+                        ＋
+                    </div>
+
+                    <h3>
+                        SSUAP
+                    </h3>
+
+                    <p>
+                        Secours et soins d'urgence aux personnes.
+                    </p>
+
+                    <span class="card-link">
+                        ACCÉDER →
                     </span>
 
-                </button>
+                </a>
 
 
-                <div
-                    class="nav-dropdown-menu"
-                    id="inventoryMenu"
+                <!-- INCENDIE -->
+
+                <a
+                    href="incendie.html"
+                    class="inventory-card"
+                    data-search="INCENDIE incendie matériel feu"
                 >
 
-                    <a href="ssuap.html">
-                        <span class="submenu-icon">＋</span>
-                        SSUAP
-                    </a>
+                    <div class="card-icon">
+                        ◆
+                    </div>
 
-                    <a href="incendie.html">
-                        <span class="submenu-icon">◆</span>
+                    <h3>
                         INCENDIE
-                    </a>
+                    </h3>
 
-                    <a href="div.html">
-                        <span class="submenu-icon">◇</span>
+                    <p>
+                        Matériels et équipements dédiés aux opérations incendie.
+                    </p>
+
+                    <span class="card-link">
+                        ACCÉDER →
+                    </span>
+
+                </a>
+
+
+                <!-- DIV -->
+
+                <a
+                    href="div.html"
+                    class="inventory-card"
+                    data-search="DIV divers matériel intervention"
+                >
+
+                    <div class="card-icon">
+                        ◇
+                    </div>
+
+                    <h3>
                         DIV
-                    </a>
+                    </h3>
 
-                    <a href="fdf.html">
-                        <span class="submenu-icon">▲</span>
+                    <p>
+                        Inventaire des matériels divers et équipements spécifiques.
+                    </p>
+
+                    <span class="card-link">
+                        ACCÉDER →
+                    </span>
+
+                </a>
+
+
+                <!-- FDF -->
+
+                <a
+                    href="fdf.html"
+                    class="inventory-card"
+                    data-search="FDF feu de forêt forêt incendie"
+                >
+
+                    <div class="card-icon">
+                        ▲
+                    </div>
+
+                    <h3>
                         FDF
-                    </a>
+                    </h3>
 
-                    <a href="specialites.html">
-                        <span class="submenu-icon">★</span>
+                    <p>
+                        Matériels destinés aux interventions feux de forêt.
+                    </p>
+
+                    <span class="card-link">
+                        ACCÉDER →
+                    </span>
+
+                </a>
+
+
+                <!-- SPECIALITES -->
+
+                <a
+                    href="specialites.html"
+                    class="inventory-card"
+                    data-search="SPECIALITES spécialités équipements"
+                >
+
+                    <div class="card-icon">
+                        ★
+                    </div>
+
+                    <h3>
                         SPECIALITES
-                    </a>
+                    </h3>
 
-                    <a href="standard.html">
-                        <span class="submenu-icon">▤</span>
+                    <p>
+                        Équipements et matériels liés aux différentes spécialités.
+                    </p>
+
+                    <span class="card-link">
+                        ACCÉDER →
+                    </span>
+
+                </a>
+
+
+                <!-- STANDARD -->
+
+                <a
+                    href="standard.html"
+                    class="inventory-card"
+                    data-search="STANDARD matériel standard équipement"
+                >
+
+                    <div class="card-icon">
+                        ▤
+                    </div>
+
+                    <h3>
                         STANDARD
-                    </a>
+                    </h3>
 
-                    <a href="casernement.html">
-                        <span class="submenu-icon">⌂</span>
+                    <p>
+                        Matériels standards utilisés au quotidien au CIS.
+                    </p>
+
+                    <span class="card-link">
+                        ACCÉDER →
+                    </span>
+
+                </a>
+
+
+                <!-- CASERNEMENT -->
+
+                <a
+                    href="casernement.html"
+                    class="inventory-card"
+                    data-search="CASERNEMENT caserne locaux matériel"
+                >
+
+                    <div class="card-icon">
+                        ⌂
+                    </div>
+
+                    <h3>
                         CASERNEMENT
-                    </a>
+                    </h3>
 
-                </div>
+                    <p>
+                        Inventaire des équipements et matériels du casernement.
+                    </p>
+
+                    <span class="card-link">
+                        ACCÉDER →
+                    </span>
+
+                </a>
+
+
+            </section>
+
+
+            <!-- AUCUN RÉSULTAT -->
+
+            <div
+                class="inventory-empty"
+                id="inventoryEmpty"
+            >
+                Aucun inventaire ne correspond à votre recherche.
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer>
+
+        <div class="footer-red-band"></div>
+
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+
+                <strong>
+                    CIS VILLENAVE-D'ORNON
+                </strong>
+
+                <span>
+                    Centre d'incendie et de secours
+                </span>
 
             </div>
 
 
-            <a
-                href="entretiens.html"
-                class="nav-link"
-            >
-                ENTRETIENS
-            </a>
+            <div class="footer-links">
 
+                <a href="index.html">
+                    Accueil
+                </a>
 
-            <a
-                href="documents.html"
-                class="nav-link"
-            >
-                DOCUMENTS
-            </a>
+                <a href="inventaires.html">
+                    Inventaires
+                </a>
 
+                <a href="entretiens.html">
+                    Entretiens
+                </a>
 
-            <a
-                href="amicale.html"
-                class="nav-link"
-            >
-                AMICALE
-            </a>
+                <a href="documents.html">
+                    Documents
+                </a>
 
+                <a href="amicale.html">
+                    Amicale
+                </a>
 
-            <a
-                href="raccourcis.html"
-                class="nav-link"
-            >
-                RACCOURCIS
-            </a>
+                <a href="raccourcis.html">
+                    Raccourcis
+                </a>
 
-        </nav>
-
-    </div>
-
-</header>
-
-
-<!-- =====================================================
-     CONTENU
-     ===================================================== -->
-
-<main>
-
-<section class="inventory-page">
-
-    <div class="inventory-container">
-
-
-        <!-- FIL D'ARIANE -->
-
-        <div class="inventory-breadcrumb">
-
-            <a href="index.html">
-                Accueil
-            </a>
-
-            <span>›</span>
-
-            <span>
-                Inventaires
-            </span>
-
-        </div>
-
-
-        <!-- TITRE -->
-
-        <div class="inventory-title">
-
-            <div class="inventory-eyebrow">
-                PORTAIL OPÉRATIONNEL
             </div>
 
-            <h1>
-                INVENTAIRES
-            </h1>
-
-            <p>
-                Tous les inventaires de votre Centre de Secours.
-            </p>
-
         </div>
 
 
-        <!-- RECHERCHE -->
-
-        <div class="inventory-search">
-
-            <span class="inventory-search-icon">
-                ⌕
-            </span>
-
-            <input
-                type="search"
-                id="inventorySearch"
-                placeholder="Rechercher un inventaire..."
-                autocomplete="off"
-            >
-
+        <div class="footer-bottom">
+            Portail opérationnel — CIS Villenave-d'Ornon
         </div>
 
+    </footer>
 
-        <!-- CARTES -->
 
-        <div class="inventory-cards">
+    <!-- JAVASCRIPT DE LA PAGE -->
 
-
-            <!-- SSUAP -->
-
-            <a
-                href="ssuap.html"
-                class="inventory-card"
-                data-search="ssuap secours victimes assistance personnes vsav"
-            >
-
-                <div class="card-icon">
-                    ＋
-                </div>
-
-                <h3>
-                    SSUAP
-                </h3>
-
-                <p>
-                    Secours d'urgence aux personnes et inventaires des véhicules SSUAP.
-                </p>
-
-                <span class="card-link">
-                    ACCÉDER →
-                </span>
-
-            </a>
-
-
-            <!-- INCENDIE -->
-
-            <a
-                href="incendie.html"
-                class="inventory-card"
-                data-search="incendie fourgon fpt materiel incendie"
-            >
-
-                <div class="card-icon">
-                    ◆
-                </div>
-
-                <h3>
-                    INCENDIE
-                </h3>
-
-                <p>
-                    Inventaires et équipements destinés aux interventions incendie.
-                </p>
-
-                <span class="card-link">
-                    ACCÉDER →
-                </span>
-
-            </a>
-
-
-            <!-- DIV -->
-
-            <a
-                href="div.html"
-                class="inventory-card"
-                data-search="div divers matériel intervention"
-            >
-
-                <div class="card-icon">
-                    ◇
-                </div>
-
-                <h3>
-                    DIV
-                </h3>
-
-                <p>
-                    Inventaires des matériels et équipements divers.
-                </p>
-
-                <span class="card-link">
-                    ACCÉDER →
-                </span>
-
-            </a>
-
-
-            <!-- FDF -->
-
-            <a
-                href="fdf.html"
-                class="inventory-card"
-                data-search="fdf feu de forêt forêt incendie"
-            >
-
-                <div class="card-icon">
-                    ▲
-                </div>
-
-                <h3>
-                    FDF
-                </h3>
-
-                <p>
-                    Matériels et équipements dédiés aux feux de forêt.
-                </p>
-
-                <span class="card-link">
-                    ACCÉDER →
-                </span>
-
-            </a>
-```html
-            <!-- SPECIALITES -->
-
-            <a
-                href="specialites.html"
-                class="inventory-card"
-                data-search="specialites spécialités"
-            >
-
-                <div class="card-icon">
-                    ★
-                </div>
-
-                <h3>SPECIALITES</h3>
-
-                <p>
-                    Inventaires liés aux différentes spécialités du centre.
-                </p>
-
-                <span class="card-link">
-                    ACCÉDER →
-                </span>
-
-            </a>
-
-
-            <!-- STANDARD -->
-
-            <a
-                href="standard.html"
-                class="inventory-card"
-                data-search="standard matériel"
-            >
-
-                <div class="card-icon">
-                    ▤
-                </div>
-
-                <h3>STANDARD</h3>
-
-                <p>
-                    Inventaires du matériel et des équipements standards.
-                </p>
-
-                <span class="card-link">
-                    ACCÉDER →
-                </span>
-
-            </a>
-
-
-            <!-- CASERNEMENT -->
-
-            <a
-                href="casernement.html"
-                class="inventory-card"
-                data-search="casernement locaux bâtiment caserne"
-            >
-
-                <div class="card-icon">
-                    ⌂
-                </div>
-
-                <h3>CASERNEMENT</h3>
-
-                <p>
-                    Inventaires et équipements du casernement.
-                </p>
-
-                <span class="card-link">
-                    ACCÉDER →
-                </span>
-
-            </a>
-
-        </div>
-
-
-        <!-- AUCUN RÉSULTAT -->
-
-        <div
-            class="inventory-empty"
-            id="inventoryEmpty"
-        >
-            Aucun inventaire ne correspond à votre recherche.
-        </div>
-
-    </div>
-
-</section>
-
-</main>
-
-
-<!-- =====================================================
-     FOOTER
-     ===================================================== -->
-
-<footer>
-
-    <div class="footer-red-band"></div>
-
-    <div class="footer-inner">
-
-        <div class="footer-brand">
-
-            <strong>
-                CIS VILLENAVE-D'ORNON
-            </strong>
-
-            <span>
-                Centre d'incendie et de secours
-            </span>
-
-        </div>
-
-
-        <div class="footer-links">
-
-            <a href="index.html">Accueil</a>
-
-            <a href="inventaires.html">Inventaires</a>
-
-            <a href="entretiens.html">Entretiens</a>
-
-            <a href="documents.html">Documents</a>
-
-            <a href="amicale.html">Amicale</a>
-
-            <a href="raccourcis.html">Raccourcis</a>
-
-        </div>
-
-    </div>
-
-
-    <div class="footer-bottom">
-        Portail opérationnel — CIS Villenave-d'Ornon
-    </div>
-
-</footer>
-
-
-<script src="script.js"></script>
+    <script src="inventairescript.js"></script>
 
 </body>
+
 </html>
 
 
