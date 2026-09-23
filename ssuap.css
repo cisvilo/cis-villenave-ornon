@@ -1,1 +1,645 @@
+/* =========================================================
+   SSUAP — DESIGN
+   ========================================================= */
 
+.ssuap-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 15% 10%, rgba(215, 25, 32, 0.08), transparent 30%),
+        var(--navy-dark);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.ssuap-hero {
+    position: relative;
+    min-height: 330px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+        linear-gradient(135deg, #071321 0%, #0b1e31 55%, #071321 100%);
+}
+
+.ssuap-hero::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    right: -180px;
+    top: -220px;
+    background: rgba(215, 25, 32, 0.10);
+    filter: blur(5px);
+}
+
+.ssuap-hero::after {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 50%;
+    right: 12%;
+    bottom: -180px;
+}
+
+.ssuap-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,9,18,0.98) 0%,
+            rgba(3,9,18,0.72) 55%,
+            rgba(3,9,18,0.30) 100%
+        );
+}
+
+.ssuap-hero-content {
+    position: relative;
+    z-index: 2;
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 55px 0;
+}
+
+.ssuap-eyebrow {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.20em;
+    color: #c9d4de;
+}
+
+.ssuap-line {
+    width: 55px;
+    height: 4px;
+    margin: 18px 0 18px;
+    border-radius: 5px;
+    background: var(--red);
+}
+
+.ssuap-hero h1 {
+    margin: 0;
+    color: var(--white);
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: 0.95;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+}
+
+.ssuap-hero p {
+    margin: 20px 0 0;
+    color: #c4d0db;
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.ssuap-content {
+    padding: 35px 0 80px;
+}
+
+.ssuap-container {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+   ========================================================= */
+
+.ssuap-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 35px;
+
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.ssuap-breadcrumb a {
+    color: #c9d5df;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.ssuap-breadcrumb a:hover {
+    color: var(--red-light);
+}
+
+.ssuap-breadcrumb strong {
+    color: white;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.ssuap-intro {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.ssuap-intro-icon {
+    width: 62px;
+    height: 62px;
+    flex: 0 0 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: rgba(215,25,32,0.12);
+    border: 1px solid rgba(215,25,32,0.25);
+
+    font-size: 29px;
+}
+
+.ssuap-label {
+    display: block;
+    margin-bottom: 5px;
+
+    color: var(--red-light);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+}
+
+.ssuap-intro h2 {
+    margin: 0;
+    color: white;
+    font-size: 30px;
+    font-weight: 850;
+}
+
+.ssuap-intro p {
+    margin: 6px 0 0;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.ssuap-search {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 62px;
+
+    margin-bottom: 28px;
+
+    background: #091827;
+    border: 1px solid #19334b;
+    border-radius: 14px;
+
+    box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.ssuap-search:focus-within {
+    border-color: rgba(215,25,32,0.7);
+    box-shadow:
+        0 0 0 3px rgba(215,25,32,0.10),
+        0 12px 35px rgba(0,0,0,0.22);
+}
+
+.search-icon {
+    width: 58px;
+    text-align: center;
+
+    color: #9eb0bf;
+    font-size: 29px;
+}
+
+.ssuap-search input {
+    flex: 1;
+
+    height: 100%;
+
+    border: 0;
+    outline: 0;
+    background: transparent;
+
+    color: white;
+    font-size: 15px;
+}
+
+.ssuap-search input::placeholder {
+    color: #748899;
+}
+
+.ssuap-search button {
+    width: 55px;
+    height: 100%;
+
+    border: 0;
+    background: transparent;
+
+    color: #8295a5;
+    font-size: 27px;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+.ssuap-search button:hover {
+    color: white;
+}
+
+.search-result {
+    min-height: 0;
+    margin-top: -16px;
+    margin-bottom: 15px;
+
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.ssuap-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.ssuap-card {
+    position: relative;
+
+    padding: 24px;
+
+    border: 1px solid #19344d;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12,32,53,0.98),
+            rgba(7,19,33,0.98)
+        );
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.20);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.ssuap-card::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background: var(--red);
+    opacity: 0.85;
+}
+
+.ssuap-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(215,25,32,0.55);
+
+    box-shadow:
+        0 22px 50px rgba(0,0,0,0.30),
+        0 0 0 1px rgba(215,25,32,0.06);
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.ssuap-card-header {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+
+    margin-bottom: 22px;
+}
+
+.ssuap-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+
+    border-radius: 13px;
+
+    background: rgba(215,25,32,0.12);
+    border: 1px solid rgba(215,25,32,0.24);
+
+    color: var(--red-light);
+
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+}
+
+.ssuap-card-header h3 {
+    margin: 0;
+
+    color: white;
+
+    font-size: 23px;
+    font-weight: 850;
+}
+
+.ssuap-card-header p {
+    margin: 4px 0 0;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.ssuap-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.ssuap-button {
+    display: grid;
+    grid-template-columns: 90px 1fr 30px;
+    align-items: center;
+
+    min-height: 52px;
+    padding: 0 15px;
+
+    border-radius: 11px;
+
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.07);
+
+    color: white;
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.ssuap-button:hover {
+    background: rgba(215,25,32,0.12);
+    border-color: rgba(215,25,32,0.38);
+    transform: translateX(3px);
+}
+
+.ssuap-button span {
+    color: var(--red-light);
+
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+.ssuap-button strong {
+    color: #eaf0f5;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.ssuap-button b {
+    text-align: right;
+
+    color: #8297a9;
+
+    font-size: 17px;
+
+    transition: color 0.2s ease;
+}
+
+.ssuap-button:hover b {
+    color: white;
+}
+
+
+/* =========================================================
+   ASU
+   ========================================================= */
+
+.asu-card {
+    grid-column: span 2;
+}
+
+.asu-card .ssuap-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+
+/* =========================================================
+   NO RESULT
+   ========================================================= */
+
+.no-result {
+    display: none;
+
+    text-align: center;
+
+    padding: 55px 20px;
+
+    border: 1px dashed #29445c;
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.015);
+}
+
+.no-result.show {
+    display: block;
+}
+
+.no-result > div {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.no-result h3 {
+    margin: 0 0 7px;
+
+    color: white;
+    font-size: 20px;
+}
+
+.no-result p {
+    margin: 0;
+
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RETOUR
+   ========================================================= */
+
+.ssuap-back {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 40px;
+}
+
+.back-inventory-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 13px 21px;
+
+    border: 1px solid #29445c;
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.025);
+
+    color: #d9e3eb;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 750;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.back-inventory-button:hover {
+    background: rgba(215,25,32,0.10);
+    border-color: rgba(215,25,32,0.45);
+
+    transform: translateX(-3px);
+}
+
+.back-inventory-button span {
+    color: var(--red-light);
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .ssuap-hero {
+        min-height: 280px;
+    }
+
+    .ssuap-hero-content {
+        padding: 45px 0;
+    }
+
+    .ssuap-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .asu-card {
+        grid-column: span 1;
+    }
+
+    .asu-card .ssuap-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .ssuap-intro {
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (max-width: 560px) {
+
+    .ssuap-container,
+    .ssuap-hero-content {
+        width: min(100% - 24px, 1180px);
+    }
+
+    .ssuap-content {
+        padding-top: 25px;
+    }
+
+    .ssuap-hero h1 {
+        font-size: 52px;
+    }
+
+    .ssuap-eyebrow {
+        font-size: 10px;
+        letter-spacing: 0.14em;
+    }
+
+    .ssuap-intro-icon {
+        width: 50px;
+        height: 50px;
+        flex-basis: 50px;
+        font-size: 23px;
+    }
+
+    .ssuap-intro h2 {
+        font-size: 24px;
+    }
+
+    .ssuap-card {
+        padding: 19px;
+    }
+
+    .ssuap-button {
+        grid-template-columns: 75px 1fr 25px;
+    }
+
+}
