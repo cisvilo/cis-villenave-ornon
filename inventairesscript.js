@@ -14,22 +14,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (mobileToggle && mainNav) {
 
-        mobileToggle.addEventListener("click", function () {
+        mobileToggle.addEventListener(
+            "click",
+            function () {
 
-            const isOpen =
-                mainNav.classList.toggle("active");
+                const isOpen =
+                    mainNav.classList.toggle("active");
 
-            mobileToggle.classList.toggle(
-                "open",
-                isOpen
-            );
+                mobileToggle.classList.toggle(
+                    "open",
+                    isOpen
+                );
 
-            mobileToggle.setAttribute(
-                "aria-expanded",
-                isOpen ? "true" : "false"
-            );
+                mobileToggle.setAttribute(
+                    "aria-expanded",
+                    isOpen ? "true" : "false"
+                );
 
-        });
+            }
+        );
 
     }
 
@@ -45,7 +48,10 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("inventoryToggle");
 
 
-    if (inventoryDropdown && inventoryToggle) {
+    if (
+        inventoryDropdown &&
+        inventoryToggle
+    ) {
 
         inventoryToggle.addEventListener(
             "click",
@@ -55,7 +61,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 event.stopPropagation();
 
                 const isOpen =
-                    inventoryDropdown.classList.toggle("open");
+                    inventoryDropdown.classList.toggle(
+                        "open"
+                    );
 
                 inventoryToggle.setAttribute(
                     "aria-expanded",
@@ -69,18 +77,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       FERMER MENU MOBILE
+       FERMER LE MENU MOBILE
        ===================================================== */
 
     function closeMobileMenu() {
 
         if (mainNav) {
-            mainNav.classList.remove("active");
+
+            mainNav.classList.remove(
+                "active"
+            );
+
         }
 
         if (mobileToggle) {
 
-            mobileToggle.classList.remove("open");
+            mobileToggle.classList.remove(
+                "open"
+            );
 
             mobileToggle.setAttribute(
                 "aria-expanded",
@@ -93,13 +107,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       FERMER MENU INVENTAIRES
+       FERMER LE MENU INVENTAIRES
        ===================================================== */
 
     function closeInventoryMenu() {
 
         if (inventoryDropdown) {
-            inventoryDropdown.classList.remove("open");
+
+            inventoryDropdown.classList.remove(
+                "open"
+            );
+
         }
 
         if (inventoryToggle) {
@@ -115,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       LIENS MENU
+       LIENS DU MENU
        ===================================================== */
 
     document
@@ -135,11 +153,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       LIENS SOUS-MENU
+       SOUS-MENU INVENTAIRES
        ===================================================== */
 
     document
-        .querySelectorAll(".nav-dropdown-menu a")
+        .querySelectorAll(
+            ".nav-dropdown-menu a"
+        )
         .forEach(function (link) {
 
             link.addEventListener(
@@ -147,6 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 function () {
 
                     closeMobileMenu();
+
                     closeInventoryMenu();
 
                 }
@@ -156,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       CLIC EN DEHORS DU MENU
+       CLIC EN DEHORS
        ===================================================== */
 
     document.addEventListener(
@@ -165,7 +186,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (
                 inventoryDropdown &&
-                !inventoryDropdown.contains(event.target)
+                !inventoryDropdown.contains(
+                    event.target
+                )
             ) {
 
                 closeInventoryMenu();
@@ -177,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       TOUCHE ESCAPE
+       ESCAPE
        ===================================================== */
 
     document.addEventListener(
@@ -187,6 +210,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (event.key === "Escape") {
 
                 closeMobileMenu();
+
                 closeInventoryMenu();
 
             }
@@ -195,6 +219,129 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
+    /* =====================================================
+       REDIMENSIONNEMENT
+       ===================================================== */
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            if (window.innerWidth > 850) {
+
+                closeMobileMenu();
+
+            }
+
+        }
+    );
+```
+
+### `script.js` — PARTIE 2/2
+
+```javascript
+    /* =====================================================
+       RECHERCHE INVENTAIRES
+       ===================================================== */
+
+    const searchInput =
+        document.getElementById(
+            "inventorySearch"
+        );
+
+    const cards =
+        document.querySelectorAll(
+            ".inventory-card"
+        );
+
+    const empty =
+        document.getElementById(
+            "inventoryEmpty"
+        );
+
+
+    if (
+        searchInput &&
+        cards.length
+    ) {
+
+        searchInput.addEventListener(
+            "input",
+            function () {
+
+                const search =
+                    this.value
+                        .toLowerCase()
+                        .normalize("NFD")
+                        .replace(
+                            /[\u0300-\u036f]/g,
+                            ""
+                        )
+                        .trim();
+
+
+                let found = 0;
+
+
+                cards.forEach(
+                    function (card) {
+
+                        const content =
+                            (
+                                card.dataset.search || ""
+                            )
+                            +
+                            " "
+                            +
+                            card.textContent;
+
+
+                        const normalized =
+                            content
+                                .toLowerCase()
+                                .normalize("NFD")
+                                .replace(
+                                    /[\u0300-\u036f]/g,
+                                    ""
+                                );
+
+
+                        if (
+                            normalized.includes(search)
+                        ) {
+
+                            card.style.display =
+                                "flex";
+
+                            found++;
+
+                        } else {
+
+                            card.style.display =
+                                "none";
+
+                        }
+
+                    }
+                );
+
+
+                if (empty) {
+
+                    empty.style.display =
+                        found === 0
+                            ? "block"
+                            : "none";
+
+                }
+
+            }
+        );
+
+    }
+
+});
+```javascript
     /* =====================================================
        RECHERCHE INVENTAIRES
        ===================================================== */
@@ -235,9 +382,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         (
                             card.dataset.search || ""
                         )
-                        +
-                        " "
-                        +
+                        + " " +
                         card.textContent;
 
 
@@ -283,5 +428,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
 
 
