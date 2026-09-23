@@ -1,25 +1,30 @@
-```css id="p1css"
+```css
+/* =========================================================
+   CIS VILLENAVE-D'ORNON
+   STYLE PREMIUM — PARTIE 1/2
+   ========================================================= */
+
 :root {
-    --navy: #050d18;
     --navy-dark: #030912;
-    --navy-card: #0b1c2f;
-    --navy-light: #14304a;
+    --navy: #071321;
+    --navy-card: #0c2035;
+    --navy-light: #14334f;
 
     --red: #d71920;
-    --red-light: #ff3b43;
+    --red-light: #ff4148;
     --red-dark: #a80f15;
 
     --white: #ffffff;
     --text: #edf3f8;
-    --muted: #a7b6c4;
+    --muted: #aab9c7;
 
-    --header-height: 94px;
+    --header-height: 92px;
 }
 
 
-/* =========================================
+/* =========================================================
    RESET
-   ========================================= */
+   ========================================================= */
 
 * {
     margin: 0;
@@ -44,40 +49,26 @@ body {
         sans-serif;
 
     color: var(--text);
-
-    background:
-        var(--navy-dark);
+    background: var(--navy-dark);
 }
 
 
-/* =========================================
-   SUPPRESSION DES SOULIGNEMENTS
-   ========================================= */
+/* =========================================================
+   AUCUN SOULIGNEMENT
+   ========================================================= */
 
 a,
 a:hover,
 a:focus,
 a:active,
-button,
-button:hover,
-button:focus {
+a:visited {
     text-decoration: none !important;
 }
 
 
-/* =========================================
-   IMAGES
-   ========================================= */
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-
-/* =========================================
+/* =========================================================
    HEADER
-   ========================================= */
+   ========================================================= */
 
 .site-header {
     position: fixed;
@@ -93,8 +84,8 @@ img {
     background:
         linear-gradient(
             180deg,
-            rgba(4, 12, 23, 0.99),
-            rgba(5, 14, 26, 0.97)
+            rgba(3, 10, 20, 0.99),
+            rgba(6, 18, 32, 0.98)
         );
 
     border-bottom:
@@ -107,7 +98,7 @@ img {
 }
 
 
-/* ligne rouge lumineuse */
+/* filet rouge */
 
 .site-header::after {
     content: "";
@@ -132,7 +123,7 @@ img {
 
     box-shadow:
         0 0 12px
-        rgba(255, 59, 67, 0.65);
+        rgba(255, 65, 72, 0.55);
 }
 
 
@@ -157,9 +148,9 @@ img {
 }
 
 
-/* =========================================
-   LOGO
-   ========================================= */
+/* =========================================================
+   MARQUE / LOGO
+   ========================================================= */
 
 .brand {
     display: flex;
@@ -170,16 +161,18 @@ img {
 
     min-width: 0;
 
+    color: var(--white) !important;
+
     text-decoration: none !important;
 }
 
 .brand-logo {
-    width: 68px;
-    height: 68px;
-
-    object-fit: contain;
+    width: 66px;
+    height: 66px;
 
     flex-shrink: 0;
+
+    object-fit: contain;
 
     filter:
         drop-shadow(
@@ -199,21 +192,19 @@ img {
 }
 
 .brand-title {
-    color:
-        #ffffff;
+    color: #ffffff;
 
-    font-size: 19px;
+    font-size: 18px;
 
     font-weight: 900;
 
-    letter-spacing: 1px;
-
     line-height: 1;
+
+    letter-spacing: 0.8px;
 }
 
 .brand-subtitle {
-    color:
-        var(--red-light);
+    color: var(--red-light);
 
     font-size: 9px;
 
@@ -223,9 +214,9 @@ img {
 }
 
 
-/* =========================================
+/* =========================================================
    NAVIGATION
-   ========================================= */
+   ========================================================= */
 
 .nav {
     display: flex;
@@ -250,17 +241,15 @@ img {
 
     justify-content: center;
 
-    gap: 8px;
+    gap: 7px;
 
     border: 0;
 
     border-radius: 6px;
 
-    background:
-        transparent !important;
+    background: transparent !important;
 
-    color:
-        #e7edf3 !important;
+    color: #e9f0f5 !important;
 
     font-size: 11px;
 
@@ -270,70 +259,49 @@ img {
 
     cursor: pointer;
 
+    outline: none;
+
     text-decoration: none !important;
 
     transition:
-        color 0.25s ease,
-        background 0.25s ease;
+        background 0.25s ease,
+        color 0.25s ease;
 }
 
 .nav-link:hover,
 .nav-dropdown-toggle:hover {
-    color:
-        #ffffff !important;
+    color: #ffffff !important;
 
     background:
-        rgba(
-            255,
-            255,
-            255,
-            0.045
-        ) !important;
+        rgba(255, 255, 255, 0.06) !important;
 }
 
 
-/* petite ligne rouge au survol */
+/*
+   IMPORTANT :
+   aucune ligne sous le texte du menu.
+*/
 
 .nav-link::after,
 .nav-dropdown-toggle::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    bottom: 3px;
-
-    width: 0;
-    height: 2px;
-
-    transform:
-        translateX(-50%);
-
-    background:
-        var(--red-light);
-
-    box-shadow:
-        0 0 8px
-        rgba(255, 59, 67, 0.75);
-
-    transition:
-        width 0.25s ease;
+    display: none !important;
 }
 
-.nav-link:hover::after,
-.nav-dropdown-toggle:hover::after {
-    width: 45%;
-}
+
+/* =========================================================
+   INVENTAIRES — SOUS-MENU
+   ========================================================= */
 
 .nav-dropdown {
     position: relative;
 }
 
 .dropdown-arrow {
-    color:
-        var(--red-light);
+    color: var(--red-light);
 
     font-size: 13px;
+
+    line-height: 1;
 
     transition:
         transform 0.25s ease;
@@ -344,11 +312,6 @@ img {
     transform:
         rotate(180deg);
 }
-
-
-/* =========================================
-   SOUS-MENU INVENTAIRES
-   ========================================= */
 
 .nav-dropdown-menu {
     position: absolute;
@@ -365,35 +328,28 @@ img {
     background:
         linear-gradient(
             145deg,
-            #0c2138,
+            #102942,
             #050d18
         );
 
     border:
         1px solid
-        rgba(
-            255,
-            255,
-            255,
-            0.10
-        );
+        rgba(255, 255, 255, 0.12);
 
     border-top:
         2px solid
-        var(--red-light);
+        var(--red);
 
     border-radius:
-        0 0 8px 8px;
+        0 0 9px 9px;
 
     box-shadow:
-        0 22px 50px
-        rgba(0, 0, 0, 0.70),
-        0 0 25px
-        rgba(215, 25, 32, 0.12);
+        0 20px 45px
+        rgba(0, 0, 0, 0.70);
 
     transform:
         translateX(-50%)
-        translateY(-7px);
+        translateY(-8px);
 
     opacity: 0;
 
@@ -422,62 +378,59 @@ img {
 }
 
 .nav-dropdown-menu a {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
+    width: 100%;
 
     min-height: 43px;
 
     padding:
         0 13px;
 
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
     border-radius: 5px;
 
-    color:
-        #e5edf4 !important;
+    color: #e5edf3 !important;
 
     font-size: 11px;
 
     font-weight: 700;
 
-    text-decoration:
-        none !important;
+    text-decoration: none !important;
 
     transition:
         background 0.2s ease,
-        padding-left 0.2s ease,
-        color 0.2s ease;
+        padding-left 0.2s ease;
 }
 
 .nav-dropdown-menu a:hover {
-    color:
-        #ffffff !important;
-
     padding-left: 18px;
 
+    color: #ffffff !important;
+
     background:
-        linear-gradient(
-            90deg,
-            rgba(215, 25, 32, 0.20),
-            rgba(215, 25, 32, 0.03)
-        );
+        rgba(215, 25, 32, 0.16);
 }
 
 .submenu-icon {
-    width: 20px;
+    width: 21px;
 
-    color:
-        var(--red-light);
+    flex-shrink: 0;
+
+    color: var(--red-light);
 
     text-align: center;
+
+    font-size: 14px;
 }
 
 
-/* =========================================
+/* =========================================================
    HAMBURGER
-   ========================================= */
+   ========================================================= */
 
 .mobile-toggle {
     display: none;
@@ -488,6 +441,7 @@ img {
     flex-shrink: 0;
 
     align-items: center;
+
     justify-content: center;
 
     flex-direction: column;
@@ -496,41 +450,35 @@ img {
 
     border:
         1px solid
-        rgba(
-            255,
-            255,
-            255,
-            0.14
-        );
+        rgba(255, 255, 255, 0.15);
 
     border-radius: 7px;
 
     background:
         linear-gradient(
             145deg,
-            #102942,
+            #12304c,
             #071522
         ) !important;
 
     cursor: pointer;
 
+    outline: none;
+
     box-shadow:
         0 8px 20px
         rgba(0, 0, 0, 0.40);
-
-    z-index: 10001;
 }
 
 .mobile-toggle span {
-    display: block;
-
     width: 23px;
     height: 2px;
 
-    background:
-        #ffffff;
+    display: block;
 
-    border-radius: 4px;
+    background: #ffffff;
+
+    border-radius: 3px;
 
     transition:
         transform 0.25s ease,
@@ -557,9 +505,9 @@ span:nth-child(3) {
 }
 
 
-/* =========================================
+/* =========================================================
    MAIN
-   ========================================= */
+   ========================================================= */
 
 main {
     width: 100%;
@@ -571,14 +519,14 @@ main {
         linear-gradient(
             180deg,
             #050d18,
-            #071321
+            #071523
         );
 }
 
 
-/* =========================================
-   HERO — PHOTO 250 PX
-   ========================================= */
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .hero {
     position: relative;
@@ -597,32 +545,28 @@ main {
     padding:
         20px 25px;
 
-    text-align: center;
-
     overflow: hidden;
 
-    background-color:
-        #050d18;
+    text-align: center;
+
+    background-color: #071321;
 
     background-image:
         linear-gradient(
-            rgba(3, 9, 18, 0.04),
-            rgba(3, 9, 18, 0.10)
+            rgba(3, 9, 18, 0.03),
+            rgba(3, 9, 18, 0.08)
         ),
         url("photo.png");
 
-    background-size:
-        cover;
+    background-size: cover;
 
-    background-position:
-        center center;
+    background-position: center center;
 
-    background-repeat:
-        no-repeat;
+    background-repeat: no-repeat;
 }
 
 
-/* lumière très légère */
+/* voile presque transparent */
 
 .hero-overlay {
     position: absolute;
@@ -630,18 +574,13 @@ main {
     inset: 0;
 
     background:
-        rgba(
-            0,
-            0,
-            0,
-            0.04
-        );
+        rgba(0, 0, 0, 0.025);
 
     pointer-events: none;
 }
 
 
-/* léger fondu inférieur */
+/* fondu discret en bas */
 
 .hero::after {
     content: "";
@@ -652,12 +591,12 @@ main {
     bottom: 0;
 
     width: 100%;
-    height: 35px;
+    height: 28px;
 
     background:
         linear-gradient(
             transparent,
-            rgba(5, 13, 24, 0.85)
+            rgba(5, 13, 24, 0.90)
         );
 
     pointer-events: none;
@@ -682,53 +621,51 @@ main {
 }
 
 .eyebrow {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 
-    color:
-        #ffffff;
+    color: #ffffff;
 
-    font-size: 10px;
+    font-size: 9px;
 
     font-weight: 800;
 
-    letter-spacing: 3px;
+    letter-spacing: 2.5px;
 
     text-shadow:
-        0 2px 10px
+        0 2px 8px
         rgba(0, 0, 0, 0.95);
 }
 
 .hero h1 {
-    color:
-        #ffffff;
+    color: #ffffff;
 
     font-size:
         clamp(
             34px,
             5vw,
-            62px
+            60px
         );
 
     line-height: 1;
 
     font-weight: 900;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 
     text-shadow:
-        0 4px 18px
+        0 3px 14px
         rgba(0, 0, 0, 0.95);
 }
 
 .hero-line {
-    width: 70px;
+    width: 65px;
 
     height: 3px;
 
     margin:
-        14px 0;
+        11px 0;
 
-    border-radius: 10px;
+    border-radius: 5px;
 
     background:
         linear-gradient(
@@ -739,39 +676,37 @@ main {
         );
 
     box-shadow:
-        0 0 13px
-        rgba(255, 59, 67, 0.70);
+        0 0 12px
+        rgba(255, 65, 72, 0.65);
 }
 
 .hero p {
-    margin-bottom: 14px;
+    margin-bottom: 13px;
 
-    color:
-        #ffffff;
+    color: #ffffff;
 
-    font-size: 13px;
+    font-size: 12px;
 
     line-height: 1.4;
 
     text-shadow:
-        0 2px 10px
+        0 2px 9px
         rgba(0, 0, 0, 0.95);
 }
 
 
-/* =========================================
-   BOUTON
-   ========================================= */
+/* =========================================================
+   BOUTON HERO
+   ========================================================= */
 
 .hero-button {
     position: relative;
 
-    min-width: 160px;
-
-    min-height: 40px;
+    min-width: 155px;
+    min-height: 39px;
 
     padding:
-        0 24px;
+        0 22px;
 
     display: inline-flex;
 
@@ -783,69 +718,36 @@ main {
 
     border:
         1px solid
-        rgba(
-            255,
-            255,
-            255,
-            0.20
-        );
+        rgba(255, 255, 255, 0.20);
 
     border-radius: 5px;
 
     background:
         linear-gradient(
             135deg,
-            #e82229,
-            #a90f15
+            #e52a31,
+            #a70f15
         );
 
-    color:
-        #ffffff !important;
+    color: #ffffff !important;
 
     font-size: 10px;
 
     font-weight: 900;
 
-    letter-spacing: 1.3px;
+    letter-spacing: 1.2px;
 
-    text-decoration:
-        none !important;
+    text-decoration: none !important;
 
     box-shadow:
         0 8px 22px
         rgba(0, 0, 0, 0.45),
-        0 0 16px
-        rgba(215, 25, 32, 0.20);
+        0 0 15px
+        rgba(215, 25, 32, 0.22);
 
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
-}
-
-.hero-button::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: -100%;
-
-    width: 65%;
-    height: 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.30),
-            transparent
-        );
-
-    transform:
-        skewX(-20deg);
-
-    transition:
-        left 0.55s ease;
 }
 
 .hero-button:hover {
@@ -859,71 +761,123 @@ main {
         rgba(215, 25, 32, 0.32);
 }
 
+.hero-button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 65%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.28),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    transition:
+        left 0.6s ease;
+}
+
 .hero-button:hover::before {
     left: 140%;
 }
-
-
-/* =========================================
-   CARTES
 ```css
-/* =========================================
-   CARTES — VERSION AÉRÉE
-   ========================================= */
+/* =========================================================
+   CIS VILLENAVE-D'ORNON
+   STYLE PREMIUM — PARTIE 2/2
+   ========================================================= */
+
+
+/* =========================================================
+   CARTES
+   ========================================================= */
 
 .quick-access {
     position: relative;
-    width: min(1380px, calc(100% - 50px));
+
+    width:
+        min(
+            1380px,
+            calc(100% - 50px)
+        );
+
     margin: 0 auto;
-    padding: 25px 0 65px;
+
+    padding:
+        25px 0 65px;
 }
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    grid-template-columns:
+        repeat(
+            5,
+            minmax(0, 1fr)
+        );
+
     gap: 20px;
 }
 
 
-/* =========================================
-   CARTE
-   ========================================= */
+/* =========================================================
+   CARTE PRINCIPALE
+   ========================================================= */
 
 .card {
     position: relative;
+
     min-width: 0;
+
     min-height: 245px;
 
-    display: flex;
-    flex-direction: column;
-
-    padding: 25px 22px;
+    padding:
+        24px 22px;
 
     overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
 
     background:
         linear-gradient(
             145deg,
-            #12304c 0%,
-            #0b1e32 50%,
-            #071320 100%
+            #12304b 0%,
+            #0b2034 48%,
+            #06111d 100%
         ) !important;
 
     color: #ffffff !important;
 
-    border: 1px solid
+    border:
+        1px solid
         rgba(255, 255, 255, 0.11);
 
-    border-top: 3px solid #d71920;
+    border-top:
+        3px solid
+        var(--red);
 
     border-radius: 10px;
 
     box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.45),
+        0 15px 35px
+        rgba(0, 0, 0, 0.48),
+
         inset 0 1px 0
         rgba(255, 255, 255, 0.08);
 
-    text-decoration: none !important;
+    text-decoration:
+        none !important;
 
     transition:
         transform 0.3s ease,
@@ -932,18 +886,18 @@ main {
 }
 
 
-/* reflet lumineux */
+/* reflet */
 
 .card::before {
     content: "";
 
     position: absolute;
 
-    top: -80%;
-    left: -120%;
+    top: -70%;
+    left: -130%;
 
     width: 70%;
-    height: 220%;
+    height: 210%;
 
     background:
         linear-gradient(
@@ -953,12 +907,13 @@ main {
             transparent
         );
 
-    transform: rotate(15deg);
+    transform:
+        rotate(14deg);
+
+    pointer-events: none;
 
     transition:
         left 0.7s ease;
-
-    pointer-events: none;
 }
 
 .card:hover::before {
@@ -966,37 +921,49 @@ main {
 }
 
 .card:hover {
-    transform: translateY(-6px);
+    transform:
+        translateY(-6px);
 
     border-color:
         rgba(255, 255, 255, 0.18);
 
     box-shadow:
-        0 22px 45px
+        0 23px 45px
         rgba(0, 0, 0, 0.58),
-        0 0 24px
-        rgba(215, 25, 32, 0.18);
+
+        0 0 25px
+        rgba(215, 25, 32, 0.18),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.10);
 }
 
 
-/* =========================================
+/* =========================================================
    ICÔNE
-   ========================================= */
+   ========================================================= */
 
 .card-icon {
     position: relative;
+
     z-index: 2;
 
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
 
-    min-width: 52px;
+    min-width: 50px;
+    min-height: 50px;
 
-    margin-bottom: 18px;
+    margin-bottom: 17px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.18);
 
     border-radius: 9px;
 
@@ -1004,20 +971,19 @@ main {
         linear-gradient(
             145deg,
             #e52a31,
-            #aa1117
+            #a70f15
         );
-
-    border: 1px solid
-        rgba(255, 255, 255, 0.18);
 
     color: #ffffff;
 
-    font-size: 23px;
+    font-size: 22px;
+
     line-height: 1;
 
     box-shadow:
         0 8px 18px
-        rgba(0, 0, 0, 0.38),
+        rgba(0, 0, 0, 0.40),
+
         0 0 14px
         rgba(215, 25, 32, 0.18);
 
@@ -1027,34 +993,41 @@ main {
 }
 
 .card:hover .card-icon {
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 
     box-shadow:
         0 12px 24px
         rgba(0, 0, 0, 0.45),
+
         0 0 20px
         rgba(215, 25, 32, 0.30);
 }
 
 
-/* =========================================
-   TITRE
-   ========================================= */
+/* =========================================================
+   TITRE DES CARTES
+   ========================================================= */
 
 .card h3 {
     position: relative;
+
     z-index: 2;
 
-    margin: 0 0 11px;
+    width: 100%;
+
+    margin:
+        0 0 10px;
 
     color: #ffffff !important;
 
-    font-size: 16px;
+    font-size: 15px;
+
     font-weight: 900;
 
-    line-height: 1.25;
+    line-height: 1.3;
 
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
 
     white-space: normal;
 
@@ -1062,23 +1035,31 @@ main {
 
     text-overflow: clip;
 
-    text-decoration: none !important;
+    word-break: normal;
+
+    overflow-wrap: break-word;
+
+    text-decoration:
+        none !important;
 }
 
 
-/* =========================================
+/* =========================================================
    DESCRIPTION
-   ========================================= */
+   ========================================================= */
 
 .card p {
     position: relative;
+
     z-index: 2;
+
+    width: 100%;
 
     margin: 0;
 
     flex: 1;
 
-    color: #b8c5d0 !important;
+    color: #b8c6d1 !important;
 
     font-size: 12px;
 
@@ -1092,21 +1073,29 @@ main {
 
     text-overflow: clip;
 
-    text-decoration: none !important;
+    word-break: normal;
+
+    overflow-wrap: break-word;
+
+    text-decoration:
+        none !important;
 }
 
 
-/* =========================================
-   LIEN DE LA CARTE
-   ========================================= */
+/* =========================================================
+   LIEN ACCÉDER
+   ========================================================= */
 
 .card-link {
     position: relative;
+
     z-index: 2;
 
     display: block;
 
-    margin-top: 20px;
+    width: 100%;
+
+    margin-top: 18px;
 
     color: #ffffff !important;
 
@@ -1114,321 +1103,11 @@ main {
 
     font-weight: 900;
 
-    letter-spacing: 1.2px;
-
     line-height: 1.3;
 
+    letter-spacing: 1.2px;
+
     white-space: nowrap;
-
-    text-decoration: none !important;
-
-    transition:
-        color 0.25s ease;
-}
-
-.card:hover .card-link {
-    color: #ff4a51 !important;
-}
-
-
-/* =========================================
-   TABLETTE
-   ========================================= */
-
-@media screen and (max-width: 1150px) {
-
-    .quick-access {
-        width:
-            calc(100% - 30px);
-    }
-
-    .cards {
-        grid-template-columns:
-            repeat(3, minmax(0, 1fr));
-
-        gap: 18px;
-    }
-
-    .card {
-        min-height: 230px;
-    }
-}
-
-
-/* =========================================
-   MOBILE
-   ========================================= */
-
-@media screen and (max-width: 850px) {
-
-    .quick-access {
-        width:
-            calc(100% - 22px);
-
-        padding:
-            18px 0 45px;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
-
-        gap: 14px;
-    }
-
-    .card {
-        width: 100%;
-
-        min-height: 205px;
-
-        padding: 22px 20px;
-    }
-
-    .card-icon {
-        width: 50px;
-        height: 50px;
-
-        min-width: 50px;
-
-        margin-bottom: 16px;
-
-        font-size: 22px;
-    }
-
-    .card h3 {
-        font-size: 16px;
-
-        line-height: 1.3;
-    }
-
-    .card p {
-        font-size: 13px;
-
-        line-height: 1.55;
-    }
-
-    .card-link {
-        margin-top: 18px;
-
-        font-size: 10px;
-    }
-}
-
-
-/* =========================================
-   PETIT MOBILE
-   ========================================= */
-
-@media screen and (max-width: 420px) {
-
-    .card {
-        min-height: 200px;
-
-        padding:
-            20px 18px;
-    }
-
-    .card-icon {
-        width: 48px;
-        height: 48px;
-
-        min-width: 48px;
-
-        font-size: 21px;
-    }
-
-    .card h3 {
-        font-size: 15px;
-    }
-
-    .card p {
-        font-size: 12px;
-
-        line-height: 1.55;
-    }
-}
-
-
-
-/* reflet brillant */
-
-.card::before {
-    content: "";
-
-    position: absolute;
-
-    top: -30%;
-    left: -130%;
-
-    width: 70%;
-    height: 170%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.11),
-            transparent
-        );
-
-    transform:
-        rotate(14deg);
-
-    transition:
-        left 0.70s ease;
-
-    pointer-events: none;
-}
-
-.card:hover::before {
-    left: 145%;
-}
-
-.card:hover {
-    transform:
-        translateY(-7px);
-
-    border-color:
-        rgba(
-            255,
-            255,
-            255,
-            0.18
-        );
-
-    box-shadow:
-        0 24px 48px
-        rgba(0, 0, 0, 0.62),
-        0 0 28px
-        rgba(215, 25, 32, 0.18),
-        inset 0 1px 0
-        rgba(255, 255, 255, 0.10);
-}
-```css id="p2css"
-/* =========================================
-   ICONES DES CARTES
-   ========================================= */
-
-.card-icon {
-    position: relative;
-
-    z-index: 2;
-
-    width: 47px;
-    height: 47px;
-
-    margin-bottom: 15px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border:
-        1px solid
-        rgba(
-            255,
-            255,
-            255,
-            0.16
-        );
-
-    border-radius:
-        8px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ed2930,
-            #9f0d13
-        );
-
-    color:
-        #ffffff;
-
-    font-size: 21px;
-
-    box-shadow:
-        0 8px 20px
-        rgba(0, 0, 0, 0.40),
-        0 0 14px
-        rgba(215, 25, 32, 0.18);
-
-    transition:
-        transform 0.30s ease,
-        box-shadow 0.30s ease;
-}
-
-.card:hover .card-icon {
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 12px 25px
-        rgba(0, 0, 0, 0.48),
-        0 0 22px
-        rgba(215, 25, 32, 0.30);
-}
-
-
-/* =========================================
-   TEXTE DES CARTES
-   ========================================= */
-
-.card h3 {
-    position: relative;
-
-    z-index: 2;
-
-    margin-bottom: 9px;
-
-    color:
-        #ffffff !important;
-
-    font-size: 15px;
-
-    font-weight: 900;
-
-    letter-spacing: 0.7px;
-
-    text-decoration:
-        none !important;
-}
-
-.card p {
-    position: relative;
-
-    z-index: 2;
-
-    flex: 1;
-
-    color:
-        #aebdca !important;
-
-    font-size: 12px;
-
-    line-height: 1.55;
-
-    text-decoration:
-        none !important;
-}
-
-.card-link {
-    position: relative;
-
-    z-index: 2;
-
-    display: block;
-
-    margin-top: 16px;
-
-    color:
-        #ffffff !important;
-
-    font-size: 10px;
-
-    font-weight: 900;
-
-    letter-spacing: 1.3px;
 
     text-decoration:
         none !important;
@@ -1443,9 +1122,9 @@ main {
 }
 
 
-/* =========================================
+/* =========================================================
    FOOTER
-   ========================================= */
+   ========================================================= */
 
 footer {
     width: 100%;
@@ -1457,8 +1136,7 @@ footer {
             #030912
         );
 
-    color:
-        #ffffff;
+    color: #ffffff;
 }
 
 .footer-red-band {
@@ -1511,19 +1189,17 @@ footer {
 }
 
 .footer-brand strong {
-    color:
-        #ffffff;
+    color: #ffffff;
 
     font-size: 13px;
 
     font-weight: 900;
 
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
 }
 
 .footer-brand span {
-    color:
-        #788b9c;
+    color: #788b9c;
 
     font-size: 10px;
 }
@@ -1533,15 +1209,16 @@ footer {
 
     flex-wrap: wrap;
 
+    align-items: center;
+
     justify-content: flex-end;
 
     gap:
-        8px 18px;
+        10px 18px;
 }
 
 .footer-links a {
-    color:
-        #9eafbf;
+    color: #9eafbf !important;
 
     font-size: 10px;
 
@@ -1556,7 +1233,7 @@ footer {
 
 .footer-links a:hover {
     color:
-        #ffffff;
+        #ffffff !important;
 }
 
 .footer-bottom {
@@ -1567,23 +1244,12 @@ footer {
 
     border-top:
         1px solid
-        rgba(
-            255,
-            255,
-            255,
-            0.06
-        );
+        rgba(255, 255, 255, 0.06);
 
     background:
-        rgba(
-            0,
-            0,
-            0,
-            0.22
-        );
+        rgba(0, 0, 0, 0.22);
 
-    color:
-        #617384;
+    color: #617384;
 
     text-align: center;
 
@@ -1593,9 +1259,9 @@ footer {
 }
 
 
-/* =========================================
+/* =========================================================
    TABLETTE
-   ========================================= */
+   ========================================================= */
 
 @media screen and (max-width: 1150px) {
 
@@ -1616,24 +1282,30 @@ footer {
         font-size: 10px;
     }
 
+    .quick-access {
+        width:
+            calc(100% - 30px);
+    }
+
     .cards {
         grid-template-columns:
             repeat(
                 3,
                 minmax(0, 1fr)
             );
+
+        gap: 18px;
     }
 
-    .quick-access {
-        width:
-            calc(100% - 30px);
+    .card {
+        min-height: 230px;
     }
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE
-   ========================================= */
+   ========================================================= */
 
 @media screen and (max-width: 850px) {
 
@@ -1641,11 +1313,8 @@ footer {
         --header-height: 76px;
     }
 
-    html,
-    body {
-        width: 100%;
-        overflow-x: hidden;
-    }
+
+    /* HEADER */
 
     .site-header {
         height:
@@ -1662,11 +1331,9 @@ footer {
     }
 
     .brand {
-        gap: 9px;
-
         flex: 1;
 
-        min-width: 0;
+        gap: 9px;
     }
 
     .brand-logo {
@@ -1674,23 +1341,16 @@ footer {
         height: 50px;
     }
 
-    .brand-text {
-        min-width: 0;
-
-        overflow: hidden;
-    }
-
     .brand-title {
         overflow: hidden;
 
-        text-overflow:
-            ellipsis;
+        text-overflow: ellipsis;
 
         white-space: nowrap;
 
         font-size: 13px;
 
-        letter-spacing: 0.4px;
+        letter-spacing: 0.3px;
     }
 
     .brand-subtitle {
@@ -1698,18 +1358,11 @@ footer {
     }
 
     .mobile-toggle {
-        display: flex !important;
-
-        width: 44px;
-        height: 44px;
-
-        margin-left: auto;
+        display: flex;
     }
 
 
-    /* =====================================
-       MENU MOBILE
-       ===================================== */
+    /* MENU */
 
     .nav {
         position: fixed !important;
@@ -1734,8 +1387,6 @@ footer {
             );
 
         overflow-y: auto;
-
-        overflow-x: hidden;
 
         display: none;
 
@@ -1776,16 +1427,11 @@ footer {
 
         min-height: 52px;
 
-        flex-shrink: 0;
-
         padding:
             0 16px;
 
         justify-content:
             space-between;
-
-        background:
-            transparent !important;
 
         color:
             #edf3f8 !important;
@@ -1800,7 +1446,7 @@ footer {
 
     .nav-link::after,
     .nav-dropdown-toggle::after {
-        display: none;
+        display: none !important;
     }
 
     .nav-link:hover,
@@ -1810,14 +1456,15 @@ footer {
                 255,
                 255,
                 255,
-                0.04
+                0.05
             ) !important;
     }
 
+
+    /* SOUS-MENU MOBILE */
+
     .nav-dropdown {
         width: 100%;
-
-        flex-shrink: 0;
     }
 
     .nav-dropdown-menu {
@@ -1844,7 +1491,7 @@ footer {
 
         border-left:
             2px solid
-            var(--red-light) !important;
+            var(--red) !important;
 
         border-radius: 0 !important;
 
@@ -1881,9 +1528,6 @@ footer {
         color:
             #dce6ee !important;
 
-        background:
-            transparent !important;
-
         font-size: 12px;
 
         text-decoration:
@@ -1891,7 +1535,8 @@ footer {
     }
 
     .nav-dropdown-menu a:hover {
-        padding-left: 18px;
+        padding-left:
+            18px;
 
         background:
             rgba(
@@ -1903,60 +1548,37 @@ footer {
     }
 
 
-    /* =====================================
-       HERO MOBILE
-       ===================================== */
+    /* HERO MOBILE */
 
     main {
-        width: 100%;
-
         padding-top:
             var(--header-height);
     }
 
     .hero {
-        width: 100%;
-
         height: 250px;
-
         min-height: 250px;
 
         padding:
-            20px 15px;
-
-        background-image:
-            linear-gradient(
-                rgba(3, 9, 18, 0.03),
-                rgba(3, 9, 18, 0.08)
-            ),
-            url("photo.png");
+            18px 15px;
 
         background-size:
             cover;
 
         background-position:
             center center;
-
-        background-repeat:
-            no-repeat;
     }
 
     .hero::after {
-        height: 25px;
-    }
-
-    .hero-content {
-        width: 100%;
-
-        max-width: 500px;
+        height: 22px;
     }
 
     .eyebrow {
-        margin-bottom: 8px;
+        margin-bottom: 7px;
 
         font-size: 8px;
 
-        letter-spacing: 2px;
+        letter-spacing: 1.8px;
     }
 
     .hero h1 {
@@ -1968,99 +1590,87 @@ footer {
             );
 
         line-height: 1.05;
-
-        letter-spacing: 0.3px;
     }
 
     .hero-line {
-        width: 55px;
+        width: 52px;
 
         height: 2px;
 
         margin:
-            12px 0;
+            10px 0;
     }
 
     .hero p {
-        margin-bottom: 13px;
+        max-width: 310px;
 
-        max-width: 300px;
+        margin-bottom: 12px;
 
         font-size: 12px;
     }
 
     .hero-button {
-        min-width: 150px;
+        min-width: 145px;
 
-        min-height: 39px;
-
-        padding:
-            0 20px;
-
-        font-size: 10px;
+        min-height: 38px;
     }
 
 
-    /* =====================================
-       CARTES MOBILE
-       ===================================== */
+    /* CARTES MOBILE */
 
     .quick-access {
         width:
             calc(100% - 22px);
 
         padding:
-            15px 0 45px;
+            17px 0 45px;
     }
 
     .cards {
-        width: 100%;
+        grid-template-columns: 1fr;
 
-        grid-template-columns:
-            1fr;
-
-        gap: 13px;
+        gap: 14px;
     }
 
     .card {
         width: 100%;
 
-        min-height: 180px;
+        min-height: 205px;
 
         padding:
-            20px;
-
-        border-radius:
-            9px;
+            21px 20px;
     }
 
     .card-icon {
-        width: 45px;
-        height: 45px;
+        width: 49px;
+        height: 49px;
 
-        margin-bottom: 14px;
+        min-width: 49px;
+        min-height: 49px;
 
-        font-size: 20px;
+        margin-bottom: 15px;
+
+        font-size: 21px;
     }
 
     .card h3 {
-        font-size: 15px;
+        font-size: 16px;
+
+        line-height: 1.3;
     }
 
     .card p {
         font-size: 13px;
 
-        line-height: 1.5;
+        line-height: 1.55;
     }
 
     .card-link {
-        font-size: 10px;
+        margin-top: 17px;
     }
 
 
-    /* =====================================
-       FOOTER MOBILE
-       ===================================== */
+    /* FOOTER MOBILE */
 
     .footer-inner {
         width:
@@ -2087,17 +1697,12 @@ footer {
         gap:
             12px 17px;
     }
-
-    .footer-bottom {
-        padding:
-            12px 14px;
-    }
 }
 
 
-/* =========================================
-   PETITS TELEPHONES
-   ========================================= */
+/* =========================================================
+   PETIT MOBILE
+   ========================================================= */
 
 @media screen and (max-width: 420px) {
 
@@ -2124,18 +1729,9 @@ footer {
         height: 42px;
     }
 
-    .nav {
-        padding:
-            7px 10px 22px;
-    }
-
     .hero {
         height: 250px;
-
         min-height: 250px;
-
-        padding:
-            18px 14px;
 
         background-position:
             center center;
@@ -2145,40 +1741,50 @@ footer {
         font-size: 28px;
     }
 
-    .hero p {
-        font-size: 12px;
-    }
-
     .quick-access {
         width:
             calc(100% - 18px);
-
-        padding:
-            12px 0 40px;
     }
 
     .card {
-        padding:
-            18px;
+        min-height: 200px;
 
-        min-height:
-            175px;
+        padding:
+            20px 18px;
+    }
+
+    .card-icon {
+        width: 48px;
+        height: 48px;
+
+        min-width: 48px;
+        min-height: 48px;
+    }
+
+    .card h3 {
+        font-size: 15px;
+    }
+
+    .card p {
+        font-size: 12px;
+
+        line-height: 1.55;
     }
 }
 
 
-/* =========================================
-   REDUCTION DES ANIMATIONS SI NECESSAIRE
-   ========================================= */
+/* =========================================================
+   ACCESSIBILITÉ
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
     *,
     *::before,
     *::after {
-        transition:
-            none !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
-
 
