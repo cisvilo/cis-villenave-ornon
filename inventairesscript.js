@@ -1,17 +1,24 @@
 ```javascript
 /* =========================================================
-   RECHERCHE PAGE INVENTAIRES
+   RECHERCHE INVENTAIRES
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const searchInput = document.getElementById("inventorySearch");
-    const inventoryCards = document.querySelectorAll(".inventory-card");
-    const emptyMessage = document.getElementById("inventoryEmpty");
+    const searchInput =
+        document.getElementById("inventorySearch");
 
-    if (!searchInput || !inventoryCards.length) {
+    const cards =
+        document.querySelectorAll(".inventory-card");
+
+    const empty =
+        document.getElementById("inventoryEmpty");
+
+
+    if (!searchInput || !cards.length) {
         return;
     }
+
 
     searchInput.addEventListener("input", function () {
 
@@ -21,11 +28,12 @@ document.addEventListener("DOMContentLoaded", function () {
             .replace(/[\u0300-\u036f]/g, "")
             .trim();
 
-        let visibleCards = 0;
+        let found = 0;
 
-        inventoryCards.forEach(function (card) {
 
-            const text = (
+        cards.forEach(function (card) {
+
+            const content = (
                 card.dataset.search +
                 " " +
                 card.textContent
@@ -34,18 +42,26 @@ document.addEventListener("DOMContentLoaded", function () {
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "");
 
-            const match = text.includes(search);
 
-            card.style.display = match ? "" : "none";
+            if (content.includes(search)) {
 
-            if (match) {
-                visibleCards++;
+                card.style.display = "";
+
+                found++;
+
+            } else {
+
+                card.style.display = "none";
+
             }
+
         });
 
-        emptyMessage.style.display =
-            visibleCards === 0 ? "block" : "none";
+
+        empty.style.display =
+            found === 0 ? "block" : "none";
 
     });
 
 });
+
