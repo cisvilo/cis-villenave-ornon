@@ -1,5 +1,6 @@
 /* =========================================================
    DIV — CIS VILLENAVE-D'ORNON
+   MÊME DESIGN QUE SSUAP / INCENDIE
    ========================================================= */
 
 .div-page {
@@ -14,16 +15,19 @@
 .div-hero {
     position: relative;
     min-height: 360px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     overflow: hidden;
 
     background:
         linear-gradient(
             135deg,
-            rgba(3, 9, 18, 0.98),
-            rgba(7, 19, 33, 0.92)
+            #030912 0%,
+            #071321 55%,
+            #0c2035 100%
         );
 }
 
@@ -35,13 +39,13 @@
     background:
         radial-gradient(
             circle at 20% 40%,
-            rgba(215, 25, 32, 0.18),
-            transparent 35%
+            rgba(215, 25, 32, 0.14),
+            transparent 38%
         ),
         radial-gradient(
             circle at 80% 60%,
-            rgba(20, 51, 79, 0.45),
-            transparent 40%
+            rgba(20, 51, 79, 0.35),
+            transparent 42%
         );
 }
 
@@ -52,9 +56,9 @@
     background:
         linear-gradient(
             90deg,
-            rgba(3, 9, 18, 0.9),
+            rgba(3, 9, 18, 0.92),
             rgba(3, 9, 18, 0.35),
-            rgba(3, 9, 18, 0.9)
+            rgba(3, 9, 18, 0.92)
         );
 }
 
@@ -70,16 +74,20 @@
 }
 
 
+/* =========================================================
+   HERO TEXT
+   ========================================================= */
+
 .div-eyebrow {
     margin-bottom: 18px;
 
+    color: rgba(255, 255, 255, 0.68);
+
     font-size: 12px;
     font-weight: 800;
+
     letter-spacing: 4px;
-
-    color: rgba(255, 255, 255, 0.68);
 }
-
 
 .div-line {
     width: 70px;
@@ -90,33 +98,32 @@
     background: var(--red);
 
     box-shadow:
-        0 0 18px rgba(215, 25, 32, 0.5);
+        0 0 18px rgba(215, 25, 32, 0.45);
 }
-
 
 .div-hero h1 {
     margin: 0;
+
+    color: #ffffff;
 
     font-size: clamp(48px, 7vw, 82px);
     line-height: 1;
 
     font-weight: 900;
+
     letter-spacing: 5px;
 
-    color: #ffffff;
-
     text-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.4);
+        0 8px 30px rgba(0, 0, 0, 0.45);
 }
-
 
 .div-hero p {
     margin: 24px 0 0;
 
+    color: var(--muted);
+
     font-size: 17px;
     line-height: 1.6;
-
-    color: var(--muted);
 }
 
 
@@ -135,9 +142,9 @@
         );
 }
 
-
 .div-container {
     width: min(1200px, calc(100% - 40px));
+
     margin: 0 auto;
 }
 
@@ -150,35 +157,32 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+
     gap: 10px;
 
     margin-bottom: 38px;
 
+    color: var(--muted);
+
     font-size: 13px;
     font-weight: 600;
-
-    color: var(--muted);
 }
-
 
 .div-breadcrumb a {
     color: #cbd7e2 !important;
 
-    transition:
-        color 0.2s ease;
+    transition: color 0.2s ease;
 }
-
 
 .div-breadcrumb a:hover {
     color: #ffffff !important;
 }
 
-
 .div-breadcrumb span {
     color: var(--red);
+
     font-size: 18px;
 }
-
 
 .div-breadcrumb strong {
     color: #ffffff;
@@ -186,31 +190,33 @@
 
 
 /* =========================================================
-   INTRO
+   INTRODUCTION
    ========================================================= */
 
 .div-intro {
     display: flex;
     align-items: center;
+
     gap: 22px;
 
     margin-bottom: 30px;
     padding: 28px 30px;
 
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
     border-radius: 18px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(12, 32, 53, 0.92),
-            rgba(7, 19, 33, 0.72)
+            rgba(12, 32, 53, 0.95),
+            rgba(7, 19, 33, 0.82)
         );
 
     box-shadow:
         0 18px 50px rgba(0, 0, 0, 0.22);
 }
-
 
 .div-intro-icon {
     width: 62px;
@@ -240,37 +246,35 @@
         0 10px 28px rgba(215, 25, 32, 0.28);
 }
 
-
 .div-label {
     display: block;
 
     margin-bottom: 5px;
 
+    color: var(--red-light);
+
     font-size: 11px;
     font-weight: 900;
+
     letter-spacing: 2px;
-
-    color: var(--red-light);
 }
-
 
 .div-intro h2 {
     margin: 0 0 7px;
 
+    color: #ffffff;
+
     font-size: 28px;
     line-height: 1.2;
-
-    color: #ffffff;
 }
-
 
 .div-intro p {
     margin: 0;
 
+    color: var(--muted);
+
     font-size: 15px;
     line-height: 1.6;
-
-    color: var(--muted);
 }
 
 
@@ -289,10 +293,13 @@
 
     margin-bottom: 12px;
 
-    border: 1px solid rgba(255, 255, 255, 0.09);
+    border:
+        1px solid rgba(255, 255, 255, 0.09);
+
     border-radius: 14px;
 
-    background: rgba(12, 32, 53, 0.8);
+    background:
+        rgba(12, 32, 53, 0.82);
 
     box-shadow:
         0 12px 35px rgba(0, 0, 0, 0.16);
@@ -302,15 +309,14 @@
         box-shadow 0.2s ease;
 }
 
-
 .div-search:focus-within {
-    border-color: rgba(215, 25, 32, 0.65);
+    border-color:
+        rgba(215, 25, 32, 0.65);
 
     box-shadow:
         0 0 0 3px rgba(215, 25, 32, 0.08),
         0 14px 40px rgba(0, 0, 0, 0.2);
 }
-
 
 .div-search .search-icon {
     width: 58px;
@@ -319,13 +325,12 @@
     align-items: center;
     justify-content: center;
 
-    font-size: 25px;
-
     color: #91a5b7;
+
+    font-size: 25px;
 
     pointer-events: none;
 }
-
 
 .div-search input {
     flex: 1;
@@ -344,17 +349,16 @@
     font-size: 15px;
 }
 
-
 .div-search input::placeholder {
     color: #718394;
 }
-
 
 .div-search button {
     width: 50px;
     height: 100%;
 
     border: 0;
+
     background: transparent;
 
     color: #718394;
@@ -363,27 +367,23 @@
 
     cursor: pointer;
 
-    transition:
-        color 0.2s ease;
+    transition: color 0.2s ease;
 }
-
 
 .div-search button:hover {
     color: #ffffff;
 }
 
-
 .search-result {
     min-height: 24px;
 
     margin-bottom: 20px;
-
     padding-left: 4px;
+
+    color: var(--red-light);
 
     font-size: 13px;
     font-weight: 700;
-
-    color: var(--red-light);
 }
 
 
@@ -415,7 +415,9 @@
 
     padding: 24px;
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
     border-radius: 18px;
 
     background:
@@ -436,7 +438,6 @@
         box-shadow 0.25s ease;
 }
 
-
 .div-card::before {
     content: "";
 
@@ -456,17 +457,21 @@
         );
 }
 
-
 .div-card:hover {
     transform: translateY(-6px);
 
-    border-color: rgba(215, 25, 32, 0.38);
+    border-color:
+        rgba(215, 25, 32, 0.38);
 
     box-shadow:
         0 22px 55px rgba(0, 0, 0, 0.3),
         0 0 30px rgba(215, 25, 32, 0.06);
 }
 
+
+/* =========================================================
+   EN-TÊTE DES CARTES
+   ========================================================= */
 
 .div-card-header {
     display: flex;
@@ -476,7 +481,6 @@
 
     margin-bottom: 24px;
 }
-
 
 .div-number {
     width: 48px;
@@ -493,15 +497,16 @@
     background:
         rgba(215, 25, 32, 0.11);
 
-    border: 1px solid rgba(215, 25, 32, 0.24);
+    border:
+        1px solid rgba(215, 25, 32, 0.24);
 
     color: var(--red-light);
 
     font-size: 14px;
     font-weight: 900;
+
     letter-spacing: 1px;
 }
-
 
 .div-card-header h3 {
     margin: 0 0 5px;
@@ -511,7 +516,6 @@
     font-size: 21px;
     font-weight: 900;
 }
-
 
 .div-card-header p {
     margin: 0;
@@ -523,13 +527,12 @@
 
 
 /* =========================================================
-   BOUTON FORM
+   BOUTONS FORM
    ========================================================= */
 
 .div-actions {
     margin-top: auto;
 }
-
 
 .div-button {
     display: grid;
@@ -542,12 +545,13 @@
     gap: 13px;
 
     width: 100%;
-
     min-height: 62px;
 
     padding: 12px 15px;
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
     border-radius: 13px;
 
     background:
@@ -561,7 +565,6 @@
         transform 0.2s ease;
 }
 
-
 .div-button:hover {
     background:
         rgba(215, 25, 32, 0.13);
@@ -571,7 +574,6 @@
 
     transform: translateX(3px);
 }
-
 
 .div-button span {
     display: inline-flex;
@@ -592,28 +594,26 @@
 
     font-size: 10px;
     font-weight: 900;
+
     letter-spacing: 0.5px;
 }
 
-
 .div-button strong {
+    color: #ffffff;
+
     font-size: 13px;
     font-weight: 800;
-
-    color: #ffffff;
 }
 
-
 .div-button b {
-    font-size: 19px;
-
     color: #91a5b7;
+
+    font-size: 19px;
 
     transition:
         color 0.2s ease,
         transform 0.2s ease;
 }
-
 
 .div-button:hover b {
     color: #ffffff;
@@ -634,18 +634,18 @@
 
     text-align: center;
 
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
     border-radius: 18px;
 
     background:
         rgba(12, 32, 53, 0.65);
 }
 
-
 .no-result.show {
     display: block;
 }
-
 
 .no-result > div {
     margin-bottom: 15px;
@@ -653,15 +653,13 @@
     font-size: 35px;
 }
 
-
 .no-result h3 {
     margin: 0 0 8px;
 
-    font-size: 21px;
-
     color: #ffffff;
-}
 
+    font-size: 21px;
+}
 
 .no-result p {
     margin: 0;
@@ -683,15 +681,17 @@
     margin-top: 42px;
 }
 
-
 .back-inventory-button {
     display: inline-flex;
     align-items: center;
+
     gap: 10px;
 
     padding: 13px 22px;
 
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
     border-radius: 12px;
 
     background:
@@ -708,7 +708,6 @@
         transform 0.2s ease;
 }
 
-
 .back-inventory-button:hover {
     background:
         rgba(215, 25, 32, 0.12);
@@ -719,11 +718,10 @@
     transform: translateY(-2px);
 }
 
-
 .back-inventory-button span {
-    font-size: 18px;
-
     color: var(--red-light);
+
+    font-size: 18px;
 }
 
 
@@ -748,8 +746,7 @@
     }
 
     .div-hero-content {
-        padding:
-            70px 0 50px;
+        padding: 70px 0 50px;
     }
 
     .div-eyebrow {
@@ -767,13 +764,11 @@
     }
 
     .div-content {
-        padding:
-            35px 0 60px;
+        padding: 35px 0 60px;
     }
 
     .div-container {
-        width:
-            min(100% - 24px, 1200px);
+        width: min(100% - 24px, 1200px);
     }
 
     .div-intro {
