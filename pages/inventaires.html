@@ -7,14 +7,18 @@
 
     <title>Inventaires — CIS Villenave-d'Ornon</title>
 
-    <!-- STYLE DE L'ACCUEIL -->
+    <!-- STYLE PRINCIPAL DE L'ACCUEIL -->
     <link rel="stylesheet" href="../style.css">
 
-    <!-- STYLE SPÉCIFIQUE INVENTAIRES -->
-    <link rel="stylesheet" href="../cssinventaire.css">
+    <!-- STYLE DE LA PAGE INVENTAIRES -->
+    <link rel="stylesheet" href="../inventairesstyle.css">
 </head>
 
 <body>
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
 
 <header class="site-header">
 
@@ -120,7 +124,7 @@
 
                     <a href="specialites.html">
                         <span class="submenu-icon">★</span>
-                        SPECIALITES
+                        SPÉCIALITÉS
                     </a>
 
                     <a href="standard.html">
@@ -176,14 +180,18 @@
 </header>
 
 
+<!-- =========================================================
+     CONTENU
+     ========================================================= -->
+
 <main class="inventory-page">
 
 
-    <!-- =====================================================
-         HERO INVENTAIRES
-         ===================================================== -->
+    <!-- HERO -->
 
     <section class="inventory-hero">
+
+        <div class="inventory-hero-overlay"></div>
 
         <div class="inventory-hero-content">
 
@@ -206,9 +214,7 @@
     </section>
 
 
-    <!-- =====================================================
-         CONTENU
-         ===================================================== -->
+    <!-- CONTENU -->
 
     <section class="inventory-content">
 
@@ -232,7 +238,7 @@
             </div>
 
 
-            <!-- TITRE + RECHERCHE -->
+            <!-- TITRE -->
 
             <div class="inventory-top">
 
@@ -255,7 +261,7 @@
                 </div>
 
 
-                <!-- RECHERCHE -->
+                <!-- BARRE DE RECHERCHE -->
 
                 <div class="inventory-search">
 
@@ -279,7 +285,6 @@
                         id="clearSearch"
                         class="clear-search"
                         aria-label="Effacer la recherche"
-                        title="Effacer"
                     >
                         ×
                     </button>
@@ -299,12 +304,12 @@
             >
 
 
-                <!-- SSUAP -->
+                <!-- 01 — SSUAP -->
 
                 <a
                     href="ssuap.html"
                     class="inventory-card"
-                    data-search="SSUAP ssuap secours soins urgence personnes VSAV ASU"
+                    data-search="SSUAP VSAV ASU secours soins urgence personnes"
                 >
 
                     <div class="inventory-card-icon">
@@ -334,12 +339,12 @@
                 </a>
 
 
-                <!-- INCENDIE -->
+                <!-- 02 — INCENDIE -->
 
                 <a
                     href="incendie.html"
                     class="inventory-card"
-                    data-search="INCENDIE feu incendie FPT FPTGP ECH FMOGP"
+                    data-search="INCENDIE FPT FPTGP ECH FMOGP feu"
                 >
 
                     <div class="inventory-card-icon">
@@ -369,12 +374,12 @@
                 </a>
 
 
-                <!-- DIV -->
+                <!-- 03 — DIV -->
 
                 <a
                     href="div.html"
                     class="inventory-card"
-                    data-search="DIV divers VTU VSR matériel intervention"
+                    data-search="DIV VTU VSR divers intervention matériel"
                 >
 
                     <div class="inventory-card-icon">
@@ -404,12 +409,12 @@
                 </a>
 
 
-                <!-- FDF -->
+                <!-- 04 — FDF -->
 
                 <a
                     href="fdf.html"
                     class="inventory-card"
-                    data-search="FDF feu forêt feux forêt CCF VLHR AMSEC"
+                    data-search="FDF CCF VLHR AMSEC feu forêt"
                 >
 
                     <div class="inventory-card-icon">
@@ -439,12 +444,12 @@
                 </a>
 
 
-                <!-- SPECIALITES -->
+                <!-- 05 — SPÉCIALITÉS -->
 
                 <a
                     href="specialites.html"
                     class="inventory-card"
-                    data-search="SPECIALITES spécialités ELD Drone équipements"
+                    data-search="SPECIALITES SPÉCIALITÉS ELD Drone"
                 >
 
                     <div class="inventory-card-icon">
@@ -474,12 +479,12 @@
                 </a>
 
 
-                <!-- STANDARD -->
+                <!-- 06 — STANDARD -->
 
                 <a
                     href="standard.html"
                     class="inventory-card"
-                    data-search="STANDARD stationnaire sac PS matériel équipement"
+                    data-search="STANDARD stationnaire sac PS"
                 >
 
                     <div class="inventory-card-icon">
@@ -509,12 +514,12 @@
                 </a>
 
 
-                <!-- CASERNEMENT -->
+                <!-- 07 — CASERNEMENT -->
 
                 <a
                     href="casernement.html"
                     class="inventory-card"
-                    data-search="CASERNEMENT caserne locaux réserve pharmacie"
+                    data-search="CASERNEMENT réserve pharmacie caserne"
                 >
 
                     <div class="inventory-card-icon">
@@ -542,7 +547,6 @@
                     </span>
 
                 </a>
-
 
             </section>
 
@@ -630,8 +634,10 @@
 
 
     <div class="footer-bottom">
+
         CIS VILLENAVE · Portail personnalisé ·
         Les boutons ouvrent directement les Forms, PDF, Drive et services externes.
+
     </div>
 
 </footer>
@@ -641,5 +647,3 @@
 
 </body>
 </html>
-
-
