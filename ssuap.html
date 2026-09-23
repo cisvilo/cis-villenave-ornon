@@ -686,6 +686,30 @@
 
 
 <script src="ssuap.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const inventoryToggle = document.getElementById("inventoryToggle");
+    const inventoryDropdown = document.getElementById("inventoryDropdown");
+
+    if (inventoryToggle && inventoryDropdown) {
+
+        inventoryToggle.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            inventoryDropdown.classList.toggle("open");
+
+            inventoryToggle.setAttribute(
+                "aria-expanded",
+                inventoryDropdown.classList.contains("open") ? "true" : "false"
+            );
+        });
+
+    }
+
+});
+</script>
 
 </body>
 </html>
