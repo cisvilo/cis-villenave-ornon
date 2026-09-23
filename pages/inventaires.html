@@ -1,18 +1,20 @@
 ```html
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inventaires — CIS VILLENAVE-D'ORNON</title>
+    <title>Inventaires — CIS VILLENAVE-D'ORNON</title>
 
-<link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
 
 <header class="site-header">
+
     <div class="header-inner">
 
         <a href="../index.html" class="brand">
@@ -31,14 +33,18 @@
                 type="button"
                 aria-label="Ouvrir le menu"
                 aria-expanded="false">
+
             <span></span>
             <span></span>
             <span></span>
+
         </button>
 
         <nav class="nav" id="mainNav">
 
-            <a href="../index.html" class="nav-link">ACCUEIL</a>
+            <a href="../index.html" class="nav-link">
+                ACCUEIL
+            </a>
 
             <div class="nav-dropdown" id="inventoryDropdown">
 
@@ -90,19 +96,20 @@
                     </a>
 
                 </div>
+
             </div>
 
             <a href="entretiens.html" class="nav-link">ENTRETIENS</a>
-
             <a href="documents.html" class="nav-link">DOCUMENTS</a>
-
             <a href="amicale.html" class="nav-link">AMICALE</a>
-
             <a href="raccourcis.html" class="nav-link">RACCOURCIS</a>
 
         </nav>
+
     </div>
+
 </header>
+
 
 <main>
 
@@ -113,28 +120,26 @@
             <div class="inventory-breadcrumb">
                 <a href="../index.html">Accueil</a>
                 <span>›</span>
-                <strong>Inventaires</strong>
+                <span>Inventaires</span>
             </div>
 
-            <div class="inventory-heading">
+            <div class="inventory-title">
 
-                <div>
-                    <div class="inventory-eyebrow">
-                        PORTAIL OPÉRATIONNEL
-                    </div>
-
-                    <h1>Inventaires</h1>
-
-                    <p>
-                        Tous les inventaires de votre Centre de Secours.
-                    </p>
+                <div class="inventory-eyebrow">
+                    CENTRE D'INCENDIE ET DE SECOURS
                 </div>
+
+                <h1>Inventaires</h1>
+
+                <p>
+                    Tous les inventaires de votre Centre de Secours.
+                </p>
 
             </div>
 
             <div class="inventory-search">
 
-                <span class="search-icon">⌕</span>
+                <span class="inventory-search-icon">⌕</span>
 
                 <input
                     type="search"
@@ -144,118 +149,141 @@
 
             </div>
 ```html
-            <div class="inventory-grid" id="inventoryGrid">
+            <div class="cards inventory-cards" id="inventoryGrid">
+
 
                 <a href="ssuap.html"
-                   class="inventory-card"
+                   class="card inventory-card"
                    data-search="ssuap vsav matériel asu">
 
-                    <div class="inventory-card-icon">🩺</div>
+                    <div class="card-icon">🩺</div>
 
-                    <div class="inventory-card-content">
-                        <h2>SSUAP</h2>
-                        <p>VSAV et matériel ASU</p>
-                    </div>
+                    <h3>SSUAP</h3>
 
-                    <span class="inventory-card-arrow">→</span>
+                    <p>
+                        VSAV et matériel ASU
+                    </p>
+
+                    <span class="card-link">
+                        ACCÉDER →
+                    </span>
 
                 </a>
 
 
                 <a href="incendie.html"
-                   class="inventory-card"
+                   class="card inventory-card"
                    data-search="incendie fpt fptgp ech fmogp">
 
-                    <div class="inventory-card-icon">🔥</div>
+                    <div class="card-icon">🔥</div>
 
-                    <div class="inventory-card-content">
-                        <h2>Incendie</h2>
-                        <p>FPT, FPTGP, ECH, FMOGP…</p>
-                    </div>
+                    <h3>INCENDIE</h3>
 
-                    <span class="inventory-card-arrow">→</span>
+                    <p>
+                        FPT, FPTGP, ECH, FMOGP…
+                    </p>
+
+                    <span class="card-link">
+                        ACCÉDER →
+                    </span>
 
                 </a>
 
 
                 <a href="div.html"
-                   class="inventory-card"
+                   class="card inventory-card"
                    data-search="div vtu vsr">
 
-                    <div class="inventory-card-icon">🛠️</div>
+                    <div class="card-icon">🛠️</div>
 
-                    <div class="inventory-card-content">
-                        <h2>DIV</h2>
-                        <p>VTU et VSR</p>
-                    </div>
+                    <h3>DIV</h3>
 
-                    <span class="inventory-card-arrow">→</span>
+                    <p>
+                        VTU et VSR
+                    </p>
+
+                    <span class="card-link">
+                        ACCÉDER →
+                    </span>
 
                 </a>
 
 
                 <a href="fdf.html"
-                   class="inventory-card"
+                   class="card inventory-card"
                    data-search="fdf ccf vlhr amsec">
 
-                    <div class="inventory-card-icon">🌲</div>
+                    <div class="card-icon">🌲</div>
 
-                    <div class="inventory-card-content">
-                        <h2>FDF</h2>
-                        <p>CCF, VLHR, AMSEC</p>
-                    </div>
+                    <h3>FDF</h3>
 
-                    <span class="inventory-card-arrow">→</span>
+                    <p>
+                        CCF, VLHR, AMSEC
+                    </p>
+
+                    <span class="card-link">
+                        ACCÉDER →
+                    </span>
 
                 </a>
 
 
                 <a href="specialites.html"
-                   class="inventory-card"
-                   data-search="specialites spécialités eld drone">
+                   class="card inventory-card"
+                   data-search="specialités spécialites eld drone">
 
-                    <div class="inventory-card-icon">⚡</div>
+                    <div class="card-icon">⚡</div>
 
-                    <div class="inventory-card-content">
-                        <h2>Spécialités</h2>
-                        <p>ELD et Drone</p>
-                    </div>
+                    <h3>SPÉCIALITÉS</h3>
 
-                    <span class="inventory-card-arrow">→</span>
+                    <p>
+                        ELD et Drone
+                    </p>
+
+                    <span class="card-link">
+                        ACCÉDER →
+                    </span>
 
                 </a>
 
 
                 <a href="standard.html"
-                   class="inventory-card"
+                   class="card inventory-card"
                    data-search="standard stationnaire sac ps">
 
-                    <div class="inventory-card-icon">📦</div>
+                    <div class="card-icon">📦</div>
 
-                    <div class="inventory-card-content">
-                        <h2>Standard</h2>
-                        <p>Stationnaire et sac PS</p>
-                    </div>
+                    <h3>STANDARD</h3>
 
-                    <span class="inventory-card-arrow">→</span>
+                    <p>
+                        Stationnaire et sac PS
+                    </p>
+
+                    <span class="card-link">
+                        ACCÉDER →
+                    </span>
 
                 </a>
 
 
                 <a href="casernement.html"
-                   class="inventory-card"
+                   class="card inventory-card"
                    data-search="casernement réserve pharmacie meducore pompy">
 
-                    <div class="inventory-card-icon">🏠</div>
+                    <div class="card-icon">🏠</div>
 
-                    <div class="inventory-card-content">
-                        <h2>Casernement</h2>
-                        <p>Réserve et pharmacie</p>
-                    </div>
+                    <h3>CASERNEMENT</h3>
 
-                    <span class="inventory-card-arrow">→</span>
+                    <p>
+                        Réserve et pharmacie
+                    </p>
+
+                    <span class="card-link">
+                        ACCÉDER →
+                    </span>
 
                 </a>
+
 
             </div>
 
@@ -305,3 +333,4 @@
 
 </body>
 </html>
+
