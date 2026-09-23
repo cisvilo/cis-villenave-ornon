@@ -54,19 +54,6 @@ body {
 
     /*
        PHOTO VISIBLE
-    */
-    background-image:
-        linear-gradient(
-            rgba(3, 9, 18, 0.30),
-            rgba(3, 9, 18, 0.38)
-        ),
-        url("photo.png");
-
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
 
 img {
     max-width: 100%;
@@ -930,6 +917,16 @@ footer {
 
     line-height: 1.5;
 }
+   background-image:
+    linear-gradient(
+        rgba(3, 9, 18, 0.25),
+        rgba(3, 9, 18, 0.32)
+    ),
+    url("photo.png");
+
+background-position: center 25%;
+background-size: cover;
+background-repeat: no-repeat;
 
 
 /* =========================================================
