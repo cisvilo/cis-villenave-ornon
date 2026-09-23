@@ -1,159 +1,418 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CIS VILLENAVE-D'ORNON</title>
+```
+<title>CIS VILLENAVE-D'ORNON — Portail opérationnel</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+```
+
 </head>
 
 <body>
 
-    <header>
-        <div class="header-inner">
+```
+<!-- =========================
+     HEADER
+========================== -->
+<header class="site-header">
 
-    <a href="index.html" class="brand">
-    <img src="logo1.png" alt="Logo CIS Villenave-d'Ornon" class="brand-logo">
+    <div class="header-inner">
 
-    <span class="brand-text">
-        <span class="brand-title">CIS VILLENAVE-D'ORNON</span>
-        <span class="brand-subtitle">PORTAIL OPÉRATIONNEL</span>
-    </span>
-</a>
-            <button class="mobile-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
-    ☰
-</button>
-            <nav class="nav">
-                <a href="index.html">ACCUEIL</a>
-                <a href="pages/inventaires.html">INVENTAIRES</a>
-                <a href="pages/entretiens.html">ENTRETIENS</a>
-                <a href="pages/documents.html">DOCUMENTS</a>
-                <a href="pages/amicale.html">AMICALE</a>
-                <a href="pages/raccourcis.html">RACCOURCIS</a>
-            </nav>
+        <!-- LOGO + NOM -->
+        <a href="index.html" class="brand">
 
-        </div>
-    </header>
+            <img
+                src="logo1.png"
+                alt="Logo CIS Villenave-d'Ornon"
+                class="brand-logo"
+            >
+
+            <span class="brand-text">
+                <span class="brand-title">
+                    CIS VILLENAVE-D'ORNON
+                </span>
+
+                <span class="brand-subtitle">
+                    PORTAIL OPÉRATIONNEL
+                </span>
+            </span>
+
+        </a>
 
 
-    <main>
+        <!-- BOUTON MENU MOBILE -->
+        <button
+            class="mobile-toggle"
+            type="button"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="mainNav"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-        <section class="hero">
 
-            <div class="hero-content">
+        <!-- MENU PRINCIPAL -->
+        <nav class="nav" id="mainNav">
 
-                <div class="eyebrow">
-                    CENTRE D'INCENDIE ET DE SECOURS
+            <!-- ACCUEIL -->
+            <a href="index.html" class="nav-link">
+                ACCUEIL
+            </a>
+
+
+            <!-- INVENTAIRES + SOUS-MENU -->
+            <div class="nav-dropdown">
+
+                <button
+                    type="button"
+                    class="nav-dropdown-toggle"
+                    aria-expanded="false"
+                    aria-controls="inventairesSubmenu"
+                >
+                    <span>INVENTAIRES</span>
+                    <span class="dropdown-arrow">⌄</span>
+                </button>
+
+
+                <div
+                    class="nav-dropdown-menu"
+                    id="inventairesSubmenu"
+                >
+
+                    <a href="pages/inventaires.html">
+                        <span class="submenu-icon">▣</span>
+                        <span>INVENTAIRES</span>
+                    </a>
+
+                    <a href="pages/ssuap.html">
+                        <span class="submenu-icon">＋</span>
+                        <span>SSUAP</span>
+                    </a>
+
+                    <a href="pages/incendie.html">
+                        <span class="submenu-icon">◆</span>
+                        <span>INCENDIE</span>
+                    </a>
+
+                    <a href="pages/div.html">
+                        <span class="submenu-icon">◇</span>
+                        <span>DIV</span>
+                    </a>
+
+                    <a href="pages/fdf.html">
+                        <span class="submenu-icon">▲</span>
+                        <span>FDF</span>
+                    </a>
+
+                    <a href="pages/specialites.html">
+                        <span class="submenu-icon">★</span>
+                        <span>SPÉCIALITÉS</span>
+                    </a>
+
+                    <a href="pages/standard.html">
+                        <span class="submenu-icon">▤</span>
+                        <span>STANDARD</span>
+                    </a>
+
+                    <a href="pages/casernement.html">
+                        <span class="submenu-icon">⌂</span>
+                        <span>CASERNEMENT</span>
+                    </a>
+
                 </div>
 
-                <h1>
-                    CIS VILLENAVE-D'ORNON
-                </h1>
+            </div>
 
-                <div class="hero-line"></div>
+
+            <!-- ENTRETIENS -->
+            <a href="pages/entretiens.html" class="nav-link">
+                ENTRETIENS
+            </a>
+
+
+            <!-- DOCUMENTS -->
+            <a href="pages/documents.html" class="nav-link">
+                DOCUMENTS
+            </a>
+
+
+            <!-- AMICALE -->
+            <a href="pages/amicale.html" class="nav-link">
+                AMICALE
+            </a>
+
+
+            <!-- RACCOURCIS -->
+            <a href="pages/raccourcis.html" class="nav-link">
+                RACCOURCIS
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     CONTENU PRINCIPAL
+========================== -->
+<main>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                CENTRE D'INCENDIE ET DE SECOURS
+            </div>
+
+            <h1>
+                CIS VILLENAVE-D'ORNON
+            </h1>
+
+            <div class="hero-line"></div>
+
+            <p>
+                Tout ce dont vous pourriez avoir besoin
+            </p>
+
+            <a
+                href="pages/inventaires.html"
+                class="hero-button"
+            >
+                INVENTAIRES
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ACCÈS PRINCIPAUX
+    ========================== -->
+    <section class="quick-access">
+
+        <div class="cards">
+
+            <!-- INVENTAIRES -->
+            <a
+                href="pages/inventaires.html"
+                class="card"
+            >
+
+                <div class="card-icon">
+                    ▣
+                </div>
+
+                <h3>
+                    INVENTAIRES
+                </h3>
 
                 <p>
-                    Tout ce dont vous pourriez avoir besoin
+                    Accéder aux inventaires des véhicules
+                    et équipements.
                 </p>
 
-                <a href="pages/inventaires.html" class="hero-button">
-                    INVENTAIRES
-                </a>
+                <span class="card-link">
+                    ACCÉDER →
+                </span>
 
-            </div>
-
-        </section>
+            </a>
 
 
-        <section class="quick-access">
 
-     
+            <!-- ENTRETIENS -->
+            <a
+                href="pages/entretiens.html"
+                class="card"
+            >
 
-            <div class="cards">
+                <div class="card-icon">
+                    ⚙
+                </div>
 
-                <a href="pages/inventaires.html" class="card">
-                    <div class="card-icon">▣</div>
-                    <h3>INVENTAIRES</h3>
-                    <p>
-                        Accéder aux inventaires des véhicules et équipements.
-                    </p>
-                    <span class="card-link">ACCÉDER →</span>
-                </a>
+                <h3>
+                    ENTRETIENS
+                </h3>
 
+                <p>
+                    Retrouver les formulaires et suivis
+                    d'entretien.
+                </p>
 
-                <a href="pages/entretiens.html" class="card">
-                    <div class="card-icon">⚙</div>
-                    <h3>ENTRETIENS</h3>
-                    <p>
-                        Retrouver les formulaires et suivis d'entretien.
-                    </p>
-                    <span class="card-link">ACCÉDER →</span>
-                </a>
+                <span class="card-link">
+                    ACCÉDER →
+                </span>
 
-
-                <a href="pages/documents.html" class="card">
-                    <div class="card-icon">▤</div>
-                    <h3>DOCUMENTS</h3>
-                    <p>
-                        Accéder aux documents et ressources du CIS.
-                    </p>
-                    <span class="card-link">ACCÉDER →</span>
-                </a>
+            </a>
 
 
-                <a href="pages/amicale.html" class="card">
-                    <div class="card-icon">★</div>
-                    <h3>AMICALE</h3>
-                    <p>
-                        Retrouvez les informations et services de l'amicale.
-                    </p>
-                    <span class="card-link">ACCÉDER →</span>
-                </a>
+
+            <!-- DOCUMENTS -->
+            <a
+                href="pages/documents.html"
+                class="card"
+            >
+
+                <div class="card-icon">
+                    ▤
+                </div>
+
+                <h3>
+                    DOCUMENTS
+                </h3>
+
+                <p>
+                    Accéder aux documents et ressources
+                    du CIS.
+                </p>
+
+                <span class="card-link">
+                    ACCÉDER →
+                </span>
+
+            </a>
 
 
-                <a href="pages/raccourcis.html" class="card">
-                    <div class="card-icon">↗</div>
-                    <h3>RACCOURCIS</h3>
-                    <p>
-                        Accéder rapidement aux plateformes utiles.
-                    </p>
-                    <span class="card-link">ACCÉDER →</span>
-                </a>
 
-            </div>
+            <!-- AMICALE -->
+            <a
+                href="pages/amicale.html"
+                class="card"
+            >
 
-        </section>
+                <div class="card-icon">
+                    ★
+                </div>
 
-    </main>
+                <h3>
+                    AMICALE
+                </h3>
+
+                <p>
+                    Retrouvez les informations et services
+                    de l'amicale.
+                </p>
+
+                <span class="card-link">
+                    ACCÉDER →
+                </span>
+
+            </a>
 
 
-    <footer>
 
-        <div class="footer-inner">
+            <!-- RACCOURCIS -->
+            <a
+                href="pages/raccourcis.html"
+                class="card"
+            >
 
-            <div class="footer-brand">
-                <strong>CIS VILLENAVE-D'ORNON</strong>
-                <span>Centre d'incendie et de secours</span>
-            </div>
+                <div class="card-icon">
+                    ↗
+                </div>
 
-            <div class="footer-links">
-                <a href="index.html">Accueil</a>
-                <a href="pages/inventaires.html">Inventaires</a>
-                <a href="pages/entretiens.html">Entretiens</a>
-                <a href="pages/documents.html">Documents</a>
-                <a href="pages/amicale.html">Amicale</a>
-                <a href="pages/raccourcis.html">Raccourcis</a>
-            </div>
+                <h3>
+                    RACCOURCIS
+                </h3>
+
+                <p>
+                    Accéder rapidement aux plateformes
+                    utiles.
+                </p>
+
+                <span class="card-link">
+                    ACCÉDER →
+                </span>
+
+            </a>
 
         </div>
 
-        <div class="footer-bottom">
-            Portail opérationnel — CIS Villenave-d'Ornon
+    </section>
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+
+            <strong>
+                CIS VILLENAVE-D'ORNON
+            </strong>
+
+            <span>
+                Centre d'incendie et de secours
+            </span>
+
         </div>
 
-    </footer>
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Accueil
+            </a>
+
+            <a href="pages/inventaires.html">
+                Inventaires
+            </a>
+
+            <a href="pages/entretiens.html">
+                Entretiens
+            </a>
+
+            <a href="pages/documents.html">
+                Documents
+            </a>
+
+            <a href="pages/amicale.html">
+                Amicale
+            </a>
+
+            <a href="pages/raccourcis.html">
+                Raccourcis
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+        Portail opérationnel — CIS Villenave-d'Ornon
+    </div>
+
+</footer>
+
+
+
+<!-- JAVASCRIPT -->
+<script src="script.js"></script>
+```
 
 </body>
 </html>
+
