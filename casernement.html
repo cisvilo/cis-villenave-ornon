@@ -1,0 +1,336 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casernement — CIS Villenave-d'Ornon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="casernement.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+
+        <a href="index.html" class="brand">
+            <img src="logo1.png" alt="Logo CIS Villenave-d'Ornon" class="brand-logo">
+
+            <div class="brand-text">
+                <div class="brand-title">CIS VILLENAVE-D'ORNON</div>
+                <div class="brand-subtitle">PORTAIL OPÉRATIONNEL</div>
+            </div>
+        </a>
+
+        <button class="mobile-toggle" id="mobileToggle" type="button"
+                aria-label="Ouvrir le menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav" id="mainNav">
+
+            <a href="index.html" class="nav-link">ACCUEIL</a>
+
+            <div class="nav-dropdown" id="inventoryDropdown">
+
+                <button type="button" class="nav-dropdown-toggle"
+                        id="inventoryToggle" aria-expanded="false">
+                    <span>INVENTAIRES</span>
+                    <span class="dropdown-arrow">▾</span>
+                </button>
+
+                <div class="nav-dropdown-menu" id="inventoryMenu">
+
+                    <a href="pages/inventaires.html">
+                        <span class="submenu-icon">▣</span>
+                        VUE D'ENSEMBLE
+                    </a>
+
+                    <a href="ssuap.html">
+                        <span class="submenu-icon">＋</span>
+                        SSUAP
+                    </a>
+
+                    <a href="incendie.html">
+                        <span class="submenu-icon">◆</span>
+                        INCENDIE
+                    </a>
+
+                    <a href="div.html">
+                        <span class="submenu-icon">◇</span>
+                        DIV
+                    </a>
+
+                    <a href="fdf.html">
+                        <span class="submenu-icon">▲</span>
+                        FDF
+                    </a>
+
+                    <a href="specialites.html">
+                        <span class="submenu-icon">★</span>
+                        SPÉCIALITÉS
+                    </a>
+
+                    <a href="standard.html">
+                        <span class="submenu-icon">▤</span>
+                        STANDARD
+                    </a>
+
+                    <a href="casernement.html" class="active">
+                        <span class="submenu-icon">⌂</span>
+                        CASERNEMENT
+                    </a>
+
+                </div>
+            </div>
+
+            <a href="pages/entretiens.html" class="nav-link">ENTRETIENS</a>
+            <a href="pages/documents.html" class="nav-link">DOCUMENTS</a>
+            <a href="pages/amicale.html" class="nav-link">AMICALE</a>
+            <a href="pages/raccourcis.html" class="nav-link">RACCOURCIS</a>
+
+        </nav>
+    </div>
+</header>
+
+
+<main class="casernement-page">
+
+    <section class="casernement-hero">
+
+        <div class="casernement-hero-overlay"></div>
+
+        <div class="casernement-hero-content">
+
+            <div class="casernement-eyebrow">
+                CENTRE D'INCENDIE ET DE SECOURS
+            </div>
+
+            <div class="casernement-line"></div>
+
+            <h1>CASERNEMENT</h1>
+
+            <p>Accès direct aux formulaires d'inventaire.</p>
+
+        </div>
+
+    </section>
+
+
+    <section class="casernement-content">
+
+        <div class="casernement-container">
+
+            <div class="casernement-breadcrumb">
+
+                <a href="index.html">Accueil</a>
+
+                <span>›</span>
+
+                <a href="pages/inventaires.html">Inventaires</a>
+
+                <span>›</span>
+
+                <strong>Casernement</strong>
+
+            </div>
+
+
+            <div class="casernement-intro">
+
+                <div class="casernement-intro-icon">⌂</div>
+
+                <div>
+
+                    <span class="casernement-label">ACCÈS RAPIDE</span>
+
+                    <h2>Inventaires Casernement</h2>
+
+                    <p>
+                        Retrouvez rapidement les formulaires d'inventaire du casernement.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="casernement-search">
+
+                <span class="search-icon">⌕</span>
+
+                <input
+                    type="search"
+                    id="casernementSearch"
+                    placeholder="Rechercher un matériel ou un formulaire..."
+                    autocomplete="off"
+                    aria-label="Rechercher un matériel ou un formulaire"
+                >
+
+                <button
+                    id="clearSearch"
+                    type="button"
+                    aria-label="Effacer"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div id="searchResult" class="search-result"></div>
+
+
+            <div class="casernement-grid" id="casernementGrid">
+
+
+                <article
+                    class="casernement-card"
+                    data-search="réserve opérationnelle réserve casernement inventaire"
+                >
+
+                    <div class="casernement-card-header">
+
+                        <span class="casernement-number">01</span>
+
+                        <div>
+                            <h3>Réserve opérationnelle</h3>
+                            <p>Réserve opérationnelle</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="casernement-actions">
+
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSdKEdVyX-ITwIlX0ebpzCnUv12Ihp459CcIW13tg9Wz7VyOrA/viewform"
+                            target="_blank"
+                            rel="noopener"
+                            class="casernement-button"
+                        >
+
+                            <span>RÉSERVE</span>
+
+                            <strong>Inventaire Réserve opérationnelle</strong>
+
+                            <b>↗</b>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="casernement-card"
+                    data-search="pharmacie ASU Meducore Pompy casernement inventaire"
+                >
+
+                    <div class="casernement-card-header">
+
+                        <span class="casernement-number">02</span>
+
+                        <div>
+                            <h3>Pharmacie ASU / Meducore / Pompy</h3>
+                            <p>Pharmacie et matériel médical</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="casernement-actions">
+
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScQ4mzrZjtt0AR9aKFWobl8DNGo-sbTzUiu4pML1xfWlsdzSg/viewform"
+                            target="_blank"
+                            rel="noopener"
+                            class="casernement-button"
+                        >
+
+                            <span>PHARMACIE</span>
+
+                            <strong>Inventaire Pharmacie ASU / Meducore / Pompy</strong>
+
+                            <b>↗</b>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+            <div id="noResult" class="no-result">
+
+                <div>🔎</div>
+
+                <h3>Aucun résultat</h3>
+
+                <p>
+                    Aucun matériel ou formulaire ne correspond à votre recherche.
+                </p>
+
+            </div>
+
+
+            <div class="casernement-back">
+
+                <a
+                    href="pages/inventaires.html"
+                    class="back-inventory-button"
+                >
+                    <span>←</span>
+                    Retour aux inventaires
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+
+            <strong>CIS VILLENAVE-D'ORNON</strong>
+
+            <span>Portail opérationnel</span>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">Accueil</a>
+            <a href="pages/inventaires.html">Inventaires</a>
+            <a href="pages/entretiens.html">Entretiens</a>
+            <a href="pages/documents.html">Documents</a>
+            <a href="pages/amicale.html">Amicale</a>
+            <a href="pages/raccourcis.html">Raccourcis</a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="casernement.js"></script>
+
+</body>
+</html>
+```
