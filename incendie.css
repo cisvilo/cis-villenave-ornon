@@ -387,3 +387,167 @@ body {
   }
 
 }
+```css
+/* =========================================================
+   MENU MOBILE — INCENDIE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .site-header {
+    position: relative !important;
+    z-index: 9999 !important;
+  }
+
+  .header-inner {
+    position: relative !important;
+  }
+
+  .mobile-toggle {
+    display: flex !important;
+
+    position: relative !important;
+
+    z-index: 10001 !important;
+
+    cursor: pointer !important;
+  }
+
+  #mainNav.nav {
+    display: none !important;
+
+    position: absolute !important;
+
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+
+    width: 100% !important;
+
+    flex-direction: column !important;
+    align-items: stretch !important;
+
+    padding: 15px !important;
+
+    box-sizing: border-box !important;
+
+    background: #07111f !important;
+
+    border-top: 1px solid #26384e !important;
+
+    box-shadow: 0 15px 30px rgba(0,0,0,0.35) !important;
+
+    z-index: 10000 !important;
+  }
+
+  #mainNav.nav.active {
+    display: flex !important;
+  }
+
+  #mainNav .nav-link,
+  #mainNav .nav-dropdown-toggle {
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    padding: 14px 16px !important;
+
+    color: #ffffff !important;
+
+    text-align: left !important;
+
+    background: transparent !important;
+
+    border: none !important;
+  }
+
+  #mainNav .nav-link:hover,
+  #mainNav .nav-dropdown-toggle:hover {
+    color: #ff5258 !important;
+  }
+
+  #mainNav .nav-dropdown {
+    width: 100% !important;
+  }
+
+  #mainNav .nav-dropdown-menu {
+    position: static !important;
+
+    display: none !important;
+
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    background: #101f33 !important;
+
+    border: 1px solid #26384e !important;
+
+    border-radius: 10px !important;
+
+    margin-top: 5px !important;
+  }
+
+  #mainNav .nav-dropdown.open .nav-dropdown-menu {
+    display: block !important;
+  }
+
+  #mainNav .nav-dropdown-menu a {
+    display: flex !important;
+
+    align-items: center !important;
+
+    gap: 10px !important;
+
+    padding: 12px 15px !important;
+
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+  }
+
+  #mainNav .nav-dropdown-menu a:hover,
+  #mainNav .nav-dropdown-menu a.active {
+    color: #ff5258 !important;
+
+    background: #192d44 !important;
+  }
+
+}
+
+
+/* =========================================================
+   BOUTONS DES CARTES
+   ========================================================= */
+
+.incendie-card .card-button {
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: space-between !important;
+
+  gap: 8px !important;
+
+  margin-top: auto !important;
+
+  padding: 13px !important;
+
+  background: #e3262e !important;
+
+  border-radius: 9px !important;
+
+  color: #ffffff !important;
+
+  text-decoration: none !important;
+
+  font-weight: bold !important;
+}
+
+.incendie-card .card-button:hover {
+  background: #bd1d25 !important;
+}
+
+.incendie-card .card-button span {
+  color: #ffffff !important;
+}
