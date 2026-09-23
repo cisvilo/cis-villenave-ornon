@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       ÉLÉMENTS DU MENU
+       MENU
        ===================================================== */
 
     const mobileToggle =
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       FERMER LE MENU MOBILE
+       FERMER MENU MOBILE
        ===================================================== */
 
     function closeMobileMenu() {
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       FERMER LE SOUS-MENU
+       FERMER SOUS-MENU
        ===================================================== */
 
     function closeInventoryMenu() {
@@ -142,17 +142,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       LIENS DU MENU
+       LIENS NAVIGATION
        ===================================================== */
 
-    const navLinks =
-        document.querySelectorAll(
-            ".nav-link"
-        );
-
-
-    navLinks.forEach(
-        function (link) {
+    document
+        .querySelectorAll(".nav-link")
+        .forEach(function (link) {
 
             link.addEventListener(
                 "click",
@@ -163,18 +158,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             );
 
-        }
-    );
+        });
 
 
-    const submenuLinks =
-        document.querySelectorAll(
-            ".nav-dropdown-menu a"
-        );
-
-
-    submenuLinks.forEach(
-        function (link) {
+    document
+        .querySelectorAll(".nav-dropdown-menu a")
+        .forEach(function (link) {
 
             link.addEventListener(
                 "click",
@@ -187,12 +176,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             );
 
-        }
-    );
+        });
 
 
     /* =====================================================
-       CLIC EN DEHORS
+       CLIC EN DEHORS DU MENU
        ===================================================== */
 
     document.addEventListener(
@@ -215,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       ESCAPE
+       TOUCHE ESC
        ===================================================== */
 
     document.addEventListener(
@@ -255,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       RECHERCHE INVENTAIRES
+       RECHERCHE
        ===================================================== */
 
     const searchInput =
@@ -279,6 +267,27 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
+    /* =====================================================
+       NORMALISATION DES ACCENTS
+       ===================================================== */
+
+    function normalizeText(text) {
+
+        return text
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(
+                /[\u0300-\u036f]/g,
+                ""
+            );
+
+    }
+
+
+    /* =====================================================
+       FILTRER LES CARTES
+       ===================================================== */
+
     function filterInventories() {
 
         if (!searchInput) {
@@ -287,14 +296,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         const search =
-            searchInput.value
-                .trim()
-                .toLowerCase()
-                .normalize("NFD")
-                .replace(
-                    /[\u0300-\u036f]/g,
-                    ""
-                );
+            normalizeText(
+                searchInput.value.trim()
+            );
 
 
         let visibleCards = 0;
@@ -304,16 +308,12 @@ document.addEventListener("DOMContentLoaded", function () {
             function (card) {
 
                 const searchableText =
-                    (
-                        card.dataset.search ||
-                        card.textContent ||
-                        ""
-                    )
-                    .toLowerCase()
-                    .normalize("NFD")
-                    .replace(
-                        /[\u0300-\u036f]/g,
-                        ""
+                    normalizeText(
+                        (
+                            card.dataset.search ||
+                            card.textContent ||
+                            ""
+                        )
                     );
 
 
@@ -344,7 +344,9 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /* Aucun résultat */
+        /* =================================================
+           MESSAGE AUCUN RÉSULTAT
+           ================================================= */
 
         if (emptyMessage) {
 
@@ -366,7 +368,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* Bouton effacer */
+        /* =================================================
+           BOUTON EFFACER
+           ================================================= */
 
         if (clearSearch) {
 
@@ -380,6 +384,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+    /* =====================================================
+       RECHERCHE EN DIRECT
+       ===================================================== */
+
     if (searchInput) {
 
         searchInput.addEventListener(
@@ -391,7 +399,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       EFFACER LA RECHERCHE
+       EFFACER
        ===================================================== */
 
     if (clearSearch) {
@@ -399,6 +407,10 @@ document.addEventListener("DOMContentLoaded", function () {
         clearSearch.addEventListener(
             "click",
             function () {
+
+                if (!searchInput) {
+                    return;
+                }
 
                 searchInput.value = "";
 
@@ -415,6 +427,16 @@ document.addEventListener("DOMContentLoaded", function () {
     /* =====================================================
        ANIMATION DES CARTES
        ===================================================== */
+
+    cards.forEach(
+        function (card, index) {
+
+            card.style.transitionDelay =
+                (index * 0.06) + "s";
+
+        }
+    );
+
 
     if (
         "IntersectionObserver"
@@ -473,6 +495,5 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
     }
-
 
 });
