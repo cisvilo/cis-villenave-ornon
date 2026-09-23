@@ -1,38 +1,31 @@
 ```javascript
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-    /* =========================
+    /* =====================================================
        MENU MOBILE
-    ========================= */
+       ===================================================== */
 
-```javascript id="lqv7rm"
-const mobileToggle = document.getElementById("mobileToggle");
-const mainNav = document.getElementById("mainNav");
+    const mobileToggle =
+        document.getElementById("mobileToggle");
 
-if (mobileToggle && mainNav) {
+    const mainNav =
+        document.getElementById("mainNav");
 
-    mobileToggle.addEventListener("click", function (event) {
+    if (mobileToggle && mainNav) {
 
-        event.preventDefault();
-        event.stopPropagation();
+        mobileToggle.addEventListener("click", () => {
 
-        const opened = mainNav.classList.toggle("active");
+            mainNav.classList.toggle("active");
+            mobileToggle.classList.toggle("open");
 
-        mobileToggle.setAttribute(
-            "aria-expanded",
-            opened ? "true" : "false"
-        );
+        });
 
-    });
-
-}
-```
+    }
 
 
-
-    /* =========================
+    /* =====================================================
        MENU INVENTAIRES
-    ========================= */
+       ===================================================== */
 
     const inventoryDropdown =
         document.getElementById("inventoryDropdown");
@@ -40,34 +33,22 @@ if (mobileToggle && mainNav) {
     const inventoryToggle =
         document.getElementById("inventoryToggle");
 
-    if (inventoryDropdown && inventoryToggle) {
+    if (inventoryToggle && inventoryDropdown) {
 
-        inventoryToggle.addEventListener("click", function (event) {
+        inventoryToggle.addEventListener("click", (event) => {
 
             event.preventDefault();
             event.stopPropagation();
 
-            const opened =
-                inventoryDropdown.classList.toggle("open");
-
-            inventoryToggle.setAttribute(
-                "aria-expanded",
-                opened ? "true" : "false"
-            );
+            inventoryDropdown.classList.toggle("open");
 
         });
 
-
-        document.addEventListener("click", function (event) {
+        document.addEventListener("click", (event) => {
 
             if (!inventoryDropdown.contains(event.target)) {
 
                 inventoryDropdown.classList.remove("open");
-
-                inventoryToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
 
             }
 
@@ -76,9 +57,9 @@ if (mobileToggle && mainNav) {
     }
 
 
-    /* =========================
-       RECHERCHE
-    ========================= */
+    /* =====================================================
+       RECHERCHE CASERNEMENT
+       ===================================================== */
 
     const searchInput =
         document.getElementById("casernementSearch");
@@ -86,14 +67,17 @@ if (mobileToggle && mainNav) {
     const clearSearch =
         document.getElementById("clearSearch");
 
-    const searchResult =
-        document.getElementById("searchResult");
-
     const cards =
         document.querySelectorAll(".casernement-card");
 
     const noResult =
         document.getElementById("noResult");
+
+    const searchResult =
+        document.getElementById("searchResult");
+
+
+    if (!searchInput) return;
 
 
     function normalize(text) {
@@ -106,116 +90,104 @@ if (mobileToggle && mainNav) {
     }
 
 
-    function filterCards() {
-
-        if (!searchInput) return;
+    function performSearch() {
 
         const query =
             normalize(searchInput.value.trim());
 
-        let visible = 0;
+        let visibleCards = 0;
 
 
-        cards.forEach(function (card) {
+        cards.forEach(card => {
 
-            const text = normalize(
-                card.textContent +
-                " " +
-                (card.dataset.search || "")
-            );
+            const cardText =
+                normalize(
+                    card.innerText +
+                    " " +
+                    Array.from(
+                        card.querySelectorAll("[data-search]")
+                    )
+                    .map(element =>
+                        element.dataset.search
+                    )
+                    .join(" ")
+                );
+
 
             const match =
                 query === "" ||
-                text.includes(query);
+                cardText.includes(query);
+
 
             card.style.display =
                 match ? "" : "none";
 
-            if (match) visible++;
+
+            if (match) {
+                visibleCards++;
+            }
 
         });
 
 
-        if (noResult) {
+        if (query !== "") {
 
-            noResult.classList.toggle(
-                "show",
-                visible === 0
-            );
+            searchResult.textContent =
+                visibleCards === 0
+                    ? ""
+                    : `${visibleCards} résultat${visibleCards > 1 ? "s" : ""}`;
+
+        } else {
+
+            searchResult.textContent = "";
 
         }
 
 
-        if (searchResult) {
+        if (query !== "" && visibleCards === 0) {
 
-            if (query === "") {
+            noResult.classList.add("show");
 
-                searchResult.textContent = "";
+        } else {
 
-            } else {
-
-                searchResult.textContent =
-                    visible +
-                    (
-                        visible > 1
-                            ? " matériels trouvés"
-                            : " matériel trouvé"
-                    );
-
-            }
+            noResult.classList.remove("show");
 
         }
 
     }
 
 
-    if (searchInput) {
-
-        searchInput.addEventListener(
-            "input",
-            filterCards
-        );
-
-    }
+    searchInput.addEventListener(
+        "input",
+        performSearch
+    );
 
 
     if (clearSearch) {
 
-        clearSearch.addEventListener(
-            "click",
-            function () {
+        clearSearch.addEventListener("click", () => {
 
-                if (!searchInput) return;
+            searchInput.value = "";
 
-                searchInput.value = "";
+            performSearch();
 
-                filterCards();
+            searchInput.focus();
 
-                searchInput.focus();
-
-            }
-        );
+        });
 
     }
 
 
-    document.addEventListener(
-        "keydown",
-        function (event) {
+    searchInput.addEventListener("keydown", (event) => {
 
-            if (
-                event.key === "Escape" &&
-                searchInput
-            ) {
+        if (event.key === "Escape") {
 
-                searchInput.value = "";
+            searchInput.value = "";
 
-                filterCards();
-
-            }
+            performSearch();
 
         }
-    );
+
+    });
 
 });
-```
