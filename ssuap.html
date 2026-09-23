@@ -710,6 +710,49 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+```html
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* MENU MOBILE */
+    const toggle = document.getElementById("mobileToggle");
+    const nav = document.getElementById("mainNav");
+
+    if (toggle && nav) {
+        toggle.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            nav.classList.toggle("active");
+
+            toggle.setAttribute(
+                "aria-expanded",
+                nav.classList.contains("active") ? "true" : "false"
+            );
+        });
+    }
+
+
+    /* SOUS-MENU INVENTAIRES */
+    const inventoryToggle = document.getElementById("inventoryToggle");
+    const inventoryDropdown = document.getElementById("inventoryDropdown");
+
+    if (inventoryToggle && inventoryDropdown) {
+        inventoryToggle.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            inventoryDropdown.classList.toggle("open");
+
+            inventoryToggle.setAttribute(
+                "aria-expanded",
+                inventoryDropdown.classList.contains("open") ? "true" : "false"
+            );
+        });
+    }
+
+});
+</script>
 
 </body>
 </html>
