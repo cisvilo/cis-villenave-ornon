@@ -6,18 +6,24 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
+
     /* =====================================================
        MENU MOBILE
        ===================================================== */
 
-    const mobileToggle = document.getElementById("mobileToggle");
-    const mainNav = document.getElementById("mainNav");
+    const mobileToggle =
+        document.getElementById("mobileToggle");
+
+    const mainNav =
+        document.getElementById("mainNav");
+
 
     if (mobileToggle && mainNav) {
 
         mobileToggle.addEventListener("click", () => {
 
-            const isOpen = mainNav.classList.toggle("open");
+            const isOpen =
+                mainNav.classList.toggle("open");
 
             mobileToggle.setAttribute(
                 "aria-expanded",
@@ -39,44 +45,53 @@ document.addEventListener("DOMContentLoaded", () => {
     const inventoryToggle =
         document.getElementById("inventoryToggle");
 
-    const inventoryMenu =
-        document.getElementById("inventoryMenu");
 
     if (
         inventoryDropdown &&
-        inventoryToggle &&
-        inventoryMenu
+        inventoryToggle
     ) {
 
-        inventoryToggle.addEventListener("click", (event) => {
+        inventoryToggle.addEventListener(
+            "click",
+            (event) => {
 
-            event.stopPropagation();
+                event.stopPropagation();
 
-            const isOpen =
-                inventoryDropdown.classList.toggle("open");
-
-            inventoryToggle.setAttribute(
-                "aria-expanded",
-                isOpen ? "true" : "false"
-            );
-
-        });
-
-
-        document.addEventListener("click", (event) => {
-
-            if (!inventoryDropdown.contains(event.target)) {
-
-                inventoryDropdown.classList.remove("open");
+                const isOpen =
+                    inventoryDropdown.classList.toggle("open");
 
                 inventoryToggle.setAttribute(
                     "aria-expanded",
-                    "false"
+                    isOpen ? "true" : "false"
                 );
 
             }
+        );
 
-        });
+
+        document.addEventListener(
+            "click",
+            (event) => {
+
+                if (
+                    !inventoryDropdown.contains(
+                        event.target
+                    )
+                ) {
+
+                    inventoryDropdown.classList.remove(
+                        "open"
+                    );
+
+                    inventoryToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
+            }
+        );
 
     }
 
@@ -92,7 +107,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("clearSearch");
 
     const cards =
-        document.querySelectorAll(".incendie-card");
+        document.querySelectorAll(
+            ".incendie-card"
+        );
 
     const searchResult =
         document.getElementById("searchResult");
@@ -106,7 +123,10 @@ document.addEventListener("DOMContentLoaded", () => {
         return text
             .toLowerCase()
             .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
+            .replace(
+                /[\u0300-\u036f]/g,
+                ""
+            )
             .trim();
 
     }
@@ -118,8 +138,10 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
+
         const query =
             normalize(searchInput.value);
+
 
         let visibleCards = 0;
 
@@ -130,8 +152,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 normalize(
                     card.innerText +
                     " " +
-                    (card.dataset.search || "")
+                    (
+                        card.dataset.search ||
+                        ""
+                    )
                 );
+
 
             const match =
                 query === "" ||
@@ -177,7 +203,8 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
 
                 searchResult.textContent =
-                    visibleCards + " résultats trouvés";
+                    visibleCards +
+                    " résultats trouvés";
 
             }
 
@@ -197,20 +224,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       EFFACER LA RECHERCHE
+       EFFACER
        ===================================================== */
 
-    if (clearButton && searchInput) {
+    if (
+        clearButton &&
+        searchInput
+    ) {
 
-        clearButton.addEventListener("click", () => {
+        clearButton.addEventListener(
+            "click",
+            () => {
 
-            searchInput.value = "";
+                searchInput.value = "";
 
-            performSearch();
+                performSearch();
 
-            searchInput.focus();
+                searchInput.focus();
 
-        });
+            }
+        );
 
     }
 
@@ -221,21 +254,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (searchInput) {
 
-        searchInput.addEventListener("keydown", (event) => {
+        searchInput.addEventListener(
+            "keydown",
+            (event) => {
 
-            if (event.key === "Escape") {
+                if (event.key === "Escape") {
 
-                searchInput.value = "";
+                    searchInput.value = "";
 
-                performSearch();
+                    performSearch();
 
-                searchInput.blur();
+                    searchInput.blur();
+
+                }
 
             }
-
-        });
+        );
 
     }
 
-
 });
+
