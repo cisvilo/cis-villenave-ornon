@@ -1,6 +1,6 @@
 ```css
 /* =========================================================
-   DIV — MÊME DESIGN, COULEURS IDENTIQUES À INCENDIE
+   DIV — MÊME DESIGN ET MÊMES COULEURS QUE INCENDIE
    ========================================================= */
 
 .div-page {
@@ -113,7 +113,7 @@
 .div-hero p {
     margin: 18px 0 0;
 
-    color: #aebacc;
+    color: #e3262e;
 
     font-size: 16px;
 }
@@ -244,7 +244,7 @@
 .div-intro p {
     margin: 0;
 
-    color: #aebacc;
+    color: #9eacbd;
 
     font-size: 14px;
 }
@@ -490,7 +490,7 @@
     padding: 10px 13px;
 
     border:
-        1px solid #26384e;
+        1px solid #e3262e;
 
     border-radius: 10px;
 
@@ -593,7 +593,7 @@
 .no-result p {
     margin: 0;
 
-    color: #aebacc;
+    color: #9eacbd;
 
     font-size: 13px;
 }
@@ -730,6 +730,39 @@
 @media screen and (max-width: 450px) {
 
     .div-breadcrumb {
-        font-size:
+        font-size: 11px;
+    }
+
+    .div-search {
+        height: 52px;
+    }
+
+    .div-card {
+        padding: 19px;
+    }
+
+    .div-button strong {
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================================
+   FOOTER — MÊME PALETTE
+   ========================================================= */
+
+.site-footer {
+    background: #050c16 !important;
+    color: #ffffff !important;
+}
+
+.site-footer a {
+    color: #aebacc !important;
+}
+
+.site-footer a:hover {
+    color: #ffffff !important;
+}
 ```
 
