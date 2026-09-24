@@ -1,84 +1,207 @@
+
 document.addEventListener("DOMContentLoaded", function () {
 
-```
-/* =====================================================
-   MENU MOBILE
-   ===================================================== */
+    /* =====================================================
+       ÉLÉMENTS DU MENU
+       ===================================================== */
 
-const mobileToggle =
-    document.getElementById("mobileToggle");
+    const mobileToggle = document.getElementById("mobileToggle");
+    const mainNav = document.getElementById("mainNav");
 
-const mainNav =
-    document.getElementById("mainNav");
+    const inventoryDropdown =
+        document.getElementById("inventoryDropdown");
+
+    const inventoryToggle =
+        document.getElementById("inventoryToggle");
 
 
-if (mobileToggle && mainNav) {
+    /* =====================================================
+       MENU MOBILE
+       ===================================================== */
 
-    mobileToggle.addEventListener(
-        "click",
-        function (event) {
+    if (mobileToggle && mainNav) {
 
+        mobileToggle.addEventListener("click", function (event) {
+
+            event.preventDefault();
             event.stopPropagation();
 
             const isOpen =
-                mainNav.classList.toggle("active");
+                mainNav.classList.contains("active");
 
-            mobileToggle.classList.toggle(
-                "open",
-                isOpen
-            );
+            if (isOpen) {
 
-            mobileToggle.setAttribute(
-                "aria-expanded",
-                isOpen ? "true" : "false"
-            );
+                mainNav.classList.remove("active");
+                mobileToggle.classList.remove("open");
 
-        }
-    );
+                mobileToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
-}
+                /* Ferme aussi le sous-menu */
+
+                if (inventoryDropdown) {
+                    inventoryDropdown.classList.remove("open");
+                }
+
+                if (inventoryToggle) {
+                    inventoryToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+                }
+
+            } else {
+
+                mainNav.classList.add("active");
+                mobileToggle.classList.add("open");
+
+                mobileToggle.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+            }
+
+        });
+
+    }
 
 
-/* =====================================================
-   MENU INVENTAIRES
-   ===================================================== */
+    /* =====================================================
+       SOUS-MENU INVENTAIRES
+       ===================================================== */
 
-const inventoryDropdown =
-    document.getElementById("inventoryDropdown");
+    if (inventoryToggle && inventoryDropdown) {
 
-const inventoryToggle =
-    document.getElementById("inventoryToggle");
+        inventoryToggle.addEventListener("click", function (event) {
 
-
-if (inventoryDropdown && inventoryToggle) {
-
-    inventoryToggle.addEventListener(
-        "click",
-        function (event) {
-
+            event.preventDefault();
             event.stopPropagation();
 
             const isOpen =
-                inventoryDropdown.classList.toggle("open");
+                inventoryDropdown.classList.contains("open");
 
-            inventoryToggle.setAttribute(
-                "aria-expanded",
-                isOpen ? "true" : "false"
+            if (isOpen) {
+
+                inventoryDropdown.classList.remove("open");
+
+                inventoryToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            } else {
+
+                inventoryDropdown.classList.add("open");
+
+                inventoryToggle.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+            }
+
+        });
+
+    }
+
+
+    /* =====================================================
+       LIENS DU MENU MOBILE
+       ===================================================== */
+
+    if (mainNav) {
+
+        const navLinks =
+            mainNav.querySelectorAll(
+                "a:not(.nav-dropdown-menu a)"
             );
 
-        }
-    );
+        navLinks.forEach(function (link) {
 
-}
+            link.addEventListener("click", function () {
+
+                if (window.innerWidth <= 900) {
+
+                    mainNav.classList.remove("active");
+
+                    if (mobileToggle) {
+
+                        mobileToggle.classList.remove("open");
+
+                        mobileToggle.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+
+                }
+
+            });
+
+        });
 
 
-/* =====================================================
-   FERMETURE DES MENUS
-   ===================================================== */
+        /* Les liens du sous-menu ferment aussi le menu */
 
-document.addEventListener(
-    "click",
-    function (event) {
+        const inventoryLinks =
+            mainNav.querySelectorAll(
+                ".nav-dropdown-menu a"
+            );
+
+        inventoryLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                if (window.innerWidth <= 900) {
+
+                    mainNav.classList.remove("active");
+
+                    if (mobileToggle) {
+
+                        mobileToggle.classList.remove("open");
+
+                        mobileToggle.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+
+                    if (inventoryDropdown) {
+
+                        inventoryDropdown.classList.remove("open");
+
+                    }
+
+                    if (inventoryToggle) {
+
+                        inventoryToggle.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+
+                }
+
+            });
+
+        });
+
+    }
+
+
+    /* =====================================================
+       CLIC EN DEHORS
+       ===================================================== */
+
+    document.addEventListener("click", function (event) {
+
+        /* Sous-menu */
 
         if (
             inventoryDropdown &&
@@ -99,6 +222,8 @@ document.addEventListener(
         }
 
 
+        /* Menu mobile */
+
         if (
             mainNav &&
             mobileToggle &&
@@ -117,187 +242,14 @@ document.addEventListener(
 
         }
 
-    }
-);
-
-
-/* =====================================================
-   RECHERCHE DOCUMENTS
-   ===================================================== */
-
-const searchInput =
-    document.getElementById("documentsSearch");
-
-const clearSearch =
-    document.getElementById("clearSearch");
-
-const cards =
-    document.querySelectorAll(".documents-card");
-
-const noResult =
-    document.getElementById("noResult");
-
-const searchResult =
-    document.getElementById("searchResult");
-
-
-function normalizeText(text) {
-
-    return text
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .trim();
-
-}
-
-
-function performSearch() {
-
-    if (!searchInput) {
-        return;
-    }
-
-
-    const query =
-        normalizeText(searchInput.value);
-
-
-    let visibleCards = 0;
-
-
-    cards.forEach(function (card) {
-
-        const cardText =
-            normalizeText(
-                card.textContent || ""
-            );
-
-
-        const match =
-            query === "" ||
-            cardText.includes(query);
-
-
-        card.style.display =
-            match ? "" : "none";
-
-
-        if (match) {
-            visibleCards++;
-        }
-
     });
 
 
-    /* =================================================
-       NOMBRE DE RÉSULTATS
-       ================================================= */
+    /* =====================================================
+       ESCAPE
+       ===================================================== */
 
-    if (searchResult) {
-
-        if (query === "") {
-
-            searchResult.textContent = "";
-
-        } else if (visibleCards > 0) {
-
-            searchResult.textContent =
-                visibleCards +
-                " résultat" +
-                (visibleCards > 1 ? "s" : "");
-
-        } else {
-
-            searchResult.textContent =
-                "Aucun résultat";
-
-        }
-
-    }
-
-
-    /* =================================================
-       AUCUN RÉSULTAT
-       ================================================= */
-
-    if (noResult) {
-
-        noResult.classList.toggle(
-            "show",
-            query !== "" && visibleCards === 0
-        );
-
-    }
-
-}
-
-
-/* =====================================================
-   RECHERCHE EN DIRECT
-   ===================================================== */
-
-if (searchInput) {
-
-    searchInput.addEventListener(
-        "input",
-        performSearch
-    );
-
-
-    searchInput.addEventListener(
-        "keydown",
-        function (event) {
-
-            if (event.key === "Escape") {
-
-                searchInput.value = "";
-
-                performSearch();
-
-                searchInput.focus();
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   BOUTON EFFACER
-   ===================================================== */
-
-if (clearSearch) {
-
-    clearSearch.addEventListener(
-        "click",
-        function () {
-
-            if (!searchInput) {
-                return;
-            }
-
-            searchInput.value = "";
-
-            performSearch();
-
-            searchInput.focus();
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   ESCAPE — FERMETURE DES MENUS
-   ===================================================== */
-
-document.addEventListener(
-    "keydown",
-    function (event) {
+    document.addEventListener("keydown", function (event) {
 
         if (event.key !== "Escape") {
             return;
@@ -305,9 +257,7 @@ document.addEventListener(
 
 
         if (mainNav) {
-
             mainNav.classList.remove("active");
-
         }
 
 
@@ -324,9 +274,7 @@ document.addEventListener(
 
 
         if (inventoryDropdown) {
-
             inventoryDropdown.classList.remove("open");
-
         }
 
 
@@ -339,46 +287,221 @@ document.addEventListener(
 
         }
 
+    });
+
+
+    /* =====================================================
+       REDIMENSIONNEMENT
+       ===================================================== */
+
+    window.addEventListener("resize", function () {
+
+        if (window.innerWidth > 900) {
+
+            if (mainNav) {
+                mainNav.classList.remove("active");
+            }
+
+            if (mobileToggle) {
+
+                mobileToggle.classList.remove("open");
+
+                mobileToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+            if (inventoryDropdown) {
+                inventoryDropdown.classList.remove("open");
+            }
+
+            if (inventoryToggle) {
+
+                inventoryToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        }
+
+    });
+
+
+    /* =====================================================
+       RECHERCHE DOCUMENTS
+       ===================================================== */
+
+    const searchInput =
+        document.getElementById("documentsSearch");
+
+    const clearSearch =
+        document.getElementById("clearSearch");
+
+    const cards =
+        document.querySelectorAll(".documents-card");
+
+    const noResult =
+        document.getElementById("noResult");
+
+    const searchResult =
+        document.getElementById("searchResult");
+
+
+    function normalizeText(text) {
+
+        return text
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .trim();
+
     }
-);
 
 
-/* =====================================================
-   REDIMENSIONNEMENT
-   ===================================================== */
+    function performSearch() {
 
-window.addEventListener(
-    "resize",
-    function () {
+        if (!searchInput) {
+            return;
+        }
 
-        if (
-            window.innerWidth > 900 &&
-            mainNav &&
-            mobileToggle
-        ) {
 
-            mainNav.classList.remove("active");
+        const query =
+            normalizeText(searchInput.value);
 
-            mobileToggle.classList.remove("open");
+        let visibleCards = 0;
 
-            mobileToggle.setAttribute(
-                "aria-expanded",
-                "false"
+
+        cards.forEach(function (card) {
+
+            const cardText =
+                normalizeText(
+                    card.textContent || ""
+                );
+
+            const match =
+                query === "" ||
+                cardText.includes(query);
+
+
+            card.style.display =
+                match ? "" : "none";
+
+
+            if (match) {
+                visibleCards++;
+            }
+
+        });
+
+
+        /* Résultats */
+
+        if (searchResult) {
+
+            if (query === "") {
+
+                searchResult.textContent = "";
+
+            } else if (visibleCards > 0) {
+
+                searchResult.textContent =
+                    visibleCards +
+                    " résultat" +
+                    (visibleCards > 1 ? "s" : "");
+
+            } else {
+
+                searchResult.textContent =
+                    "Aucun résultat";
+
+            }
+
+        }
+
+
+        /* Aucun résultat */
+
+        if (noResult) {
+
+            noResult.classList.toggle(
+                "show",
+                query !== "" && visibleCards === 0
             );
 
         }
 
     }
-);
 
 
-/* =====================================================
-   INITIALISATION
-   ===================================================== */
+    /* =====================================================
+       RECHERCHE EN DIRECT
+       ===================================================== */
 
-performSearch();
-```
+    if (searchInput) {
+
+        searchInput.addEventListener(
+            "input",
+            performSearch
+        );
+
+
+        searchInput.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Escape") {
+
+                    searchInput.value = "";
+
+                    performSearch();
+
+                    searchInput.focus();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       BOUTON EFFACER
+       ===================================================== */
+
+    if (clearSearch) {
+
+        clearSearch.addEventListener(
+            "click",
+            function () {
+
+                if (!searchInput) {
+                    return;
+                }
+
+                searchInput.value = "";
+
+                performSearch();
+
+                searchInput.focus();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       INITIALISATION
+       ===================================================== */
+
+    performSearch();
 
 });
+
 
 
