@@ -1,14 +1,19 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const mobileToggle = document.getElementById("mobileToggle");
-  const mainNav = document.getElementById("mainNav");
+  const mobileToggle =
+    document.getElementById("mobileToggle");
 
-  const inventoryToggle = document.getElementById("inventoryToggle");
-  const inventoryDropdown = document.getElementById("inventoryDropdown");
-  const navDropdown = inventoryToggle
-    ? inventoryToggle.closest(".nav-dropdown")
-    : null;
+  const mainNav =
+    document.getElementById("mainNav");
+
+  const inventoryToggle =
+    document.getElementById("inventoryToggle");
+
+  const navDropdown =
+    inventoryToggle
+      ? inventoryToggle.closest(".nav-dropdown")
+      : null;
 
 
   /* =====================================================
@@ -18,41 +23,47 @@ document.addEventListener("DOMContentLoaded", () => {
   if (mobileToggle && mainNav) {
 
     mobileToggle.addEventListener("click", (event) => {
+
       event.stopPropagation();
 
-      const isOpen = mainNav.classList.toggle("active");
+      const isOpen =
+        mainNav.classList.toggle("active");
 
       mobileToggle.setAttribute(
         "aria-expanded",
         isOpen ? "true" : "false"
       );
+
     });
 
   }
 
 
   /* =====================================================
-     SOUS-MENU INVENTAIRES
+     MENU INVENTAIRES
      ===================================================== */
 
   if (inventoryToggle && navDropdown) {
 
     inventoryToggle.addEventListener("click", (event) => {
+
       event.stopPropagation();
 
-      const isOpen = navDropdown.classList.toggle("open");
+      const isOpen =
+        navDropdown.classList.toggle("open");
 
       inventoryToggle.setAttribute(
         "aria-expanded",
         isOpen ? "true" : "false"
       );
+
     });
 
   }
 
 
   /* =====================================================
-     FERMETURE EN CLIQUANT À L'EXTÉRIEUR
+     CLIC À L'EXTÉRIEUR
      ===================================================== */
 
   document.addEventListener("click", (event) => {
@@ -64,8 +75,14 @@ document.addEventListener("DOMContentLoaded", () => {
       !mainNav.contains(event.target) &&
       !mobileToggle.contains(event.target)
     ) {
+
       mainNav.classList.remove("active");
-      mobileToggle.setAttribute("aria-expanded", "false");
+
+      mobileToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
     }
 
 
@@ -75,30 +92,50 @@ document.addEventListener("DOMContentLoaded", () => {
       navDropdown.classList.contains("open") &&
       !navDropdown.contains(event.target)
     ) {
+
       navDropdown.classList.remove("open");
-      inventoryToggle.setAttribute("aria-expanded", "false");
+
+      inventoryToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
     }
 
   });
 
 
   /* =====================================================
-     TOUCHE ÉCHAP
+     TOUCHE ESCAPE
      ===================================================== */
 
   document.addEventListener("keydown", (event) => {
 
-    if (event.key === "Escape") {
+    if (event.key !== "Escape") {
+      return;
+    }
 
-      if (mainNav && mobileToggle) {
-        mainNav.classList.remove("active");
-        mobileToggle.setAttribute("aria-expanded", "false");
-      }
 
-      if (navDropdown && inventoryToggle) {
-        navDropdown.classList.remove("open");
-        inventoryToggle.setAttribute("aria-expanded", "false");
-      }
+    if (mainNav && mobileToggle) {
+
+      mainNav.classList.remove("active");
+
+      mobileToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+    }
+
+
+    if (navDropdown && inventoryToggle) {
+
+      navDropdown.classList.remove("open");
+
+      inventoryToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
 
     }
 
@@ -106,23 +143,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =====================================================
-     FERMER LE MENU APRÈS CLIC SUR UN LIEN MOBILE
+     FERMER LE MENU APRÈS UN CLIC
      ===================================================== */
 
   if (mainNav) {
 
-    const navLinks = mainNav.querySelectorAll("a");
+    const navLinks =
+      mainNav.querySelectorAll("a");
 
     navLinks.forEach((link) => {
 
       link.addEventListener("click", () => {
 
         if (window.innerWidth <= 900) {
+
           mainNav.classList.remove("active");
 
           if (mobileToggle) {
-            mobileToggle.setAttribute("aria-expanded", "false");
+
+            mobileToggle.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
           }
+
         }
 
       });
