@@ -3,22 +3,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
        MENU MOBILE
-       IDENTIQUE AU SSUAP
        ===================================================== */
 
     const mobileToggle = document.getElementById("mobileToggle");
     const mainNav = document.getElementById("mainNav");
 
     if (mobileToggle && mainNav) {
-        mobileToggle.addEventListener("click", () => {
+
+        mobileToggle.addEventListener("click", (event) => {
+            event.stopPropagation();
             mainNav.classList.toggle("active");
         });
+
     }
 
 
     /* =====================================================
        SOUS-MENU INVENTAIRES
-       IDENTIQUE AU SSUAP
        ===================================================== */
 
     const inventoryToggle = document.getElementById("inventoryToggle");
@@ -26,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (inventoryToggle && inventoryDropdown) {
 
-        inventoryToggle.addEventListener("click", function (event) {
+        inventoryToggle.addEventListener("click", (event) => {
 
             event.preventDefault();
             event.stopPropagation();
@@ -36,6 +37,54 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     }
+
+
+    /* =====================================================
+       FERMETURE DU MENU
+       ===================================================== */
+
+    document.addEventListener("click", (event) => {
+
+        if (
+            mainNav &&
+            mobileToggle &&
+            !mainNav.contains(event.target) &&
+            !mobileToggle.contains(event.target)
+        ) {
+            mainNav.classList.remove("active");
+        }
+
+        if (
+            inventoryDropdown &&
+            inventoryToggle &&
+            !inventoryDropdown.contains(event.target) &&
+            !inventoryToggle.contains(event.target)
+        ) {
+            inventoryDropdown.classList.remove("open");
+        }
+
+    });
+
+
+    /* =====================================================
+       TOUCHE ÉCHAP
+       ===================================================== */
+
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key === "Escape") {
+
+            if (mainNav) {
+                mainNav.classList.remove("active");
+            }
+
+            if (inventoryDropdown) {
+                inventoryDropdown.classList.remove("open");
+            }
+
+        }
+
+    });
 
 
     /* =====================================================
@@ -173,28 +222,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-
-    /* Touche Échap */
-
-    document.addEventListener(
-        "keydown",
-        function (event) {
-
-            if (
-                event.key === "Escape" &&
-                searchInput
-            ) {
-
-                searchInput.value = "";
-
-                filterCards();
-
-            }
-
-        }
-    );
-
 });
-```
-
 
