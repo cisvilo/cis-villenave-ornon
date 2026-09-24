@@ -1,610 +1,440 @@
+
 <!DOCTYPE html>
-
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<title>Documents — CIS Villenave-d'Ornon</title>
+    <title>Documents | CIS Villenave-d'Ornon</title>
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="documents.css">
-```
-
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="documents.css">
 </head>
 
-<body>
+<body class="documents-page">
 
 <header class="site-header">
+    <div class="header-inner">
 
-```
-<div class="header-inner">
+        <a href="index.html" class="brand">
+            <img src="logo1.png" alt="Logo CIS Villenave-d'Ornon" class="brand-logo">
 
-    <a href="index.html" class="brand">
-
-        <img
-            src="logo1.png"
-            alt="CIS Villenave-d'Ornon"
-            class="brand-logo"
-        >
-
-        <div class="brand-text">
-
-            <div class="brand-title">
-                CIS VILLENAVE-D'ORNON
+            <div class="brand-text">
+                <div class="brand-title">CIS VILLENAVE-D'ORNON</div>
+                <div class="brand-subtitle">PORTAIL OPÉRATIONNEL</div>
             </div>
-
-            <div class="brand-subtitle">
-                PORTAIL OPÉRATIONNEL
-            </div>
-
-        </div>
-
-    </a>
-
-    <button
-        class="mobile-toggle"
-        id="mobileToggle"
-        type="button"
-        aria-label="Ouvrir le menu"
-        aria-expanded="false"
-    >
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <nav class="nav" id="mainNav">
-
-        <a
-            href="index.html"
-            class="nav-link"
-        >
-            ACCUEIL
         </a>
 
-        <div
-            class="nav-dropdown"
-            id="inventoryDropdown"
+        <button
+            id="mobileToggle"
+            class="mobile-toggle"
+            type="button"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
         >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-            <button
-                type="button"
-                class="nav-dropdown-toggle"
-                id="inventoryToggle"
-                aria-expanded="false"
-            >
-                <span>INVENTAIRES</span>
-                <span class="dropdown-arrow">▾</span>
-            </button>
+        <nav id="mainNav" class="nav">
 
-            <div
-                class="nav-dropdown-menu"
-                id="inventoryMenu"
-            >
+            <a href="index.html">Accueil</a>
 
-                <a href="pages/inventaires.html">
-                    <span class="submenu-icon">▣</span>
-                    VUE D'ENSEMBLE
-                </a>
+            <div class="nav-dropdown" id="inventoryDropdown">
 
-                <a href="ssuap.html">
-                    <span class="submenu-icon">＋</span>
-                    SSUAP
-                </a>
+                <button
+                    id="inventoryToggle"
+                    class="nav-dropdown-toggle"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    Inventaires
+                    <span class="nav-arrow">▾</span>
+                </button>
 
-                <a href="incendie.html">
-                    <span class="submenu-icon">◆</span>
-                    INCENDIE
-                </a>
-
-                <a href="div.html">
-                    <span class="submenu-icon">◇</span>
-                    DIV
-                </a>
-
-                <a href="fdf.html">
-                    <span class="submenu-icon">▲</span>
-                    FDF
-                </a>
-
-                <a href="specialites.html">
-                    <span class="submenu-icon">★</span>
-                    SPÉCIALITÉS
-                </a>
-
-                <a href="standard.html">
-                    <span class="submenu-icon">▤</span>
-                    STANDARD
-                </a>
-
-                <a href="casernement.html">
-                    <span class="submenu-icon">⌂</span>
-                    CASERNEMENT
-                </a>
+                <div id="inventoryMenu" class="nav-dropdown-menu">
+                    <a href="ssuap.html">SSUAP</a>
+                    <a href="incendie.html">Incendie</a>
+                    <a href="div.html">DIV</a>
+                    <a href="fdf.html">FDF</a>
+                    <a href="specialites.html">Spécialités</a>
+                    <a href="standard.html">Standard</a>
+                    <a href="casernement.html">Casernement</a>
+                </div>
 
             </div>
 
-        </div>
+            <a href="entretiens.html">Entretiens</a>
 
-        <a
-            href="entretiens.html"
-            class="nav-link"
-        >
-            ENTRETIENS
-        </a>
+            <a href="documents.html" class="active">Documents</a>
 
-        <a
-            href="documents.html"
-            class="nav-link active"
-        >
-            DOCUMENTS
-        </a>
+            <a href="amicale.html">Amicale</a>
 
-        <a
-            href="amicale.html"
-            class="nav-link"
-        >
-            AMICALE
-        </a>
+            <a href="raccourcis.html">Raccourcis</a>
 
-        <a
-            href="raccourcis.html"
-            class="nav-link"
-        >
-            RACCOURCIS
-        </a>
-
-    </nav>
-
-</div>
-```
-
-</header>
-
-<main class="documents-page">
-
-```
-<section class="documents-hero">
-
-    <div class="documents-hero-overlay"></div>
-
-    <div class="documents-hero-content">
-
-        <div class="documents-eyebrow">
-            CENTRE D'INCENDIE ET DE SECOURS
-        </div>
-
-        <div class="documents-line"></div>
-
-        <h1>
-            DOCUMENTS
-        </h1>
-
-        <p>
-            Accès direct aux documents et ressources opérationnelles.
-        </p>
+        </nav>
 
     </div>
-
-</section>
-
-
-<section class="documents-content">
-
-    <div class="documents-container">
-
-        <div class="documents-breadcrumb">
-
-            <a href="index.html">
-                Accueil
-            </a>
-
-            <span>›</span>
-
-            <strong>
-                Documents
-            </strong>
-
-        </div>
+</header>
 
 
-        <div class="documents-intro">
+<main>
 
-            <div class="documents-intro-icon">
-                📁
+    <!-- HERO -->
+
+    <section class="documents-hero">
+
+        <div class="documents-hero-overlay"></div>
+
+        <div class="documents-hero-content">
+
+            <div class="documents-eyebrow">
+                CENTRE D'INCENDIE ET DE SECOURS
             </div>
 
-            <div>
+            <h1>DOCUMENTS</h1>
 
-                <span class="documents-label">
-                    ACCÈS RAPIDE
-                </span>
-
-                <h2>
-                    Ressources opérationnelles
-                </h2>
-
-                <p>
-                    Retrouvez rapidement les documents, procédures
-                    et ressources utiles au CIS Villenave-d'Ornon.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="documents-search">
-
-            <span class="documents-search-icon">
-                ⌕
-            </span>
-
-            <input
-                type="search"
-                id="documentsSearch"
-                placeholder="Rechercher un document, une procédure ou une ressource..."
-                autocomplete="off"
-                aria-label="Rechercher un document"
-            >
-
-            <button
-                id="clearSearch"
-                type="button"
-                aria-label="Effacer"
-            >
-                ×
-            </button>
-
-        </div>
-
-
-        <div
-            id="searchResult"
-            class="search-result"
-        ></div>
-
-
-        <div
-            class="documents-grid"
-            id="documentsGrid"
-        >
-
-
-            <article
-                class="documents-card"
-                data-search="notes service notes de service google drive informations internes"
-            >
-
-                <div class="documents-card-header">
-
-                    <span class="documents-number">
-                        01
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Notes de service
-                        </h3>
-
-                        <p>
-                            Informations internes
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="documents-description">
-                    Retrouvez les notes de service et les informations
-                    internes du centre.
-                </div>
-
-
-                <div class="documents-actions">
-
-                    <a
-                        href="https://drive.google.com/drive/folders/1mZU_QXucWcthPotO1mkU4cxS8GGF8erV"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="documents-button"
-                    >
-                        <span>DRIVE</span>
-                        <strong>Accéder au dossier</strong>
-                        <b>↗</b>
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article
-                class="documents-card"
-                data-search="procedures procédures opérationnelles documents opérations"
-            >
-
-                <div class="documents-card-header">
-
-                    <span class="documents-number">
-                        02
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Procédures opérationnelles
-                        </h3>
-
-                        <p>
-                            Documents opérationnels
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="documents-description">
-                    Consultez les procédures et documents nécessaires
-                    aux opérations.
-                </div>
-
-
-                <div class="documents-actions">
-
-                    <a
-                        href="https://drive.google.com/drive/folders/162tWotHf18UoYEwiueZNTLvwbDYLzesX"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="documents-button"
-                    >
-                        <span>DRIVE</span>
-                        <strong>Accéder au dossier</strong>
-                        <b>↗</b>
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article
-                class="documents-card"
-                data-search="ssuap secours urgence personnes documents ressources"
-            >
-
-                <div class="documents-card-header">
-
-                    <span class="documents-number">
-                        03
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            SSUAP
-                        </h3>
-
-                        <p>
-                            Secours d'urgence aux personnes
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="documents-description">
-                    Documents et ressources dédiés au secours
-                    d'urgence aux personnes.
-                </div>
-
-
-                <div class="documents-actions">
-
-                    <a
-                        href="https://drive.google.com/drive/folders/1oXW1lqGMaBO__y8poG2fD16YAqLebj5T"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="documents-button"
-                    >
-                        <span>DRIVE</span>
-                        <strong>Accéder au dossier</strong>
-                        <b>↗</b>
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article
-                class="documents-card"
-                data-search="auto protection mensuel pdf autoprotection mensuelle"
-            >
-
-                <div class="documents-card-header">
-
-                    <span class="documents-number">
-                        04
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Auto Protection Mensuel
-                        </h3>
-
-                        <p>
-                            Document mensuel
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="documents-description">
-                    Consultez directement le document d'auto
-                    protection mensuel.
-                </div>
-
-
-                <div class="documents-actions">
-
-                    <a
-                        href="https://drive.google.com/file/d/1Ur6e9zWXoJeiHtCmXubOAMYmRqTsUVVU/view"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="documents-button"
-                    >
-                        <span>PDF</span>
-                        <strong>Ouvrir le document</strong>
-                        <b>↗</b>
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article
-                class="documents-card"
-                data-search="auto protection hebdo hebdomadaire pdf autoprotection"
-            >
-
-                <div class="documents-card-header">
-
-                    <span class="documents-number">
-                        05
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Auto Protection Hebdo
-                        </h3>
-
-                        <p>
-                            Document hebdomadaire
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="documents-description">
-                    Consultez directement le document d'auto
-                    protection hebdomadaire.
-                </div>
-
-
-                <div class="documents-actions">
-
-                    <a
-                        href="https://drive.google.com/file/d/1j7pnM1rRjwVETOVvHIehP-GgrFBDNWHf/view"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="documents-button"
-                    >
-                        <span>PDF</span>
-                        <strong>Ouvrir le document</strong>
-                        <b>↗</b>
-                    </a>
-
-                </div>
-
-            </article>
-
-
-        </div>
-
-
-        <div
-            id="noResult"
-            class="no-result"
-        >
-
-            <div>⌕</div>
-
-            <h3>
-                Aucun document trouvé
-            </h3>
+            <div class="documents-line"></div>
 
             <p>
-                Essayez avec un autre terme de recherche.
+                Dossiers Google Drive et documents PDF du CIS Villenave-d'Ornon.
             </p>
 
         </div>
 
+    </section>
 
-    </div>
 
-</section>
-```
+    <!-- CONTENU -->
+
+    <section class="documents-content">
+
+        <div class="documents-container">
+
+            <!-- BREADCRUMB -->
+
+            <div class="documents-breadcrumb">
+                <a href="index.html">Accueil</a>
+                <span>›</span>
+                <strong>Documents</strong>
+            </div>
+
+
+            <!-- INTRO -->
+
+            <div class="documents-intro">
+
+                <div class="documents-intro-icon">
+                    📁
+                </div>
+
+                <div>
+
+                    <span class="documents-label">
+                        ACCÈS RAPIDE
+                    </span>
+
+                    <h2>
+                        Ressources opérationnelles
+                    </h2>
+
+                    <p>
+                        Retrouvez rapidement les documents, procédures et ressources utiles au CIS Villenave-d'Ornon.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECHERCHE -->
+
+            <div class="documents-search">
+
+                <span class="documents-search-icon">
+                    🔎
+                </span>
+
+                <input
+                    type="search"
+                    id="documentsSearch"
+                    placeholder="Rechercher un document..."
+                    autocomplete="off"
+                >
+
+                <button
+                    id="clearSearch"
+                    type="button"
+                    aria-label="Effacer la recherche"
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <div id="searchResult" class="search-result"></div>
+
+
+            <!-- CARTES -->
+
+            <div class="documents-grid" id="documentsGrid">
+
+
+                <!-- 01 -->
+
+                <article class="documents-card">
+
+                    <div class="documents-card-header">
+
+                        <div class="documents-number">
+                            01
+                        </div>
+
+                        <div>
+                            <h3>Notes de service</h3>
+                            <p>Google Drive</p>
+                        </div>
+
+                    </div>
+
+                    <div class="documents-description">
+                        Retrouvez les notes de service et informations internes du CIS.
+                    </div>
+
+                    <div class="documents-actions">
+
+                        <a
+                            href="https://drive.google.com/drive/folders/1mZU_QXucWcthPotO1mkU4cxS8GGF8erV"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="documents-button"
+                        >
+                            <span>DRIVE</span>
+                            <strong>Accéder aux notes de service</strong>
+                            <b>↗</b>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 02 -->
+
+                <article class="documents-card">
+
+                    <div class="documents-card-header">
+
+                        <div class="documents-number">
+                            02
+                        </div>
+
+                        <div>
+                            <h3>Procédures opérationnelles</h3>
+                            <p>Google Drive</p>
+                        </div>
+
+                    </div>
+
+                    <div class="documents-description">
+                        Accédez aux procédures opérationnelles utilisées au sein du CIS.
+                    </div>
+
+                    <div class="documents-actions">
+
+                        <a
+                            href="https://drive.google.com/drive/folders/162tWotHf18UoYEwiueZNTLvwbDYLzesX"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="documents-button"
+                        >
+                            <span>DRIVE</span>
+                            <strong>Accéder aux procédures</strong>
+                            <b>↗</b>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 03 -->
+
+                <article class="documents-card">
+
+                    <div class="documents-card-header">
+
+                        <div class="documents-number">
+                            03
+                        </div>
+
+                        <div>
+                            <h3>SSUAP</h3>
+                            <p>Google Drive</p>
+                        </div>
+
+                    </div>
+
+                    <div class="documents-description">
+                        Documents et ressources liés à l'activité SSUAP.
+                    </div>
+
+                    <div class="documents-actions">
+
+                        <a
+                            href="https://drive.google.com/drive/folders/1oXW1lqGMaBO__y8poG2fD16YAqLebj5T"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="documents-button"
+                        >
+                            <span>DRIVE</span>
+                            <strong>Accéder aux documents SSUAP</strong>
+                            <b>↗</b>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 04 -->
+
+                <article class="documents-card">
+
+                    <div class="documents-card-header">
+
+                        <div class="documents-number">
+                            04
+                        </div>
+
+                        <div>
+                            <h3>Auto Protection Mensuel</h3>
+                            <p>Document PDF</p>
+                        </div>
+
+                    </div>
+
+                    <div class="documents-description">
+                        Document mensuel dédié au suivi de l'auto-protection.
+                    </div>
+
+                    <div class="documents-actions">
+
+                        <a
+                            href="https://drive.google.com/file/d/1Ur6e9zWXoJeiHtCmXubOAMYmRqTsUVVU/view"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="documents-button"
+                        >
+                            <span>PDF</span>
+                            <strong>Ouvrir le document</strong>
+                            <b>↗</b>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 05 -->
+
+                <article class="documents-card">
+
+                    <div class="documents-card-header">
+
+                        <div class="documents-number">
+                            05
+                        </div>
+
+                        <div>
+                            <h3>Auto Protection Hebdo</h3>
+                            <p>Document PDF</p>
+                        </div>
+
+                    </div>
+
+                    <div class="documents-description">
+                        Document hebdomadaire dédié au suivi de l'auto-protection.
+                    </div>
+
+                    <div class="documents-actions">
+
+                        <a
+                            href="https://drive.google.com/file/d/1j7pnM1rRjwVETOVvHIehP-GgrFBDNWHf/view"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="documents-button"
+                        >
+                            <span>PDF</span>
+                            <strong>Ouvrir le document</strong>
+                            <b>↗</b>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+            <!-- AUCUN RESULTAT -->
+
+            <div id="noResult" class="no-result">
+
+                <div>🔎</div>
+
+                <h3>Aucun document trouvé</h3>
+
+                <p>
+                    Essayez avec un autre mot-clé.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
 
 </main>
 
+
+<!-- FOOTER -->
+
 <footer class="site-footer">
 
-```
-<div class="footer-inner">
+    <div class="footer-inner">
 
-    <div class="footer-brand">
+        <div class="footer-brand">
+            <strong>CIS VILLENAVE-D'ORNON</strong>
+            <span>PORTAIL OPÉRATIONNEL</span>
+        </div>
 
-        <strong>
-            CIS VILLENAVE-D'ORNON
-        </strong>
+        <div class="footer-links">
 
-        <span>
-            Portail opérationnel
-        </span>
+            <a href="index.html">Accueil</a>
+            <a href="ssuap.html">Inventaires</a>
+            <a href="entretiens.html">Entretiens</a>
+            <a href="documents.html">Documents</a>
+            <a href="amicale.html">Amicale</a>
+            <a href="raccourcis.html">Raccourcis</a>
 
-    </div>
+        </div>
 
-
-    <div class="footer-links">
-
-        <a href="index.html">
-            Accueil
-        </a>
-
-        <a href="pages/inventaires.html">
-            Inventaires
-        </a>
-
-        <a href="entretiens.html">
-            Entretiens
-        </a>
-
-        <a href="documents.html">
-            Documents
-        </a>
-
-        <a href="amicale.html">
-            Amicale
-        </a>
-
-        <a href="raccourcis.html">
-            Raccourcis
-        </a>
+        <div class="footer-copy">
+            © CIS Villenave-d'Ornon
+        </div>
 
     </div>
-
-</div>
-```
 
 </footer>
+
 
 <script src="documents.js"></script>
 
 </body>
 </html>
+
 
