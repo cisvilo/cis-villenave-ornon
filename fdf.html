@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -128,7 +128,8 @@
             </div>
 
 
-            <a href="pages/entretiens.html" class="nav-link">
+            <!-- CORRIGÉ : entretiens.html est à la racine -->
+            <a href="entretiens.html" class="nav-link">
                 ENTRETIENS
             </a>
 
@@ -574,7 +575,8 @@
                 Inventaires
             </a>
 
-            <a href="pages/entretiens.html">
+            <!-- CORRIGÉ : entretiens.html est à la racine -->
+            <a href="entretiens.html">
                 Entretiens
             </a>
 
@@ -597,16 +599,8 @@
 </footer>
 
 
-<!-- =====================================================
-     JAVASCRIPT FDF
-     ===================================================== -->
-
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-
-    /* =========================
-       MENU MOBILE
-       ========================= */
 
     const mobileToggle = document.getElementById("mobileToggle");
     const mainNav = document.getElementById("mainNav");
@@ -629,10 +623,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
-    /* =========================
-       SOUS-MENU INVENTAIRES
-       ========================= */
 
     const inventoryToggle = document.getElementById("inventoryToggle");
     const inventoryDropdown = document.getElementById("inventoryDropdown");
@@ -671,10 +661,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
-    /* =========================
-       RECHERCHE
-       ========================= */
 
     const searchInput = document.getElementById("fdfSearch");
     const clearSearch = document.getElementById("clearSearch");
@@ -785,10 +771,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================
-       TOUCHE ESCAPE
-       ========================= */
-
     document.addEventListener(
         "keydown",
         function (event) {
@@ -812,6 +794,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
-```
 
-```
