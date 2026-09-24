@@ -5,14 +5,28 @@ document.addEventListener("DOMContentLoaded", () => {
        MENU MOBILE
        ===================================================== */
 
-    const mobileToggle = document.getElementById("mobileToggle");
-    const mainNav = document.getElementById("mainNav");
+    const mobileToggle =
+        document.getElementById("mobileToggle");
+
+    const mainNav =
+        document.getElementById("mainNav");
+
 
     if (mobileToggle && mainNav) {
 
         mobileToggle.addEventListener("click", (event) => {
+
+            event.preventDefault();
             event.stopPropagation();
-            mainNav.classList.toggle("active");
+
+            const isOpen =
+                mainNav.classList.toggle("active");
+
+            mobileToggle.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
         });
 
     }
@@ -22,8 +36,12 @@ document.addEventListener("DOMContentLoaded", () => {
        SOUS-MENU INVENTAIRES
        ===================================================== */
 
-    const inventoryToggle = document.getElementById("inventoryToggle");
-    const inventoryDropdown = document.getElementById("inventoryDropdown");
+    const inventoryToggle =
+        document.getElementById("inventoryToggle");
+
+    const inventoryDropdown =
+        document.getElementById("inventoryDropdown");
+
 
     if (inventoryToggle && inventoryDropdown) {
 
@@ -32,7 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault();
             event.stopPropagation();
 
-            inventoryDropdown.classList.toggle("open");
+            const isOpen =
+                inventoryDropdown.classList.toggle("open");
+
+            inventoryToggle.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
 
         });
 
@@ -40,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       FERMETURE DU MENU
+       FERMER EN CLIQUANT AILLEURS
        ===================================================== */
 
     document.addEventListener("click", (event) => {
@@ -51,8 +75,16 @@ document.addEventListener("DOMContentLoaded", () => {
             !mainNav.contains(event.target) &&
             !mobileToggle.contains(event.target)
         ) {
+
             mainNav.classList.remove("active");
+
+            mobileToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
         }
+
 
         if (
             inventoryDropdown &&
@@ -60,14 +92,21 @@ document.addEventListener("DOMContentLoaded", () => {
             !inventoryDropdown.contains(event.target) &&
             !inventoryToggle.contains(event.target)
         ) {
+
             inventoryDropdown.classList.remove("open");
+
+            inventoryToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
         }
 
     });
 
 
     /* =====================================================
-       TOUCHE ÉCHAP
+       ÉCHAP
        ===================================================== */
 
     document.addEventListener("keydown", (event) => {
@@ -78,8 +117,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 mainNav.classList.remove("active");
             }
 
+            if (mobileToggle) {
+                mobileToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+
             if (inventoryDropdown) {
                 inventoryDropdown.classList.remove("open");
+            }
+
+            if (inventoryToggle) {
+                inventoryToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
             }
 
         }
@@ -122,12 +175,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!searchInput) return;
 
         const query =
-            normalize(searchInput.value.trim());
+            normalize(
+                searchInput.value.trim()
+            );
 
         let visible = 0;
 
 
-        cards.forEach(function (card) {
+        cards.forEach((card) => {
 
             const text =
                 normalize(
@@ -135,6 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     " " +
                     (card.dataset.search || "")
                 );
+
 
             const match =
                 query === "" ||
@@ -152,8 +208,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-        /* Aucun résultat */
-
         if (noResult) {
 
             noResult.classList.toggle(
@@ -163,8 +217,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-
-        /* Nombre de résultats */
 
         if (searchResult) {
 
@@ -189,7 +241,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* Recherche en direct */
+    /* =====================================================
+       RECHERCHE EN DIRECT
+       ===================================================== */
 
     if (searchInput) {
 
@@ -201,13 +255,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* Bouton X */
+    /* =====================================================
+       BOUTON EFFACER
+       ===================================================== */
 
     if (clearSearch) {
 
         clearSearch.addEventListener(
             "click",
-            function () {
+            () => {
 
                 if (!searchInput) return;
 
@@ -223,4 +279,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
 
