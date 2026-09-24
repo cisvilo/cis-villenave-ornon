@@ -803,4 +803,21 @@
     }
 
 }
+/* =========================================================
+FOOTER
+========================================================= */
+
+.site-footer {
+background: #050c16 !important;
+color: #ffffff !important;
+}
+
+.site-footer a {
+color: #aebacc !important;
+}
+
+.site-footer a:hover {
+color: #ffffff !important;
+}
+
 
