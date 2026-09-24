@@ -1,7 +1,6 @@
 
 /* =========================================================
    CASERNEMENT — CIS VILLENAVE-D'ORNON
-   Même identité visuelle que SSUAP
    ========================================================= */
 
 .casernement-page {
@@ -18,7 +17,6 @@
 .casernement-hero {
     position: relative;
     overflow: hidden;
-
     padding: 70px 20px 65px;
 
     background:
@@ -34,90 +32,68 @@
 
 .casernement-hero::before {
     content: "";
-
     position: absolute;
-
     width: 500px;
     height: 500px;
-
     top: -300px;
     right: -120px;
-
     border-radius: 50%;
-
     background: rgba(215, 25, 32, 0.07);
 }
 
 .casernement-hero::after {
     content: "";
-
     position: absolute;
-
     width: 350px;
     height: 350px;
-
     bottom: -250px;
     left: -120px;
-
     border-radius: 50%;
-
     background: rgba(20, 51, 79, 0.18);
 }
 
 .casernement-hero-overlay {
     position: absolute;
     inset: 0;
-
     pointer-events: none;
 }
 
 .casernement-hero-content {
     position: relative;
     z-index: 2;
-
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .casernement-eyebrow {
     margin-bottom: 15px;
-
     color: #ff4148;
-
     font-size: 13px;
     font-weight: 800;
-
     letter-spacing: 2px;
     text-transform: uppercase;
-}
-
-.casernement-hero h1 {
-    margin: 0;
-
-    color: #ffffff;
-
-    font-size: clamp(42px, 7vw, 72px);
-    font-weight: 900;
-
-    line-height: 1;
-    letter-spacing: -2px;
 }
 
 .casernement-line {
     width: 65px;
     height: 4px;
-
     margin: 22px 0 18px;
-
     background: #d71920;
     border-radius: 10px;
 }
 
+.casernement-hero h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(42px, 7vw, 72px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
 .casernement-hero p {
     margin: 0;
-
     color: #aab9c7;
-
     font-size: 17px;
     line-height: 1.6;
 }
@@ -129,7 +105,6 @@
 
 .casernement-content {
     padding: 35px 20px 70px;
-
     background: #030912;
 }
 
@@ -148,19 +123,14 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 9px;
-
     margin-bottom: 30px;
-
     color: #aab9c7;
-
     font-size: 14px;
 }
 
 .casernement-breadcrumb a {
     color: #edf3f8;
-
     text-decoration: none;
-
     transition: color 0.2s ease;
 }
 
@@ -181,7 +151,6 @@
     display: flex;
     align-items: center;
     gap: 18px;
-
     margin-bottom: 28px;
     padding: 25px;
 
@@ -194,7 +163,6 @@
 
     border: 1px solid #14334f;
     border-left: 4px solid #d71920;
-
     border-radius: 14px;
 
     box-shadow:
@@ -211,42 +179,32 @@
     min-width: 58px;
 
     background: rgba(215, 25, 32, 0.10);
-
     border: 1px solid rgba(215, 25, 32, 0.28);
     border-radius: 14px;
 
     color: #ff4148;
-
     font-size: 28px;
 }
 
 .casernement-label {
     display: block;
-
     margin-bottom: 5px;
-
     color: #ff4148;
-
     font-size: 11px;
     font-weight: 900;
-
     letter-spacing: 1.5px;
 }
 
 .casernement-intro h2 {
     margin: 0 0 6px;
-
     color: #ffffff;
-
     font-size: 22px;
     font-weight: 800;
 }
 
 .casernement-intro p {
     margin: 0;
-
     color: #aab9c7;
-
     line-height: 1.6;
 }
 
@@ -257,7 +215,6 @@
 
 .casernement-search {
     position: relative;
-
     margin-bottom: 10px;
 }
 
@@ -268,14 +225,12 @@
     padding: 17px 52px 17px 48px;
 
     background: #071321;
-
     border: 1px solid #14334f;
     border-radius: 12px;
 
     outline: none;
 
     color: #ffffff;
-
     font-family: inherit;
     font-size: 15px;
 
@@ -297,40 +252,29 @@
 
 .casernement-search .search-icon {
     position: absolute;
-
     left: 18px;
     top: 50%;
-
     transform: translateY(-50%);
-
     color: #aab9c7;
-
     font-size: 22px;
-
     pointer-events: none;
 }
 
 .casernement-search button {
     position: absolute;
-
     right: 15px;
     top: 50%;
-
     transform: translateY(-50%);
 
     padding: 4px;
 
     background: transparent;
-
     border: none;
 
     color: #aab9c7;
-
     font-size: 22px;
 
     cursor: pointer;
-
-    transition: color 0.2s ease;
 }
 
 .casernement-search button:hover {
@@ -339,11 +283,8 @@
 
 .search-result {
     min-height: 20px;
-
     margin-bottom: 25px;
-
     color: #aab9c7;
-
     font-size: 13px;
 }
 
@@ -354,10 +295,7 @@
 
 .casernement-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 22px;
 }
 
@@ -391,15 +329,11 @@
 
 .casernement-card::before {
     content: "";
-
     position: absolute;
-
     top: 0;
     left: 0;
-
     width: 100%;
     height: 3px;
-
     background: #d71920;
 }
 
@@ -447,24 +381,19 @@
 
     font-size: 12px;
     font-weight: 900;
-
     letter-spacing: 1px;
 }
 
 .casernement-card-header h3 {
     margin: 0 0 5px;
-
     color: #ffffff;
-
     font-size: 24px;
     font-weight: 850;
 }
 
 .casernement-card-header p {
     margin: 0;
-
     color: #aab9c7;
-
     font-size: 14px;
 }
 
@@ -476,7 +405,6 @@
 .casernement-actions {
     display: grid;
     gap: 10px;
-
     padding: 20px 25px 25px;
 }
 
@@ -487,18 +415,12 @@
 
 .casernement-button {
     display: grid;
-
-    grid-template-columns:
-        auto 1fr auto;
-
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-
     gap: 14px;
 
     min-height: 52px;
-
     padding: 0 15px;
-
     box-sizing: border-box;
 
     background: #071321;
@@ -507,7 +429,6 @@
     border-radius: 10px;
 
     color: #edf3f8;
-
     text-decoration: none;
 
     transition:
@@ -523,33 +444,27 @@
     justify-content: center;
 
     min-width: 58px;
-
     padding: 6px 8px;
 
     background: rgba(215, 25, 32, 0.10);
-
     border-radius: 6px;
 
     color: #ff4148;
 
     font-size: 10px;
     font-weight: 900;
-
     letter-spacing: 0.6px;
 }
 
 .casernement-button strong {
     color: #edf3f8;
-
     font-size: 14px;
     font-weight: 700;
 }
 
 .casernement-button b {
     color: #ff4148;
-
     font-size: 18px;
-    font-weight: 700;
 }
 
 .casernement-button:hover {
@@ -561,7 +476,6 @@
         );
 
     border-color: #d71920;
-
     transform: translateX(4px);
 
     box-shadow:
@@ -594,21 +508,17 @@
 
 .no-result > div {
     margin-bottom: 10px;
-
     font-size: 28px;
 }
 
 .no-result h3 {
     margin: 0 0 8px;
-
     color: #ffffff;
-
     font-size: 20px;
 }
 
 .no-result p {
     margin: 0;
-
     color: #aab9c7;
 }
 
@@ -658,7 +568,6 @@
         width: 48px;
         height: 48px;
         min-width: 48px;
-
         font-size: 23px;
     }
 
@@ -691,7 +600,6 @@
 
 /* =========================================================
    MENU MOBILE
-   Même fonctionnement que SSUAP
    ========================================================= */
 
 @media (max-width: 900px) {
@@ -714,17 +622,25 @@
 
     #mainNav.nav {
         display: none !important;
+
         position: absolute !important;
+
         top: 100% !important;
         left: 0 !important;
         right: 0 !important;
+
         width: 100% !important;
+
         flex-direction: column !important;
         align-items: stretch !important;
+
         padding: 15px !important;
         box-sizing: border-box !important;
+
         background: #07111f !important;
+
         border-top: 1px solid #26384e !important;
+
         z-index: 10000 !important;
     }
 
@@ -735,9 +651,13 @@
     #mainNav .nav-link,
     #mainNav .nav-dropdown-toggle {
         width: 100% !important;
+
         padding: 14px 16px !important;
+
         box-sizing: border-box !important;
+
         color: #ffffff !important;
+
         text-align: left !important;
     }
 
@@ -747,11 +667,17 @@
 
     #mainNav .nav-dropdown-menu {
         position: static !important;
+
         display: none !important;
+
         width: 100% !important;
+
         margin-top: 5px !important;
+
         background: #101f33 !important;
+
         border: 1px solid #26384e !important;
+
         border-radius: 10px !important;
     }
 
@@ -760,21 +686,23 @@
     }
 
 }
+
+
 /* =========================================================
-FOOTER
-========================================================= */
+   FOOTER
+   ========================================================= */
 
 .site-footer {
-background: #050c16 !important;
-color: #ffffff !important;
+    background: #050c16 !important;
+    color: #ffffff !important;
 }
 
 .site-footer a {
-color: #aebacc !important;
+    color: #aebacc !important;
 }
 
 .site-footer a:hover {
-color: #ffffff !important;
+    color: #ffffff !important;
 }
 
 
