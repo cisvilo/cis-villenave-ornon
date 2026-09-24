@@ -3,258 +3,421 @@
    ENTRETIENS — CIS VILLENAVE-D'ORNON
    ========================================================= */
 
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
 .entretiens-page {
-    background: #f4f6f9;
     min-height: 100vh;
+    background: #f3f5f8;
+    color: #172b43;
 }
 
-/* HERO */
+
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .entretiens-hero {
     position: relative;
     min-height: 250px;
-    background:
-        linear-gradient(135deg, rgba(5, 25, 52, 0.96), rgba(12, 44, 82, 0.88)),
-        url("photo.png") center / cover;
+
     display: flex;
     align-items: center;
+
     overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(3, 9, 18, 0.96),
+            rgba(12, 32, 53, 0.90)
+        ),
+        url("photo.png") center / cover;
 }
+
 
 .entretiens-hero::after {
     content: "";
+
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    height: 5px;
-    background: #c8102e;
+
+    height: 4px;
+
+    background: #d71920;
 }
+
 
 .entretiens-hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        90deg,
-        rgba(3, 20, 42, 0.92),
-        rgba(3, 20, 42, 0.45)
-    );
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 9, 18, 0.95),
+            rgba(3, 9, 18, 0.45)
+        );
 }
+
 
 .entretiens-hero-content {
     position: relative;
     z-index: 2;
-    width: min(1400px, calc(100% - 48px));
-    margin: auto;
-    color: white;
+
+    width:
+        min(
+            1400px,
+            calc(100% - 40px)
+        );
+
+    margin: 0 auto;
+
+    color: #ffffff;
 }
 
+
 .hero-eyebrow {
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.18em;
-    color: #e63950;
     margin-bottom: 12px;
+
+    color: #ff4148;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
 }
+
 
 .entretiens-hero h1 {
     margin: 0;
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+
+    color: #ffffff;
+
+    font-size:
+        clamp(
+            2.4rem,
+            5vw,
+            4rem
+        );
+
     font-weight: 900;
-    letter-spacing: -0.03em;
 }
+
 
 .entretiens-hero p {
     margin: 12px 0 0;
-    font-size: 1.05rem;
-    color: rgba(255,255,255,0.82);
+
+    color: rgba(255,255,255,0.78);
+
+    font-size: 15px;
 }
 
 
-/* CONTENT */
+/* =========================================================
+   CONTENU
+   ========================================================= */
 
 .entretiens-content {
     padding: 34px 0 70px;
 }
 
+
 .entretiens-container {
-    width: min(1400px, calc(100% - 48px));
-    margin: auto;
+    width:
+        min(
+            1400px,
+            calc(100% - 40px)
+        );
+
+    margin: 0 auto;
 }
 
 
-/* BREADCRUMB */
+/* =========================================================
+   BREADCRUMB
+   ========================================================= */
 
 .breadcrumb {
     display: flex;
     align-items: center;
+
     gap: 9px;
+
     margin-bottom: 32px;
-    font-size: 0.88rem;
-    color: #6b7280;
+
+    color: #718096;
+
+    font-size: 13px;
 }
+
 
 .breadcrumb a {
-    color: #163a63;
-    text-decoration: none;
+    color: #163a63 !important;
+
     font-weight: 700;
+
+    text-decoration: none !important;
 }
+
 
 .breadcrumb a:hover {
-    color: #c8102e;
+    color: #d71920 !important;
 }
 
 
-/* TOP */
+/* =========================================================
+   INTRO
+   ========================================================= */
 
 .entretiens-top {
     display: flex;
+
+    align-items: flex-end;
     justify-content: space-between;
-    align-items: end;
+
     gap: 40px;
-    margin-bottom: 35px;
+
+    margin-bottom: 32px;
 }
 
+
 .section-eyebrow {
-    color: #c8102e;
-    font-size: 0.76rem;
-    font-weight: 900;
-    letter-spacing: 0.16em;
+    display: block;
+
     margin-bottom: 8px;
+
+    color: #d71920;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 2.5px;
 }
+
 
 .entretiens-intro h2 {
     margin: 0;
+
     color: #102b4e;
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
+
+    font-size:
+        clamp(
+            1.8rem,
+            3vw,
+            2.5rem
+        );
+
     font-weight: 900;
 }
 
+
 .entretiens-intro p {
     margin: 9px 0 0;
+
     color: #657184;
-    font-size: 1rem;
+
+    font-size: 14px;
 }
 
 
-/* SEARCH */
+/* =========================================================
+   RECHERCHE
+   ========================================================= */
 
 .entretiens-search {
     flex: 0 0 390px;
 }
 
+
 .search-box {
     position: relative;
+
     display: flex;
     align-items: center;
-    background: white;
-    border: 1px solid #d9dee7;
-    border-radius: 12px;
+
     min-height: 54px;
-    box-shadow: 0 8px 24px rgba(12, 35, 65, 0.07);
+
+    background: #ffffff;
+
+    border: 1px solid #d9dee7;
+    border-radius: 8px;
+
+    box-shadow:
+        0 8px 24px
+        rgba(12, 35, 65, 0.07);
 }
+
+
+.search-box:focus-within {
+    border-color: #d71920;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(215, 25, 32, 0.10);
+}
+
 
 .search-icon {
     padding-left: 17px;
-    font-size: 1.35rem;
+
     color: #718096;
+
+    font-size: 21px;
 }
+
 
 .search-box input {
     width: 100%;
     height: 52px;
+
+    padding: 0 42px 0 12px;
+
     border: 0;
     outline: none;
-    padding: 0 42px 0 12px;
+
     background: transparent;
+
     color: #162d49;
-    font-size: 0.96rem;
+
+    font-size: 14px;
 }
 
-.search-box:focus-within {
-    border-color: #c8102e;
-    box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.10);
-}
 
 .clear-search {
     position: absolute;
     right: 10px;
+
     border: 0;
+
     background: transparent;
+
     color: #8a94a3;
-    font-size: 1.5rem;
+
+    font-size: 22px;
+
     cursor: pointer;
+
     display: none;
 }
+
 
 .clear-search.visible {
     display: block;
 }
 
 
-/* CARDS */
+/* =========================================================
+   CARTES
+   ========================================================= */
 
 .entretiens-cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
     gap: 18px;
 }
 
+
 .entretien-card {
     position: relative;
+
     min-height: 165px;
+
     padding: 24px;
+
     display: flex;
     align-items: center;
+
     gap: 17px;
+
     overflow: hidden;
 
-    text-decoration: none;
-    color: white;
+    color: #ffffff !important;
+
+    text-decoration: none !important;
 
     background:
-        linear-gradient(145deg, #102f54, #071d37);
+        linear-gradient(
+            145deg,
+            #102942,
+            #050d18
+        );
 
-    border-radius: 14px;
-    border-top: 4px solid #c8102e;
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
 
-    box-shadow: 0 10px 25px rgba(5, 25, 52, 0.12);
+    border-top:
+        3px solid
+        #d71920;
+
+    border-radius: 9px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(0,0,0,0.14);
 
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
 }
 
+
 .entretien-card::after {
     content: "";
+
     position: absolute;
     inset: 0;
 
-    background: linear-gradient(
-        110deg,
-        transparent 20%,
-        rgba(255,255,255,0.08) 50%,
-        transparent 80%
-    );
+    background:
+        linear-gradient(
+            110deg,
+            transparent 20%,
+            rgba(255,255,255,0.08) 50%,
+            transparent 80%
+        );
 
     transform: translateX(-100%);
-    transition: transform 0.55s ease;
+
+    transition:
+        transform 0.55s ease;
 }
+
 
 .entretien-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 16px 35px rgba(5, 25, 52, 0.20);
+
+    box-shadow:
+        0 18px 40px
+        rgba(0,0,0,0.25);
 }
+
 
 .entretien-card:hover::after {
     transform: translateX(100%);
 }
+
+
+/* =========================================================
+   ICÔNES
+   ========================================================= */
 
 .entretien-card-icon {
     position: relative;
     z-index: 1;
 
     flex: 0 0 58px;
+
     width: 58px;
     height: 58px;
 
@@ -262,106 +425,153 @@
     align-items: center;
     justify-content: center;
 
-    border-radius: 13px;
+    border-radius: 8px;
 
-    background: linear-gradient(135deg, #d7193f, #a80f2c);
+    background:
+        linear-gradient(
+            135deg,
+            #d71920,
+            #a80f15
+        );
 
-    font-size: 1.65rem;
+    font-size: 25px;
 
-    box-shadow: 0 8px 18px rgba(0,0,0,0.16);
+    box-shadow:
+        0 8px 18px
+        rgba(0,0,0,0.20);
 }
+
 
 .entretien-card-content {
     position: relative;
     z-index: 1;
+
     min-width: 0;
 }
 
+
 .entretien-number {
     display: block;
+
     margin-bottom: 3px;
 
-    font-size: 0.68rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
+    color:
+        rgba(255,255,255,0.45);
 
-    color: rgba(255,255,255,0.48);
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
 }
+
 
 .entretien-card h3 {
     margin: 0;
-    font-size: 1.12rem;
-    font-weight: 850;
+
+    color: #ffffff;
+
+    font-size: 18px;
+    font-weight: 900;
 }
+
 
 .entretien-card p {
     margin: 5px 0 0;
 
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.65);
+    color:
+        rgba(255,255,255,0.62);
+
+    font-size: 12px;
 }
+
 
 .entretien-arrow {
     position: absolute;
+
     right: 18px;
     bottom: 15px;
+
     z-index: 2;
 
-    color: rgba(255,255,255,0.55);
-    font-size: 1.15rem;
+    color:
+        rgba(255,255,255,0.50);
+
+    font-size: 18px;
 
     transition:
         transform 0.25s ease,
         color 0.25s ease;
 }
 
+
 .entretien-card:hover .entretien-arrow {
-    color: white;
-    transform: translate(3px, -3px);
+    color: #ffffff;
+
+    transform:
+        translate(3px,-3px);
 }
 
 
-/* RECHERCHE */
+/* =========================================================
+   RECHERCHE
+   ========================================================= */
 
 .entretien-card.hidden {
     display: none;
 }
 
 
-/* EMPTY */
+/* =========================================================
+   AUCUN RÉSULTAT
+   ========================================================= */
 
 .entretiens-empty {
     display: none;
-    text-align: center;
+
     padding: 60px 20px;
+
+    text-align: center;
 }
+
 
 .entretiens-empty.visible {
     display: block;
 }
 
+
 .empty-icon {
-    font-size: 2.5rem;
-    color: #9aa5b5;
     margin-bottom: 10px;
+
+    color: #9aa5b5;
+
+    font-size: 38px;
 }
+
 
 .entretiens-empty h3 {
     margin: 0;
+
     color: #263b56;
 }
+
 
 .entretiens-empty p {
     color: #788496;
 }
 
 
-/* RESPONSIVE */
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 
 @media (max-width: 1150px) {
 
     .entretiens-cards {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
     }
 
 }
@@ -370,17 +580,25 @@
 @media (max-width: 900px) {
 
     .entretiens-cards {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
     }
+
 
     .entretiens-top {
         flex-direction: column;
+
         align-items: stretch;
     }
 
+
     .entretiens-search {
-        flex: none;
         width: 100%;
+
+        flex: none;
     }
 
 }
@@ -392,26 +610,31 @@
         min-height: 220px;
     }
 
+
     .entretiens-hero-content,
     .entretiens-container {
         width: calc(100% - 30px);
     }
 
+
     .entretiens-content {
         padding-top: 25px;
     }
 
+
     .entretiens-cards {
         grid-template-columns: 1fr;
+
         gap: 14px;
     }
 
+
     .entretien-card {
         min-height: 135px;
+
         padding: 20px;
     }
 
 }
-
 
 
