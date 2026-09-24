@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -141,7 +141,7 @@
 
 
             <a
-                href="pages/entretiens.html"
+                href="entretiens.html"
                 class="nav-link"
             >
                 ENTRETIENS
@@ -178,10 +178,6 @@
 <main class="specialites-page">
 
 
-    <!-- =====================================================
-         HERO
-         ===================================================== -->
-
     <section class="specialites-hero">
 
         <div class="specialites-hero-overlay"></div>
@@ -207,16 +203,10 @@
     </section>
 
 
-    <!-- =====================================================
-         CONTENU
-         ===================================================== -->
-
     <section class="specialites-content">
 
         <div class="specialites-container">
 
-
-            <!-- BREADCRUMB -->
 
             <div class="specialites-breadcrumb">
 
@@ -238,8 +228,6 @@
 
             </div>
 
-
-            <!-- INTRO -->
 
             <div class="specialites-intro">
 
@@ -266,8 +254,6 @@
 
             </div>
 
-
-            <!-- RECHERCHE -->
 
             <div class="specialites-search">
 
@@ -300,17 +286,11 @@
             ></div>
 
 
-            <!-- =================================================
-                 CARTES
-                 ================================================= -->
-
             <div
                 class="specialites-grid"
                 id="specialitesGrid"
             >
 
-
-                <!-- ELD -->
 
                 <article
                     class="specialites-card"
@@ -365,8 +345,6 @@
 
                 </article>
 
-
-                <!-- DRONE -->
 
                 <article
                     class="specialites-card"
@@ -425,8 +403,6 @@
             </div>
 
 
-            <!-- AUCUN RÉSULTAT -->
-
             <div
                 id="noResult"
                 class="no-result"
@@ -446,8 +422,6 @@
 
             </div>
 
-
-            <!-- RETOUR -->
 
             <div class="specialites-back">
 
@@ -472,10 +446,6 @@
 
 </main>
 
-
-<!-- =====================================================
-     FOOTER
-     ===================================================== -->
 
 <footer class="site-footer">
 
@@ -504,7 +474,7 @@
                 Inventaires
             </a>
 
-            <a href="pages/entretiens.html">
+            <a href="entretiens.html">
                 Entretiens
             </a>
 
@@ -527,18 +497,10 @@
 </footer>
 
 
-<!-- =====================================================
-     JAVASCRIPT
-     ===================================================== -->
-
 <script>
 
 document.addEventListener("DOMContentLoaded", function () {
 
-
-    /* =====================================================
-       MENU MOBILE
-       ===================================================== */
 
     const mobileToggle = document.getElementById("mobileToggle");
     const mainNav = document.getElementById("mainNav");
@@ -561,10 +523,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
-    /* =====================================================
-       SOUS-MENU INVENTAIRES
-       ===================================================== */
 
     const inventoryToggle =
         document.getElementById("inventoryToggle");
@@ -608,10 +566,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
-    /* =====================================================
-       RECHERCHE
-       ===================================================== */
 
     const searchInput =
         document.getElementById("specialitesSearch");
@@ -722,10 +676,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       BOUTON EFFACER
-       ===================================================== */
-
     if (clearSearch) {
 
         clearSearch.addEventListener(
@@ -748,10 +698,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
-    /* =====================================================
-       TOUCHE ESCAPE
-       ===================================================== */
 
     document.addEventListener(
         "keydown",
@@ -779,4 +725,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
-```
+
+
