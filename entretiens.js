@@ -1,307 +1,306 @@
-
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* =====================================================
-       MENU MOBILE
-       ===================================================== */
+```
+/* =====================================================
+   MENU MOBILE
+   ===================================================== */
 
-    const mobileToggle = document.getElementById("mobileToggle");
-    const mainNav = document.getElementById("mainNav");
+const mobileToggle = document.getElementById("mobileToggle");
+const mainNav = document.getElementById("mainNav");
 
-    if (mobileToggle && mainNav) {
+if (mobileToggle && mainNav) {
 
-        mobileToggle.addEventListener("click", function (event) {
+    mobileToggle.addEventListener("click", function (event) {
 
-            event.stopPropagation();
+        event.stopPropagation();
 
-            const isOpen =
-                mainNav.classList.toggle("active");
+        const isOpen = mainNav.classList.toggle("active");
 
-            mobileToggle.classList.toggle(
-                "open",
-                isOpen
-            );
+        mobileToggle.classList.toggle("open", isOpen);
 
-            mobileToggle.setAttribute(
+        mobileToggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+    });
+}
+
+
+/* =====================================================
+   MENU INVENTAIRES
+   ===================================================== */
+
+const inventoryDropdown =
+    document.getElementById("inventoryDropdown");
+
+const inventoryToggle =
+    document.getElementById("inventoryToggle");
+
+if (inventoryDropdown && inventoryToggle) {
+
+    inventoryToggle.addEventListener("click", function (event) {
+
+        event.stopPropagation();
+
+        const isOpen =
+            inventoryDropdown.classList.toggle("open");
+
+        inventoryToggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+    });
+}
+
+
+/* =====================================================
+   FERMETURE DES MENUS
+   ===================================================== */
+
+document.addEventListener("click", function (event) {
+
+    if (
+        inventoryDropdown &&
+        !inventoryDropdown.contains(event.target)
+    ) {
+
+        inventoryDropdown.classList.remove("open");
+
+        if (inventoryToggle) {
+            inventoryToggle.setAttribute(
                 "aria-expanded",
-                isOpen ? "true" : "false"
+                "false"
             );
-
-        });
-
+        }
     }
 
 
-    /* =====================================================
-       MENU INVENTAIRES
-       ===================================================== */
+    if (
+        mainNav &&
+        mobileToggle &&
+        !mainNav.contains(event.target) &&
+        !mobileToggle.contains(event.target)
+    ) {
 
-    const inventoryDropdown =
-        document.getElementById("inventoryDropdown");
+        mainNav.classList.remove("active");
+        mobileToggle.classList.remove("open");
 
-    const inventoryToggle =
-        document.getElementById("inventoryToggle");
+        mobileToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+    }
 
-    if (inventoryDropdown && inventoryToggle) {
+});
 
-        inventoryToggle.addEventListener(
-            "click",
-            function (event) {
 
-                event.stopPropagation();
+/* =====================================================
+   ESCAPE
+   ===================================================== */
 
-                const isOpen =
-                    inventoryDropdown.classList.toggle("open");
+document.addEventListener("keydown", function (event) {
 
-                inventoryToggle.setAttribute(
-                    "aria-expanded",
-                    isOpen ? "true" : "false"
-                );
+    if (event.key !== "Escape") {
+        return;
+    }
 
-            }
+    if (inventoryDropdown) {
+        inventoryDropdown.classList.remove("open");
+    }
+
+    if (inventoryToggle) {
+        inventoryToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+    }
+
+    if (mainNav) {
+        mainNav.classList.remove("active");
+    }
+
+    if (mobileToggle) {
+        mobileToggle.classList.remove("open");
+
+        mobileToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+    }
+
+});
+
+
+/* =====================================================
+   RECHERCHE ENTRETIENS
+   ===================================================== */
+
+const searchInput =
+    document.getElementById("entretiensSearch");
+
+const clearSearch =
+    document.getElementById("clearSearch");
+
+const cards =
+    document.querySelectorAll(".entretien-card");
+
+const emptyMessage =
+    document.getElementById("entretiensEmpty");
+
+const searchResult =
+    document.getElementById("entretiensSearchResult");
+
+
+function normalizeText(text) {
+
+    return text
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+
+}
+
+
+function filterCards() {
+
+    if (!searchInput) {
+        return;
+    }
+
+    const query =
+        normalizeText(searchInput.value.trim());
+
+    let visibleCount = 0;
+
+
+    cards.forEach(function (card) {
+
+        const searchData =
+            normalizeText(
+                card.dataset.search || ""
+            );
+
+        const cardText =
+            normalizeText(
+                card.textContent || ""
+            );
+
+        const matches =
+            query === "" ||
+            searchData.includes(query) ||
+            cardText.includes(query);
+
+
+        card.style.display =
+            matches ? "" : "none";
+
+
+        if (matches) {
+            visibleCount++;
+        }
+
+    });
+
+
+    if (searchResult) {
+
+        if (query === "") {
+            searchResult.textContent = "";
+        } else if (visibleCount > 0) {
+            searchResult.textContent =
+                visibleCount +
+                " résultat" +
+                (visibleCount > 1 ? "s" : "");
+        } else {
+            searchResult.textContent = "";
+        }
+    }
+
+
+    if (emptyMessage) {
+
+        emptyMessage.classList.toggle(
+            "visible",
+            query !== "" && visibleCount === 0
         );
 
     }
 
-
-    /* =====================================================
-       FERMETURE DES MENUS
-       ===================================================== */
-
-    document.addEventListener(
-        "click",
-        function (event) {
-
-            if (
-                inventoryDropdown &&
-                !inventoryDropdown.contains(event.target)
-            ) {
-
-                inventoryDropdown.classList.remove("open");
-
-                if (inventoryToggle) {
-                    inventoryToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-                }
-
-            }
+}
 
 
-            if (
-                mainNav &&
-                mobileToggle &&
-                !mainNav.contains(event.target) &&
-                !mobileToggle.contains(event.target)
-            ) {
+if (searchInput) {
 
-                mainNav.classList.remove("active");
-
-                mobileToggle.classList.remove("open");
-
-                mobileToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            }
-
-        }
+    searchInput.addEventListener(
+        "input",
+        filterCards
     );
 
-
-    /* =====================================================
-       ESCAPE
-       ===================================================== */
-
-    document.addEventListener(
+    searchInput.addEventListener(
         "keydown",
         function (event) {
 
-            if (event.key !== "Escape") {
-                return;
-            }
-
-
-            if (inventoryDropdown) {
-                inventoryDropdown.classList.remove("open");
-            }
-
-
-            if (inventoryToggle) {
-                inventoryToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-            }
-
-
-            if (mainNav) {
-                mainNav.classList.remove("active");
-            }
-
-
-            if (mobileToggle) {
-
-                mobileToggle.classList.remove("open");
-
-                mobileToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            }
-
-        }
-    );
-
-
-    /* =====================================================
-       RECHERCHE ENTRETIENS
-       ===================================================== */
-
-    const searchInput =
-        document.getElementById("entretiensSearch");
-
-    const clearSearch =
-        document.getElementById("clearSearch");
-
-    const cards =
-        document.querySelectorAll(".entretien-card");
-
-    const emptyMessage =
-        document.getElementById("entretiensEmpty");
-
-
-    function normalizeText(text) {
-
-        return text
-            .toLowerCase()
-            .normalize("NFD")
-            .replace(
-                /[\u0300-\u036f]/g,
-                ""
-            )
-            .trim();
-
-    }
-
-
-    function filterCards() {
-
-        if (!searchInput) {
-            return;
-        }
-
-
-        const query =
-            normalizeText(searchInput.value);
-
-
-        let visibleCount = 0;
-
-
-        cards.forEach(function (card) {
-
-            const searchData =
-                normalizeText(
-                    card.dataset.search || ""
-                );
-
-            const cardText =
-                normalizeText(
-                    card.textContent
-                );
-
-
-            const matches =
-                !query ||
-                searchData.includes(query) ||
-                cardText.includes(query);
-
-
-            card.style.display =
-                matches ? "" : "none";
-
-
-            if (matches) {
-                visibleCount++;
-            }
-
-        });
-
-
-        if (emptyMessage) {
-
-            emptyMessage.classList.toggle(
-                "visible",
-                visibleCount === 0
-            );
-
-        }
-
-    }
-
-
-    if (searchInput) {
-
-        searchInput.addEventListener(
-            "input",
-            filterCards
-        );
-
-    }
-
-
-    if (clearSearch) {
-
-        clearSearch.addEventListener(
-            "click",
-            function () {
-
-                if (!searchInput) {
-                    return;
-                }
+            if (event.key === "Escape") {
 
                 searchInput.value = "";
 
                 filterCards();
 
                 searchInput.focus();
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       FERMETURE MENU AU REDIMENSIONNEMENT
-       ===================================================== */
-
-    window.addEventListener(
-        "resize",
-        function () {
-
-            if (
-                window.innerWidth > 850 &&
-                mainNav &&
-                mobileToggle
-            ) {
-
-                mainNav.classList.remove("active");
-
-                mobileToggle.classList.remove("open");
-
-                mobileToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
             }
 
         }
     );
+}
+
+
+if (clearSearch) {
+
+    clearSearch.addEventListener(
+        "click",
+        function () {
+
+            if (!searchInput) {
+                return;
+            }
+
+            searchInput.value = "";
+
+            filterCards();
+
+            searchInput.focus();
+
+        }
+    );
+}
+
+
+/* =====================================================
+   REDIMENSIONNEMENT
+   ===================================================== */
+
+window.addEventListener("resize", function () {
+
+    if (
+        window.innerWidth > 900 &&
+        mainNav &&
+        mobileToggle
+    ) {
+
+        mainNav.classList.remove("active");
+
+        mobileToggle.classList.remove("open");
+
+        mobileToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+    }
 
 });
+```
+
+});
+
