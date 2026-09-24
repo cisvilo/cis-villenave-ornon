@@ -1,0 +1,506 @@
+
+/* =========================================================
+   RACCOURCIS — CIS VILLENAVE-D'ORNON
+   ========================================================= */
+
+:root {
+  --navy: #030912;
+  --navy-2: #071321;
+  --navy-3: #0c2035;
+  --red: #d71920;
+  --red-light: #ff4148;
+  --white: #ffffff;
+  --text: #e8edf3;
+  --muted: #8f9dad;
+  --border: rgba(255, 255, 255, 0.09);
+  --card: rgba(255, 255, 255, 0.035);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.raccourcis-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(215, 25, 32, 0.16), transparent 32%),
+    linear-gradient(135deg, #030912 0%, #071321 55%, #0c2035 100%);
+}
+
+.raccourcis-hero::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: -180px;
+  bottom: -240px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+.raccourcis-hero .hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  margin: 22px 0 18px;
+  border-radius: 14px;
+  background: rgba(215, 25, 32, 0.14);
+  border: 1px solid rgba(255, 65, 72, 0.28);
+  color: var(--red-light);
+  font-size: 25px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.raccourcis-section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 65px 24px 90px;
+}
+
+.section-intro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.section-kicker {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--red-light);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.section-intro h2 {
+  margin: 0 0 8px;
+  color: var(--white);
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.1;
+}
+
+.section-intro p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.raccourcis-count {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 13px 18px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+  white-space: nowrap;
+}
+
+.raccourcis-count strong {
+  color: var(--white);
+  font-size: 25px;
+}
+
+.raccourcis-count span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   RECHERCHE
+   ========================================================= */
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 650px;
+  margin-bottom: 12px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 18px;
+  color: var(--muted);
+  font-size: 25px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+#raccourcisSearch {
+  width: 100%;
+  height: 56px;
+  padding: 0 52px 0 50px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.045);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 15px;
+  transition: 0.25s ease;
+}
+
+#raccourcisSearch::placeholder {
+  color: #718092;
+}
+
+#raccourcisSearch:focus {
+  border-color: rgba(255, 65, 72, 0.55);
+  box-shadow: 0 0 0 4px rgba(215, 25, 32, 0.08);
+}
+
+.clear-search {
+  position: absolute;
+  right: 12px;
+  display: none;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--muted);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.clear-search.visible {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear-search:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+}
+
+.search-result {
+  min-height: 20px;
+  margin: 0 0 25px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   GRILLE
+   ========================================================= */
+
+.raccourcis-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+
+/* =========================================================
+   CARTES
+   ========================================================= */
+
+.raccourcis-card {
+  position: relative;
+  display: flex;
+  gap: 22px;
+  min-height: 225px;
+  padding: 25px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.018)
+    );
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.raccourcis-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--red);
+  opacity: 0;
+  transition: 0.25s ease;
+}
+
+.raccourcis-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 65, 72, 0.28);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+.raccourcis-card:hover::before {
+  opacity: 1;
+}
+
+.raccourcis-card-icon {
+  flex: 0 0 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 15px;
+  background: rgba(215, 25, 32, 0.11);
+  border: 1px solid rgba(255, 65, 72, 0.18);
+  color: var(--red-light);
+  font-size: 25px;
+}
+
+.raccourcis-card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.raccourcis-card-number {
+  display: block;
+  margin-bottom: 7px;
+  color: #596879;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.raccourcis-card h3 {
+  margin: 0 0 8px;
+  color: var(--white);
+  font-size: 21px;
+  line-height: 1.2;
+}
+
+.raccourcis-card p {
+  min-height: 42px;
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.raccourcis-card-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-width: 110px;
+  padding: 10px 15px;
+  border: 1px solid rgba(255, 65, 72, 0.3);
+  border-radius: 10px;
+  background: rgba(215, 25, 32, 0.1);
+  color: #ff6970;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.raccourcis-card-button:hover {
+  border-color: var(--red);
+  background: var(--red);
+  color: var(--white);
+}
+
+.raccourcis-card-button span {
+  font-size: 15px;
+}
+
+.raccourcis-card-button.disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   AUCUN RÉSULTAT
+   ========================================================= */
+
+.raccourcis-empty {
+  display: none;
+  padding: 60px 20px;
+  text-align: center;
+  border: 1px dashed var(--border);
+  border-radius: 18px;
+}
+
+.raccourcis-empty.visible {
+  display: block;
+}
+
+.empty-icon {
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-size: 34px;
+}
+
+.raccourcis-empty h3 {
+  margin: 0 0 8px;
+  color: var(--white);
+}
+
+.raccourcis-empty p {
+  margin: 0;
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: #02070d;
+}
+
+.footer-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 25px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.footer-inner div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-inner strong {
+  color: var(--white);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+.footer-inner span,
+.footer-inner p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.footer-inner p {
+  margin: 0;
+  text-align: right;
+}
+
+
+/* =========================================================
+   MENU MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .main-nav.active {
+    display: flex;
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+  }
+
+}
+
+
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .raccourcis-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .raccourcis-section {
+    padding: 45px 17px 65px;
+  }
+
+  .section-intro {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .raccourcis-count {
+    padding: 10px 14px;
+  }
+
+  .raccourcis-card {
+    gap: 15px;
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .raccourcis-card-icon {
+    flex-basis: 48px;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    font-size: 21px;
+  }
+
+  .raccourcis-card h3 {
+    font-size: 19px;
+  }
+
+  .raccourcis-card p {
+    min-height: auto;
+  }
+
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-inner p {
+    text-align: left;
+  }
+
+}
+
