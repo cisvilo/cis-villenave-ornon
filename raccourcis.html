@@ -14,14 +14,13 @@
 <body>
 
 <header class="site-header">
-
   <div class="header-inner">
 
     <a href="index.html" class="logo-link">
       <img src="logo1.png" alt="CIS Villenave-d'Ornon" class="site-logo">
     </a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Ouvrir le menu">
       <span></span>
       <span></span>
       <span></span>
@@ -45,7 +44,6 @@
         </button>
 
         <div class="nav-dropdown-menu">
-
           <a href="ssuap.html">SSUAP</a>
           <a href="incendie.html">Incendie</a>
           <a href="div.html">DIV</a>
@@ -53,7 +51,6 @@
           <a href="specialites.html">Spécialités</a>
           <a href="standard.html">Standard</a>
           <a href="casernement.html">Casernement</a>
-
         </div>
 
       </div>
@@ -63,7 +60,6 @@
     </nav>
 
   </div>
-
 </header>
 
 
@@ -79,9 +75,7 @@
         <span>Raccourcis</span>
       </div>
 
-      <div class="hero-icon">
-        ↗
-      </div>
+      <div class="raccourcis-hero-icon">↗</div>
 
       <h1>Raccourcis</h1>
 
@@ -109,7 +103,7 @@
       </div>
 
       <div class="raccourcis-count">
-        <strong id="raccourcisCount">6</strong>
+        <strong id="raccourcisCount">7</strong>
         <span>services</span>
       </div>
 
@@ -118,7 +112,7 @@
 
     <div class="search-box">
 
-      <div class="search-icon">⌕</div>
+      <span class="search-icon">⌕</span>
 
       <input
         type="search"
@@ -144,16 +138,11 @@
     <div class="raccourcis-grid" id="raccourcisGrid">
 
 
-      <!-- AGATT -->
-      <article
-        class="raccourcis-card"
+      <article class="raccourcis-card"
         data-name="AGATT"
-        data-description="Planning et gestion des activités"
-      >
+        data-description="service AGATT SDIS 33">
 
-        <div class="raccourcis-card-icon">
-          📅
-        </div>
+        <div class="raccourcis-card-icon">📅</div>
 
         <div class="raccourcis-card-content">
 
@@ -161,9 +150,7 @@
 
           <h3>AGATT</h3>
 
-          <p>
-            Accès au service AGATT du SDIS 33.
-          </p>
+          <p>Accès au service AGATT du SDIS 33.</p>
 
           <a
             href="https://agatt.sdis33.fr/public/index.php"
@@ -171,8 +158,7 @@
             rel="noopener noreferrer"
             class="raccourcis-card-button"
           >
-            Accéder
-            <span>↗</span>
+            Accéder <span>↗</span>
           </a>
 
         </div>
@@ -180,16 +166,11 @@
       </article>
 
 
-      <!-- ZIMBRA -->
-      <article
-        class="raccourcis-card"
+      <article class="raccourcis-card"
         data-name="ZIMBRA"
-        data-description="Messagerie professionnelle"
-      >
+        data-description="messagerie professionnelle">
 
-        <div class="raccourcis-card-icon">
-          ✉
-        </div>
+        <div class="raccourcis-card-icon">✉</div>
 
         <div class="raccourcis-card-content">
 
@@ -197,9 +178,7 @@
 
           <h3>ZIMBRA</h3>
 
-          <p>
-            Accès à la messagerie professionnelle.
-          </p>
+          <p>Accès à la messagerie professionnelle.</p>
 
           <a
             href="https://messagerie.sdis33.fr/"
@@ -207,8 +186,7 @@
             rel="noopener noreferrer"
             class="raccourcis-card-button"
           >
-            Accéder
-            <span>↗</span>
+            Accéder <span>↗</span>
           </a>
 
         </div>
@@ -216,16 +194,11 @@
       </article>
 
 
-      <!-- GIPSI -->
-      <article
-        class="raccourcis-card"
+      <article class="raccourcis-card"
         data-name="GIPSI"
-        data-description="Portail GIPSI SDIS 33"
-      >
+        data-description="portail GIPSI SDIS 33">
 
-        <div class="raccourcis-card-icon">
-          ◈
-        </div>
+        <div class="raccourcis-card-icon">◈</div>
 
         <div class="raccourcis-card-content">
 
@@ -233,9 +206,7 @@
 
           <h3>GIPSI</h3>
 
-          <p>
-            Accès au portail GIPSI du SDIS 33.
-          </p>
+          <p>Accès au portail GIPSI du SDIS 33.</p>
 
           <a
             href="https://gate.sdis33.fr/gate/cloud/?orgname=sdis33&domainid=1586354925552"
@@ -243,8 +214,7 @@
             rel="noopener noreferrer"
             class="raccourcis-card-button"
           >
-            Accéder
-            <span>↗</span>
+            Accéder <span>↗</span>
           </a>
 
         </div>
@@ -252,16 +222,11 @@
       </article>
 
 
-      <!-- ENASIS -->
-      <article
-        class="raccourcis-card"
+      <article class="raccourcis-card"
         data-name="ENASIS"
-        data-description="Accès au service ENASIS"
-      >
+        data-description="service ENASIS">
 
-        <div class="raccourcis-card-icon">
-          ◉
-        </div>
+        <div class="raccourcis-card-icon">◉</div>
 
         <div class="raccourcis-card-content">
 
@@ -269,34 +234,22 @@
 
           <h3>ENASIS</h3>
 
-          <p>
-            Accès direct au service ENASIS.
-          </p>
+          <p>Accès direct au service ENASIS.</p>
 
-          <a
-            href="#"
-            class="raccourcis-card-button disabled"
-            aria-disabled="true"
-          >
-            Accéder
-            <span>↗</span>
-          </a>
+          <span class="raccourcis-card-button disabled">
+            Lien à ajouter <span>↗</span>
+          </span>
 
         </div>
 
       </article>
 
 
-      <!-- UDSP 33 -->
-      <article
-        class="raccourcis-card"
+      <article class="raccourcis-card"
         data-name="UDSP 33"
-        data-description="Union Départementale des Sapeurs-Pompiers de la Gironde"
-      >
+        data-description="Union Départementale des Sapeurs-Pompiers de la Gironde">
 
-        <div class="raccourcis-card-icon">
-          ★
-        </div>
+        <div class="raccourcis-card-icon">★</div>
 
         <div class="raccourcis-card-content">
 
@@ -304,9 +257,7 @@
 
           <h3>UDSP 33</h3>
 
-          <p>
-            Union Départementale des Sapeurs-Pompiers de la Gironde.
-          </p>
+          <p>Union Départementale des Sapeurs-Pompiers de la Gironde.</p>
 
           <a
             href="https://www.udsp33.fr/"
@@ -314,8 +265,7 @@
             rel="noopener noreferrer"
             class="raccourcis-card-button"
           >
-            Accéder
-            <span>↗</span>
+            Accéder <span>↗</span>
           </a>
 
         </div>
@@ -323,16 +273,11 @@
       </article>
 
 
-      <!-- COS SDIS 33 -->
-      <article
-        class="raccourcis-card"
+      <article class="raccourcis-card"
         data-name="COS SDIS 33"
-        data-description="Portail COS SDIS 33"
-      >
+        data-description="portail COS SDIS 33">
 
-        <div class="raccourcis-card-icon">
-          ⚕
-        </div>
+        <div class="raccourcis-card-icon">⚕</div>
 
         <div class="raccourcis-card-content">
 
@@ -340,9 +285,7 @@
 
           <h3>COS SDIS 33</h3>
 
-          <p>
-            Accès au portail COS SDIS 33.
-          </p>
+          <p>Accès au portail COS SDIS 33.</p>
 
           <a
             href="https://www.cossdis33.fr/Authentification/index?ReturnUrl=https://www.cossdis33.fr/"
@@ -350,8 +293,7 @@
             rel="noopener noreferrer"
             class="raccourcis-card-button"
           >
-            Accéder
-            <span>↗</span>
+            Accéder <span>↗</span>
           </a>
 
         </div>
@@ -359,16 +301,11 @@
       </article>
 
 
-      <!-- GOOGLE DRIVE -->
-      <article
-        class="raccourcis-card raccourcis-card-drive"
+      <article class="raccourcis-card"
         data-name="Google Drive"
-        data-description="Documents et fichiers du CIS"
-      >
+        data-description="documents fichiers CIS">
 
-        <div class="raccourcis-card-icon">
-          ▣
-        </div>
+        <div class="raccourcis-card-icon">▣</div>
 
         <div class="raccourcis-card-content">
 
@@ -376,9 +313,7 @@
 
           <h3>Google Drive</h3>
 
-          <p>
-            Accès aux documents et fichiers partagés du CIS.
-          </p>
+          <p>Accès aux documents et fichiers partagés du CIS.</p>
 
           <a
             href="https://drive.google.com/drive/u/0/home"
@@ -386,8 +321,7 @@
             rel="noopener noreferrer"
             class="raccourcis-card-button"
           >
-            Accéder
-            <span>↗</span>
+            Accéder <span>↗</span>
           </a>
 
         </div>
@@ -437,3 +371,5 @@
 
 </body>
 </html>
+
+
