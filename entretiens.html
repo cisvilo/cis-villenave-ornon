@@ -16,55 +16,113 @@
 
 <header class="site-header">
 
-    <div class="header-container">
+    <div class="header-inner">
 
         <a href="index.html" class="brand">
-            <img src="logo1.png" alt="CIS Villenave-d'Ornon">
+
+            <img
+                src="logo1.png"
+                alt="Logo CIS Villenave-d'Ornon"
+                class="brand-logo"
+            >
+
+            <span class="brand-text">
+                <span class="brand-title">
+                    CIS VILLENAVE-D'ORNON
+                </span>
+
+                <span class="brand-subtitle">
+                    PORTAIL OPÉRATIONNEL
+                </span>
+            </span>
+
         </a>
 
-        <button class="mobile-menu-toggle" id="mobileToggle" aria-label="Ouvrir le menu">
+
+        <button
+            class="mobile-toggle"
+            id="mobileToggle"
+            type="button"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+        >
             ☰
         </button>
 
-        <nav class="main-nav" id="mainNav">
+
+        <nav class="nav" id="mainNav">
 
             <a href="index.html" class="nav-link">
                 ACCUEIL
             </a>
 
+
             <div class="nav-dropdown" id="inventoryDropdown">
 
-                <button class="nav-link dropdown-toggle" id="inventoryToggle" type="button">
-                    INVENTAIRES
+                <button
+                    type="button"
+                    class="nav-dropdown-toggle"
+                    id="inventoryToggle"
+                    aria-expanded="false"
+                >
+                    <span>INVENTAIRES</span>
                     <span class="dropdown-arrow">▾</span>
                 </button>
 
-                <div class="dropdown-menu">
 
-                    <a href="pages/inventaires.html">Tous les inventaires</a>
-                    <a href="ssuap.html">SSUAP</a>
-                    <a href="incendie.html">INCENDIE</a>
-                    <a href="fdf.html">FDF</a>
-                    <a href="specialites.html">SPÉCIALITÉS</a>
-                    <a href="standard.html">STANDARD</a>
-                    <a href="casernement.html">CASERNEMENT</a>
-                    <a href="div.html">DIV</a>
+                <div class="nav-dropdown-menu" id="inventoryMenu">
+
+                    <a href="pages/inventaires.html">
+                        TOUS LES INVENTAIRES
+                    </a>
+
+                    <a href="ssuap.html">
+                        SSUAP
+                    </a>
+
+                    <a href="incendie.html">
+                        INCENDIE
+                    </a>
+
+                    <a href="fdf.html">
+                        FDF
+                    </a>
+
+                    <a href="specialites.html">
+                        SPÉCIALITÉS
+                    </a>
+
+                    <a href="standard.html">
+                        STANDARD
+                    </a>
+
+                    <a href="casernement.html">
+                        CASERNEMENT
+                    </a>
+
+                    <a href="div.html">
+                        DIV
+                    </a>
 
                 </div>
 
             </div>
 
+
             <a href="entretiens.html" class="nav-link active">
                 ENTRETIENS
             </a>
+
 
             <a href="pages/documents.html" class="nav-link">
                 DOCUMENTS
             </a>
 
+
             <a href="pages/amicale.html" class="nav-link">
                 AMICALE
             </a>
+
 
             <a href="pages/raccourcis.html" class="nav-link">
                 RACCOURCIS
@@ -78,6 +136,7 @@
 
 
 <main class="entretiens-page">
+
 
     <!-- HERO -->
 
@@ -108,6 +167,7 @@
 
         <div class="entretiens-container">
 
+
             <div class="breadcrumb">
 
                 <a href="index.html">Accueil</a>
@@ -127,7 +187,7 @@
                         ACCÈS RAPIDE
                     </div>
 
-                    <h2>Choisissez un véhicule</h2>
+                    <h2>Formulaires d'entretien</h2>
 
                     <p>
                         Retrouvez rapidement les formulaires d'entretien des véhicules du CIS.
@@ -169,12 +229,14 @@
 
             <div class="entretiens-cards" id="entretiensCards">
 
-                <a class="entretien-card"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSfZQSjmudmFNhIiM9rMcCZNVQ7Q8170Wa6AyoV86-jAAZXQWA/viewform"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   data-search="fpt 01 fpt entretien">
 
+                <a
+                    class="entretien-card"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfZQSjmudmFNhIiM9rMcCZNVQ7Q8170Wa6AyoV86-jAAZXQWA/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-search="fpt 01 fpt entretien"
+                >
                     <div class="entretien-card-icon">🚒</div>
 
                     <div class="entretien-card-content">
@@ -184,16 +246,16 @@
                     </div>
 
                     <span class="entretien-arrow">↗</span>
-
                 </a>
 
 
-                <a class="entretien-card"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSeZ56XeTt0LrIe5a1a1I8CDqd3iHFU_e8G60ZZb0dUefL2UrA/viewform"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   data-search="fptgp 02 fptgp entretien">
-
+                <a
+                    class="entretien-card"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSeZ56XeTt0LrIe5a1a1I8CDqd3iHFU_e8G60ZZb0dUefL2UrA/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-search="fptgp 02 fptgp entretien"
+                >
                     <div class="entretien-card-icon">🚒</div>
 
                     <div class="entretien-card-content">
@@ -203,16 +265,16 @@
                     </div>
 
                     <span class="entretien-arrow">↗</span>
-
                 </a>
 
 
-                <a class="entretien-card"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSdp7xykQc6NyZiupN6Z4C1GCCv_UgkQ7hZozlaYLhW-iRQ6ZQ/viewform"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   data-search="ech entretien">
-
+                <a
+                    class="entretien-card"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSdp7xykQc6NyZiupN6Z4C1GCCv_UgkQ7hZozlaYLhW-iRQ6ZQ/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-search="ech entretien"
+                >
                     <div class="entretien-card-icon">🚒</div>
 
                     <div class="entretien-card-content">
@@ -222,16 +284,16 @@
                     </div>
 
                     <span class="entretien-arrow">↗</span>
-
                 </a>
 
 
-                <a class="entretien-card"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSexPEtpJJaCjY6opzUm7rM04LYddi6be8BpXhpt57niuaqklQ/viewform"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   data-search="vsav 1 entretien">
-
+                <a
+                    class="entretien-card"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSexPEtpJJaCjY6opzUm7rM04LYddi6be8BpXhpt57niuaqklQ/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-search="vsav 1 entretien"
+                >
                     <div class="entretien-card-icon">🚑</div>
 
                     <div class="entretien-card-content">
@@ -241,16 +303,16 @@
                     </div>
 
                     <span class="entretien-arrow">↗</span>
-
                 </a>
 
 
-                <a class="entretien-card"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSfK6T-RljeWJKpeQKXlDfJQp76ILd6vx72KZTq9Pu3ay5Ytkg/viewform"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   data-search="vsav 2 entretien">
-
+                <a
+                    class="entretien-card"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfK6T-RljeWJKpeQKXlDfJQp76ILd6vx72KZTq9Pu3ay5Ytkg/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-search="vsav 2 entretien"
+                >
                     <div class="entretien-card-icon">🚑</div>
 
                     <div class="entretien-card-content">
@@ -260,16 +322,16 @@
                     </div>
 
                     <span class="entretien-arrow">↗</span>
-
                 </a>
 
 
-                <a class="entretien-card"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSd-YqNzMoOnLyfymA_F8GQeqwPyc9fKqQ3icW5pwQhSA2fBaw/viewform"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   data-search="vsav 3 entretien">
-
+                <a
+                    class="entretien-card"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSd-YqNzMoOnLyfymA_F8GQeqwPyc9fKqQ3icW5pwQhSA2fBaw/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-search="vsav 3 entretien"
+                >
                     <div class="entretien-card-icon">🚑</div>
 
                     <div class="entretien-card-content">
@@ -279,16 +341,16 @@
                     </div>
 
                     <span class="entretien-arrow">↗</span>
-
                 </a>
 
 
-                <a class="entretien-card"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLScGpf5CnajHpkX1shdvShQ0K1zE42meWOZIpfNiIXZ1F-C3cQ/viewform"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   data-search="ccf 1 entretien">
-
+                <a
+                    class="entretien-card"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScGpf5CnajHpkX1shdvShQ0K1zE42meWOZIpfNiIXZ1F-C3cQ/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-search="ccf 1 entretien"
+                >
                     <div class="entretien-card-icon">🚒</div>
 
                     <div class="entretien-card-content">
@@ -298,16 +360,16 @@
                     </div>
 
                     <span class="entretien-arrow">↗</span>
-
                 </a>
 
 
-                <a class="entretien-card"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSfCB2kfLpJh7Twf0AdOZjXpEPbtZv7S_Yzswycm9HmGlEg2LQ/viewform"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   data-search="ccf 2 entretien">
-
+                <a
+                    class="entretien-card"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfCB2kfLpJh7Twf0AdOZjXpEPbtZv7S_Yzswycm9HmGlEg2LQ/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-search="ccf 2 entretien"
+                >
                     <div class="entretien-card-icon">🚒</div>
 
                     <div class="entretien-card-content">
@@ -317,16 +379,16 @@
                     </div>
 
                     <span class="entretien-arrow">↗</span>
-
                 </a>
 
 
-                <a class="entretien-card"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSftcEsezcTAlCkSyYK3tQetz5XOV76e3ItEgNiL6ohq9zmSMw/viewform"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   data-search="vlhr entretien">
-
+                <a
+                    class="entretien-card"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSftcEsezcTAlCkSyYK3tQetz5XOV76e3ItEgNiL6ohq9zmSMw/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-search="vlhr entretien"
+                >
                     <div class="entretien-card-icon">🚙</div>
 
                     <div class="entretien-card-content">
@@ -336,16 +398,16 @@
                     </div>
 
                     <span class="entretien-arrow">↗</span>
-
                 </a>
 
 
-                <a class="entretien-card"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLScrbu5B8utOjph7NM5iGsWJkVdcKeDt9mORvsaqjAx5S-1SVg/viewform"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   data-search="fmogp entretien">
-
+                <a
+                    class="entretien-card"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScrbu5B8utOjph7NM5iGsWJkVdcKeDt9mORvsaqjAx5S-1SVg/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-search="fmogp entretien"
+                >
                     <div class="entretien-card-icon">🚒</div>
 
                     <div class="entretien-card-content">
@@ -355,16 +417,16 @@
                     </div>
 
                     <span class="entretien-arrow">↗</span>
-
                 </a>
 
 
-                <a class="entretien-card"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSc6CeuZIV-1c0EXIFWpWxX2qwSDa9TMi8J0I673H2_xvfYjeA/viewform"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   data-search="vsr m entretien">
-
+                <a
+                    class="entretien-card"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSc6CeuZIV-1c0EXIFWpWxX2qwSDa9TMi8J0I673H2_xvfYjeA/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-search="vsr m entretien"
+                >
                     <div class="entretien-card-icon">🚒</div>
 
                     <div class="entretien-card-content">
@@ -374,16 +436,16 @@
                     </div>
 
                     <span class="entretien-arrow">↗</span>
-
                 </a>
 
 
-                <a class="entretien-card"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSdYdGsTNzGGXxB5xrpMMZojlHo0BrI9HlOf8uK08LkBHHC2xQ/viewform"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   data-search="vl cdgg entretien">
-
+                <a
+                    class="entretien-card"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSdYdGsTNzGGXxB5xrpMMZojlHo0BrI9HlOf8uK08LkBHHC2xQ/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-search="vl cdgg entretien"
+                >
                     <div class="entretien-card-icon">🚙</div>
 
                     <div class="entretien-card-content">
@@ -393,16 +455,16 @@
                     </div>
 
                     <span class="entretien-arrow">↗</span>
-
                 </a>
 
 
-                <a class="entretien-card"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSf3HfP82F2Om6bb23rBeJdnOhDa16bOjVRXHDAS_0Wtgxbrnw/viewform"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   data-search="vtu 1 entretien">
-
+                <a
+                    class="entretien-card"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSf3HfP82F2Om6bb23rBeJdnOhDa16bOjVRXHDAS_0Wtgxbrnw/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-search="vtu 1 entretien"
+                >
                     <div class="entretien-card-icon">🚒</div>
 
                     <div class="entretien-card-content">
@@ -412,16 +474,16 @@
                     </div>
 
                     <span class="entretien-arrow">↗</span>
-
                 </a>
 
 
-                <a class="entretien-card"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSdVecrUXja7EYTMccqFexNsJ2op8UDjhzVD889DQG_xLHZCDw/viewform"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   data-search="vtu 2 entretien">
-
+                <a
+                    class="entretien-card"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSdVecrUXja7EYTMccqFexNsJ2op8UDjhzVD889DQG_xLHZCDw/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-search="vtu 2 entretien"
+                >
                     <div class="entretien-card-icon">🚒</div>
 
                     <div class="entretien-card-content">
@@ -431,16 +493,16 @@
                     </div>
 
                     <span class="entretien-arrow">↗</span>
-
                 </a>
 
 
-                <a class="entretien-card"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSeTErRJarDO-FcVdIecawmBva-XAX2xolyWbDlLOqFdmLXGLg/viewform"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   data-search="vls 1 entretien">
-
+                <a
+                    class="entretien-card"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSeTErRJarDO-FcVdIecawmBva-XAX2xolyWbDlLOqFdmLXGLg/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-search="vls 1 entretien"
+                >
                     <div class="entretien-card-icon">🚑</div>
 
                     <div class="entretien-card-content">
@@ -450,16 +512,16 @@
                     </div>
 
                     <span class="entretien-arrow">↗</span>
-
                 </a>
 
 
-                <a class="entretien-card"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSdebOPjUy2yD8771XaYzOo7aeDxmAzryuR22ecRT2y184BACQ/viewform"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   data-search="vls 2 entretien">
-
+                <a
+                    class="entretien-card"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSdebOPjUy2yD8771XaYzOo7aeDxmAzryuR22ecRT2y184BACQ/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-search="vls 2 entretien"
+                >
                     <div class="entretien-card-icon">🚑</div>
 
                     <div class="entretien-card-content">
@@ -469,16 +531,16 @@
                     </div>
 
                     <span class="entretien-arrow">↗</span>
-
                 </a>
 
 
-                <a class="entretien-card"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSfL7ula_m4T8RUsMjSnQ5N0PKrDzz5S7tGaJ6ddTo2HwuB_EA/viewform"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   data-search="vls 3 entretien">
-
+                <a
+                    class="entretien-card"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfL7ula_m4T8RUsMjSnQ5N0PKrDzz5S7tGaJ6ddTo2HwuB_EA/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-search="vls 3 entretien"
+                >
                     <div class="entretien-card-icon">🚑</div>
 
                     <div class="entretien-card-content">
@@ -488,16 +550,16 @@
                     </div>
 
                     <span class="entretien-arrow">↗</span>
-
                 </a>
 
 
-                <a class="entretien-card"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSdzA-3igGsKir9qjNEnQ0w0LMIOn0kjSAgrYTrzxqcktgkSlQ/viewform"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   data-search="v drone drone entretien">
-
+                <a
+                    class="entretien-card"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSdzA-3igGsKir9qjNEnQ0w0LMIOn0kjSAgrYTrzxqcktgkSlQ/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-search="v drone drone entretien"
+                >
                     <div class="entretien-card-icon">🚁</div>
 
                     <div class="entretien-card-content">
@@ -507,7 +569,6 @@
                     </div>
 
                     <span class="entretien-arrow">↗</span>
-
                 </a>
 
             </div>
@@ -538,7 +599,10 @@
 
         <div class="footer-brand">
 
-            <img src="logo1.png" alt="CIS Villenave-d'Ornon">
+            <img
+                src="logo1.png"
+                alt="CIS Villenave-d'Ornon"
+            >
 
             <p>CIS Villenave-d'Ornon</p>
 
@@ -548,11 +612,26 @@
         <div class="footer-links">
 
             <a href="index.html">Accueil</a>
-            <a href="pages/inventaires.html">Inventaires</a>
-            <a href="entretiens.html">Entretiens</a>
-            <a href="pages/documents.html">Documents</a>
-            <a href="pages/amicale.html">Amicale</a>
-            <a href="pages/raccourcis.html">Raccourcis</a>
+
+            <a href="pages/inventaires.html">
+                Inventaires
+            </a>
+
+            <a href="entretiens.html">
+                Entretiens
+            </a>
+
+            <a href="pages/documents.html">
+                Documents
+            </a>
+
+            <a href="pages/amicale.html">
+                Amicale
+            </a>
+
+            <a href="pages/raccourcis.html">
+                Raccourcis
+            </a>
 
         </div>
 
@@ -565,4 +644,6 @@
 
 </body>
 </html>
+
+
 
