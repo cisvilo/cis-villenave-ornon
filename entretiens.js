@@ -1,29 +1,42 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* =========================================
+    /* =====================================================
        MENU MOBILE
-    ========================================= */
+       ===================================================== */
 
-    const mobileToggle = document.getElementById("mobileToggle");
-    const mainNav = document.getElementById("mainNav");
+    const mobileToggle =
+        document.getElementById("mobileToggle");
+
+    const mainNav =
+        document.getElementById("mainNav");
+
 
     if (mobileToggle && mainNav) {
 
-        mobileToggle.addEventListener("click", function (event) {
+        mobileToggle.addEventListener(
+            "click",
+            function (event) {
 
-            event.stopPropagation();
+                event.stopPropagation();
 
-            mainNav.classList.toggle("open");
+                const isOpen =
+                    mainNav.classList.toggle("open");
 
-        });
+                mobileToggle.setAttribute(
+                    "aria-expanded",
+                    isOpen ? "true" : "false"
+                );
+
+            }
+        );
 
     }
 
 
-    /* =========================================
+    /* =====================================================
        MENU INVENTAIRES
-    ========================================= */
+       ===================================================== */
 
     const inventoryDropdown =
         document.getElementById("inventoryDropdown");
@@ -34,71 +47,118 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (inventoryDropdown && inventoryToggle) {
 
-        inventoryToggle.addEventListener("click", function (event) {
+        inventoryToggle.addEventListener(
+            "click",
+            function (event) {
 
-            event.stopPropagation();
+                event.stopPropagation();
 
-            inventoryDropdown.classList.toggle("open");
+                const isOpen =
+                    inventoryDropdown.classList.toggle("open");
 
-        });
+                inventoryToggle.setAttribute(
+                    "aria-expanded",
+                    isOpen ? "true" : "false"
+                );
+
+            }
+        );
 
     }
 
 
-    /* =========================================
-       FERMETURE DU MENU
-    ========================================= */
+    /* =====================================================
+       FERMETURE DES MENUS
+       ===================================================== */
 
-    document.addEventListener("click", function (event) {
+    document.addEventListener(
+        "click",
+        function (event) {
 
-        if (
-            inventoryDropdown &&
-            !inventoryDropdown.contains(event.target)
-        ) {
+            if (
+                inventoryDropdown &&
+                !inventoryDropdown.contains(event.target)
+            ) {
 
-            inventoryDropdown.classList.remove("open");
-
-        }
-
-
-        if (
-            mainNav &&
-            mobileToggle &&
-            !mainNav.contains(event.target) &&
-            !mobileToggle.contains(event.target)
-        ) {
-
-            mainNav.classList.remove("open");
-
-        }
-
-    });
-
-
-    /* =========================================
-       ESCAPE
-    ========================================= */
-
-    document.addEventListener("keydown", function (event) {
-
-        if (event.key === "Escape") {
-
-            if (inventoryDropdown) {
                 inventoryDropdown.classList.remove("open");
+
+                if (inventoryToggle) {
+
+                    inventoryToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
             }
 
-            if (mainNav) {
+
+            if (
+                mainNav &&
+                mobileToggle &&
+                !mainNav.contains(event.target) &&
+                !mobileToggle.contains(event.target)
+            ) {
+
                 mainNav.classList.remove("open");
+
+                mobileToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
             }
 
         }
+    );
 
-    });
+
+    /* =====================================================
+       ESCAPE
+       ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Escape") {
+
+                if (inventoryDropdown) {
+                    inventoryDropdown.classList.remove("open");
+                }
+
+                if (inventoryToggle) {
+
+                    inventoryToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
+                if (mainNav) {
+                    mainNav.classList.remove("open");
+                }
+
+                if (mobileToggle) {
+
+                    mobileToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
+            }
+
+        }
+    );
 
 
-    /* =========================================
-       RECHERCHE DES ENTRETIENS
-    ========================================= */
+    /* =====================================================
+       RECHERCHE
+       ===================================================== */
 
     const searchInput =
         document.getElementById("entretiensSearch");
@@ -129,70 +189,63 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+
         const searchValue =
-            normalizeText(searchInput.value.trim());
+            normalizeText(
+                searchInput.value.trim()
+            );
+
 
         let visibleCards = 0;
 
 
-        cards.forEach(function (card) {
+        cards.forEach(
+            function (card) {
 
-            const searchableText =
-                normalizeText(
-                    card.dataset.search || card.textContent
-                );
-
-
-            const match =
-                searchValue === "" ||
-                searchableText.includes(searchValue);
+                const searchableText =
+                    normalizeText(
+                        card.dataset.search ||
+                        card.textContent
+                    );
 
 
-            if (match) {
+                const match =
+                    searchValue === "" ||
+                    searchableText.includes(searchValue);
 
-                card.classList.remove("hidden");
 
-                visibleCards++;
+                if (match) {
 
-            } else {
+                    card.classList.remove("hidden");
 
-                card.classList.add("hidden");
+                    visibleCards++;
+
+                } else {
+
+                    card.classList.add("hidden");
+
+                }
 
             }
+        );
 
-        });
-
-
-        /* Aucun résultat */
 
         if (emptyState) {
 
-            if (visibleCards === 0) {
-
-                emptyState.classList.add("visible");
-
-            } else {
-
-                emptyState.classList.remove("visible");
-
-            }
+            emptyState.classList.toggle(
+                "visible",
+                visibleCards === 0
+            );
 
         }
 
 
-        /* Bouton X */
-
         if (clearSearch) {
 
-            if (searchInput.value.trim() !== "") {
-
-                clearSearch.classList.add("visible");
-
-            } else {
-
-                clearSearch.classList.remove("visible");
-
-            }
+            clearSearch.classList.toggle(
+                "visible",
+                searchInput.value.trim() !== ""
+            );
 
         }
 
@@ -209,44 +262,59 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================================
+    /* =====================================================
        EFFACER LA RECHERCHE
-    ========================================= */
+       ===================================================== */
 
     if (clearSearch) {
 
-        clearSearch.addEventListener("click", function () {
+        clearSearch.addEventListener(
+            "click",
+            function () {
 
-            if (!searchInput) {
-                return;
+                if (!searchInput) {
+                    return;
+                }
+
+                searchInput.value = "";
+
+                filterCards();
+
+                searchInput.focus();
+
             }
-
-            searchInput.value = "";
-
-            filterCards();
-
-            searchInput.focus();
-
-        });
+        );
 
     }
 
 
-    /* =========================================
-       FERMETURE MENU MOBILE > 850px
-    ========================================= */
+    /* =====================================================
+       REDIMENSIONNEMENT
+       ===================================================== */
 
-    window.addEventListener("resize", function () {
+    window.addEventListener(
+        "resize",
+        function () {
 
-        if (window.innerWidth > 850) {
+            if (window.innerWidth > 850) {
 
-            if (mainNav) {
-                mainNav.classList.remove("open");
+                if (mainNav) {
+                    mainNav.classList.remove("open");
+                }
+
+                if (mobileToggle) {
+
+                    mobileToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
             }
 
         }
-
-    });
+    );
 
 });
 
