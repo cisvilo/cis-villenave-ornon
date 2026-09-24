@@ -1,313 +1,250 @@
+
 document.addEventListener("DOMContentLoaded", () => {
 
-```
-/* =====================================================
-   MENU MOBILE
-   ===================================================== */
+    /* =====================================================
+       MENU MOBILE
+       ===================================================== */
 
-const mobileToggle =
-    document.getElementById("mobileToggle");
+    const mobileToggle = document.getElementById("mobileToggle");
+    const mainNav = document.getElementById("mainNav");
 
-const mainNav =
-    document.getElementById("mainNav");
+    if (mobileToggle && mainNav) {
 
-if (mobileToggle && mainNav) {
+        mobileToggle.addEventListener("click", (event) => {
 
-    mobileToggle.addEventListener("click", (event) => {
+            event.stopPropagation();
 
-        event.stopPropagation();
+            const isOpen = mainNav.classList.toggle("active");
 
-        const isOpen =
-            mainNav.classList.toggle("active");
+            mobileToggle.classList.toggle("open", isOpen);
 
-        mobileToggle.setAttribute(
-            "aria-expanded",
-            isOpen ? "true" : "false"
-        );
+            mobileToggle.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
 
-    });
-
-}
-
-
-/* =====================================================
-   MENU INVENTAIRES
-   ===================================================== */
-
-const inventoryToggle =
-    document.getElementById("inventoryToggle");
-
-const inventoryDropdown =
-    document.getElementById("inventoryDropdown");
-
-if (inventoryToggle && inventoryDropdown) {
-
-    inventoryToggle.addEventListener("click", (event) => {
-
-        event.stopPropagation();
-
-        const isOpen =
-            inventoryDropdown.classList.toggle("open");
-
-        inventoryToggle.setAttribute(
-            "aria-expanded",
-            isOpen ? "true" : "false"
-        );
-
-    });
-
-}
-
-
-/* =====================================================
-   CLIC À L'EXTÉRIEUR
-   ===================================================== */
-
-document.addEventListener("click", (event) => {
-
-    if (
-        mainNav &&
-        mobileToggle &&
-        mainNav.classList.contains("active") &&
-        !mainNav.contains(event.target) &&
-        !mobileToggle.contains(event.target)
-    ) {
-
-        mainNav.classList.remove("active");
-
-        mobileToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
+        });
     }
 
 
-    if (
-        inventoryDropdown &&
-        inventoryToggle &&
-        inventoryDropdown.classList.contains("open") &&
-        !inventoryDropdown.contains(event.target)
-    ) {
+    /* =====================================================
+       MENU INVENTAIRES
+       ===================================================== */
 
-        inventoryDropdown.classList.remove("open");
+    const inventoryDropdown =
+        document.getElementById("inventoryDropdown");
 
-        inventoryToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
+    const inventoryToggle =
+        document.getElementById("inventoryToggle");
 
-    }
+    if (inventoryDropdown && inventoryToggle) {
 
-});
+        inventoryToggle.addEventListener("click", (event) => {
 
+            event.stopPropagation();
 
-/* =====================================================
-   RECHERCHE DOCUMENTS
-   ===================================================== */
+            const isOpen =
+                inventoryDropdown.classList.toggle("open");
 
-const searchInput =
-    document.getElementById("documentsSearch");
+            inventoryToggle.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
 
-const clearSearch =
-    document.getElementById("clearSearch");
+        });
 
-const cards =
-    document.querySelectorAll(".documents-card");
+        document.addEventListener("click", (event) => {
 
-const searchResult =
-    document.getElementById("searchResult");
+            if (!inventoryDropdown.contains(event.target)) {
 
-const noResult =
-    document.getElementById("noResult");
+                inventoryDropdown.classList.remove("open");
 
-
-if (searchInput) {
-
-    function normalize(text) {
-
-        return text
-            .toLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "");
-
-    }
-
-
-    function performSearch() {
-
-        const query =
-            normalize(searchInput.value.trim());
-
-        let visibleCards = 0;
-
-
-        cards.forEach(card => {
-
-            const searchableText =
-                normalize(
-                    card.innerText +
-                    " " +
-                    (card.dataset.search || "")
+                inventoryToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
                 );
+            }
+        });
+    }
 
 
-            const match =
-                query === "" ||
-                searchableText.includes(query);
+    /* =====================================================
+       RECHERCHE DOCUMENTS
+       ===================================================== */
+
+    const searchInput =
+        document.getElementById("documentsSearch");
+
+    const clearSearch =
+        document.getElementById("clearSearch");
+
+    const cards =
+        document.querySelectorAll(".documents-card");
+
+    const noResult =
+        document.getElementById("noResult");
+
+    const searchResult =
+        document.getElementById("searchResult");
 
 
-            card.style.display =
-                match ? "" : "none";
+    if (searchInput) {
+
+        function normalize(text) {
+
+            return text
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "");
+        }
 
 
-            if (match) {
-                visibleCards++;
+        function performSearch() {
+
+            const query =
+                normalize(searchInput.value.trim());
+
+            let visibleCards = 0;
+
+
+            cards.forEach((card) => {
+
+                const cardText =
+                    normalize(card.innerText);
+
+                const match =
+                    query === "" ||
+                    cardText.includes(query);
+
+                card.style.display =
+                    match ? "" : "none";
+
+                if (match) {
+                    visibleCards++;
+                }
+
+            });
+
+
+            /* Résultats */
+
+            if (query !== "") {
+
+                if (visibleCards === 0) {
+
+                    searchResult.textContent =
+                        "Aucun résultat";
+
+                } else {
+
+                    searchResult.textContent =
+                        `${visibleCards} résultat${visibleCards > 1 ? "s" : ""}`;
+                }
+
+            } else {
+
+                searchResult.textContent = "";
             }
 
-        });
 
+            /* Aucun résultat */
 
-        if (query !== "") {
+            if (query !== "" && visibleCards === 0) {
 
-            searchResult.textContent =
-                visibleCards === 0
-                    ? ""
-                    : `${visibleCards} résultat${visibleCards > 1 ? "s" : ""}`;
+                noResult.classList.add("show");
 
-        } else {
+            } else {
 
-            searchResult.textContent = "";
-
+                noResult.classList.remove("show");
+            }
         }
 
 
-        if (
-            query !== "" &&
-            visibleCards === 0
-        ) {
+        /* Recherche en direct */
 
-            noResult.classList.add("show");
+        searchInput.addEventListener(
+            "input",
+            performSearch
+        );
 
-        } else {
 
-            noResult.classList.remove("show");
+        /* Bouton X */
 
+        if (clearSearch) {
+
+            clearSearch.addEventListener("click", () => {
+
+                searchInput.value = "";
+
+                performSearch();
+
+                searchInput.focus();
+
+            });
         }
 
-    }
 
+        /* Touche Échap */
 
-    searchInput.addEventListener(
-        "input",
-        performSearch
-    );
+        searchInput.addEventListener(
+            "keydown",
+            (event) => {
 
+                if (event.key === "Escape") {
 
-    if (clearSearch) {
+                    searchInput.value = "";
 
-        clearSearch.addEventListener("click", () => {
+                    performSearch();
 
-            searchInput.value = "";
-
-            performSearch();
-
-            searchInput.focus();
-
-        });
-
-    }
-
-
-    searchInput.addEventListener("keydown", (event) => {
-
-        if (event.key === "Escape") {
-
-            searchInput.value = "";
-
-            performSearch();
-
-        }
-
-    });
-
-}
-
-
-/* =====================================================
-   FERMER LE MENU APRÈS UN CLIC
-   ===================================================== */
-
-if (mainNav) {
-
-    const navLinks =
-        mainNav.querySelectorAll("a");
-
-    navLinks.forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            if (window.innerWidth <= 900) {
-
-                mainNav.classList.remove("active");
-
-                if (mobileToggle) {
-
-                    mobileToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
+                    searchInput.focus();
                 }
 
             }
+        );
 
-        });
+    }
+
+
+    /* =====================================================
+       FERMETURE MENU AVEC ÉCHAP
+       ===================================================== */
+
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key === "Escape") {
+
+            if (mainNav) {
+
+                mainNav.classList.remove("active");
+
+            }
+
+            if (mobileToggle) {
+
+                mobileToggle.classList.remove("open");
+
+                mobileToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+
+            if (inventoryDropdown) {
+
+                inventoryDropdown.classList.remove("open");
+
+            }
+
+            if (inventoryToggle) {
+
+                inventoryToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+        }
 
     });
-
-}
-
-
-/* =====================================================
-   TOUCHE ESCAPE
-   ===================================================== */
-
-document.addEventListener("keydown", (event) => {
-
-    if (event.key !== "Escape") {
-        return;
-    }
-
-
-    if (mainNav && mobileToggle) {
-
-        mainNav.classList.remove("active");
-
-        mobileToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-    }
-
-
-    if (
-        inventoryDropdown &&
-        inventoryToggle
-    ) {
-
-        inventoryDropdown.classList.remove("open");
-
-        inventoryToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-    }
-
-});
-
 
 });
 
