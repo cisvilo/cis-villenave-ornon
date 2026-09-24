@@ -3,30 +3,21 @@
    RACCOURCIS — CIS VILLENAVE-D'ORNON
    ========================================================= */
 
-:root {
-  --navy: #030912;
-  --navy-2: #071321;
-  --navy-3: #0c2035;
-  --red: #d71920;
-  --red-light: #ff4148;
-  --white: #ffffff;
-  --text: #e8edf3;
-  --muted: #8f9dad;
-  --border: rgba(255, 255, 255, 0.09);
-  --card: rgba(255, 255, 255, 0.035);
-}
-
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
 .raccourcis-hero {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 85% 20%, rgba(215, 25, 32, 0.16), transparent 32%),
-    linear-gradient(135deg, #030912 0%, #071321 55%, #0c2035 100%);
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(215, 25, 32, 0.16),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #030912 0%,
+      #071321 55%,
+      #0c2035 100%
+    );
 }
 
 .raccourcis-hero::after {
@@ -46,7 +37,7 @@
   z-index: 1;
 }
 
-.hero-icon {
+.raccourcis-hero-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -56,7 +47,7 @@
   border-radius: 14px;
   background: rgba(215, 25, 32, 0.14);
   border: 1px solid rgba(255, 65, 72, 0.28);
-  color: var(--red-light);
+  color: #ff4148;
   font-size: 25px;
   font-weight: 700;
 }
@@ -83,7 +74,7 @@
 .section-kicker {
   display: block;
   margin-bottom: 10px;
-  color: var(--red-light);
+  color: #ff4148;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -91,14 +82,14 @@
 
 .section-intro h2 {
   margin: 0 0 8px;
-  color: var(--white);
+  color: #ffffff;
   font-size: clamp(28px, 4vw, 40px);
   line-height: 1.1;
 }
 
 .section-intro p {
   margin: 0;
-  color: var(--muted);
+  color: #8f9dad;
   font-size: 16px;
 }
 
@@ -107,19 +98,19 @@
   align-items: baseline;
   gap: 8px;
   padding: 13px 18px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.025);
   white-space: nowrap;
 }
 
 .raccourcis-count strong {
-  color: var(--white);
+  color: #ffffff;
   font-size: 25px;
 }
 
 .raccourcis-count span {
-  color: var(--muted);
+  color: #8f9dad;
   font-size: 13px;
 }
 
@@ -133,13 +124,13 @@
   display: flex;
   align-items: center;
   max-width: 650px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .search-icon {
   position: absolute;
   left: 18px;
-  color: var(--muted);
+  color: #8f9dad;
   font-size: 25px;
   line-height: 1;
   pointer-events: none;
@@ -149,14 +140,14 @@
   width: 100%;
   height: 56px;
   padding: 0 52px 0 50px;
-  border: 1px solid var(--border);
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 14px;
   outline: none;
   background: rgba(255, 255, 255, 0.045);
-  color: var(--white);
+  color: #ffffff;
   font-family: inherit;
   font-size: 15px;
-  transition: 0.25s ease;
 }
 
 #raccourcisSearch::placeholder {
@@ -172,32 +163,27 @@
   position: absolute;
   right: 12px;
   display: none;
+  align-items: center;
+  justify-content: center;
   width: 34px;
   height: 34px;
+  padding: 0;
   border: 0;
   border-radius: 9px;
   background: rgba(255, 255, 255, 0.07);
-  color: var(--muted);
+  color: #8f9dad;
   font-size: 22px;
-  line-height: 1;
   cursor: pointer;
 }
 
 .clear-search.visible {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.clear-search:hover {
-  background: rgba(255, 255, 255, 0.12);
-  color: var(--white);
+  display: flex;
 }
 
 .search-result {
   min-height: 20px;
   margin: 0 0 25px;
-  color: var(--muted);
+  color: #8f9dad;
   font-size: 13px;
 }
 
@@ -224,7 +210,8 @@
   min-height: 225px;
   padding: 25px;
   overflow: hidden;
-  border: 1px solid var(--border);
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 18px;
   background:
     linear-gradient(
@@ -232,10 +219,7 @@
       rgba(255, 255, 255, 0.045),
       rgba(255, 255, 255, 0.018)
     );
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: 0.25s ease;
 }
 
 .raccourcis-card::before {
@@ -245,7 +229,7 @@
   left: 0;
   width: 3px;
   height: 100%;
-  background: var(--red);
+  background: #d71920;
   opacity: 0;
   transition: 0.25s ease;
 }
@@ -267,10 +251,11 @@
   justify-content: center;
   width: 58px;
   height: 58px;
+  box-sizing: border-box;
   border-radius: 15px;
   background: rgba(215, 25, 32, 0.11);
   border: 1px solid rgba(255, 65, 72, 0.18);
-  color: var(--red-light);
+  color: #ff4148;
   font-size: 25px;
 }
 
@@ -290,7 +275,7 @@
 
 .raccourcis-card h3 {
   margin: 0 0 8px;
-  color: var(--white);
+  color: #ffffff;
   font-size: 21px;
   line-height: 1.2;
 }
@@ -298,7 +283,7 @@
 .raccourcis-card p {
   min-height: 42px;
   margin: 0 0 20px;
-  color: var(--muted);
+  color: #8f9dad;
   font-size: 14px;
   line-height: 1.55;
 }
@@ -310,6 +295,7 @@
   gap: 9px;
   min-width: 110px;
   padding: 10px 15px;
+  box-sizing: border-box;
   border: 1px solid rgba(255, 65, 72, 0.3);
   border-radius: 10px;
   background: rgba(215, 25, 32, 0.1);
@@ -321,9 +307,9 @@
 }
 
 .raccourcis-card-button:hover {
-  border-color: var(--red);
-  background: var(--red);
-  color: var(--white);
+  border-color: #d71920;
+  background: #d71920;
+  color: #ffffff;
 }
 
 .raccourcis-card-button span {
@@ -332,8 +318,7 @@
 
 .raccourcis-card-button.disabled {
   opacity: 0.38;
-  cursor: not-allowed;
-  pointer-events: none;
+  cursor: default;
 }
 
 
@@ -345,7 +330,7 @@
   display: none;
   padding: 60px 20px;
   text-align: center;
-  border: 1px dashed var(--border);
+  border: 1px dashed rgba(255, 255, 255, 0.09);
   border-radius: 18px;
 }
 
@@ -355,18 +340,18 @@
 
 .empty-icon {
   margin-bottom: 12px;
-  color: var(--muted);
+  color: #8f9dad;
   font-size: 34px;
 }
 
 .raccourcis-empty h3 {
   margin: 0 0 8px;
-  color: var(--white);
+  color: #ffffff;
 }
 
 .raccourcis-empty p {
   margin: 0;
-  color: var(--muted);
+  color: #8f9dad;
 }
 
 
@@ -375,7 +360,7 @@
    ========================================================= */
 
 .site-footer {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
   background: #02070d;
 }
 
@@ -383,6 +368,7 @@
   max-width: 1180px;
   margin: 0 auto;
   padding: 25px 24px;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -396,14 +382,14 @@
 }
 
 .footer-inner strong {
-  color: var(--white);
+  color: #ffffff;
   font-size: 13px;
   letter-spacing: 0.08em;
 }
 
 .footer-inner span,
 .footer-inner p {
-  color: var(--muted);
+  color: #8f9dad;
   font-size: 12px;
 }
 
@@ -414,32 +400,7 @@
 
 
 /* =========================================================
-   MENU MOBILE
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .main-nav {
-    display: none;
-  }
-
-  .main-nav.active {
-    display: flex;
-  }
-
-  .nav-dropdown-menu {
-    position: static;
-  }
-
-}
-
-
-/* =========================================================
-   TABLETTE
+   RESPONSIVE
    ========================================================= */
 
 @media (max-width: 850px) {
@@ -451,10 +412,6 @@
 }
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
 @media (max-width: 600px) {
 
   .raccourcis-section {
@@ -465,10 +422,6 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 18px;
-  }
-
-  .raccourcis-count {
-    padding: 10px 14px;
   }
 
   .raccourcis-card {
@@ -503,4 +456,6 @@
   }
 
 }
+
+
 
