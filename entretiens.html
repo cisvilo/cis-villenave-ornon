@@ -1,1 +1,655 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Entretiens — CIS Villenave-d'Ornon</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../entretiens.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <a href="../index.html" class="brand">
+            <img
+                src="../logo1.png"
+                alt="Logo CIS Villenave-d'Ornon"
+                class="brand-logo"
+            >
+
+            <div class="brand-text">
+                <div class="brand-title">
+                    CIS VILLENAVE-D'ORNON
+                </div>
+
+                <div class="brand-subtitle">
+                    PORTAIL OPÉRATIONNEL
+                </div>
+            </div>
+        </a>
+
+        <button
+            class="mobile-toggle"
+            id="mobileToggle"
+            type="button"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav" id="mainNav">
+
+            <a href="../index.html" class="nav-link">
+                ACCUEIL
+            </a>
+
+            <div class="nav-dropdown" id="inventoryDropdown">
+
+                <button
+                    type="button"
+                    class="nav-dropdown-toggle"
+                    id="inventoryToggle"
+                    aria-expanded="false"
+                >
+                    <span>INVENTAIRES</span>
+                    <span class="dropdown-arrow">▾</span>
+                </button>
+
+                <div class="nav-dropdown-menu" id="inventoryMenu">
+
+                    <a href="inventaires.html">
+                        <span class="submenu-icon">▣</span>
+                        VUE D'ENSEMBLE
+                    </a>
+
+                    <a href="../ssuap.html">
+                        <span class="submenu-icon">＋</span>
+                        SSUAP
+                    </a>
+
+                    <a href="../incendie.html">
+                        <span class="submenu-icon">◆</span>
+                        INCENDIE
+                    </a>
+
+                    <a href="../div.html">
+                        <span class="submenu-icon">◇</span>
+                        DIV
+                    </a>
+
+                    <a href="../fdf.html">
+                        <span class="submenu-icon">▲</span>
+                        FDF
+                    </a>
+
+                    <a href="../specialites.html">
+                        <span class="submenu-icon">★</span>
+                        SPÉCIALITÉS
+                    </a>
+
+                    <a href="../standard.html">
+                        <span class="submenu-icon">▤</span>
+                        STANDARD
+                    </a>
+
+                    <a href="../casernement.html">
+                        <span class="submenu-icon">⌂</span>
+                        CASERNEMENT
+                    </a>
+
+                </div>
+
+            </div>
+
+            <a href="entretiens.html" class="nav-link active">
+                ENTRETIENS
+            </a>
+
+            <a href="documents.html" class="nav-link">
+                DOCUMENTS
+            </a>
+
+            <a href="amicale.html" class="nav-link">
+                AMICALE
+            </a>
+
+            <a href="raccourcis.html" class="nav-link">
+                RACCOURCIS
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main class="entretiens-page">
+
+    <!-- HERO -->
+
+    <section class="entretiens-hero">
+
+        <div class="entretiens-hero-overlay"></div>
+
+        <div class="entretiens-hero-content">
+
+            <div class="entretiens-eyebrow">
+                CENTRE D'INCENDIE ET DE SECOURS
+            </div>
+
+            <h1>ENTRETIENS</h1>
+
+            <div class="entretiens-line"></div>
+
+            <p>
+                Accès direct aux formulaires d'entretien des véhicules.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTENU -->
+
+    <section class="entretiens-content">
+
+        <div class="entretiens-container">
+
+            <!-- BREADCRUMB -->
+
+            <div class="entretiens-breadcrumb">
+
+                <a href="../index.html">
+                    Accueil
+                </a>
+
+                <span>›</span>
+
+                <strong>
+                    Entretiens
+                </strong>
+
+            </div>
+
+
+            <!-- INTRO -->
+
+            <div class="entretiens-intro">
+
+                <div class="entretiens-intro-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <span class="entretiens-label">
+                        ACCÈS RAPIDE
+                    </span>
+
+                    <h2>
+                        Formulaires d'entretien
+                    </h2>
+
+                    <p>
+                        Retrouvez rapidement les formulaires d'entretien
+                        de chaque véhicule du centre.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECHERCHE -->
+
+            <div class="entretiens-search">
+
+                <span class="search-icon">
+                    ⌕
+                </span>
+
+                <input
+                    type="search"
+                    id="entretiensSearch"
+                    placeholder="Rechercher un véhicule ou un formulaire..."
+                    autocomplete="off"
+                    aria-label="Rechercher un véhicule ou un formulaire"
+                >
+
+                <button
+                    id="clearSearch"
+                    type="button"
+                    aria-label="Effacer"
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <div
+                id="searchResult"
+                class="search-result"
+            ></div>
+
+
+            <!-- CARTES -->
+
+            <div
+                class="entretiens-grid"
+                id="entretiensGrid"
+            >
+
+                <article class="entretiens-card" data-search="FPT 01 formulaire entretien">
+                    <div class="entretiens-card-header">
+                        <span class="entretiens-number">01</span>
+                        <div>
+                            <h3>FPT 01</h3>
+                            <p>Formulaire d'entretien</p>
+                        </div>
+                    </div>
+                    <div class="entretiens-actions">
+                        <a target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSfZQSjmudmFNhIiM9rMcCZNVQ7Q8170Wa6AyoV86-jAAZXQWA/viewform" class="entretiens-button">
+                            <span>FPT 01</span>
+                            <strong>Formulaire d'entretien</strong>
+                            <b>↗</b>
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="entretiens-card" data-search="FPTGP 02 formulaire entretien">
+                    <div class="entretiens-card-header">
+                        <span class="entretiens-number">02</span>
+                        <div>
+                            <h3>FPTGP 02</h3>
+                            <p>Formulaire d'entretien</p>
+                        </div>
+                    </div>
+                    <div class="entretiens-actions">
+                        <a target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSeZ56XeTt0LrIe5a1a1I8CDqd3iHFU_e8G60ZZb0dUefL2UrA/viewform" class="entretiens-button">
+                            <span>FPTGP 02</span>
+                            <strong>Formulaire d'entretien</strong>
+                            <b>↗</b>
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="entretiens-card" data-search="ECH formulaire entretien">
+                    <div class="entretiens-card-header">
+                        <span class="entretiens-number">03</span>
+                        <div>
+                            <h3>ECH</h3>
+                            <p>Formulaire d'entretien</p>
+                        </div>
+                    </div>
+                    <div class="entretiens-actions">
+                        <a target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSdp7xykQc6NyZiupN6Z4C1GCCv_UgkQ7hZozlaYLhW-iRQ6ZQ/viewform" class="entretiens-button">
+                            <span>ECH</span>
+                            <strong>Formulaire d'entretien</strong>
+                            <b>↗</b>
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="entretiens-card" data-search="VSAV 1 formulaire entretien">
+                    <div class="entretiens-card-header">
+                        <span class="entretiens-number">04</span>
+                        <div>
+                            <h3>VSAV 1</h3>
+                            <p>Formulaire d'entretien</p>
+                        </div>
+                    </div>
+                    <div class="entretiens-actions">
+                        <a target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSexPEtpJJaCjY6opzUm7rM04LYddi6be8BpXhpt57niuaqklQ/viewform" class="entretiens-button">
+                            <span>VSAV 1</span>
+                            <strong>Formulaire d'entretien</strong>
+                            <b>↗</b>
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="entretiens-card" data-search="VSAV 2 formulaire entretien">
+                    <div class="entretiens-card-header">
+                        <span class="entretiens-number">05</span>
+                        <div>
+                            <h3>VSAV 2</h3>
+                            <p>Formulaire d'entretien</p>
+                        </div>
+                    </div>
+                    <div class="entretiens-actions">
+                        <a target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSfK6T-RljeWJKpeQKXlDfJQp76ILd6vx72KZTq9Pu3ay5Ytkg/viewform" class="entretiens-button">
+                            <span>VSAV 2</span>
+                            <strong>Formulaire d'entretien</strong>
+                            <b>↗</b>
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="entretiens-card" data-search="VSAV 3 formulaire entretien">
+                    <div class="entretiens-card-header">
+                        <span class="entretiens-number">06</span>
+                        <div>
+                            <h3>VSAV 3</h3>
+                            <p>Formulaire d'entretien</p>
+                        </div>
+                    </div>
+                    <div class="entretiens-actions">
+                        <a target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSd-YqNzMoOnLyfymA_F8GQeqwPyc9fKqQ3icW5pwQhSA2fBaw/viewform" class="entretiens-button">
+                            <span>VSAV 3</span>
+                            <strong>Formulaire d'entretien</strong>
+                            <b>↗</b>
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="entretiens-card" data-search="CCF 1 formulaire entretien">
+                    <div class="entretiens-card-header">
+                        <span class="entretiens-number">07</span>
+                        <div>
+                            <h3>CCF 1</h3>
+                            <p>Formulaire d'entretien</p>
+                        </div>
+                    </div>
+                    <div class="entretiens-actions">
+                        <a target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLScGpf5CnajHpkX1shdvShQ0K1zE42meWOZIpfNiIXZ1F-C3cQ/viewform" class="entretiens-button">
+                            <span>CCF 1</span>
+                            <strong>Formulaire d'entretien</strong>
+                            <b>↗</b>
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="entretiens-card" data-search="CCF 2 formulaire entretien">
+                    <div class="entretiens-card-header">
+                        <span class="entretiens-number">08</span>
+                        <div>
+                            <h3>CCF 2</h3>
+                            <p>Formulaire d'entretien</p>
+                        </div>
+                    </div>
+                    <div class="entretiens-actions">
+                        <a target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSfCB2kfLpJh7Twf0AdOZjXpEPbtZv7S_Yzswycm9HmGlEg2LQ/viewform" class="entretiens-button">
+                            <span>CCF 2</span>
+                            <strong>Formulaire d'entretien</strong>
+                            <b>↗</b>
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="entretiens-card" data-search="VLHR formulaire entretien">
+                    <div class="entretiens-card-header">
+                        <span class="entretiens-number">09</span>
+                        <div>
+                            <h3>VLHR</h3>
+                            <p>Formulaire d'entretien</p>
+                        </div>
+                    </div>
+                    <div class="entretiens-actions">
+                        <a target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSftcEsezcTAlCkSyYK3tQetz5XOV76e3ItEgNiL6ohq9zmSMw/viewform" class="entretiens-button">
+                            <span>VLHR</span>
+                            <strong>Formulaire d'entretien</strong>
+                            <b>↗</b>
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="entretiens-card" data-search="FMOGP formulaire entretien">
+                    <div class="entretiens-card-header">
+                        <span class="entretiens-number">10</span>
+                        <div>
+                            <h3>FMOGP</h3>
+                            <p>Formulaire d'entretien</p>
+                        </div>
+                    </div>
+                    <div class="entretiens-actions">
+                        <a target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLScrbu5B8utOjph7NM5iGsWJkVdcKeDt9mORvsaqjAx5S-1SVg/viewform" class="entretiens-button">
+                            <span>FMOGP</span>
+                            <strong>Formulaire d'entretien</strong>
+                            <b>↗</b>
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="entretiens-card" data-search="VSR M formulaire entretien">
+                    <div class="entretiens-card-header">
+                        <span class="entretiens-number">11</span>
+                        <div>
+                            <h3>VSR M</h3>
+                            <p>Formulaire d'entretien</p>
+                        </div>
+                    </div>
+                    <div class="entretiens-actions">
+                        <a target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSc6CeuZIV-1c0EXIFWpWxX2qwSDa9TMi8J0I673H2_xvfYjeA/viewform" class="entretiens-button">
+                            <span>VSR M</span>
+                            <strong>Formulaire d'entretien</strong>
+                            <b>↗</b>
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="entretiens-card" data-search="VL CDGG formulaire entretien">
+                    <div class="entretiens-card-header">
+                        <span class="entretiens-number">12</span>
+                        <div>
+                            <h3>VL CDGG</h3>
+                            <p>Formulaire d'entretien</p>
+                        </div>
+                    </div>
+                    <div class="entretiens-actions">
+                        <a target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSdYdGsTNzGGXxB5xrpMMZojlHo0BrI9HlOf8uK08LkBHHC2xQ/viewform" class="entretiens-button">
+                            <span>VL CDGG</span>
+                            <strong>Formulaire d'entretien</strong>
+                            <b>↗</b>
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="entretiens-card" data-search="VTU 1 formulaire entretien">
+                    <div class="entretiens-card-header">
+                        <span class="entretiens-number">13</span>
+                        <div>
+                            <h3>VTU 1</h3>
+                            <p>Formulaire d'entretien</p>
+                        </div>
+                    </div>
+                    <div class="entretiens-actions">
+                        <a target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSf3HfP82F2Om6bb23rBeJdnOhDa16bOjVRXHDAS_0Wtgxbrnw/viewform" class="entretiens-button">
+                            <span>VTU 1</span>
+                            <strong>Formulaire d'entretien</strong>
+                            <b>↗</b>
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="entretiens-card" data-search="VTU 2 formulaire entretien">
+                    <div class="entretiens-card-header">
+                        <span class="entretiens-number">14</span>
+                        <div>
+                            <h3>VTU 2</h3>
+                            <p>Formulaire d'entretien</p>
+                        </div>
+                    </div>
+                    <div class="entretiens-actions">
+                        <a target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSdVecrUXja7EYTMccqFexNsJ2op8UDjhzVD889DQG_xLHZCDw/viewform" class="entretiens-button">
+                            <span>VTU 2</span>
+                            <strong>Formulaire d'entretien</strong>
+                            <b>↗</b>
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="entretiens-card" data-search="VLS 1 formulaire entretien">
+                    <div class="entretiens-card-header">
+                        <span class="entretiens-number">15</span>
+                        <div>
+                            <h3>VLS 1</h3>
+                            <p>Formulaire d'entretien</p>
+                        </div>
+                    </div>
+                    <div class="entretiens-actions">
+                        <a target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSeTErRJarDO-FcVdIecawmBva-XAX2xolyWbDlLOqFdmLXGLg/viewform" class="entretiens-button">
+                            <span>VLS 1</span>
+                            <strong>Formulaire d'entretien</strong>
+                            <b>↗</b>
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="entretiens-card" data-search="VLS 2 formulaire entretien">
+                    <div class="entretiens-card-header">
+                        <span class="entretiens-number">16</span>
+                        <div>
+                            <h3>VLS 2</h3>
+                            <p>Formulaire d'entretien</p>
+                        </div>
+                    </div>
+                    <div class="entretiens-actions">
+                        <a target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSdebOPjUy2yD8771XaYzOo7aeDxmAzryuR22ecRT2y184BACQ/viewform" class="entretiens-button">
+                            <span>VLS 2</span>
+                            <strong>Formulaire d'entretien</strong>
+                            <b>↗</b>
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="entretiens-card" data-search="VLS 3 formulaire entretien">
+                    <div class="entretiens-card-header">
+                        <span class="entretiens-number">17</span>
+                        <div>
+                            <h3>VLS 3</h3>
+                            <p>Formulaire d'entretien</p>
+                        </div>
+                    </div>
+                    <div class="entretiens-actions">
+                        <a target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSfL7ula_m4T8RUsMjSnQ5N0PKrDzz5S7tGaJ6ddTo2HwuB_EA/viewform" class="entretiens-button">
+                            <span>VLS 3</span>
+                            <strong>Formulaire d'entretien</strong>
+                            <b>↗</b>
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="entretiens-card" data-search="V DRONE drone formulaire entretien">
+                    <div class="entretiens-card-header">
+                        <span class="entretiens-number">18</span>
+                        <div>
+                            <h3>V DRONE</h3>
+                            <p>Formulaire d'entretien</p>
+                        </div>
+                    </div>
+                    <div class="entretiens-actions">
+                        <a target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSdzA-3igGsKir9qjNEnQ0w0LMIOn0kjSAgrYTrzxqcktgkSlQ/viewform" class="entretiens-button">
+                            <span>V DRONE</span>
+                            <strong>Formulaire d'entretien</strong>
+                            <b>↗</b>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+
+            <!-- AUCUN RESULTAT -->
+
+            <div id="noResult" class="no-result">
+
+                <div>🔎</div>
+
+                <h3>Aucun résultat</h3>
+
+                <p>
+                    Aucun véhicule ou formulaire ne correspond à votre recherche.
+                </p>
+
+            </div>
+
+
+            <!-- RETOUR -->
+
+            <div class="entretiens-back">
+
+                <a
+                    href="inventaires.html"
+                    class="back-inventory-button"
+                >
+                    <span>←</span>
+                    Retour aux inventaires
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+
+            <strong>
+                CIS VILLENAVE-D'ORNON
+            </strong>
+
+            <span>
+                Portail opérationnel
+            </span>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="../index.html">Accueil</a>
+            <a href="inventaires.html">Inventaires</a>
+            <a href="entretiens.html">Entretiens</a>
+            <a href="documents.html">Documents</a>
+            <a href="amicale.html">Amicale</a>
+            <a href="raccourcis.html">Raccourcis</a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="../entretiens.js"></script>
+
+</body>
+</html>
+
