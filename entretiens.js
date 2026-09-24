@@ -1,163 +1,502 @@
 
+/* =========================================================
+   CIS VILLENAVE-D'ORNON
+   JAVASCRIPT — PAGE ENTRETIENS
+   ========================================================= */
+
 document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =====================================================
+       MENU
+       ===================================================== */
+
+    const mobileToggle =
+        document.getElementById("mobileToggle");
+
+    const mainNav =
+        document.getElementById("mainNav");
+
+    const inventoryDropdown =
+        document.getElementById("inventoryDropdown");
+
+    const inventoryToggle =
+        document.getElementById("inventoryToggle");
+
 
     /* =====================================================
        MENU MOBILE
        ===================================================== */
 
-    const mobileToggle = document.getElementById("mobileToggle");
-    const mainNav = document.getElementById("mainNav");
-
     if (mobileToggle && mainNav) {
 
-        mobileToggle.addEventListener("click", function () {
+        mobileToggle.addEventListener(
+            "click",
+            function () {
 
-            const isOpen = mainNav.classList.toggle("active");
+                const isOpen =
+                    mainNav.classList.toggle("active");
 
-            mobileToggle.setAttribute(
-                "aria-expanded",
-                isOpen ? "true" : "false"
-            );
+                mobileToggle.classList.toggle(
+                    "open",
+                    isOpen
+                );
 
-        });
-
-    }
-
-
-    /* =====================================================
-       MENU INVENTAIRES
-       ===================================================== */
-
-    const inventoryToggle =
-        document.getElementById("inventoryToggle");
-
-    const inventoryDropdown =
-        document.getElementById("inventoryDropdown");
-
-    if (inventoryToggle && inventoryDropdown) {
-
-        inventoryToggle.addEventListener("click", function (event) {
-
-            event.preventDefault();
-            event.stopPropagation();
-
-            const isOpen =
-                inventoryDropdown.classList.toggle("open");
-
-            inventoryToggle.setAttribute(
-                "aria-expanded",
-                isOpen ? "true" : "false"
-            );
-
-        });
-
-    }
-
-
-    /* =====================================================
-       RECHERCHE ENTRETIENS
-       ===================================================== */
-
-    const searchInput =
-        document.getElementById("searchInput");
-
-    const cards =
-        document.querySelectorAll(".entretiens-card");
-
-    const resultsCount =
-        document.getElementById("resultsCount");
-
-    const noResult =
-        document.getElementById("noResult");
-
-
-    function updateResults() {
-
-        const search =
-            searchInput.value.trim().toLowerCase();
-
-        let visibleCards = 0;
-
-        cards.forEach(function (card) {
-
-            const name =
-                card.querySelector("h3").textContent.toLowerCase();
-
-            if (name.includes(search)) {
-
-                card.style.display = "";
-
-                visibleCards++;
-
-            } else {
-
-                card.style.display = "none";
+                mobileToggle.setAttribute(
+                    "aria-expanded",
+                    isOpen ? "true" : "false"
+                );
 
             }
-
-        });
-
-
-        if (visibleCards === 0) {
-
-            noResult.style.display = "block";
-
-        } else {
-
-            noResult.style.display = "none";
-
-        }
-
-
-        if (visibleCards === 1) {
-
-            resultsCount.textContent =
-                "1 entretien trouvé";
-
-        } else {
-
-            resultsCount.textContent =
-                visibleCards + " entretiens trouvés";
-
-        }
-
-    }
-
-
-    if (searchInput) {
-
-        searchInput.addEventListener(
-            "input",
-            updateResults
         );
 
     }
 
 
     /* =====================================================
-       FERMETURE DU MENU INVENTAIRES
+       SOUS-MENU INVENTAIRES
        ===================================================== */
 
-    document.addEventListener("click", function (event) {
+    if (
+        inventoryDropdown &&
+        inventoryToggle
+    ) {
 
-        if (
-            inventoryDropdown &&
-            !inventoryDropdown.contains(event.target)
-        ) {
+        inventoryToggle.addEventListener(
+            "click",
+            function (event) {
 
-            inventoryDropdown.classList.remove("open");
+                event.preventDefault();
 
-            if (inventoryToggle) {
+                event.stopPropagation();
+
+                const isOpen =
+                    inventoryDropdown.classList.toggle(
+                        "open"
+                    );
 
                 inventoryToggle.setAttribute(
                     "aria-expanded",
-                    "false"
+                    isOpen ? "true" : "false"
                 );
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       FERMER MENU MOBILE
+       ===================================================== */
+
+    function closeMobileMenu() {
+
+        if (mainNav) {
+
+            mainNav.classList.remove(
+                "active"
+            );
+
+        }
+
+        if (mobileToggle) {
+
+            mobileToggle.classList.remove(
+                "open"
+            );
+
+            mobileToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
+    }
+
+
+    /* =====================================================
+       FERMER SOUS-MENU
+       ===================================================== */
+
+    function closeInventoryMenu() {
+
+        if (inventoryDropdown) {
+
+            inventoryDropdown.classList.remove(
+                "open"
+            );
+
+        }
+
+        if (inventoryToggle) {
+
+            inventoryToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
+    }
+
+
+    /* =====================================================
+       LIENS NAVIGATION
+       ===================================================== */
+
+    document
+        .querySelectorAll(".nav-link")
+        .forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    closeMobileMenu();
+
+                }
+            );
+
+        });
+
+
+    document
+        .querySelectorAll(".nav-dropdown-menu a")
+        .forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    closeMobileMenu();
+
+                    closeInventoryMenu();
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       CLIC EN DEHORS DU MENU
+       ===================================================== */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                inventoryDropdown &&
+                !inventoryDropdown.contains(
+                    event.target
+                )
+            ) {
+
+                closeInventoryMenu();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       TOUCHE ESC
+       ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Escape") {
+
+                closeMobileMenu();
+
+                closeInventoryMenu();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       REDIMENSIONNEMENT
+       ===================================================== */
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            if (
+                window.innerWidth > 850
+            ) {
+
+                closeMobileMenu();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       RECHERCHE
+       ===================================================== */
+
+    const searchInput =
+        document.getElementById(
+            "entretiensSearch"
+        );
+
+    const cards =
+        document.querySelectorAll(
+            ".entretiens-card"
+        );
+
+    const emptyMessage =
+        document.getElementById(
+            "entretiensEmpty"
+        );
+
+    const clearSearch =
+        document.getElementById(
+            "clearSearch"
+        );
+
+
+    /* =====================================================
+       NORMALISATION DES ACCENTS
+       ===================================================== */
+
+    function normalizeText(text) {
+
+        return text
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(
+                /[\u0300-\u036f]/g,
+                ""
+            );
+
+    }
+
+
+    /* =====================================================
+       FILTRER LES CARTES
+       ===================================================== */
+
+    function filterEntretiens() {
+
+        if (!searchInput) {
+            return;
+        }
+
+
+        const search =
+            normalizeText(
+                searchInput.value.trim()
+            );
+
+
+        let visibleCards = 0;
+
+
+        cards.forEach(
+            function (card) {
+
+                const searchableText =
+                    normalizeText(
+                        (
+                            card.dataset.search ||
+                            card.textContent ||
+                            ""
+                        )
+                    );
+
+
+                const matches =
+                    search === "" ||
+                    searchableText.includes(
+                        search
+                    );
+
+
+                if (matches) {
+
+                    card.classList.remove(
+                        "hidden"
+                    );
+
+                    visibleCards++;
+
+                } else {
+
+                    card.classList.add(
+                        "hidden"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =================================================
+           MESSAGE AUCUN RÉSULTAT
+           ================================================= */
+
+        if (emptyMessage) {
+
+            if (
+                search !== "" &&
+                visibleCards === 0
+            ) {
+
+                emptyMessage.style.display =
+                    "flex";
+
+            } else {
+
+                emptyMessage.style.display =
+                    "none";
 
             }
 
         }
 
-    });
+
+        /* =================================================
+           BOUTON EFFACER
+           ================================================= */
+
+        if (clearSearch) {
+
+            clearSearch.style.display =
+                search !== ""
+                    ? "flex"
+                    : "none";
+
+        }
+
+    }
+
+
+    /* =====================================================
+       RECHERCHE EN DIRECT
+       ===================================================== */
+
+    if (searchInput) {
+
+        searchInput.addEventListener(
+            "input",
+            filterEntretiens
+        );
+
+    }
+
+
+    /* =====================================================
+       EFFACER
+       ===================================================== */
+
+    if (clearSearch) {
+
+        clearSearch.addEventListener(
+            "click",
+            function () {
+
+                if (!searchInput) {
+                    return;
+                }
+
+                searchInput.value = "";
+
+                filterEntretiens();
+
+                searchInput.focus();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       ANIMATION DES CARTES
+       ===================================================== */
+
+    cards.forEach(
+        function (card, index) {
+
+            card.style.transitionDelay =
+                (index * 0.06) + "s";
+
+        }
+    );
+
+
+    if (
+        "IntersectionObserver"
+        in window
+    ) {
+
+        const observer =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "visible"
+                                );
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.08
+                }
+            );
+
+
+        cards.forEach(
+            function (card) {
+
+                observer.observe(card);
+
+            }
+        );
+
+    } else {
+
+        cards.forEach(
+            function (card) {
+
+                card.classList.add(
+                    "visible"
+                );
+
+            }
+        );
+
+    }
 
 });
+
+
