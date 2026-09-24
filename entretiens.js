@@ -5,31 +5,29 @@ document.addEventListener("DOMContentLoaded", function () {
        MENU MOBILE
        ===================================================== */
 
-    const mobileToggle =
-        document.getElementById("mobileToggle");
-
-    const mainNav =
-        document.getElementById("mainNav");
-
+    const mobileToggle = document.getElementById("mobileToggle");
+    const mainNav = document.getElementById("mainNav");
 
     if (mobileToggle && mainNav) {
 
-        mobileToggle.addEventListener(
-            "click",
-            function (event) {
+        mobileToggle.addEventListener("click", function (event) {
 
-                event.stopPropagation();
+            event.stopPropagation();
 
-                const isOpen =
-                    mainNav.classList.toggle("open");
+            const isOpen =
+                mainNav.classList.toggle("active");
 
-                mobileToggle.setAttribute(
-                    "aria-expanded",
-                    isOpen ? "true" : "false"
-                );
+            mobileToggle.classList.toggle(
+                "open",
+                isOpen
+            );
 
-            }
-        );
+            mobileToggle.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+        });
 
     }
 
@@ -43,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const inventoryToggle =
         document.getElementById("inventoryToggle");
-
 
     if (inventoryDropdown && inventoryToggle) {
 
@@ -83,12 +80,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 inventoryDropdown.classList.remove("open");
 
                 if (inventoryToggle) {
-
                     inventoryToggle.setAttribute(
                         "aria-expanded",
                         "false"
                     );
-
                 }
 
             }
@@ -101,7 +96,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 !mobileToggle.contains(event.target)
             ) {
 
-                mainNav.classList.remove("open");
+                mainNav.classList.remove("active");
+
+                mobileToggle.classList.remove("open");
 
                 mobileToggle.setAttribute(
                     "aria-expanded",
@@ -122,33 +119,37 @@ document.addEventListener("DOMContentLoaded", function () {
         "keydown",
         function (event) {
 
-            if (event.key === "Escape") {
+            if (event.key !== "Escape") {
+                return;
+            }
 
-                if (inventoryDropdown) {
-                    inventoryDropdown.classList.remove("open");
-                }
 
-                if (inventoryToggle) {
+            if (inventoryDropdown) {
+                inventoryDropdown.classList.remove("open");
+            }
 
-                    inventoryToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
 
-                }
+            if (inventoryToggle) {
+                inventoryToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
 
-                if (mainNav) {
-                    mainNav.classList.remove("open");
-                }
 
-                if (mobileToggle) {
+            if (mainNav) {
+                mainNav.classList.remove("active");
+            }
 
-                    mobileToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
 
-                }
+            if (mobileToggle) {
+
+                mobileToggle.classList.remove("open");
+
+                mobileToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
             }
 
@@ -157,20 +158,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       RECHERCHE
+       RECHERCHE ENTRETIENS
        ===================================================== */
 
     const searchInput =
         document.getElementById("entretiensSearch");
 
+    const clearSearch =
+        document.getElementById("clearSearch");
+
     const cards =
         document.querySelectorAll(".entretien-card");
 
-    const emptyState =
+    const emptyMessage =
         document.getElementById("entretiensEmpty");
-
-    const clearSearch =
-        document.getElementById("clearSearch");
 
 
     function normalizeText(text) {
@@ -178,7 +179,11 @@ document.addEventListener("DOMContentLoaded", function () {
         return text
             .toLowerCase()
             .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "");
+            .replace(
+                /[\u0300-\u036f]/g,
+                ""
+            )
+            .trim();
 
     }
 
@@ -190,61 +195,48 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        const searchValue =
-            normalizeText(
-                searchInput.value.trim()
-            );
+        const query =
+            normalizeText(searchInput.value);
 
 
-        let visibleCards = 0;
+        let visibleCount = 0;
 
 
-        cards.forEach(
-            function (card) {
+        cards.forEach(function (card) {
 
-                const searchableText =
-                    normalizeText(
-                        card.dataset.search ||
-                        card.textContent
-                    );
+            const searchData =
+                normalizeText(
+                    card.dataset.search || ""
+                );
 
-
-                const match =
-                    searchValue === "" ||
-                    searchableText.includes(searchValue);
+            const cardText =
+                normalizeText(
+                    card.textContent
+                );
 
 
-                if (match) {
+            const matches =
+                !query ||
+                searchData.includes(query) ||
+                cardText.includes(query);
 
-                    card.classList.remove("hidden");
 
-                    visibleCards++;
+            card.style.display =
+                matches ? "" : "none";
 
-                } else {
 
-                    card.classList.add("hidden");
-
-                }
-
+            if (matches) {
+                visibleCount++;
             }
-        );
+
+        });
 
 
-        if (emptyState) {
+        if (emptyMessage) {
 
-            emptyState.classList.toggle(
+            emptyMessage.classList.toggle(
                 "visible",
-                visibleCards === 0
-            );
-
-        }
-
-
-        if (clearSearch) {
-
-            clearSearch.classList.toggle(
-                "visible",
-                searchInput.value.trim() !== ""
+                visibleCount === 0
             );
 
         }
@@ -261,10 +253,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
-    /* =====================================================
-       EFFACER LA RECHERCHE
-       ===================================================== */
 
     if (clearSearch) {
 
@@ -289,27 +277,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       REDIMENSIONNEMENT
+       FERMETURE MENU AU REDIMENSIONNEMENT
        ===================================================== */
 
     window.addEventListener(
         "resize",
         function () {
 
-            if (window.innerWidth > 850) {
+            if (
+                window.innerWidth > 850 &&
+                mainNav &&
+                mobileToggle
+            ) {
 
-                if (mainNav) {
-                    mainNav.classList.remove("open");
-                }
+                mainNav.classList.remove("active");
 
-                if (mobileToggle) {
+                mobileToggle.classList.remove("open");
 
-                    mobileToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                }
+                mobileToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
             }
 
@@ -317,4 +305,3 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 });
-
