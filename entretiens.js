@@ -5,25 +5,18 @@ document.addEventListener("DOMContentLoaded", function () {
        MENU MOBILE
        ===================================================== */
 
-    const mobileToggle =
-        document.getElementById("mobileToggle");
-
-    const mainNav =
-        document.getElementById("mainNav");
+    const mobileToggle = document.getElementById("mobileToggle");
+    const mainNav = document.getElementById("mainNav");
 
     if (mobileToggle && mainNav) {
 
-        mobileToggle.addEventListener("click", function (event) {
+        mobileToggle.addEventListener("click", function () {
 
-            event.preventDefault();
-            event.stopPropagation();
-
-            const opened =
-                mainNav.classList.toggle("active");
+            const isOpen = mainNav.classList.toggle("active");
 
             mobileToggle.setAttribute(
                 "aria-expanded",
-                opened ? "true" : "false"
+                isOpen ? "true" : "false"
             );
 
         });
@@ -32,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       SOUS-MENU INVENTAIRES
+       MENU INVENTAIRES
        ===================================================== */
 
     const inventoryToggle =
@@ -41,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const inventoryDropdown =
         document.getElementById("inventoryDropdown");
 
-
     if (inventoryToggle && inventoryDropdown) {
 
         inventoryToggle.addEventListener("click", function (event) {
@@ -49,29 +41,13 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
             event.stopPropagation();
 
-            const opened =
+            const isOpen =
                 inventoryDropdown.classList.toggle("open");
 
             inventoryToggle.setAttribute(
                 "aria-expanded",
-                opened ? "true" : "false"
+                isOpen ? "true" : "false"
             );
-
-        });
-
-
-        document.addEventListener("click", function (event) {
-
-            if (!inventoryDropdown.contains(event.target)) {
-
-                inventoryDropdown.classList.remove("open");
-
-                inventoryToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            }
 
         });
 
@@ -79,104 +55,69 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       RECHERCHE
+       RECHERCHE ENTRETIENS
        ===================================================== */
 
     const searchInput =
-        document.getElementById("entretiensSearch");
-
-    const clearSearch =
-        document.getElementById("clearSearch");
-
-    const searchResult =
-        document.getElementById("searchResult");
+        document.getElementById("searchInput");
 
     const cards =
         document.querySelectorAll(".entretiens-card");
+
+    const resultsCount =
+        document.getElementById("resultsCount");
 
     const noResult =
         document.getElementById("noResult");
 
 
-    function normalize(text) {
+    function updateResults() {
 
-        return text
-            .toLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "");
+        const search =
+            searchInput.value.trim().toLowerCase();
 
-    }
-
-
-    function filterCards() {
-
-        if (!searchInput) {
-            return;
-        }
-
-
-        const query =
-            normalize(
-                searchInput.value.trim()
-            );
-
-
-        let visible = 0;
-
+        let visibleCards = 0;
 
         cards.forEach(function (card) {
 
-            const text =
-                normalize(
-                    card.textContent +
-                    " " +
-                    (card.dataset.search || "")
-                );
+            const name =
+                card.querySelector("h3").textContent.toLowerCase();
 
+            if (name.includes(search)) {
 
-            const match =
-                query === "" ||
-                text.includes(query);
+                card.style.display = "";
 
+                visibleCards++;
 
-            card.style.display =
-                match ? "" : "none";
+            } else {
 
+                card.style.display = "none";
 
-            if (match) {
-                visible++;
             }
 
         });
 
 
-        if (noResult) {
+        if (visibleCards === 0) {
 
-            noResult.classList.toggle(
-                "show",
-                visible === 0
-            );
+            noResult.style.display = "block";
+
+        } else {
+
+            noResult.style.display = "none";
 
         }
 
 
-        if (searchResult) {
+        if (visibleCards === 1) {
 
-            if (query === "") {
+            resultsCount.textContent =
+                "1 entretien trouvé";
 
-                searchResult.textContent = "";
+        } else {
 
-            } else {
-
-                searchResult.textContent =
-                    visible +
-                    (
-                        visible > 1
-                            ? " véhicules trouvés"
-                            : " véhicule trouvé"
-                    );
-
-            }
+            resultsCount.textContent =
+                visibleCards + " entretiens trouvés";
 
         }
 
@@ -187,58 +128,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
         searchInput.addEventListener(
             "input",
-            filterCards
+            updateResults
         );
 
     }
 
 
     /* =====================================================
-       BOUTON EFFACER
+       FERMETURE DU MENU INVENTAIRES
        ===================================================== */
 
-    if (clearSearch) {
+    document.addEventListener("click", function (event) {
 
-        clearSearch.addEventListener(
-            "click",
-            function () {
+        if (
+            inventoryDropdown &&
+            !inventoryDropdown.contains(event.target)
+        ) {
 
-                if (!searchInput) {
-                    return;
-                }
+            inventoryDropdown.classList.remove("open");
 
-                searchInput.value = "";
+            if (inventoryToggle) {
 
-                filterCards();
-
-                searchInput.focus();
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       ESCAPE
-       ===================================================== */
-
-    document.addEventListener(
-        "keydown",
-        function (event) {
-
-            if (
-                event.key === "Escape" &&
-                searchInput
-            ) {
-
-                searchInput.value = "";
-
-                filterCards();
+                inventoryToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
             }
 
         }
-    );
+
+    });
 
 });
