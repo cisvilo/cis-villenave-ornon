@@ -9,12 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const mainNav = document.getElementById("mainNav");
 
   if (menuToggle && mainNav) {
-
     menuToggle.addEventListener("click", function (event) {
       event.stopPropagation();
       mainNav.classList.toggle("active");
     });
-
   }
 
 
@@ -31,20 +29,15 @@ document.addEventListener("DOMContentLoaded", function () {
       : null;
 
   if (dropdownToggle && inventoryDropdown) {
-
     dropdownToggle.addEventListener("click", function (event) {
-
       event.stopPropagation();
-
       inventoryDropdown.classList.toggle("open");
-
     });
-
   }
 
 
   /* =====================================================
-     FERMETURE DES MENUS EN CLIQUANT AILLEURS
+     FERMETURE DU DROPDOWN
      ===================================================== */
 
   document.addEventListener("click", function (event) {
@@ -72,26 +65,20 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchResult =
     document.getElementById("searchResult");
 
-  const raccourcisGrid =
-    document.getElementById("raccourcisGrid");
-
   const noResult =
     document.getElementById("noResult");
 
   const countElement =
     document.getElementById("raccourcisCount");
 
-  const cards =
-    raccourcisGrid
-      ? Array.from(
-          raccourcisGrid.querySelectorAll(".raccourcis-card")
-        )
-      : [];
+  const cards = Array.from(
+    document.querySelectorAll(".raccourcis-card")
+  );
 
 
   function normalizeText(text) {
 
-    return text
+    return String(text)
       .toLowerCase()
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "");
@@ -110,6 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let visibleCount = 0;
 
+
     cards.forEach(function (card) {
 
       const name =
@@ -126,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
         name.includes(query) ||
         description.includes(query) ||
         content.includes(query);
+
 
       if (matches) {
 
@@ -197,15 +186,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  if (searchInput) {
+  /* =====================================================
+     ÉVÉNEMENT RECHERCHE
+     ===================================================== */
 
+  if (searchInput) {
     searchInput.addEventListener(
       "input",
       performSearch
     );
-
   }
 
+
+  /* =====================================================
+     BOUTON EFFACER
+     ===================================================== */
 
   if (clearSearch) {
 
@@ -213,14 +208,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
       searchInput.value = "";
 
-      searchInput.focus();
-
       performSearch();
+
+      searchInput.focus();
 
     });
 
   }
 
+
+  /* =====================================================
+     TOUCHE ESC
+     ===================================================== */
 
   document.addEventListener("keydown", function (event) {
 
@@ -240,7 +239,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =====================================================
-     FERMETURE DU MENU MOBILE APRÈS UN CLIC
+     FERMETURE MENU MOBILE
      ===================================================== */
 
   if (mainNav) {
@@ -267,9 +266,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", function () {
 
     if (window.innerWidth > 900 && mainNav) {
-
       mainNav.classList.remove("active");
-
     }
 
   });
@@ -282,3 +279,5 @@ document.addEventListener("DOMContentLoaded", function () {
   performSearch();
 
 });
+
+
