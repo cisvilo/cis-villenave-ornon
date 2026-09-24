@@ -1,502 +1,250 @@
 
-/* =========================================================
-   CIS VILLENAVE-D'ORNON
-   JAVASCRIPT — PAGE ENTRETIENS
-   ========================================================= */
-
 document.addEventListener("DOMContentLoaded", function () {
 
-
-    /* =====================================================
-       MENU
-       ===================================================== */
-
-    const mobileToggle =
-        document.getElementById("mobileToggle");
-
-    const mainNav =
-        document.getElementById("mainNav");
-
-    const inventoryDropdown =
-        document.getElementById("inventoryDropdown");
-
-    const inventoryToggle =
-        document.getElementById("inventoryToggle");
-
-
-    /* =====================================================
+    /* ================================
        MENU MOBILE
-       ===================================================== */
+    ================================= */
+
+    const mobileToggle = document.getElementById("mobileToggle");
+    const mainNav = document.getElementById("mainNav");
 
     if (mobileToggle && mainNav) {
 
-        mobileToggle.addEventListener(
-            "click",
-            function () {
-
-                const isOpen =
-                    mainNav.classList.toggle("active");
-
-                mobileToggle.classList.toggle(
-                    "open",
-                    isOpen
-                );
-
-                mobileToggle.setAttribute(
-                    "aria-expanded",
-                    isOpen ? "true" : "false"
-                );
-
-            }
-        );
+        mobileToggle.addEventListener("click", function () {
+            mainNav.classList.toggle("open");
+        });
 
     }
 
 
-    /* =====================================================
-       SOUS-MENU INVENTAIRES
-       ===================================================== */
+    /* ================================
+       MENU INVENTAIRES
+    ================================= */
 
-    if (
-        inventoryDropdown &&
-        inventoryToggle
-    ) {
+    const inventoryDropdown = document.getElementById("inventoryDropdown");
+    const inventoryToggle = document.getElementById("inventoryToggle");
 
-        inventoryToggle.addEventListener(
-            "click",
-            function (event) {
+    if (inventoryDropdown && inventoryToggle) {
 
-                event.preventDefault();
+        inventoryToggle.addEventListener("click", function (event) {
 
-                event.stopPropagation();
+            event.stopPropagation();
 
-                const isOpen =
-                    inventoryDropdown.classList.toggle(
-                        "open"
-                    );
-
-                inventoryToggle.setAttribute(
-                    "aria-expanded",
-                    isOpen ? "true" : "false"
-                );
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       FERMER MENU MOBILE
-       ===================================================== */
-
-    function closeMobileMenu() {
-
-        if (mainNav) {
-
-            mainNav.classList.remove(
-                "active"
-            );
-
-        }
-
-        if (mobileToggle) {
-
-            mobileToggle.classList.remove(
-                "open"
-            );
-
-            mobileToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-        }
-
-    }
-
-
-    /* =====================================================
-       FERMER SOUS-MENU
-       ===================================================== */
-
-    function closeInventoryMenu() {
-
-        if (inventoryDropdown) {
-
-            inventoryDropdown.classList.remove(
-                "open"
-            );
-
-        }
-
-        if (inventoryToggle) {
-
-            inventoryToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-        }
-
-    }
-
-
-    /* =====================================================
-       LIENS NAVIGATION
-       ===================================================== */
-
-    document
-        .querySelectorAll(".nav-link")
-        .forEach(function (link) {
-
-            link.addEventListener(
-                "click",
-                function () {
-
-                    closeMobileMenu();
-
-                }
-            );
+            inventoryDropdown.classList.toggle("open");
 
         });
 
+    }
 
-    document
-        .querySelectorAll(".nav-dropdown-menu a")
-        .forEach(function (link) {
 
-            link.addEventListener(
-                "click",
-                function () {
+    /* ================================
+       LIENS DU MENU
+    ================================= */
 
-                    closeMobileMenu();
+    const navLinks = document.querySelectorAll(".main-nav a");
 
-                    closeInventoryMenu();
+    navLinks.forEach(function (link) {
 
-                }
-            );
+        link.addEventListener("click", function () {
+
+            if (mainNav) {
+                mainNav.classList.remove("open");
+            }
 
         });
 
+    });
 
-    /* =====================================================
-       CLIC EN DEHORS DU MENU
-       ===================================================== */
 
-    document.addEventListener(
-        "click",
-        function (event) {
+    /* ================================
+       FERMETURE MENU EN DEHORS
+    ================================= */
 
-            if (
-                inventoryDropdown &&
-                !inventoryDropdown.contains(
-                    event.target
-                )
-            ) {
+    document.addEventListener("click", function (event) {
 
-                closeInventoryMenu();
+        if (
+            inventoryDropdown &&
+            !inventoryDropdown.contains(event.target)
+        ) {
+            inventoryDropdown.classList.remove("open");
+        }
 
+    });
+
+
+    /* ================================
+       ESCAPE
+    ================================= */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            if (inventoryDropdown) {
+                inventoryDropdown.classList.remove("open");
+            }
+
+            if (mainNav) {
+                mainNav.classList.remove("open");
             }
 
         }
-    );
+
+    });
 
 
-    /* =====================================================
-       TOUCHE ESC
-       ===================================================== */
-
-    document.addEventListener(
-        "keydown",
-        function (event) {
-
-            if (event.key === "Escape") {
-
-                closeMobileMenu();
-
-                closeInventoryMenu();
-
-            }
-
-        }
-    );
-
-
-    /* =====================================================
+    /* ================================
        REDIMENSIONNEMENT
-       ===================================================== */
+    ================================= */
 
-    window.addEventListener(
-        "resize",
-        function () {
+    window.addEventListener("resize", function () {
 
-            if (
-                window.innerWidth > 850
-            ) {
-
-                closeMobileMenu();
-
-            }
-
+        if (window.innerWidth > 850 && mainNav) {
+            mainNav.classList.remove("open");
         }
-    );
+
+    });
 
 
-    /* =====================================================
-       RECHERCHE
-       ===================================================== */
+    /* ================================
+       RECHERCHE ENTRETIENS
+    ================================= */
 
-    const searchInput =
-        document.getElementById(
-            "entretiensSearch"
-        );
-
-    const cards =
-        document.querySelectorAll(
-            ".entretiens-card"
-        );
-
-    const emptyMessage =
-        document.getElementById(
-            "entretiensEmpty"
-        );
-
-    const clearSearch =
-        document.getElementById(
-            "clearSearch"
-        );
+    const searchInput = document.getElementById("entretiensSearch");
+    const cards = document.querySelectorAll(".entretien-card");
+    const emptyState = document.getElementById("entretiensEmpty");
+    const clearSearch = document.getElementById("clearSearch");
 
 
-    /* =====================================================
-       NORMALISATION DES ACCENTS
-       ===================================================== */
+    if (searchInput && cards.length) {
 
-    function normalizeText(text) {
+        function normalizeText(text) {
 
-        return text
-            .toLowerCase()
-            .normalize("NFD")
-            .replace(
-                /[\u0300-\u036f]/g,
-                ""
-            );
+            return text
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "");
 
-    }
-
-
-    /* =====================================================
-       FILTRER LES CARTES
-       ===================================================== */
-
-    function filterEntretiens() {
-
-        if (!searchInput) {
-            return;
         }
 
 
-        const search =
-            normalizeText(
-                searchInput.value.trim()
-            );
+        function filterCards() {
+
+            const searchValue = normalizeText(searchInput.value.trim());
+
+            let visibleCards = 0;
 
 
-        let visibleCards = 0;
+            cards.forEach(function (card) {
+
+                const searchableText = normalizeText(
+                    card.dataset.search || card.textContent
+                );
+
+                const match =
+                    searchValue === "" ||
+                    searchableText.includes(searchValue);
 
 
-        cards.forEach(
-            function (card) {
+                if (match) {
 
-                const searchableText =
-                    normalizeText(
-                        (
-                            card.dataset.search ||
-                            card.textContent ||
-                            ""
-                        )
-                    );
+                    card.classList.remove("hidden");
 
-
-                const matches =
-                    search === "" ||
-                    searchableText.includes(
-                        search
-                    );
-
-
-                if (matches) {
-
-                    card.classList.remove(
-                        "hidden"
-                    );
+                    card.style.transitionDelay =
+                        (visibleCards * 0.03) + "s";
 
                     visibleCards++;
 
                 } else {
 
-                    card.classList.add(
-                        "hidden"
-                    );
+                    card.classList.add("hidden");
+                    card.style.transitionDelay = "0s";
 
                 }
 
+            });
+
+
+            if (emptyState) {
+
+                if (visibleCards === 0) {
+                    emptyState.classList.add("visible");
+                } else {
+                    emptyState.classList.remove("visible");
+                }
+
             }
-        );
 
 
-        /* =================================================
-           MESSAGE AUCUN RÉSULTAT
-           ================================================= */
+            if (clearSearch) {
 
-        if (emptyMessage) {
-
-            if (
-                search !== "" &&
-                visibleCards === 0
-            ) {
-
-                emptyMessage.style.display =
-                    "flex";
-
-            } else {
-
-                emptyMessage.style.display =
-                    "none";
+                if (searchInput.value.length > 0) {
+                    clearSearch.classList.add("visible");
+                } else {
+                    clearSearch.classList.remove("visible");
+                }
 
             }
 
         }
 
 
-        /* =================================================
-           BOUTON EFFACER
-           ================================================= */
+        searchInput.addEventListener("input", filterCards);
+
 
         if (clearSearch) {
 
-            clearSearch.style.display =
-                search !== ""
-                    ? "flex"
-                    : "none";
-
-        }
-
-    }
-
-
-    /* =====================================================
-       RECHERCHE EN DIRECT
-       ===================================================== */
-
-    if (searchInput) {
-
-        searchInput.addEventListener(
-            "input",
-            filterEntretiens
-        );
-
-    }
-
-
-    /* =====================================================
-       EFFACER
-       ===================================================== */
-
-    if (clearSearch) {
-
-        clearSearch.addEventListener(
-            "click",
-            function () {
-
-                if (!searchInput) {
-                    return;
-                }
+            clearSearch.addEventListener("click", function () {
 
                 searchInput.value = "";
 
-                filterEntretiens();
+                filterCards();
 
                 searchInput.focus();
 
-            }
-        );
+            });
+
+        }
 
     }
 
 
-    /* =====================================================
+    /* ================================
        ANIMATION DES CARTES
-       ===================================================== */
+    ================================= */
 
-    cards.forEach(
-        function (card, index) {
-
-            card.style.transitionDelay =
-                (index * 0.06) + "s";
-
-        }
-    );
+    const entretienCards = document.querySelectorAll(".entretien-card");
 
 
-    if (
-        "IntersectionObserver"
-        in window
-    ) {
+    if ("IntersectionObserver" in window) {
 
-        const observer =
-            new IntersectionObserver(
-                function (entries) {
+        const observer = new IntersectionObserver(
+            function (entries) {
 
-                    entries.forEach(
-                        function (entry) {
+                entries.forEach(function (entry) {
 
-                            if (
-                                entry.isIntersecting
-                            ) {
+                    if (entry.isIntersecting) {
 
-                                entry.target.classList.add(
-                                    "visible"
-                                );
+                        entry.target.classList.add("visible");
 
-                                observer.unobserve(
-                                    entry.target
-                                );
+                        observer.unobserve(entry.target);
 
-                            }
+                    }
 
-                        }
-                    );
+                });
 
-                },
-                {
-                    threshold: 0.08
-                }
-            );
-
-
-        cards.forEach(
-            function (card) {
-
-                observer.observe(card);
-
+            },
+            {
+                threshold: 0.08
             }
         );
 
-    } else {
 
-        cards.forEach(
-            function (card) {
-
-                card.classList.add(
-                    "visible"
-                );
-
-            }
-        );
+        entretienCards.forEach(function (card) {
+            observer.observe(card);
+        });
 
     }
 
 });
-
 
