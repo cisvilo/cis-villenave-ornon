@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Raccourcis — CIS Villenave-d'Ornon</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="raccourcis.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+  <div class="header-inner">
+
+    <a href="index.html" class="logo-link">
+      <img src="logo1.png" alt="CIS Villenave-d'Ornon" class="site-logo">
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav">
+
+      <a href="index.html">Accueil</a>
+
+      <a href="entretiens.html">Entretiens</a>
+
+      <a href="documents.html">Documents</a>
+
+      <a href="amicale.html">Amicale</a>
+
+      <div class="nav-dropdown" id="inventoryDropdown">
+
+        <button class="nav-dropdown-toggle" type="button">
+          Inventaires
+          <span class="dropdown-arrow">⌄</span>
+        </button>
+
+        <div class="nav-dropdown-menu">
+
+          <a href="ssuap.html">SSUAP</a>
+          <a href="incendie.html">Incendie</a>
+          <a href="div.html">DIV</a>
+          <a href="fdf.html">FDF</a>
+          <a href="specialites.html">Spécialités</a>
+          <a href="standard.html">Standard</a>
+          <a href="casernement.html">Casernement</a>
+
+        </div>
+
+      </div>
+
+      <a href="raccourcis.html" class="active">Raccourcis</a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main>
+
+  <section class="page-hero raccourcis-hero">
+
+    <div class="hero-content">
+
+      <div class="breadcrumb">
+        <a href="index.html">Accueil</a>
+        <span>›</span>
+        <span>Raccourcis</span>
+      </div>
+
+      <div class="hero-icon">
+        ↗
+      </div>
+
+      <h1>Raccourcis</h1>
+
+      <p>
+        Accès directs aux services externes du CIS.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="raccourcis-section">
+
+    <div class="section-intro">
+
+      <div>
+        <span class="section-kicker">SERVICES EXTERNES</span>
+
+        <h2>Accès rapides</h2>
+
+        <p>
+          Retrouvez en un clic les principaux services utilisés au CIS.
+        </p>
+      </div>
+
+      <div class="raccourcis-count">
+        <strong id="raccourcisCount">6</strong>
+        <span>services</span>
+      </div>
+
+    </div>
+
+
+    <div class="search-box">
+
+      <div class="search-icon">⌕</div>
+
+      <input
+        type="search"
+        id="raccourcisSearch"
+        placeholder="Rechercher un service..."
+        autocomplete="off"
+      >
+
+      <button
+        type="button"
+        id="clearSearch"
+        class="clear-search"
+        aria-label="Effacer la recherche"
+      >
+        ×
+      </button>
+
+    </div>
+
+    <div class="search-result" id="searchResult"></div>
+
+
+    <div class="raccourcis-grid" id="raccourcisGrid">
+
+
+      <!-- AGATT -->
+      <article
+        class="raccourcis-card"
+        data-name="AGATT"
+        data-description="Planning et gestion des activités"
+      >
+
+        <div class="raccourcis-card-icon">
+          📅
+        </div>
+
+        <div class="raccourcis-card-content">
+
+          <span class="raccourcis-card-number">01</span>
+
+          <h3>AGATT</h3>
+
+          <p>
+            Accès au service AGATT du SDIS 33.
+          </p>
+
+          <a
+            href="https://agatt.sdis33.fr/public/index.php"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="raccourcis-card-button"
+          >
+            Accéder
+            <span>↗</span>
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- ZIMBRA -->
+      <article
+        class="raccourcis-card"
+        data-name="ZIMBRA"
+        data-description="Messagerie professionnelle"
+      >
+
+        <div class="raccourcis-card-icon">
+          ✉
+        </div>
+
+        <div class="raccourcis-card-content">
+
+          <span class="raccourcis-card-number">02</span>
+
+          <h3>ZIMBRA</h3>
+
+          <p>
+            Accès à la messagerie professionnelle.
+          </p>
+
+          <a
+            href="https://messagerie.sdis33.fr/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="raccourcis-card-button"
+          >
+            Accéder
+            <span>↗</span>
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- GIPSI -->
+      <article
+        class="raccourcis-card"
+        data-name="GIPSI"
+        data-description="Portail GIPSI SDIS 33"
+      >
+
+        <div class="raccourcis-card-icon">
+          ◈
+        </div>
+
+        <div class="raccourcis-card-content">
+
+          <span class="raccourcis-card-number">03</span>
+
+          <h3>GIPSI</h3>
+
+          <p>
+            Accès au portail GIPSI du SDIS 33.
+          </p>
+
+          <a
+            href="https://gate.sdis33.fr/gate/cloud/?orgname=sdis33&domainid=1586354925552"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="raccourcis-card-button"
+          >
+            Accéder
+            <span>↗</span>
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- ENASIS -->
+      <article
+        class="raccourcis-card"
+        data-name="ENASIS"
+        data-description="Accès au service ENASIS"
+      >
+
+        <div class="raccourcis-card-icon">
+          ◉
+        </div>
+
+        <div class="raccourcis-card-content">
+
+          <span class="raccourcis-card-number">04</span>
+
+          <h3>ENASIS</h3>
+
+          <p>
+            Accès direct au service ENASIS.
+          </p>
+
+          <a
+            href="#"
+            class="raccourcis-card-button disabled"
+            aria-disabled="true"
+          >
+            Accéder
+            <span>↗</span>
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- UDSP 33 -->
+      <article
+        class="raccourcis-card"
+        data-name="UDSP 33"
+        data-description="Union Départementale des Sapeurs-Pompiers de la Gironde"
+      >
+
+        <div class="raccourcis-card-icon">
+          ★
+        </div>
+
+        <div class="raccourcis-card-content">
+
+          <span class="raccourcis-card-number">05</span>
+
+          <h3>UDSP 33</h3>
+
+          <p>
+            Union Départementale des Sapeurs-Pompiers de la Gironde.
+          </p>
+
+          <a
+            href="https://www.udsp33.fr/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="raccourcis-card-button"
+          >
+            Accéder
+            <span>↗</span>
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- COS SDIS 33 -->
+      <article
+        class="raccourcis-card"
+        data-name="COS SDIS 33"
+        data-description="Portail COS SDIS 33"
+      >
+
+        <div class="raccourcis-card-icon">
+          ⚕
+        </div>
+
+        <div class="raccourcis-card-content">
+
+          <span class="raccourcis-card-number">06</span>
+
+          <h3>COS SDIS 33</h3>
+
+          <p>
+            Accès au portail COS SDIS 33.
+          </p>
+
+          <a
+            href="https://www.cossdis33.fr/Authentification/index?ReturnUrl=https://www.cossdis33.fr/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="raccourcis-card-button"
+          >
+            Accéder
+            <span>↗</span>
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- GOOGLE DRIVE -->
+      <article
+        class="raccourcis-card raccourcis-card-drive"
+        data-name="Google Drive"
+        data-description="Documents et fichiers du CIS"
+      >
+
+        <div class="raccourcis-card-icon">
+          ▣
+        </div>
+
+        <div class="raccourcis-card-content">
+
+          <span class="raccourcis-card-number">07</span>
+
+          <h3>Google Drive</h3>
+
+          <p>
+            Accès aux documents et fichiers partagés du CIS.
+          </p>
+
+          <a
+            href="https://drive.google.com/drive/u/0/home"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="raccourcis-card-button"
+          >
+            Accéder
+            <span>↗</span>
+          </a>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+    <div class="raccourcis-empty" id="noResult">
+
+      <div class="empty-icon">⌕</div>
+
+      <h3>Aucun service trouvé</h3>
+
+      <p>
+        Modifiez votre recherche pour afficher les services disponibles.
+      </p>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+  <div class="footer-inner">
+
+    <div>
+      <strong>CIS VILLENAVE</strong>
+      <span>Portail personnalisé</span>
+    </div>
+
+    <p>
+      Les boutons ouvrent directement les Forms, PDF, Drive et services externes.
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script src="raccourcis.js"></script>
+
+</body>
+</html>
