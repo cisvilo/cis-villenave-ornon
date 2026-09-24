@@ -1,28 +1,36 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* ================================
+    /* =========================================
        MENU MOBILE
-    ================================= */
+    ========================================= */
 
     const mobileToggle = document.getElementById("mobileToggle");
     const mainNav = document.getElementById("mainNav");
 
     if (mobileToggle && mainNav) {
 
-        mobileToggle.addEventListener("click", function () {
+        mobileToggle.addEventListener("click", function (event) {
+
+            event.stopPropagation();
+
             mainNav.classList.toggle("open");
+
         });
 
     }
 
 
-    /* ================================
+    /* =========================================
        MENU INVENTAIRES
-    ================================= */
+    ========================================= */
 
-    const inventoryDropdown = document.getElementById("inventoryDropdown");
-    const inventoryToggle = document.getElementById("inventoryToggle");
+    const inventoryDropdown =
+        document.getElementById("inventoryDropdown");
+
+    const inventoryToggle =
+        document.getElementById("inventoryToggle");
+
 
     if (inventoryDropdown && inventoryToggle) {
 
@@ -37,28 +45,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* ================================
-       LIENS DU MENU
-    ================================= */
-
-    const navLinks = document.querySelectorAll(".main-nav a");
-
-    navLinks.forEach(function (link) {
-
-        link.addEventListener("click", function () {
-
-            if (mainNav) {
-                mainNav.classList.remove("open");
-            }
-
-        });
-
-    });
-
-
-    /* ================================
-       FERMETURE MENU EN DEHORS
-    ================================= */
+    /* =========================================
+       FERMETURE DU MENU
+    ========================================= */
 
     document.addEventListener("click", function (event) {
 
@@ -66,15 +55,29 @@ document.addEventListener("DOMContentLoaded", function () {
             inventoryDropdown &&
             !inventoryDropdown.contains(event.target)
         ) {
+
             inventoryDropdown.classList.remove("open");
+
+        }
+
+
+        if (
+            mainNav &&
+            mobileToggle &&
+            !mainNav.contains(event.target) &&
+            !mobileToggle.contains(event.target)
+        ) {
+
+            mainNav.classList.remove("open");
+
         }
 
     });
 
 
-    /* ================================
+    /* =========================================
        ESCAPE
-    ================================= */
+    ========================================= */
 
     document.addEventListener("keydown", function (event) {
 
@@ -93,158 +96,157 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* ================================
-       REDIMENSIONNEMENT
-    ================================= */
+    /* =========================================
+       RECHERCHE DES ENTRETIENS
+    ========================================= */
 
-    window.addEventListener("resize", function () {
+    const searchInput =
+        document.getElementById("entretiensSearch");
 
-        if (window.innerWidth > 850 && mainNav) {
-            mainNav.classList.remove("open");
+    const cards =
+        document.querySelectorAll(".entretien-card");
+
+    const emptyState =
+        document.getElementById("entretiensEmpty");
+
+    const clearSearch =
+        document.getElementById("clearSearch");
+
+
+    function normalizeText(text) {
+
+        return text
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+
+    }
+
+
+    function filterCards() {
+
+        if (!searchInput) {
+            return;
         }
 
-    });
+        const searchValue =
+            normalizeText(searchInput.value.trim());
+
+        let visibleCards = 0;
 
 
-    /* ================================
-       RECHERCHE ENTRETIENS
-    ================================= */
+        cards.forEach(function (card) {
 
-    const searchInput = document.getElementById("entretiensSearch");
-    const cards = document.querySelectorAll(".entretien-card");
-    const emptyState = document.getElementById("entretiensEmpty");
-    const clearSearch = document.getElementById("clearSearch");
-
-
-    if (searchInput && cards.length) {
-
-        function normalizeText(text) {
-
-            return text
-                .toLowerCase()
-                .normalize("NFD")
-                .replace(/[\u0300-\u036f]/g, "");
-
-        }
-
-
-        function filterCards() {
-
-            const searchValue = normalizeText(searchInput.value.trim());
-
-            let visibleCards = 0;
-
-
-            cards.forEach(function (card) {
-
-                const searchableText = normalizeText(
+            const searchableText =
+                normalizeText(
                     card.dataset.search || card.textContent
                 );
 
-                const match =
-                    searchValue === "" ||
-                    searchableText.includes(searchValue);
+
+            const match =
+                searchValue === "" ||
+                searchableText.includes(searchValue);
 
 
-                if (match) {
+            if (match) {
 
-                    card.classList.remove("hidden");
+                card.classList.remove("hidden");
 
-                    card.style.transitionDelay =
-                        (visibleCards * 0.03) + "s";
+                visibleCards++;
 
-                    visibleCards++;
+            } else {
 
-                } else {
-
-                    card.classList.add("hidden");
-                    card.style.transitionDelay = "0s";
-
-                }
-
-            });
-
-
-            if (emptyState) {
-
-                if (visibleCards === 0) {
-                    emptyState.classList.add("visible");
-                } else {
-                    emptyState.classList.remove("visible");
-                }
+                card.classList.add("hidden");
 
             }
 
+        });
 
-            if (clearSearch) {
 
-                if (searchInput.value.length > 0) {
-                    clearSearch.classList.add("visible");
-                } else {
-                    clearSearch.classList.remove("visible");
-                }
+        /* Aucun résultat */
+
+        if (emptyState) {
+
+            if (visibleCards === 0) {
+
+                emptyState.classList.add("visible");
+
+            } else {
+
+                emptyState.classList.remove("visible");
 
             }
 
         }
 
 
-        searchInput.addEventListener("input", filterCards);
-
+        /* Bouton X */
 
         if (clearSearch) {
 
-            clearSearch.addEventListener("click", function () {
+            if (searchInput.value.trim() !== "") {
 
-                searchInput.value = "";
+                clearSearch.classList.add("visible");
 
-                filterCards();
+            } else {
 
-                searchInput.focus();
+                clearSearch.classList.remove("visible");
 
-            });
+            }
 
         }
 
     }
 
 
-    /* ================================
-       ANIMATION DES CARTES
-    ================================= */
+    if (searchInput) {
 
-    const entretienCards = document.querySelectorAll(".entretien-card");
-
-
-    if ("IntersectionObserver" in window) {
-
-        const observer = new IntersectionObserver(
-            function (entries) {
-
-                entries.forEach(function (entry) {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add("visible");
-
-                        observer.unobserve(entry.target);
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.08
-            }
+        searchInput.addEventListener(
+            "input",
+            filterCards
         );
 
+    }
 
-        entretienCards.forEach(function (card) {
-            observer.observe(card);
+
+    /* =========================================
+       EFFACER LA RECHERCHE
+    ========================================= */
+
+    if (clearSearch) {
+
+        clearSearch.addEventListener("click", function () {
+
+            if (!searchInput) {
+                return;
+            }
+
+            searchInput.value = "";
+
+            filterCards();
+
+            searchInput.focus();
+
         });
 
     }
+
+
+    /* =========================================
+       FERMETURE MENU MOBILE > 850px
+    ========================================= */
+
+    window.addEventListener("resize", function () {
+
+        if (window.innerWidth > 850) {
+
+            if (mainNav) {
+                mainNav.classList.remove("open");
+            }
+
+        }
+
+    });
 
 });
 
