@@ -40,9 +40,6 @@
 
         </a>
 
-
-        <!-- BOUTON HAMBURGER -->
-
         <button
             class="mobile-toggle"
             id="mobileToggle"
@@ -55,9 +52,6 @@
             <span></span>
         </button>
 
-
-        <!-- MENU -->
-
         <nav class="nav" id="mainNav">
 
             <a
@@ -66,9 +60,6 @@
             >
                 ACCUEIL
             </a>
-
-
-            <!-- INVENTAIRES -->
 
             <div
                 class="nav-dropdown"
@@ -91,7 +82,6 @@
                     </span>
 
                 </button>
-
 
                 <div
                     class="nav-dropdown-menu"
@@ -145,14 +135,12 @@
 
             </div>
 
-
             <a
-                href="pages/entretiens.html"
+                href="entretiens.html"
                 class="nav-link"
             >
                 ENTRETIENS
             </a>
-
 
             <a
                 href="pages/documents.html"
@@ -161,14 +149,12 @@
                 DOCUMENTS
             </a>
 
-
             <a
                 href="pages/amicale.html"
                 class="nav-link"
             >
                 AMICALE
             </a>
-
 
             <a
                 href="pages/raccourcis.html"
@@ -185,11 +171,6 @@
 
 
 <main class="ssuap-page">
-
-
-    <!-- =====================================================
-         HERO
-         ===================================================== -->
 
     <section class="ssuap-hero">
 
@@ -216,16 +197,9 @@
     </section>
 
 
-    <!-- =====================================================
-         CONTENU
-         ===================================================== -->
-
     <section class="ssuap-content">
 
         <div class="ssuap-container">
-
-
-            <!-- BREADCRUMB -->
 
             <div class="ssuap-breadcrumb">
 
@@ -247,8 +221,6 @@
 
             </div>
 
-
-            <!-- INTRO -->
 
             <div class="ssuap-intro">
 
@@ -275,8 +247,6 @@
 
             </div>
 
-
-            <!-- RECHERCHE -->
 
             <div class="ssuap-search">
 
@@ -309,17 +279,10 @@
             ></div>
 
 
-            <!-- =================================================
-                 CARTES
-                 ================================================= -->
-
             <div
                 class="ssuap-grid"
                 id="ssuapGrid"
             >
-
-
-                <!-- VSAV 1 -->
 
                 <article
                     class="ssuap-card"
@@ -392,8 +355,6 @@
                 </article>
 
 
-                <!-- VSAV 2 -->
-
                 <article
                     class="ssuap-card"
                     data-search="VSAV 2 CA chef agréé COND conducteur EQUIPIER équipier"
@@ -462,7 +423,6 @@
 
                     </div>
 
-
                 </article>
 
             </div>
@@ -507,9 +467,6 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-
-</body>
-</html>
 <footer class="site-footer">
 
 <div class="footer-inner">
@@ -536,7 +493,7 @@ document.addEventListener("DOMContentLoaded", function () {
             Inventaires
         </a>
 
-        <a href="pages/entretiens.html">
+        <a href="entretiens.html">
             Entretiens
         </a>
 
@@ -556,8 +513,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </div>
 
-
 </footer>
+
+</body>
+</html>
+```
+
+Le seul changement de navigation est bien :
+
+* **Menu :** `pages/entretiens.html` → `entretiens.html`
+* **Footer :** `pages/entretiens.html` → `entretiens.html`
+
+Les liens Google Forms et le reste du code sont conservés.
+
 
 
 
